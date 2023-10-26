@@ -1,0 +1,386 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&family=Oooh+Baby&display=swap');
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.wrap-flex {
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 1430px;
+    margin: 0 auto;
+}
+
+.pr60 {
+    padding-right: 60px;
+}
+
+.pl60 {
+    padding-left: 60px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.w-50 {
+    width: calc(100% / 2 - 50px);
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.just-start {
+    justify-content: flex-start;
+}
+
+.pad100 {
+    padding: 100px 15px;
+}
+
+.pb100 {
+    padding-bottom: 100px;
+}
+
+.navbar .d-flex {
+    gap: 50px;
+}
+
+.navbar .d-flex li {
+    margin: 0px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
+    text-decoration: none;
+}
+
+.navbar ul li:hover a {
+    color: #316C7A;
+}
+
+.toggle-menu svg {
+    display: none;
+}
+
+p,
+li,
+a,
+input,
+span {
+    color: #515151;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.6s all ease-in-out;
+    outline: none;
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #171C24;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: 0.6s all ease-in-out;
+    font-family: 'DM Serif Display', serif;
+    margin: 0px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+/* *********************************************************************** HEADER **************************************************************************** */
+
+.main-header {
+    padding: 20px 15px;
+}
+
+.fixed-header {
+    position: fixed;
+    top: -100px; /* Start with the header off-screen */
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    background-color: #ffffff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    z-index: 9;
+    transition: top 0.3s ease; /* Smooth transition for the top property */
+}
+
+
+
+.defbtn,
+.main-header .defbtn {
+    border-radius: 100px;
+    border: 1px solid #A7A9AC;
+    padding: 18px 80px 18px 20px;
+    color: #000;
+    display: inline-block;
+    ;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 17px;
+    text-transform: capitalize;
+    background-color: #ffff;
+    text-align: left;
+    position: relative;
+}
+
+.defbtn::after {
+    position: absolute;
+    content: "\2b";
+    background-color: #000;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: 7px;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50px;
+    font-family: "Font Awesome 6 Free";
+    color: #ffffff;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    transition: .6s all ease-in-out;
+    pointer-events: none;
+}
+
+.defbtn:hover::after {
+    right: 138px;
+}
+
+.defbtn:hover {
+    padding: 18px 20px 18px 80px;
+}
+
+.main-header .defbtn:hover::after {
+    right: 115px;
+}
+
+/* *********************************************************************** HEADER **************************************************************************** */
+
+/* *********************************************************************** BANNER **************************************************************************** */
+
+.banner-slider{
+    background: url(assets/images/banner.jpg) no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    padding: 440px 0px;
+}
+/* *********************************************************************** BANNER **************************************************************************** */
+
+/* *********************************************************************** FOOTER **************************************************************************** */
+
+.main-footer {
+    background-color: #316C7A;
+}
+
+.ft-link span {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.footer_social a img {
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 30px;
+}
+
+.footer_social a:hover img {
+    filter: invert(100);
+    background-color: #000000;
+}
+
+.footer-bottom .footer_social h3 {
+    width: 100%;
+}
+
+.footer_social .d-flex {
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+
+.ft-link span i {
+    display: block;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.ft-link img {
+    border: 0.5px solid #FFF;
+    padding: 8px;
+    max-width: 25px;
+}
+
+.ft-top_bar {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-footer p,
+.main-footer a,
+.main-footer h3 {
+    color: #fff;
+}
+
+.ft-para {
+    margin-top: 30px !important;
+}
+
+.ft-col {
+    width: calc(100% / 3 - 30px);
+}
+
+.ft_navbar {
+    max-width: fit-content;
+    max-width: --moz-fit-content;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.footer-bottom {
+    margin-top: 70px;
+    padding-top: 70px;
+    border-top: 1px solid #fff;
+}
+
+.footer-bottom h3::before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 1px;
+    background-color: #ffffff;
+    bottom: -8px;
+    left: 0;
+}
+
+.footer-bottom h3 {
+    font-family: Nunito Sans;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.footer-bottom .footer_social h3::before {
+    display: none;
+}
+
+.footer-bottom li {
+    margin-bottom: 5px !important;
+}
+
+.footer-contact p,
+.footer-bottom li a {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.copyright-col {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #fff;
+}
+
+.main-footer {
+    padding: 100px 15px 30px;
+}
+
+.footer_social h3 {
+    position: static;
+}
+
+.mail-col {
+    border-radius: 10px;
+    background: #FFF;
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+}
+
+.ft-link:hover img {
+    animation: shake 0.9s;
+}
+
+footer h3,
+footer p{
+    margin-bottom: 20px;
+}
+
+/* *********************************************************************** FOOTER **************************************************************************** */
