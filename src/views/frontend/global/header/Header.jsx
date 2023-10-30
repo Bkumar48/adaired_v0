@@ -88,10 +88,10 @@ const Header = () => {
                 </svg>
                 <ul className="menu d-flex">
                   <li>
-                    <a href="#">HOME</a>
+                    <a href="/">HOME</a>
                   </li>
                   <li>
-                    <a href="#">ABOUT US</a>
+                    <a href="/about">ABOUT US</a>
                   </li>
                   <li>
                     <a href="#">BLOG</a>
@@ -106,7 +106,7 @@ const Header = () => {
                     <a href="#">CARRER</a>
                   </li>
                   <li>
-                    <a href="#" className="defbtn">
+                    <a href="/contact" className="defbtn">
                       Contact
                     </a>
                   </li>

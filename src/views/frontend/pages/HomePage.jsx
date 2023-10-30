@@ -1,8 +1,6 @@
-import Header from "../global/header/Header";
-import Footer from "../global/footer/Footer";
+
 // import Swiper core and required modules
 import { A11y, Autoplay, Parallax } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
@@ -15,7 +13,6 @@ import { Link } from "react-router-dom";
 const HomePage = () => {
   return (
     <>
-      <Header />
 
       <section className="banner">
         <Swiper
@@ -27,7 +24,7 @@ const HomePage = () => {
           parallax={true}
           loop={true}
           // onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
+          // onSlideChange={() => console.log("slide change")}
           effect="fade"
         >
           <SwiperSlide className="banner-slider">
@@ -438,8 +435,6 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 };

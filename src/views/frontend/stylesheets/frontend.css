@@ -265,7 +265,7 @@ h6:not(:last-child) {
 
 .banner-box {
     background-position: center center;
-    background-image: url(../image/banner.jpg);
+    background-image: url(../assets/images/banner.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     padding: 460px 15px 150px;
@@ -418,7 +418,7 @@ h6:not(:last-child) {
 .manage-grid::after {
     position: absolute;
     content: "";
-    background-image: url(../image/multi-color-left.png);
+    background-image: url(../assets/images/multi-color-left.png);
     background-repeat: no-repeat;
     background-position: center left;
     background-size: contain;
@@ -434,7 +434,7 @@ h6:not(:last-child) {
 /* .manage-grid::after {
     left: unset;
     right: 0px;
-    background-image: url(../image/multi-color-right.png);
+    background-image: url(../assets/images/multi-color-right.png);
     background-position: center right;
 } */
 
@@ -961,3 +961,224 @@ footer p {
 }
 
 /* *********************************************************************** FOOTER **************************************************************************** */
+
+/* Contact Us Page Start */
+
+body label {
+    display: block;
+    color: #515151;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: capitalize;
+    padding-bottom: 5px;
+}
+
+.contact-form {
+    width: 50%;
+    padding: 50px;
+    border-radius: 9px;
+    border: 1px solid #A7A9AC;
+}
+
+.contact-form form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.contact-form form input,
+.contact-form form textarea {
+    border-radius: 9px;
+    border: 1px solid #E7E7E7;
+    height: 50px;
+    width: 100%;
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+.contact-form form textarea {
+    height: auto;
+}
+
+.contact-form form input::placeholder,
+.contact-form form textarea::placeholder {
+    color: #515151;
+    font-size: 18px;
+    font-family: 'Nunito Sans', sans-serif;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.submit1.defbtn {
+    width: 100%;
+    text-align: center;
+    border-radius: 100px;
+}
+
+.arrow-btn::after {
+    background-image: url(../assets/images/right-arrow.png);
+    background-color: #000000;
+}
+
+.contact-flex {
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.contact-para {
+    width: 50%;
+}
+
+.contact-para .sub-heading {
+    color: #515151;
+}
+
+.contact-para .sub-heading::before {
+    position: absolute;
+    content: "";
+    width: 50px;
+    height: 2px;
+    background: #A7A9AC;
+}
+
+.main-heading {
+    color: #010101;
+    font-family: 'DM Serif Display', serif;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 1px;
+}
+
+.social-cont-1 {
+    margin: 30px 0 40px;
+}
+
+.social-cont-1 a {
+    display: flex;
+    margin-bottom: 30px;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    align-items: flex-start;
+    background: #FFF;
+    border: 1px solid #D9D9D9;
+    padding: 15px;
+    max-width: 500px;
+}
+
+.social-cont-1 a strong {
+    color: #010101;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.social-cont-1 a img {
+    display: block;
+    max-width: 28px;
+    border: 1px solid #d9d9d9;
+    padding: 8px;
+}
+
+.social-cont-1 a p {
+    color: #515151;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.social-cont-1 .social-cont-iner {
+    display: flex;
+    margin-bottom: 30px;
+    /* flex-wrap: wrap; */
+    gap: 20px;
+    align-items: flex-start;
+    background: #FFF;
+    border: 1px solid #D9D9D9;
+    padding: 15px;
+    max-width: 500px;
+}
+
+.social-cont-1 .social-cont-iner a {
+    color: #010101;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+    padding: 0;
+    border: none;
+    margin-bottom: 0;
+}
+
+.social-cont-1 .social-cont-iner strong {
+    color: #010101;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.social-cont-1 .social-cont-iner img {
+    display: block;
+    max-width: 28px;
+    border: 1px solid #d9d9d9;
+    padding: 8px;
+}
+
+.social-cont-1 .social-cont-iner p {
+    color: #515151;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.location img {
+    display: block;
+    max-width: max-content;
+    width: 100%;
+    text-align: center;
+}
+
+.full-col-1 {
+    background-image: url(../assets/images/contact-form_img\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: center right 10px;
+}
+
+.full-col-2 {
+    background-image: url(../assets/images/contact-form_img\ \(1\).png);
+    background-repeat: no-repeat;
+    background-size: 26px;
+    background-position: top 10px right 10px;
+}
+
+.name-col {
+    background-image: url(../assets/images/contact-form_img\ \(3\).png);
+}
+
+.email-col {
+    background-image: url(../assets/images/contact-form_img\ \(2\).png);
+}
+
+.phone-col {
+    background-image: url(../assets/images/contact-form_img\ \(4\).png);
+}
+
+.msg-col {
+    background-image: url(../assets/images/contact-form_img\ \(1\).png);
+}
+
+/* Contact Ends */
