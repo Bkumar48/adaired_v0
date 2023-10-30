@@ -1,0 +1,35 @@
+[
+  {
+    "image": "assets/images/rev-user (1).png",
+    "name": "John Wick 1",
+    "designation": "CEO Founder",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "stars": 5,
+    "id": 1
+  },
+  {
+    "image": "assets/images/rev-user (1).png",
+    "name": "John Wick 2",
+    "designation": "CEO Founder",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "stars": 5,
+    "id": 1
+  },
+  {
+    "image": "assets/images/rev-user (1).png",
+    "name": "John Wick 3",
+    "designation": "CEO Founder",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "stars": 5,
+    "id": 1
+  },
+  {
+    "image": "assets/images/rev-user (1).png",
+    "name": "John Wick 4",
+    "designation": "CEO Founder",
+    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "stars": 5,
+    "id": 1
+  }
+  
+]

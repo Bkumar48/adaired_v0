@@ -209,7 +209,7 @@ h6:not(:last-child) {
 
 .defbtn::after {
     position: absolute;
-    content: "\f879";
+    content: "\290f";
     background-color: #000;
     width: 40px;
     height: 40px;
@@ -220,8 +220,8 @@ h6:not(:last-child) {
     border-radius: 50px;
     font-family: "Font Awesome 6 Free";
     color: #ffffff;
-    font-size: 20px;
-    line-height: 40px;
+    font-size: 35px;
+    line-height: 35px;
     text-align: center;
     transition: .6s all ease-in-out;
     pointer-events: none;
@@ -229,7 +229,7 @@ h6:not(:last-child) {
 
 .defbtn:hover::after {
     right: 138px;
-    content: "\f2a0";
+    /* content: "\f2a0"; */
 }
 
 .defbtn:hover {
@@ -281,7 +281,7 @@ h6:not(:last-child) {
 }
 
 
- .sub-heading {
+.sub-heading {
     color: #FFF;
     font-size: 20px;
     font-weight: 400;
@@ -570,27 +570,28 @@ h6:not(:last-child) {
 /************************************************************************* ABOUT US *****************************************************************************/
 
 /************************************************************************* TRUSTED BY: *****************************************************************************/
-.trusted-outer{
+.trusted-outer {
     background-color: #F8F8F8;
 }
 
-.trust-icon{
+.trust-icon {
     max-width: 100px;
     margin: 0 auto;
     padding: 20px 0;
     align-items: center;
 }
 
-.trust-icon img{
+.trust-icon img {
     width: 100%;
     display: block;
     margin: 0 auto;
 }
 
-.trust-slider .swiper-wrapper{
+.trust-slider .swiper-wrapper {
     display: flex;
     align-items: center;
 }
+
 /************************************************************************* TRUSTED BY: *****************************************************************************/
 
 /************************************************************************* SERVICES CARDS *****************************************************************************/
@@ -747,7 +748,7 @@ h6:not(:last-child) {
     margin-bottom: 15px !important;
 }
 
-.service-outer .min-heading::before{
+.service-outer .min-heading::before {
     position: absolute;
     content: "";
     background-color: #000;
@@ -756,10 +757,10 @@ h6:not(:last-child) {
     top: 0;
     bottom: 0;
     margin: auto;
-    left:36%;
+    left: 36%;
 }
 
-.service-outer .min-heading::after{
+.service-outer .min-heading::after {
     position: absolute;
     content: "";
     background-color: #000;
@@ -768,7 +769,7 @@ h6:not(:last-child) {
     top: 0;
     bottom: 0;
     margin: auto;
-    right:36%;
+    right: 36%;
 }
 
 
@@ -810,6 +811,441 @@ h6:not(:last-child) {
 
 
 /************************************************************************* SERVICES CARDS *****************************************************************************/
+/************************************************************************* CASE STUDIES *****************************************************************************/
+.case-study {
+    background-image: url(assets/images/brown-vector.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+}
+
+.growth-img {
+    position: relative;
+}
+
+.growth-img .team-img {
+    position: absolute;
+    right: -40px;
+    width: auto;
+    top: 40%;
+}
+
+.growth-img::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #BC1D8D;
+    width: 561px;
+    height: 524px;
+    right: 60px;
+    top: -20px;
+    z-index: -1;
+}
+
+.pink-para {
+    background: #FFF9FD;
+    padding: 15px;
+    border-left: 10px solid #BC1D8D;
+}
+
+.half-list li {
+    width: calc(100% / 2 - 70px);
+    margin: 0;
+    position: relative;
+    padding-left: 28px;
+}
+
+.half-list li::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url(assets/images/pink-arrow.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    margin: auto;
+}
+
+.half-list {
+    flex-wrap: wrap;
+    gap: 25px 20px;
+    padding: 0;
+    justify-content: space-between;
+    max-width: 450px;
+    margin-bottom: 20px;
+}
+
+/************************************************************************* CASE STUDIES *****************************************************************************/
+/************************************************************************* LOGO SLIDER *****************************************************************************/
+/* .reward-col {
+    width: calc(100% / 7 - 50px);
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 10px;
+    border: 1px solid transparent;
+}
+
+.reward-col:hover {
+    border: 1px solid #bc1d8d;
+}
+
+.reward-col img {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.reward-col:hover img {
+    transform: scale(0.7);
+
+} */
+
+/************************************************************************* LOGO SLIDER *****************************************************************************/
+/************************************************************************* TESTIMONIALS *****************************************************************************/
+.review-col h4 {
+    color: #000;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    margin-bottom: 6px !important;
+}
+
+.review-col span {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* .rating-star {
+    margin-top: 20px;
+} */
+
+.review-col {
+    /* width: calc(100% / 2 - 140px); */
+    padding-left: 100px;
+    position: relative;
+}
+
+.review-col::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: #8EC640;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100px;
+    border: 6px solid #fff;
+    background-image: url(assets/images/qoute.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+}
+
+.review-col::after {
+    position: absolute;
+    content: "";
+    height: 120px;
+    width: 5px;
+    background-color: #fff;
+    top: 0px;
+    bottom: 0;
+    left: 33px;
+    margin: auto;
+    z-index: -1;
+}
+
+.review-grid{
+    background: #F7FFEC;
+}
+
+.review-grid{
+    position: relative;
+}
+
+.testimonials__buttons{
+    position: absolute;
+    bottom: 7%;
+    /* right: 0; */
+    /* transform: translateY(-50%); */
+    display: flex;
+    gap: 20px;
+    padding: 20px 0 0 0;
+    /* z-index: 1; */
+}
+
+.testimonials__button-icon{
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.testimonials__button-icon:hover{
+    transform: scale(1.2);
+    color: #F89520;
+}
+
+/************************************************************************* TESTIMONIALS *****************************************************************************/
+/************************************************************************* BLOGS *****************************************************************************/
+.blog-col {
+    border: 1px solid #D9D9D9;
+    padding: 20px;
+    width: calc(100% / 3 - 60px);
+}
+
+.blog-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-img::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    background: #316c7a5e;
+    transition: 0.5s all ease-in-out;
+}
+
+.blog-col:hover .blog-img::after {
+    height: 100%;
+}
+
+.blog-col:hover .blog-img img {
+    transform: scale(1.5);
+    transition: 0.5s all ease-in-out;
+}
+
+.blog-img img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    transition: 0.5s all ease-in-out;
+}
+
+.short-hd {
+    font-family: Nunito Sans;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.blog-text {
+    padding-top: 20px;
+}
+
+.blog-bottom {
+    border-top: 1px solid #A7A9AC;
+    margin-top: 35px;
+    padding-top: 20px;
+}
+
+.post-btn {
+    position: relative;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.blog-col:hover .post-btn {
+    padding-left: 47px;
+}
+
+.blog-col:hover .post-btn::after {
+    right: 103px;
+}
+
+.post-btn::after {
+    position: absolute;
+    content: "\290f";
+    background-color: #f89520;
+    width: 40px;
+    height: 40px;
+    top: 0;
+    right: -53px;
+    bottom: 0;
+    margin: auto;
+    border-radius: 50px;
+    font-family: "Font Awesome 6 Free";
+    color: #ffffff;
+    font-size: 35px;
+    line-height: 35px;
+    text-align: center;
+    transition: .6s all ease-in-out;
+}
+
+.blog-bottom a {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.blog-bottom a img {
+    object-fit: contain;
+    display: block;
+    max-width: 13px;
+}
+
+.blog-bottom a span {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+}
+
+.blog-outer .defbtn {
+    text-align: center;
+    display: block;
+    max-width: max-content;
+    margin: 40px auto 0;
+}
+/************************************************************************* BLOGS *****************************************************************************/
+/************************************************************************* CONTACT SECTION HOMEPAGE *****************************************************************************/
+.home-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px 30px;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: #FFF;
+    padding: 45px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    position: relative;
+    z-index: 1;
+}
+
+.home-form form::after {
+    position: absolute;
+    content: "";
+    height: 125px;
+    pointer-events: none;
+    border-radius: 10px 10px 0px 0px;
+    border: 7px solid #A7A9AC;
+    top: 0;
+    left: -6px;
+    right: 0;
+    margin: 0 auto;
+    border-bottom: 0;
+    width: 100%;
+}
+
+.home-form form .half-col {
+    width: calc(100% / 2 - 20px);
+}
+
+.home-form form input,
+.home-form form select,
+.home-form form textarea {
+    border: 0px;
+    border-bottom: 1px solid #A7A9AC;
+    padding-bottom: 10px;
+    outline: none;
+}
+
+.home-form form textarea {
+    border: 1px solid #A7A9AC;
+}
+
+.home-form form .full-col {
+    width: 100%;
+}
+
+.home-form form input::placeholder,
+.home-form form select,
+.home-form form label {
+    color: #515151;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.checkbox input {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.home-form .defbtn {
+    margin-top: 20px;
+    font-family: Nunito Sans;
+}
+
+.home-form .defbtn:hover::after {
+    right: 210px;
+}
+
+.social-cont {
+    margin: 80px 0 40px;
+}
+
+.social-cont a {
+    display: flex;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    background: #FFF;
+    padding: 15px;
+    max-width: 500px;
+}
+
+.social-cont a strong {
+    width: 100%;
+    display: block;
+    color: #515151;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 4px;
+}
+
+.social-cont a img {
+    display: block;
+    max-width: 28px;
+    border: 1px solid #a7a9ac59;
+    padding: 8px;
+}
+
+.social-cont a p {
+    line-height: normal;
+    color: #515151;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 24px;
+}
+
+.cont-text li {
+    color: #000;
+    font-size: 24px;
+    line-height: 24px;
+    margin-bottom: 15px;
+    list-style: disc;
+}
+
+.cont-text ul {
+    padding-left: 24px;
+}
+
+.contact-grid {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 1) 19%, rgba(255, 251, 228, 1) -6%);
+}
+
+/************************************************************************* CONTACT SECTION HOMEPAGE *****************************************************************************/
 
 /* *********************************************************************** FOOTER **************************************************************************** */
 

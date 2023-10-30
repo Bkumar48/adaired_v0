@@ -47,7 +47,7 @@ const Footer = () => {
               </Link>
               <p className="ft-para">
                 Lorem Ipsum is simply dummy text of the printing and
-                typesettingindustry. Lorem Ipsum has been the industr`&apos`s
+                typesettingindustry. Lorem Ipsum has been the industry's
                 standard dummy text ever.{" "}
               </p>
 

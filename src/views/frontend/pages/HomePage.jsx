@@ -1,7 +1,4 @@
-import Header from "../global/header/Header";
-import Footer from "../global/footer/Footer";
-// import Swiper core and required modules
-import { A11y, Autoplay, Parallax } from "swiper/modules";
+import { A11y, Autoplay, Parallax, EffectCoverflow } from "swiper/modules";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -10,13 +7,14 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import "swiper/css/effect-coverflow";
 import { Link } from "react-router-dom";
+import Testimonials from "../components/Testimonials";
+import Blogs from "../components/Blogs";
 
 const HomePage = () => {
   return (
     <>
-      <Header />
-
       <section className="banner">
         <Swiper
           // install Swiper modules
@@ -26,9 +24,6 @@ const HomePage = () => {
           autoplay={{ delay: 3000 }}
           parallax={true}
           loop={true}
-          // onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-          effect="fade"
         >
           <SwiperSlide className="banner-slider">
             <div className="banner-box ">
@@ -290,7 +285,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (1).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Organic Growth (SEO)</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -315,7 +313,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (2).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Paid Media & Advertising (PPC)</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -340,7 +341,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (3).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Web Development & Redesign</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -365,7 +369,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (4).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Compelling Content Marketing</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -390,7 +397,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (4).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Digital Creative & Logo Design</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -415,7 +425,10 @@ const HomePage = () => {
                 <img src="assets/images/serv-img (1).jpg" />
               </div>
               <div className="serv-content">
-                <img className="serv-icon" src="assets/images/services_cards_tick.svg" />
+                <img
+                  className="serv-icon"
+                  src="assets/images/services_cards_tick.svg"
+                />
                 <h3 className="hd-block">Strategic Social Media Management</h3>
                 <p>
                   Lorem Ipsum is simply dummy text of the text printing and
@@ -439,7 +452,224 @@ const HomePage = () => {
         </div>
       </section>
 
-      <Footer />
+      <section className="case-study pad100">
+        <div className="study_slider">
+          <Swiper
+            modules={[A11y, Autoplay, Parallax]}
+            spaceBetween={0}
+            slidesPerView={1}
+            autoplay={{ delay: 3000 }}
+            parallax={true}
+            loop={true}
+          >
+            <SwiperSlide className="case-study-col">
+              <div className="container d-flex">
+                <div className="w-50">
+                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h2 className="bigheading">Case Studies </h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the text printing and
+                    typesetting industry. Lorem has been the industry's dummy
+                    text.
+                  </p>
+                  <a href="#" className="mt25 arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
+                <div className="w-50">
+                  <img src="assets/images/laptop.png" />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="case-study-col">
+              <div className="container d-flex">
+                <div className="w-50">
+                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h2 className="bigheading">Case Studies </h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the text printing and
+                    typesetting industry. Lorem has been the industry's dummy
+                    text.
+                  </p>
+                  <a href="#" className="mt25 arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
+                <div className="w-50">
+                  <img src="assets/images/laptop.png" />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="case-study-col">
+              <div className="container d-flex">
+                <div className="w-50">
+                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h2 className="bigheading">Case Studies </h2>
+                  <p>
+                    Lorem Ipsum is simply dummy text of the text printing and
+                    typesetting industry. Lorem has been the industry's dummy
+                    text.
+                  </p>
+                  <a href="#" className="mt25 arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
+                <div className="w-50">
+                  <img src="assets/images/laptop.png" />
+                </div>
+              </div>
+            </SwiperSlide>
+          </Swiper>
+        </div>
+      </section>
+
+      <section className="grow-grid pad100">
+        <div className="container d-flex align-start">
+          <div className="growth-img w-50">
+            <img
+              className="grow_single-img"
+              src="assets/images/growth-img.jpg"
+            />
+            <img className="team-img" src="assets/images/team-img.png" />
+          </div>
+          <div className="grow-text w-50 pl60">
+            <h4 className="sub-hd">ABOUT US</h4>
+            <h2 className="main-hedaing">Lorem Ipsum</h2>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book. It has
+              survived not only five centuries, but also the.
+            </p>
+            <ul className="half-list d-flex wrap-flex">
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+              <li>Lorem Ipsum</li>
+            </ul>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's.
+            </p>
+            <p className="pink-para">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's.
+            </p>
+            <a href="#" className="defbtn mt25 arrow-btn">
+              Read More
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="rewards_outer pb100">
+        <Swiper
+          modules={[A11y, Autoplay, Parallax]}
+          spaceBetween={0}
+          slidesPerView={7}
+          autoplay={{ delay: 1000 }}
+          parallax={true}
+          loop={true}
+          className="container d-flex"
+        >
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (1).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (7).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (6).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (5).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (4).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (3).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (2).png" />
+          </SwiperSlide>
+          <SwiperSlide className="reward-col">
+            <img src="assets/images/reward (2).png" />
+          </SwiperSlide>
+        </Swiper>
+      </section>
+
+      <Testimonials />
+
+      <Blogs />
+
+      <section className="contact-grid pb100">
+        <div className="container d-flex align-start">
+          <div className="cont-text w-50">
+            <h2 className="bigheading">Lorem Ipsum Is Simply Text</h2>
+            <p>Let's Talk And Get Started</p>
+            <div className="social-cont">
+              <a href="#" className="d-flex just-start gap-20">
+                <img src="assets/images/conticon (2).png" />
+                <p>
+                  Mail Id Of Sales Executive
+                  <strong>Salesadaired@gmail.com</strong>
+                </p>
+              </a>
+              <a href="#" className="d-flex just-start gap-20">
+                <img src="assets/images/conticon (1).png" />
+                <p>
+                  Our Skpe ID
+                  <strong>adaireddigital</strong>
+                </p>
+              </a>
+            </div>
+            <h2 className="bigheading mt25">& What you will get:</h2>
+            <ul>
+              <li>On-call inquiry assistance</li>
+              <li>Project consulting by experts</li>
+              <li>Detailed project estimation</li>
+            </ul>
+          </div>
+          <div className="home-form w-50">
+            <form>
+              <input className="half-col" type="text" placeholder="Name" />
+              <input className="half-col" type="email" placeholder="Email" />
+              <input className="half-col" type="tel" placeholder="Phone No." />
+              <select className="serv__select half-col" name="service">
+                <option>Interested</option>
+                <option> 1</option>
+                <option> 2</option>
+                <option> 3</option>
+              </select>
+              <select className="serv__select full-col" name="service">
+                <option>Budget</option>
+                <option> 1</option>
+                <option> 2</option>
+                <option> 3</option>
+              </select>
+              <label htmlFor="textarea">Message</label>
+              <textarea className="full-col" rows="8"></textarea>
+              <div className="checkbox full-col">
+                <input
+                  type="checkbox"
+                  id="vehicle1"
+                  name="vehicle1"
+                  value="Bike"
+                />
+                <label htmlFor="vehicle1">
+                  Lorem Ipsum is simply dummy text of the printing.
+                </label>
+              </div>
+              <button type="submit" className="submit defbtn arrow-btn">
+                Send Your Inquiry
+                {/* <img src="image/right-arrow.png" /> */}
+              </button>
+            </form>
+          </div>
+        </div>
+      </section>
     </>
   );
 };
