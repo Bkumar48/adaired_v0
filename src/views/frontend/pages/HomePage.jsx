@@ -1,57 +1,176 @@
-import { A11y, Autoplay, Parallax, EffectCoverflow } from "swiper/modules";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
-import "swiper/css/effect-coverflow";
 import { Link } from "react-router-dom";
 import Testimonials from "../components/Testimonials";
 import Blogs from "../components/Blogs";
+import { useEffect, useRef } from "react";
+
+// import Swiper core and required modules
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/bundle";
+import { A11y, Autoplay, Parallax } from "swiper/modules";
+
+// Import Framer Motion
+import { motion } from "framer-motion";
+
+
 
 const HomePage = () => {
+
   return (
     <>
       <section className="banner">
         <Swiper
-          // install Swiper modules
-          modules={[A11y, Autoplay, Parallax]}
+          modules={[A11y, Parallax]}
           spaceBetween={0}
           slidesPerView={1}
-          autoplay={{ delay: 3000 }}
-          parallax={true}
-          loop={true}
+          // loop={true}
+          className="banner_slider-wrap-horizontal"
+          // draggable={true}
+          // direction="horizontal"
+          // autoplay={"false"}
         >
-          <SwiperSlide className="banner-slider">
-            <div className="banner-box ">
-              <div className="banner-col container d-flex">
-                <div className="banner-text ">
-                  <h5 className="sub-heading">Lorem Ipsum</h5>
-                  <h1>We Are A Strategic Creative Agency.</h1>
-                  <a href="#" className="arrow-btn defbtn">
-                    Request A Callback
-                  </a>
+          <SwiperSlide>
+            {" "}
+            <Swiper
+              modules={[A11y, Autoplay, Parallax]}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+                reverseDirection: true,
+              }}
+              parallax={true}
+              loop={true}
+              direction="vertical"
+              speed={2000}
+              className="banner-slider-wrap"
+              allowTouchMove={false}
+            >
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </SwiperSlide>
-          <SwiperSlide className="banner-slider">
-            <div className="banner-box ">
-              <div className="banner-col container d-flex">
-                <div className="banner-text ">
-                  <h5 className="sub-heading">Lorem Ipsum</h5>
-                  <h1>We Are A Strategic Creative Agency.</h1>
-                  <a href="#" className="arrow-btn defbtn">
-                    Request A Callback
-                  </a>
+
+          <SwiperSlide>
+            {" "}
+            <Swiper
+              modules={[A11y, Autoplay, Parallax]}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+                reverseDirection: true,
+              }}
+              parallax={true}
+              loop={true}
+              direction="vertical"
+              speed={2000}
+              className="banner-slider-wrap"
+              allowTouchMove={false}
+            >
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            {" "}
+            <Swiper
+              modules={[A11y, Autoplay, Parallax]}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+                reverseDirection: true,
+              }}
+              parallax={true}
+              loop={true}
+              direction="vertical"
+              speed={2000}
+              className="banner-slider-wrap"
+              allowTouchMove={false}
+            >
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Lorem Ipsum</h5>
+                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Request A Callback
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
           </SwiperSlide>
         </Swiper>
+
         <div className="social-icon">
           <Link to="/">
             <svg
@@ -107,8 +226,7 @@ const HomePage = () => {
       </section>
 
       <section className="manage-grid pad100">
-        <span id="splash-overlay" className="splash"></span>
-        <span id="welcome" className="z-depth-4"></span>
+
         <Swiper
           // install Swiper modules
           modules={[A11y, Autoplay, Parallax]}
@@ -121,25 +239,35 @@ const HomePage = () => {
           <SwiperSlide>
             <div className="container text-center">
               <h2 className="bigheading">Social Media Management</h2>
-              <div className="mike-img">
+              <div className="splash-box">
+              <span id="splash-overlay" className="splash-left"></span>
+              <div className=" z-depth-4 mike-img"  id="welcome" >
                 <img src="assets/images/services_slider_icon.png" />
+              </div>
+              <span id="splash-overlay" className="splash-right"></span>
               </div>
               <p className="big-para">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
               </p>
             </div>
           </SwiperSlide>
+
           <SwiperSlide>
             <div className="container text-center">
               <h2 className="bigheading">Social Media Management</h2>
-              <div className="mike-img">
+              <div className="splash-box">
+              <span id="splash-overlay" className="splash-left"></span>
+              <div className=" z-depth-4 mike-img"  id="welcome" >
                 <img src="assets/images/services_slider_icon.png" />
+              </div>
+              <span id="splash-overlay" className="splash-right"></span>
               </div>
               <p className="big-para">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
               </p>
             </div>
           </SwiperSlide>
+         
         </Swiper>
       </section>
 
@@ -664,7 +792,7 @@ const HomePage = () => {
               </div>
               <button type="submit" className="submit defbtn arrow-btn">
                 Send Your Inquiry
-                {/* <img src="image/right-arrow.png" /> */}
+                {/* <img src="image/right-arrow.png" />  */}
               </button>
             </form>
           </div>

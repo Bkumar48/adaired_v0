@@ -256,18 +256,23 @@ h6:not(:last-child) {
 
 /* *********************************************************************** BANNER **************************************************************************** */
 
+.banner_slider-wrap-horizontal {
+    height: 90vh;
+}
+
+.banner-slider-wrap {
+    height: 90vh;
+}
+
+
 .banner-slider {
     background: url(assets/images/banner.jpg) no-repeat center center;
     background-size: cover;
-    color: #fff;
-    /* padding: 440px 0px; */
+    color: #000;
+    background-color: #aaa;
 }
 
 .banner-box {
-    background-position: center center;
-    background-image: url(../image/banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
     padding: 460px 15px 150px;
 }
 
@@ -348,6 +353,23 @@ h6:not(:last-child) {
     margin: 0 auto;
 }
 
+.swiper-slide.banner-slider.swiper-slide-next {
+    opacity: 0;
+    transform: scale(1);
+    transition: all 2s ease-in-out;
+    transition: scale(1);
+}
+
+.swiper-slide.banner-slider.swiper-slide-active {
+    opacity: 1;
+    transition: all 2s ease-in-out;
+    transform: scale(1.1);
+}
+
+
+
+
+
 /* *********************************************************************** BANNER **************************************************************************** */
 
 /********************************************************************* SERVICE SLIDER **************************************************************************/
@@ -356,18 +378,6 @@ h6:not(:last-child) {
     display: block;
     margin: 0 auto;
 }
-
-/* .double-border {
-    position: relative;
-    color: #171C24;
-    max-width: max-content;
-    padding: 0px;
-    margin: 0 auto 10px !important;
-} */
-/* .double-border::before {
-    left: 0px !important;
-    right: -230px;
-} */
 
 .mike-img {
     position: relative;
@@ -408,35 +418,25 @@ h6:not(:last-child) {
     line-height: 50px;
 }
 
+.manage-grid .bigheading{
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 50px;
+    /* padding: 0 0 10px 0px; */
+}
+
 .big-para {
     font-size: 40px;
     line-height: normal;
     margin-top: 30px;
 }
 
-/* .manage-grid::before,
-.manage-grid::after {
-    position: absolute;
-    content: "";
-    background-image: url(../image/multi-color-left.png);
-    background-repeat: no-repeat;
-    background-position: center left;
-    background-size: contain;
-    height: 100%;
-    width: 100%;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-    animation: shake 0.9s;
-    animation-iteration-count: infinite;
-} */
+.manage-grid .big-para{
+    font-size: 40px;
+    line-height: normal;
+    margin-top: 20px;
+}
 
-/* .manage-grid::after {
-    left: unset;
-    right: 0px;
-    background-image: url(../image/multi-color-right.png);
-    background-position: center right;
-} */
 
 .brand-col img {
     display: block;
@@ -444,62 +444,136 @@ h6:not(:last-child) {
 
 }
 
-@keyframes shake {
-    0% {
-        transform: translate(1px, 1px) rotate(0deg);
-    }
-
-    10% {
-        transform: translate(-1px, -2px) rotate(-1deg);
-    }
-
-    30% {
-        transform: translate(3px, 2px) rotate(0deg);
-    }
-
-    40% {
-        transform: translate(1px, -1px) rotate(1deg);
-    }
-
-    60% {
-        transform: translate(-3px, 1px) rotate(0deg);
-    }
-
-    70% {
-        transform: translate(3px, 1px) rotate(-1deg);
-    }
-
-    90% {
-        transform: translate(1px, 2px) rotate(0deg);
-    }
-
-    100% {
-        transform: translate(1px, -2px) rotate(-1deg);
-    }
-}
-
-.manage-grid {
-    position: relative;
-    overflow: hidden;
-}
-
 /* ANIMATION */
-.welcome .splash {
+.splash-box {
+    position: relative;
+    padding: 40px 0;
+    /* overflow: hidden; */
+}
+
+.manage-grid .splash-left {
     height: 0px;
     padding: 0px;
-    border: 130em solid #039be5;
+    background: #039be5;
     position: fixed;
     left: 50%;
-    top: 100%;
+    top: 50%;
     display: block;
     box-sizing: initial;
     overflow: hidden;
 
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+    animation: puff-left 1.5s 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
 }
 
+.manage-grid .splash-right {
+    height: 0px;
+    padding: 0px;
+    background: #039be5;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    display: block;
+    box-sizing: initial;
+    overflow: hidden;
+
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: puff-right 1.5s 1.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+.manage-grid #welcome {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    overflow: hidden;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+
+@keyframes init {
+    0% {
+        width: 0px;
+        height: 0px;
+    }
+
+    100% {
+        width: 56px;
+        height: 56px;
+        margin-top: 0px;
+        opacity: 1;
+    }
+}
+
+@keyframes puff-left {
+    0% {
+        top: 50%;
+        left: 50%;
+        height: 0px;
+        padding: 0px;
+    }
+
+    20% {
+        height: 20px;
+        width: 20px;
+    }
+    90%{
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        left: 0%;
+        height: 100px;
+        width: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes puff-right {
+    0% {
+        top: 50%;
+        left: 50%;
+        height: 0px;
+        padding: 0px;
+    }
+
+    20% {
+        height: 20px;
+        width: 20px;
+    }
+    90%{
+        opacity: 1;
+    }
+    100% {
+        top: 50%;
+        left: 100%;
+        height: 100px;
+        width: 100px;
+        opacity: 0;
+    }
+}
+
+@keyframes moveDown {
+    0% {
+        top: 20%;
+    }
+
+    50% {
+        top: 60%;
+    }
+
+    100% {
+        top: 50%;
+    }
+}
 
 /********************************************************************* SERVICES SLIDER **************************************************************************/
 
@@ -963,15 +1037,15 @@ h6:not(:last-child) {
     z-index: -1;
 }
 
-.review-grid{
+.review-grid {
     background: #F7FFEC;
 }
 
-.review-grid{
+.review-grid {
     position: relative;
 }
 
-.testimonials__buttons{
+.testimonials__buttons {
     position: absolute;
     bottom: 7%;
     /* right: 0; */
@@ -982,7 +1056,7 @@ h6:not(:last-child) {
     /* z-index: 1; */
 }
 
-.testimonials__button-icon{
+.testimonials__button-icon {
     width: 30px;
     height: 30px;
     cursor: pointer;
@@ -990,7 +1064,7 @@ h6:not(:last-child) {
     transition: 0.3s;
 }
 
-.testimonials__button-icon:hover{
+.testimonials__button-icon:hover {
     transform: scale(1.2);
     color: #F89520;
 }
@@ -1112,6 +1186,7 @@ h6:not(:last-child) {
     max-width: max-content;
     margin: 40px auto 0;
 }
+
 /************************************************************************* BLOGS *****************************************************************************/
 /************************************************************************* CONTACT SECTION HOMEPAGE *****************************************************************************/
 .home-form form {
@@ -1183,10 +1258,11 @@ h6:not(:last-child) {
 .home-form .defbtn {
     margin-top: 20px;
     font-family: Nunito Sans;
+    transition: 0.6s all ease-in-out;
 }
 
 .home-form .defbtn:hover::after {
-    right: 210px;
+    right: 195px;
 }
 
 .social-cont {

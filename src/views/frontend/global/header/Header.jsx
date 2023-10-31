@@ -2,44 +2,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "../../stylesheets/frontend.css";
 const Header = () => {
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     const header = document.querySelector(".main-header");
-  //     if (header) {
-  //       header.classList.toggle("fixed-header", window.scrollY > 0);
-  //     }
-  //   };
-
-  //   // Attach the scroll event listener when the component mounts
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   // Remove the event listener when the component unmounts
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const header = document.querySelector(".main-header");
-      if (header) {
-        header.classList.toggle("fixed-header", window.scrollY > 0);
-        if (window.scrollY > 0) {
-          header.style.top = "0"; // Slide in from the top
-        } else {
-          header.style.top = "-100px"; // Off-screen when not fixed
-        }
-      }
-    };
-
-    // Attach the scroll event listener when the component mounts
-    window.addEventListener("scroll", handleScroll);
-
-    // Remove the event listener when the component unmounts
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
