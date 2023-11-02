@@ -1,0 +1,72 @@
+[
+  {
+    "display_name": "Dashboard",
+    "route": "/admin",
+    "icon": "bx bxs-dashboard"
+  },
+  {
+    "display_name": "Visit Site",
+    "route": "/",
+    "icon": "bx bxl-chrome"
+  },
+  {
+    "display_name": "Account Information",
+    "route": "/admin/account-information",
+    "icon": "bx bxs-user-detail"
+  },
+  {
+    "display_name": "Users",
+    "route": "/admin/users",
+    "icon": "bx bxs-user-plus"
+  },
+  {
+    "display_name": "Roles",
+    "route": "/admin/roles",
+    "icon": "bx bx-shield-quarter"
+  },
+  {
+    "display_name": "Products",
+    "route": "/admin/products",
+    "icon": "bx bxs-package"
+  },
+  {
+    "display_name": "Product Pricing",
+    "route": "/admin/product-pricing",
+    "icon": "bx bx-list-ol"
+  },
+  {
+    "display_name": "Coupons",
+    "route": "/admin/coupons",
+    "icon": "bx bxs-discount"
+  },
+  {
+    "display_name": "Orders",
+    "route": "/admin/orders",
+    "icon": "bx bxs-cart-download"
+  },
+  {
+    "display_name": "Blogs",
+    "route": "/admin/blogs",
+    "icon": "bx bxl-blogger"
+  },
+  {
+    "display_name": "Tickets",
+    "route": "/admin/tickets",
+    "icon": "bx bxs-coupon"
+  },
+  {
+    "display_name": "Pages",
+    "route": "/admin/pages",
+    "icon": "bx bxs-component"
+  },
+  {
+    "display_name": "Testimonials",
+    "route": "/admin/testimonials",
+    "icon": "bx bxs-star"
+  },
+  {
+    "display_name": "FAQs",
+    "route": "/admin/faqs",
+    "icon": "bx bx-question-mark"
+  }
+]

@@ -50,27 +50,27 @@ const Header = () => {
                 </svg>
                 <ul className="menu d-flex">
                   <li>
-                    <a href="#">HOME</a>
+                    <Link to ="/">HOME</Link>
                   </li>
                   <li>
-                    <a href="#">ABOUT US</a>
+                    <Link to="/about">ABOUT US</Link>
                   </li>
                   <li>
-                    <a href="#">BLOG</a>
+                    <Link to="/blog">BLOG</Link>
                   </li>
                   <li>
-                    <a href="#">SERVICES</a>
+                    <Link to="/services">SERVICES</Link>
                   </li>
                   <li>
-                    <a href="#">CASE STUDIES</a>
+                    <Link to="/case-studies">CASE STUDIES</Link>
                   </li>
                   <li>
-                    <a href="#">CARRER</a>
+                    <Link to="/carrer">CARRER</Link>
                   </li>
                   <li>
-                    <a href="#" className="defbtn">
+                    <Link to="/contact-us" className="defbtn">
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
