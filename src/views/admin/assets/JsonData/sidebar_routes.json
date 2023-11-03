@@ -17,7 +17,17 @@
   {
     "display_name": "Users",
     "route": "/admin/users",
-    "icon": "bx bxs-user-plus"
+    "icon": "bx bxs-user-plus",
+    "sub_menu": [
+      {
+        "display_name": "All Users",
+        "route": "/admin/users"
+      },
+      {
+        "display_name": "Add New User",
+        "route": "/admin/users/create"
+      }
+    ]
   },
   {
     "display_name": "Roles",

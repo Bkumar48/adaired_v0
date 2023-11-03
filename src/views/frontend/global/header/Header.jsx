@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import "../../stylesheets/frontend.css";
 const Header = () => {
+  // const [isHeaderVisible, setIsHeaderVisible] = useState(false);
 
+  // useEffect(() => {
+  //   window.addEventListener("scroll", () => {
+  //     window.pageYOffset > 100
+  //       ? setIsHeaderVisible(true)
+  //       : setIsHeaderVisible(false);
+  //   });
+  // }, []);
   return (
     <>
-      <header className="main-header">
+      <header className={`main-header`}>
         <div className="container d-flex">
           <div className="logo">
             <Link to="/">
@@ -50,7 +58,7 @@ const Header = () => {
                 </svg>
                 <ul className="menu d-flex">
                   <li>
-                    <Link to ="/">HOME</Link>
+                    <Link to="/">HOME</Link>
                   </li>
                   <li>
                     <Link to="/about">ABOUT US</Link>

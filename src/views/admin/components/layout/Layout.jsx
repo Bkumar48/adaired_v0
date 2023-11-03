@@ -1,55 +1,3 @@
-// import  { useEffect } from "react";
-
-// import "./layout.css";
-
-// import Sidebar from "../sidebar/Sidebar";
-// import TopNav from "../topnav/TopNav";
-
-// import { Routes, Route } from "react-router-dom";
-
-// import { useSelector, useDispatch } from "react-redux";
-
-// import ThemeAction from "../../redux/actions/ThemeAction";
-// import Dashboard from "../../pages/Dashboard";
-
-// const Layout = () => {
-//   const themeReducer = useSelector((state) => state.ThemeReducer);
-
-//   const dispatch = useDispatch();
-
-//   useEffect(() => {
-//     const themeClass = localStorage.getItem("themeMode", "theme-mode-light");
-
-//     const colorClass = localStorage.getItem("colorMode", "theme-mode-light");
-
-//     dispatch(ThemeAction.setMode(themeClass));
-
-//     dispatch(ThemeAction.setColor(colorClass));
-//   }, [dispatch]);
-
-//   return (
-//     <Routes>
-//       <Route
-//         path="/admin/*"
-//         render={(props) => (
-//           <div className={`layout ${themeReducer.mode} ${themeReducer.color}`}>
-//             <Sidebar {...props} />
-//             <div className="layout__content">
-//               <TopNav />
-//               <div className="layout__content-main">
-//               <Route path="/admin/*" element={<Dashboard />} />
-//               </div>
-//             </div>
-//           </div>
-//         )}
-//       />
-
-//       </Routes>
-//   );
-// };
-
-// export default Layout;
-
 import { useEffect } from "react";
 import "../../assets/css/index.css";
 import Sidebar from "../sidebar/Sidebar";
@@ -59,7 +7,6 @@ import { useSelector, useDispatch } from "react-redux";
 import ThemeAction from "../../redux/actions/ThemeAction";
 import Dashboard from "../../pages/Dashboard";
 import Customers from "../../pages/Customers";
-// import "../../assets/css/theme.css";
 
 const Layout = (props) => {
   const themeReducer = useSelector((state) => state.ThemeReducer);

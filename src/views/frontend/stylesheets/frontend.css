@@ -174,22 +174,6 @@ h6:not(:last-child) {
     padding: 20px 15px;
 }
 
-.fixed-header {
-    position: fixed;
-    top: -100px;
-    /* Start with the header off-screen */
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-    background-color: #ffffff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    z-index: 9;
-    transition: top 0.3s ease;
-    /* Smooth transition for the top property */
-}
-
-
-
 .defbtn,
 .main-header .defbtn {
     border-radius: 100px;
@@ -418,7 +402,7 @@ h6:not(:last-child) {
     line-height: 50px;
 }
 
-.manage-grid .bigheading{
+.manage-grid .bigheading {
     font-size: 44px;
     font-weight: 400;
     line-height: 50px;
@@ -431,7 +415,7 @@ h6:not(:last-child) {
     margin-top: 30px;
 }
 
-.manage-grid .big-para{
+.manage-grid .big-para {
     font-size: 40px;
     line-height: normal;
     margin-top: 20px;
@@ -525,9 +509,11 @@ h6:not(:last-child) {
         height: 20px;
         width: 20px;
     }
-    90%{
+
+    90% {
         opacity: 1;
     }
+
     100% {
         top: 50%;
         left: 0%;
@@ -549,9 +535,11 @@ h6:not(:last-child) {
         height: 20px;
         width: 20px;
     }
-    90%{
+
+    90% {
         opacity: 1;
     }
+
     100% {
         top: 50%;
         left: 100%;
@@ -1339,7 +1327,7 @@ h6:not(:last-child) {
 .footer_social a img {
     padding: 5px;
     border-radius: 10px;
-    max-width: 30px;
+    max-width: 50px;
 }
 
 .footer_social a:hover img {
@@ -1369,7 +1357,7 @@ h6:not(:last-child) {
 .ft-link img {
     border: 0.5px solid #FFF;
     padding: 8px;
-    max-width: 25px;
+    max-width: 50px;
 }
 
 .ft-top_bar {
