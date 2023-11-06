@@ -3,6 +3,7 @@ import Header from "./global/header/Header";
 import Footer from "./global/footer/Footer";
 import HomePage from "./pages/HomePage";
 import Headroom from "react-headroom";
+import { useEffect, useState } from "react";
 
 const FrontLayout = () => {
   return (

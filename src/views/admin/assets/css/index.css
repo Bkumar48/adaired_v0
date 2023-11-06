@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 /******************** UNIVERSAL GRIDS STARTS *********************/
 .row {
@@ -287,39 +287,7 @@ input:focus {
     border: 2px solid var(--main-color);
 }
 
-.page-header {
-    margin-bottom: 40px;
-    text-transform: capitalize;
-}
 
-.card {
-    padding: 30px;
-    margin-bottom: 30px;
-    background-color: var(--main-bg);
-    box-shadow: var(--box-shadow);
-    border-radius: var(--border-radius);
-}
-
-.full-height {
-    height: 100%;
-}
-
-.card.full-height {
-    height: calc(100% - 30px);
-}
-
-.card__header {
-    text-transform: capitalize;
-}
-
-.card>div~div {
-    margin-top: 30px;
-}
-
-.card__footer {
-    text-align: center;
-    text-transform: capitalize;
-}
 
 .light-background {
     background-color: var(--main-bg-light);
@@ -382,7 +350,9 @@ input:focus {
     position: fixed;
     left: 0;
     top: 0;
-    background-color: var(--main-bg);
+    /* background-color: var(--main-bg); */
+    /* background: linear-gradient(0deg, #3358f4, #1d8cf8); */
+    background: linear-gradient(0deg, #2d2d2d, #616161);
     box-shadow: var(--box-shadow);
     overflow-y: auto;
 }
@@ -404,26 +374,33 @@ input:focus {
     display: flex;
     align-items: center;
     justify-content: center;
+    /* background-color: var(--main-bg); */
 }
 
 .sidebar__logo>img {
-    height: 45%;
+    /* height: 45%; */
 }
 
 .sidebar__item {
-    /* padding: 0 20px; */
+    padding: 3px 10px;
 }
 
+
 .sidebar__item-inner {
-    padding: 15px 35px;
+    padding: 15px 20px;
     display: flex;
     align-items: center;
     font-weight: 600;
+    border-radius: 10px;
 }
 
 .sidebar__item-inner * {
-    color: inherit;
-    transition: color 0.6s ease 0s;
+    color: #fff;
+    transition: all 0.4s ease;
+}
+
+.sidebar__item-inner>span {
+    font-weight: 500;
 }
 
 .sidebar__item-inner>i {
@@ -435,16 +412,87 @@ input:focus {
     text-transform: capitalize;
 }
 
-.sidebar__item-inner:hover {
-    color: var(--main-color);
+.sidebar__item-inner:hover,
+.sidebar__submenu-item:hover {
+    background: #ffffff24;
 }
 
-.sidebar__item-inner.active {
-    /* border-radius: var(--border-radius); */
+.sidebar__item-inner.active,
+.sidebar__submenu-item:active {
+    background: #ffffff24;
+}
+
+.sidebar__item-inner.active>i,
+.sidebar__item-inner.active>span {
+    color: #fff;
+}
+
+/* .sidebar__item-inner.active {
+    border-radius: var(--border-radius);
     background-image: linear-gradient(to right,
             var(--main-color),
             var(--second-color));
     color: var(--txt-white);
+} */
+
+.sidebar__item__w-submenu {
+    position: relative;
+}
+
+.sub__menu-icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translate(0, -50%);
+}
+
+.sub__menu-icon>span {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 6px;
+    border-color: transparent transparent transparent #fff;
+    pointer-events: none;
+    transition: all 0.2s;
+}
+
+.sidebar__submenu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #00000029;
+    overflow: hidden;
+    transition: all 0.4s ease-in-out;
+    margin: 2px 0 2px;
+}
+
+.sidebar__submenu-item {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    border-radius: 10px;
+}
+
+.sidebar__submenu-item span,
+.sidebar__submenu-item i {
+    color: #fff;
+}
+
+.sidebar__footer {
+    margin-top: 50px;
+    -webkit-box-shadow: 0px -10px 14px -10px rgba(0, 0, 0, 0.22);
+    -moz-box-shadow: 0px -10px 14px -10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0px -10px 14px -10px rgba(0, 0, 0, 0.22);
+    padding: 15px 15px;
+}
+
+.sidebar__footer-title>a {
+    text-decoration: none;
+    color: #d8d8d8;
+    padding: 10px 20px;
+    font-weight: 500;
 }
 
 /******************** SIDEBAR ENDS ********************/
@@ -762,22 +810,67 @@ input:focus {
 /******************** THEME MENU ENDS ********************/
 
 /******************** TABLE STARTS ********************/
+
+.page-header {
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+
+.card {
+    padding: 30px;
+    margin-bottom: 30px;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+}
+
+.full-height {
+    height: 100%;
+}
+
+.card.full-height {
+    height: calc(100% - 30px);
+}
+
+.card__header {
+    text-transform: capitalize;
+}
+
+.card>div~div {
+    margin-top: 30px;
+}
+
+.card__footer {
+    text-align: center;
+    text-transform: capitalize;
+}
+
+
 .table-wrapper {
     overflow-y: auto;
+    border: 1px solid #E8EAF6;
+    background-color: var(--main-bg);
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
 }
 
 table {
     width: 100%;
     min-width: 400px;
     border-spacing: 0;
+    font-family: "Poppins", sans-serif;
 }
 
 thead {
-    background-color: var(--second-bg);
+    /* background-color: var(--second-bg); */
+    background-color: #9b9b9b;
+    font-size: 1.2rem;
+    color: #111827;
 }
 
 tr {
     text-align: left;
+    border-top: 1px solid #e8e8e8;
 }
 
 th,
@@ -786,8 +879,18 @@ td {
     padding: 15px 10px;
 }
 
+td {
+    border-top: 1px solid #e8e8e8;
+
+}
+
+tbody {
+    color: #a6abb3;
+}
+
 tbody>tr:hover {
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
+    background-color: #00000024;
     color: var(--txt-white);
 }
 
@@ -797,6 +900,7 @@ tbody>tr:hover {
     justify-content: flex-end;
     align-items: center;
     margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
 }
 
 .table__pagination-item~.table__pagination-item {
@@ -815,14 +919,16 @@ tbody>tr:hover {
 
 .table__pagination-item.active,
 .table__pagination-item.active:hover {
-    background-color: var(--main-color);
+    /* background-color: var(--main-color); */
+    background-color: #9b9b9b;
     color: var(--txt-white);
     font-weight: 600;
 }
 
 .table__pagination-item:hover {
     color: var(--txt-white);
-    background-color: var(--second-color);
+    /* background-color: var(--second-color); */
+    background-color: #00000024;
 }
 
 /******************** TABLE ENDS ********************/

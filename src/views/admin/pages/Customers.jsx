@@ -1,30 +1,22 @@
-import React from "react";
-
 import Table from "../components/table/Table";
 
 import customerList from "../assets/JsonData/customers-list.json";
 
-const customerTableHead = [
-  "",
-  "name",
-  "email",
-  "phone",
-  "total orders",
-  "total spend",
-  "location",
-];
+const customerTableHead = ["Id", "name", "email", "phone", "role", "actions"];
 
 const renderHead = (item, index) => <th key={index}>{item}</th>;
 
 const renderBody = (item, index) => (
   <tr key={index}>
-    <td>{item.id}</td>
-    <td>{item.name}</td>
+    <td>{item._id}</td>
+    <td>{item.firstName + " " + item.lastName}</td>
     <td>{item.email}</td>
-    <td>{item.phone}</td>
-    <td>{item.total_orders}</td>
-    <td>{item.total_spend}</td>
-    <td>{item.location}</td>
+    <td>{item.mobile}</td>
+    <td>{item.role}</td>
+    <td className="d-flex">
+      <button className="btn btn-success">Edit</button>
+      <button className="btn btn-danger">Delete</button>
+    </td>
   </tr>
 );
 
@@ -34,17 +26,18 @@ const Customers = () => {
       <h1 className="page-header">Users List</h1>
       <div className="row">
         <div className="col-12">
-          <div className="card">
-            <div className="card__body">
-              <Table
-                limit="10"
-                headData={customerTableHead}
-                renderHead={(item, index) => renderHead(item, index)}
-                bodyData={customerList}
-                renderBody={(item, index) => renderBody(item, index)}
-              />
-            </div>
-          </div>
+          {/* <div className="card"> */}
+          {/* <div className="card__body"> */}
+          <Table
+            limit="10"
+            headData={customerTableHead}
+            renderHead={(item, index) => renderHead(item, index)}
+            bodyData={customerList}
+            // renderBody={(item, index) => renderBody(item, index)}
+            renderBody={(item, index) => renderBody(item, index)}
+          />
+          {/* </div> */}
+          {/* </div> */}
         </div>
       </div>
     </div>

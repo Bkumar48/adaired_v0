@@ -1,19 +1,10 @@
 import { Link } from "react-router-dom";
-import { useEffect,useState } from "react";
 import "../../stylesheets/frontend.css";
-const Header = () => {
-  // const [isHeaderVisible, setIsHeaderVisible] = useState(false);
+const Header = (props) => {
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", () => {
-  //     window.pageYOffset > 100
-  //       ? setIsHeaderVisible(true)
-  //       : setIsHeaderVisible(false);
-  //   });
-  // }, []);
   return (
     <>
-      <header className={`main-header`}>
+      <header className={`main-header `}>
         <div className="container d-flex">
           <div className="logo">
             <Link to="/">
