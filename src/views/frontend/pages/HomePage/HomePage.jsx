@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Testimonials from "../components/Testimonials";
-import Blogs from "../components/Blogs";
+import Testimonials from "../../components/Testimonials";
+import Blogs from "../../components/Blogs";
 import { useEffect, useRef } from "react";
 
 // import Swiper core and required modules

@@ -1,6 +1,9 @@
+import { useState, useEffect } from "react";
+
 import Table from "../components/table/Table";
 
 import customerList from "../assets/JsonData/customers-list.json";
+import axios from "axios";
 
 const customerTableHead = ["Id", "name", "email", "phone", "role", "actions"];
 
@@ -21,6 +24,26 @@ const renderBody = (item, index) => (
 );
 
 const Customers = () => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    const getUsers = async () => {
+      try {
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/user/all-users`,{
+          headers: {
+            Authorization: `Bearer ${import.meta.env.VITE_API_TOKEN}`,
+          },
+        });
+        setUsers(res.data.data.users);
+      }
+       catch (error) {
+        throw new Error(error);
+      }
+    }
+    getUsers();
+  }
+  , []);
+
   return (
     <div>
       <h1 className="page-header">Users List</h1>
@@ -38,7 +61,7 @@ const Customers = () => {
           />
           {/* </div> */}
           {/* </div> */}
-        </div>
+        </div> 
       </div>
     </div>
   );

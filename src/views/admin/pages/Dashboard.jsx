@@ -202,7 +202,7 @@ const Dashboard = () => {
             />
           </div>
         </div>
-        <div className="col-4">
+        {/* <div className="col-4">
           <div className="card__header">
             <h2>top customers</h2>
           </div>
@@ -219,8 +219,8 @@ const Dashboard = () => {
               <Link to="/">view all</Link>
             </div>
           </div>
-        </div>
-        <div className="col-8">
+        </div> */}
+        {/* <div className="col-8">
           <div className="card">
             <div className="card__header">
               <h3>latest orders</h3>
@@ -237,7 +237,7 @@ const Dashboard = () => {
               <Link to="/">view all</Link>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLoader from "./views/frontend/components/loaders/MainLoader";
 import FrontLayout from "./views/frontend/FrontLayout";
-import Layout from "./views/admin/components/layout/Layout";
+// import Layout from "./views/admin/components/layout/Layout";
+import "./App.css";
 
 const App = () => {
  
@@ -11,7 +10,7 @@ const App = () => {
       <Router>
         <Routes>
           <Route path="*" element={<FrontLayout />} />
-          <Route path="/admin/*" element={<Layout />} />
+          {/* <Route path="/admin/*" element={<Layout />} /> */}
         </Routes>
       </Router>
     </>

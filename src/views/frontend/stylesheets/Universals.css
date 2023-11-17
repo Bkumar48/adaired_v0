@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,200;1,6..12,300;1,6..12,400;1,6..12,500;1,6..12,600;1,6..12,700&family=Oooh+Baby&display=swap');
+
+
+:root {
+    /* Font Families */
+    --font-DM: 'DM Serif Display', serif;
+    --font-Nunito: 'Nunito Sans', sans-serif;
+    --font-Oooh: 'Oooh Baby', cursive;
+
+
+    /* Font sizes and weights */
+
+
+    /* Colors */
+    --gray-0: 255 255 255;
+    --gray-50: 250 250 250;
+    --gray-100: 241 241 241;
+    --gray-200: 227 227 227;
+    --gray-300: 223 223 223;
+    --gray-400: 146 146 146;
+    --gray-500: 102 102 102;
+    --gray-600: 72 72 72;
+    --gray-700: 51 51 51;
+    --gray-800: 34 34 34;
+    --gray-900: 17 17 17;
+    --gray-1000: 0 0 0;
+    --primary-lighter: 215 227 254;
+    --primary-light: 96 142 251;
+    --primary-default: 56 114 250;
+    --primary-dark: 29 88 216;
+    --secondary-lighter: 227 215 252;
+    --secondary-light: 138 99 210;
+    --secondary-default: 121 40 202;
+    --secondary-dark: 76 40 137;
+    --red-lighter: 247 212 214;
+    --red-light: 255 26 26;
+    --red-default: 238 0 0;
+    --red-dark: 197 0 0;
+    --orange-lighter: 255 239 207;
+    --orange-light: 247 185 85;
+    --orange-default: 245 166 35;
+    --orange-dark: 171 87 10;
+    --blue-lighter: 211 229 255;
+    --blue-light: 50 145 255;
+    --blue-default: 0 112 243;
+    --blue-dark: 7 97 209;
+    --green-lighter: 185 249 207;
+    --green-light: 6 193 103;
+    --green-default: 4 136 72;
+    --green-dark: 3 112 60;
+}
+
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.align-start {
+    align-items: flex-start;
+}
+
+.align-end {
+    align-items: flex-end;
+}
+
+.wrap-flex {
+    flex-wrap: wrap;
+}
+
+.container {
+    max-width: 1430px;
+    margin: 0 auto;
+}
+
+.pr60 {
+    padding-right: 60px;
+}
+
+.pl60 {
+    padding-left: 60px;
+}
+
+.gap-30 {
+    gap: 30px;
+}
+
+.gap-20 {
+    gap: 20px;
+}
+
+.mt50 {
+    margin-top: 50px;
+}
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.w-50 {
+    width: calc(100% / 2 - 50px);
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.w-20 {
+    width: 20%;
+}
+
+.w-70 {
+    width: 70%;
+}
+
+
+.mt25 {
+    margin-top: 25px;
+}
+
+.just-start {
+    justify-content: flex-start;
+}
+
+.pad100 {
+    padding: 100px 15px;
+}
+
+.pb100 {
+    padding-bottom: 100px;
+}
+
+.navbar .d-flex {
+    gap: 50px;
+}
+
+.navbar .d-flex li {
+    margin: 0px;
+    list-style: none;
+}
+
+.navbar ul li a {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 27px;
+    text-decoration: none;
+}
+
+.navbar ul li:hover a {
+    color: #316C7A;
+}
+
+.toggle-menu svg {
+    display: none;
+}
+
+p,
+li,
+a,
+input,
+span,
+textarea {
+    color: #515151;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 33px;
+    text-decoration: none;
+    list-style: none;
+    transition: 0.6s all ease-in-out;
+    outline: none;
+    margin: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #171C24;
+    font-weight: 600;
+    text-transform: capitalize;
+    transition: 0.6s all ease-in-out;
+    font-family: 'DM Serif Display', serif;
+    margin: 0px;
+}
+
+ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+p:not(:last-child),
+li:not(:last-child),
+h1:not(:last-child),
+h2:not(:last-child),
+h3:not(:last-child),
+h4:not(:last-child),
+h5:not(:last-child),
+h6:not(:last-child) {
+    margin: 0 0 20px;
+}

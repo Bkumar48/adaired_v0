@@ -12,7 +12,7 @@ const StatusCard = (props) => {
           <span>{props.title}</span>
         </div>
       </div>
-    </div>
+    </div> 
   );
 };
 
