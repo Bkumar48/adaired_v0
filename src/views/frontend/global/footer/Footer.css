@@ -1,0 +1,150 @@
+
+.main-footer {
+    background-color: #316C7A;
+}
+
+.ft-link span {
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 26px;
+}
+
+.footer_social.d-flex {
+    justify-content: flex-start;
+}
+
+.footer_social a img {
+    padding: 5px;
+    border-radius: 10px;
+    max-width: 50px;
+}
+
+.footer_social a:hover img {
+    filter: invert(100);
+    background-color: #000000;
+}
+
+.footer-bottom .footer_social h3 {
+    width: 100%;
+}
+
+.footer_social .d-flex {
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+
+.ft-link span i {
+    display: block;
+    color: #FFF;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.ft-link img {
+    border: 0.5px solid #FFF;
+    padding: 8px;
+    max-width: 50px;
+}
+
+.ft-top_bar {
+    margin: 0 auto;
+}
+
+.main-footer p,
+.main-footer a,
+.main-footer h3 {
+    color: #fff;
+}
+
+.ft-para {
+    margin-top: 30px !important;
+}
+
+.ft-col {
+    width: calc(100% / 3 - 30px);
+}
+
+.ft_navbar {
+    max-width: fit-content;
+    max-width: --moz-fit-content;
+    padding-right: 60px;
+    padding-left: 60px;
+}
+
+.footer-bottom {
+    margin-top: 70px;
+    padding-top: 70px;
+    border-top: 1px solid #fff;
+}
+
+.footer-bottom h3::before {
+    position: absolute;
+    content: "";
+    width: 80px;
+    height: 1px;
+    background-color: #ffffff;
+    bottom: -8px;
+    left: 0;
+}
+
+.footer-bottom h3 {
+    font-family: Nunito Sans;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.footer-bottom .footer_social h3::before {
+    display: none;
+}
+
+.footer-bottom li {
+    margin-bottom: 5px !important;
+}
+
+.footer-contact p,
+.footer-bottom li a {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.copyright-col {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 1px solid #fff;
+}
+
+.main-footer {
+    padding: 100px 15px 30px;
+}
+
+.footer_social h3 {
+    position: static;
+}
+
+.mail-col {
+    border-radius: 10px;
+    background: #FFF;
+    width: 100%;
+    border: 0px;
+    padding: 10px;
+}
+
+.ft-link:hover img {
+    animation: shake 0.9s;
+}
+
+footer h3,
+footer p {
+    margin-bottom: 20px;
+}
+
+.copyright-col.d-flex p {
+    margin: 0;
+}

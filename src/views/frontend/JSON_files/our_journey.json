@@ -1,0 +1,32 @@
+[
+  {
+    "image": "assets/images/journey_block_1.svg",
+    "from": "2015",
+    "till": "2016",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui."
+  },
+  {
+    "image": "assets/images/journey_block_1.svg",
+    "from": "2017",
+    "till": "2018",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui."
+  },
+  {
+    "image": "assets/images/journey_block_1.svg",
+    "from": "2018",
+    "till": "2019",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui."
+  },
+  {
+    "image": "assets/images/journey_block_1.svg",
+    "from": "2019",
+    "till": "2020",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui."
+  },
+  {
+    "image": "assets/images/journey_block_1.svg",
+    "from": "2020",
+    "till": "2021",
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus feugiat, molestie ipsum et, consequat nibh. Etiam non elit dui."
+  }
+]

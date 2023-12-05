@@ -730,7 +730,7 @@ const HomePage = () => {
 
       <Testimonials />
 
-      <Blogs />
+      <Blogs limit={3} viewMoreBtn={true}/>
 
       <section className="contact-grid pb100">
         <div className="container d-flex align-start">

@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FrontLayout from "./views/frontend/FrontLayout";
-// import Layout from "./views/admin/components/layout/Layout";
+import FrontLayout from "./views/frontend/layout/FrontLayout";
 import "./App.css";
 
 const App = () => {

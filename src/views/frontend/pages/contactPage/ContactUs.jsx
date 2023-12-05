@@ -1,6 +1,9 @@
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import Banner from "../../components/banners/Banner";
+import { lazy } from "react";
+
+const Map = lazy(() => import("../../components/mapSection/map"));
 
 const ContactForm = () => {
   return (
@@ -44,6 +47,10 @@ const ContactForm = () => {
 };
 
 const ContactDetails = () => {
+  const firstContact = import.meta.env.VITE_FIRST_PHONE_NUMBER;
+  const secondContact = import.meta.env.VITE_SECOND_PHONE_NUMBER;
+  const firstEmail = import.meta.env.VITE_ADAIRED_SUPPORT_EMAIL;
+  const secondEmail = import.meta.env.VITE_ADAIRED_HR_EMAIL;
   return (
     <div className="contact-para">
       <h4 className="sub-heading">Contact Us</h4>
@@ -78,12 +85,8 @@ const ContactDetails = () => {
             Call Us
             <br />
             <strong>
-              <Link to={`tel:${import.meta.env.VITE_FIRST_PHONE_NUMBER}`}>
-                {import.meta.env.VITE_FIRST_PHONE_NUMBER}
-              </Link>
-              <Link to={`tel:${import.meta.env.VITE_SECOND_PHONE_NUMBER}`}>
-                {import.meta.env.VITE_SECOND_PHONE_NUMBER}
-              </Link>
+              <Link to={`tel:${firstContact}`}>{firstContact}</Link>
+              <Link to={`tel:${secondContact}`}>{secondContact}</Link>
             </strong>
           </h6>
         </div>
@@ -97,15 +100,11 @@ const ContactDetails = () => {
             Email <br />
             <strong>
               <Link
-                to={`mailto:${
-                  import.meta.env.VITE_ADAIREDSUPPORT_SUPPORT_EMAIL
-                }`}
+                to={`mailto:${firstEmail}?subject=Adaired Support&body=Hi Adaired Team,`}
               >
-                {import.meta.env.VITE_ADAIRED_SUPPORT_EMAIL}
+                {firstEmail}
               </Link>
-              <Link to={`mailto:${import.meta.env.VITE_ADAIRED_HR_EMAIL}`}>
-                {import.meta.env.VITE_ADAIRED_HR_EMAIL}
-              </Link>
+              <Link to={`mailto:${secondEmail}?`}>{secondEmail}</Link>
             </strong>
           </h6>
         </div>
@@ -114,7 +113,7 @@ const ContactDetails = () => {
   );
 };
 
-const ContactUs = () => {
+const ContactUs = () => { 
   return (
     <>
       <Banner title="Contact Us" />
@@ -122,6 +121,8 @@ const ContactUs = () => {
         <ContactForm />
         <ContactDetails />
       </div>
+
+      <Map />
     </>
   );
 };

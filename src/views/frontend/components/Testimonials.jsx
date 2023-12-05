@@ -13,7 +13,7 @@ import "swiper/css/scrollbar";
 const Testimonials = () => {
   return (
     <>
-      <section className="review-grid pad100">
+      <section className="review-grid pt50 pb100">
         <div className="container">
           <h5 className="sub-heading sub-hd">Testimonials</h5>
           <h2 className="bigheading">Check What Our Clients Say!</h2>
