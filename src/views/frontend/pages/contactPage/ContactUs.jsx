@@ -2,8 +2,9 @@ import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import Banner from "../../components/banners/Banner";
 import { lazy } from "react";
+import Map from "../../components/mapSection/map";
+// const Map = lazy(() => import("../../components/mapSection/map"));
 
-const Map = lazy(() => import("../../components/mapSection/map"));
 
 const ContactForm = () => {
   return (

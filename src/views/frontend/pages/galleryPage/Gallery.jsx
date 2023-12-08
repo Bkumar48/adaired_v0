@@ -1,5 +1,5 @@
-import Testimonials from "../../components/Testimonials";
-import Blogs from "../../components/Blogs";
+import Testimonials from "../../components/testimonialsSection/Testimonials";
+import Blogs from "../../components/blogSection/Blogs";
 
 const Gallery = () => {
   return (

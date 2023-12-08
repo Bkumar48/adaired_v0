@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import Testimonials from "../../components/Testimonials";
-import Blogs from "../../components/Blogs";
+import Testimonials from "../../components/testimonialsSection/Testimonials";
+import Blogs from "../../components/blogSection/Blogs";
 import { useEffect, useRef } from "react";
 
 // import Swiper core and required modules
@@ -12,10 +12,7 @@ import { A11y, Autoplay, Parallax } from "swiper/modules";
 // Import Framer Motion
 import { motion } from "framer-motion";
 
-
-
 const HomePage = () => {
-
   return (
     <>
       <section className="banner">
@@ -23,7 +20,7 @@ const HomePage = () => {
           modules={[A11y, Parallax]}
           spaceBetween={0}
           slidesPerView={1}
-          // loop={true}
+          loop={true}
           className="banner_slider-wrap-horizontal"
           // draggable={true}
           // direction="horizontal"
@@ -51,10 +48,13 @@ const HomePage = () => {
                 <div className="banner-box ">
                   <div className="banner-col container d-flex">
                     <div className="banner-text ">
-                      <h5 className="sub-heading">Lorem Ipsum</h5>
-                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <h5 className="sub-heading">Adaired Digital Media</h5>
+                      <h1>
+                        Digital Marketing Agency That Turns Businesses Into
+                        Brands
+                      </h1>
                       <a href="#" className="arrow-btn defbtn">
-                        Request A Callback
+                        Let's talk about your needs
                       </a>
                     </div>
                   </div>
@@ -64,57 +64,13 @@ const HomePage = () => {
                 <div className="banner-box ">
                   <div className="banner-col container d-flex">
                     <div className="banner-text ">
-                      <h5 className="sub-heading">Lorem Ipsum</h5>
-                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <h5 className="sub-heading">Adaired Digital Media</h5>
+                      <h1>
+                        Digital Marketing Agency That Turns Businesses Into
+                        Brands
+                      </h1>
                       <a href="#" className="arrow-btn defbtn">
-                        Request A Callback
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-            </Swiper>
-          </SwiperSlide>
-
-          <SwiperSlide>
-            {" "}
-            <Swiper
-              modules={[A11y, Autoplay, Parallax]}
-              spaceBetween={0}
-              slidesPerView={1}
-              autoplay={{
-                delay: 3000,
-                disableOnInteraction: true,
-                reverseDirection: true,
-              }}
-              parallax={true}
-              loop={true}
-              direction="vertical"
-              speed={2000}
-              className="banner-slider-wrap"
-              allowTouchMove={false}
-            >
-              <SwiperSlide className="banner-slider">
-                <div className="banner-box ">
-                  <div className="banner-col container d-flex">
-                    <div className="banner-text ">
-                      <h5 className="sub-heading">Lorem Ipsum</h5>
-                      <h1>We Are A Strategic Creative Agency.</h1>
-                      <a href="#" className="arrow-btn defbtn">
-                        Request A Callback
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide className="banner-slider">
-                <div className="banner-box ">
-                  <div className="banner-col container d-flex">
-                    <div className="banner-text ">
-                      <h5 className="sub-heading">Lorem Ipsum</h5>
-                      <h1>We Are A Strategic Creative Agency.</h1>
-                      <a href="#" className="arrow-btn defbtn">
-                        Request A Callback
+                        Let's talk about your needs
                       </a>
                     </div>
                   </div>
@@ -145,10 +101,68 @@ const HomePage = () => {
                 <div className="banner-box ">
                   <div className="banner-col container d-flex">
                     <div className="banner-text ">
-                      <h5 className="sub-heading">Lorem Ipsum</h5>
-                      <h1>We Are A Strategic Creative Agency.</h1>
+                      <h5 className="sub-heading">Adaired Digital Media</h5>
+                      <h1>
+                        Digital Marketing Agency That Turns Businesses Into
+                        Brands
+                      </h1>
                       <a href="#" className="arrow-btn defbtn">
-                        Request A Callback
+                        Let's talk about your needs
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">Adaired Digital Media</h5>
+                      <h1>
+                        Digital Marketing Agency That Turns Businesses Into
+                        Brands
+                      </h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Let's talk about your needs
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          </SwiperSlide>
+
+          <SwiperSlide>
+            {" "}
+            <Swiper
+              modules={[A11y, Autoplay, Parallax]}
+              spaceBetween={0}
+              slidesPerView={1}
+              autoplay={{
+                delay: 3000,
+                disableOnInteraction: true,
+                reverseDirection: true,
+              }}
+              parallax={true}
+              loop={true}
+              direction="vertical"
+              speed={2000}
+              className="banner-slider-wrap"
+              allowTouchMove={false}
+            >
+              <SwiperSlide className="banner-slider">
+                <div className="banner-box ">
+                  <div className="banner-col container d-flex">
+                    <div className="banner-text ">
+                      <h5 className="sub-heading">
+                        Adaired Digital MediaLorem Ipsum
+                      </h5>
+                      <h1>
+                        Digital Marketing Agency That Turns Businesses Into
+                        Brands
+                      </h1>
+                      <a href="#" className="arrow-btn defbtn">
+                        Let's talk about your needs
                       </a>
                     </div>
                   </div>
@@ -226,7 +240,6 @@ const HomePage = () => {
       </section>
 
       <section className="manage-grid pad100">
-
         <Swiper
           // install Swiper modules
           modules={[A11y, Autoplay, Parallax]}
@@ -238,16 +251,19 @@ const HomePage = () => {
         >
           <SwiperSlide>
             <div className="container text-center">
-              <h2 className="bigheading">Social Media Management</h2>
+              <h2 className="bigheading">
+                Digital Marketing Services for The Most Ambitious Enterprises
+              </h2>
               <div className="splash-box">
-              <span id="splash-overlay" className="splash-left"></span>
-              <div className=" z-depth-4 mike-img"  id="welcome" >
-                <img src="assets/images/services_slider_icon.png" />
-              </div>
-              <span id="splash-overlay" className="splash-right"></span>
+                <span id="splash-overlay" className="splash-left"></span>
+                <div className=" z-depth-4 mike-img" id="welcome">
+                  <img src="assets/images/services_slider_icon.png" />
+                </div>
+                <span id="splash-overlay" className="splash-right"></span>
               </div>
               <p className="big-para">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
+                We work with businesses that want to engage better, dominate
+                SERPs, and achieve more than just website traffic.
               </p>
             </div>
           </SwiperSlide>
@@ -256,18 +272,17 @@ const HomePage = () => {
             <div className="container text-center">
               <h2 className="bigheading">Social Media Management</h2>
               <div className="splash-box">
-              <span id="splash-overlay" className="splash-left"></span>
-              <div className=" z-depth-4 mike-img"  id="welcome" >
-                <img src="assets/images/services_slider_icon.png" />
-              </div>
-              <span id="splash-overlay" className="splash-right"></span>
+                <span id="splash-overlay" className="splash-left"></span>
+                <div className=" z-depth-4 mike-img" id="welcome">
+                  <img src="assets/images/services_slider_icon.png" />
+                </div>
+                <span id="splash-overlay" className="splash-right"></span>
               </div>
               <p className="big-para">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
               </p>
             </div>
           </SwiperSlide>
-         
         </Swiper>
       </section>
 
@@ -288,37 +303,37 @@ const HomePage = () => {
             <h5 className="sub-heading sub-hd">About Us</h5>
             <h2 className="bigheading">A Company Obsessed With ROI</h2>
             <p>
-              Adaired is a multi-service digital marketing firm that has a
-              qualified team of professionals to help you get noticed online.
-              Our marketing solutions cater to many needs of our clients helping
-              them grow online, increase exposure, and ultimately become the
-              leader in the industry. What started as a small business, Adaired
-              has now grown into a successful leading marketing agency helping
-              businesses thrive online, worldwide.
+              Transform your marketing outcomes and experience exponential ROI
+              growth by partnering with Adaired! We offer smart, targeted,
+              integrated campaigns that drive traffic, build engagement,
+              generate conversions, and foster long-term relationships. Our
+              online marketing services will turn your website into a
+              lead-generating machine, and our ongoing efforts will bring in
+              more clients than you can handle.
             </p>
             <div className="abt-card-group d-flex gap-20 mt25">
               <div className="abt-card">
                 <img className="abt-icon" src="assets/images/tick_svg.svg" />
-                <h4>Lorem Ipsum</h4>
+                <h4>Tailored Approach</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typeset
-                  indstry. Lorem Ipsum has been the industry's standard text 123
-                  dummy text .
+                  Our obsession with ROI means crafting personalized strategies,
+                  from meticulous campaign design to continuous optimization for
+                  maximum impact and growth.
                 </p>
               </div>
               <div className="abt-card">
                 <img className="abt-icon" src="assets/images/tick_svg.svg" />
-                <h4>Lorem Ipsum</h4>
+                <h4>Tangible Results</h4>
                 <p>
-                  Lorem Ipsum is simply dummy text of the printing and typeset
-                  indstry. Lorem Ipsum has been the industry's standard text 123
-                  dummy text .
+                  Experience transparency in your marketing endeavors with
+                  Adaired. As your brand gains momentum, the ROI translates into
+                  measurable success for your business.
                 </p>
               </div>
             </div>
             <p className="cursive-para">
-              "The internet is becoming the town square for the global village
-              of tomorrow." -<i>Bill Gates</i>
+              "Your brand is what people say about you when you're not in the
+              room." -<i>Jeff Bezos</i>
             </p>
             <a href="#" className="mt25 arrow-btn defbtn">
               View More Information
@@ -331,8 +346,9 @@ const HomePage = () => {
         <div className="container text-center">
           <h2 className="bigheading">Trusted By:</h2>
           <p>
-            We work with businesses that want to engage better, dominate SERPs,
-            and achieve more than just website traffic.
+            The success of our clients is what determines our success. <br />
+            Below are a few of our favorite clients who we have worked for; we
+            have reserved a spot for you!
           </p>
           <Swiper
             modules={[A11y, Autoplay, Parallax]}
@@ -417,19 +433,19 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Organic Growth (SEO)</h3>
+                <h3 className="hd-block">Website Design & Development</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  Website Design and development services that deliver exquisite
+                  design, a user-friendly interface, and robust functionality
+                  for lasting impressions on the audience.
                 </p>
                 <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>PHP Development</li>
+                  <li>Website management</li>
+                  <li>Website CMS migrations</li>
+                  <li>WordPress design & development</li>
+                  <li>Landing page design & development</li>
+                  <li>E-commerce website design & development </li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -445,19 +461,19 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Paid Media & Advertising (PPC)</h3>
+                <h3 className="hd-block">Social Media Management</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  Enhance the social media presence of brands on diverse social
+                  platforms with engaging content to foster meaningful
+                  interactions and amplify reach.
                 </p>
                 <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>Profile Optimization</li>
+                  <li>Targeted Page Likes</li>
+                  <li>Targeted Page Likes</li>
+                  <li>Hashtag Trend Research</li>
+                  <li>Content Calendar</li>
+                  <li>Monthly Report</li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -473,19 +489,19 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Web Development & Redesign</h3>
+                <h3 className="hd-block">Content Development & Marketing</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  Engaging and captivating content development that not only
+                  resonates with the audience but ranks well across all search
+                  engines.
                 </p>
                 <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>Infographics</li>
+                  <li>Website Blogs</li>
+                  <li>Press Releases</li>
+                  <li>Website Copy</li>
+                  <li>Guest Posting</li>
+                  <li>Social Media Posting </li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -501,11 +517,10 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Compelling Content Marketing</h3>
+                <h3 className="hd-block">Graphic Designing</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  The creative team illustrates the brand's image and ideas in
+                  captivating visuals to communicate with the target audience.
                 </p>
                 <ul>
                   <li>Digital Broucher</li>
@@ -513,7 +528,7 @@ const HomePage = () => {
                   <li>Logos and Branded Elements</li>
                   <li>Poster , Banner and Signage</li>
                   <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>Social media graphics & digital marketing ads </li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -529,19 +544,19 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Digital Creative & Logo Design</h3>
+                <h3 className="hd-block">Search engine optimization</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  Launch and maintain the websites on top of search results to
+                  enhance your online visibility with tried and tested Search
+                  Engine Optimization (SEO) services.
                 </p>
                 <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>Meta Tags Optimization</li>
+                  <li>Google tags Setup</li>
+                  <li>Schema Optimization</li>
+                  <li>Website Layout Optimization</li>
+                  <li>Website Broken Link Analysis</li>
+                  <li>Penalty review & recovery </li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -557,19 +572,19 @@ const HomePage = () => {
                   className="serv-icon"
                   src="assets/images/services_cards_tick.svg"
                 />
-                <h3 className="hd-block">Strategic Social Media Management</h3>
+                <h3 className="hd-block">Pay Per Click</h3>
                 <p>
-                  Lorem Ipsum is simply dummy text of the text printing and
-                  typesetting industry. Lorem has been the industry's dummy
-                  text.
+                  Building strategic ad campaigns and carrying data-driven
+                  optimizations to drive targeted traffic with our Pay-Per-Click
+                  (PPC) solutions.
                 </p>
                 <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social Media Marketing </li>
+                  <li>Social Ads</li>
+                  <li>Google Ads</li>
+                  <li>Conversion Tracking</li>
+                  <li>Google Analytics set up</li>
+                  <li>Overall performance Analysis</li>
+                  <li>Campaign management and optimization </li>
                 </ul>
                 <a href="#" className="arrow-btn defbtn">
                   View More
@@ -593,12 +608,12 @@ const HomePage = () => {
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
                   <h2 className="bigheading">Case Studies </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the text printing and
-                    typesetting industry. Lorem has been the industry's dummy
-                    text.
+                    When we provide you with the best Digital Marketing
+                    Services, we mean it. Check out the results we have
+                    successfully fetched for our clients.
                   </p>
                   <a href="#" className="mt25 arrow-btn defbtn">
                     View More
@@ -612,12 +627,12 @@ const HomePage = () => {
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
                   <h2 className="bigheading">Case Studies </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the text printing and
-                    typesetting industry. Lorem has been the industry's dummy
-                    text.
+                    When we provide you with the best Digital Marketing
+                    Services, we mean it. Check out the results we have
+                    successfully fetched for our clients.
                   </p>
                   <a href="#" className="mt25 arrow-btn defbtn">
                     View More
@@ -631,12 +646,12 @@ const HomePage = () => {
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
+                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
                   <h2 className="bigheading">Case Studies </h2>
                   <p>
-                    Lorem Ipsum is simply dummy text of the text printing and
-                    typesetting industry. Lorem has been the industry's dummy
-                    text.
+                    When we provide you with the best Digital Marketing
+                    Services, we mean it. Check out the results we have
+                    successfully fetched for our clients.
                   </p>
                   <a href="#" className="mt25 arrow-btn defbtn">
                     View More
@@ -662,27 +677,31 @@ const HomePage = () => {
           </div>
           <div className="grow-text w-50 pl60">
             <h4 className="sub-hd">ABOUT US</h4>
-            <h2 className="main-hedaing">Lorem Ipsum</h2>
+            <h2 className="main-hedaing">
+              Digital Marketing Experts Dedicated To Your Growth
+            </h2>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book. It has
-              survived not only five centuries, but also the.
+              Adaired has helped numerous companies develop their brands with
+              its digital marketing services worldwide. We understand the
+              importance of leads, sales, and return on investment when it comes
+              to digital marketing. Our clients come from all industries of
+              every size.
             </p>
             <ul className="half-list d-flex wrap-flex">
-              <li>Lorem Ipsum</li>
-              <li>Lorem Ipsum</li>
-              <li>Lorem Ipsum</li>
-              <li>Lorem Ipsum</li>
+              <li>Comprehensive Services</li>
+              <li>Industry Expertise</li>
+              <li>Client-Centric Approach</li>
+              <li>Tailored Solutions</li>
             </ul>
             <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's.
+              Our digital marketing agency provides a wide range of services,
+              from initial brand development to a globally syndicated
+              advertising campaign, all of which are customized to meet the
+              unique needs of our clients.
             </p>
             <p className="pink-para">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's.
+              We strive to surpass your expectations, providing unparalleled
+              quality in our online marketing services.
             </p>
             <a href="#" className="defbtn mt25 arrow-btn">
               Read More
@@ -730,13 +749,13 @@ const HomePage = () => {
 
       <Testimonials />
 
-      <Blogs limit={3} viewMoreBtn={true}/>
+      <Blogs limit={3} viewMoreBtn={true} />
 
       <section className="contact-grid pb100">
         <div className="container d-flex align-start">
           <div className="cont-text w-50">
-            <h2 className="bigheading">Lorem Ipsum Is Simply Text</h2>
-            <p>Let's Talk And Get Started</p>
+            <h2 className="bigheading">Ready To Win More Customers?</h2>
+            <p>Connect for more website traffic, qualified leads, and an established online brand image.</p>
             <div className="social-cont">
               <a href="#" className="d-flex just-start gap-20">
                 <img src="assets/images/conticon (2).png" />

@@ -3,7 +3,7 @@ const Banner = (props) => {
     <>
       <div className="inner-banner">
         <div className="container">
-            <h1 className="inner-banner-head">{props.title}</h1>
+            <h1>{props.title}</h1>
         </div>
       </div>
     </>

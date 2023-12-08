@@ -1,0 +1,85 @@
+.review-col h4 {
+    color: #000;
+    font-family: Nunito Sans;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px;
+    margin-bottom: 6px !important;
+}
+
+.review-col span {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.review-col {
+    /* width: calc(100% / 2 - 140px); */
+    padding-left: 100px;
+    position: relative;
+}
+
+.review-col::before {
+    position: absolute;
+    content: "";
+    width: 60px;
+    height: 60px;
+    background-color: #8EC640;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border-radius: 100px;
+    border: 6px solid #fff;
+    background-image: url(assets/images/qoute.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 20px;
+}
+
+.review-col::after {
+    position: absolute;
+    content: "";
+    height: 120px;
+    width: 5px;
+    background-color: #fff;
+    top: 0px;
+    bottom: 0;
+    left: 33px;
+    margin: auto;
+    z-index: -1;
+}
+
+.review-grid {
+    background: #F7FFEC;
+}
+
+.review-grid {
+    position: relative;
+}
+
+.testimonials__buttons {
+    position: absolute;
+    bottom: 7%;
+    /* right: 0; */
+    /* transform: translateY(-50%); */
+    display: flex;
+    gap: 20px;
+    padding: 20px 0 0 0;
+    /* z-index: 1; */
+}
+
+.testimonials__button-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.testimonials__button-icon:hover {
+    transform: scale(1.2);
+    color: #F89520;
+}

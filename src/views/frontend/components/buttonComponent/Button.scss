@@ -1,0 +1,33 @@
+.btn {
+    border-radius: 100px;
+    font-size: 18px;
+    line-height: 17px;
+    text-transform: capitalize;
+    text-align: left;
+    padding: 18px 70px 18px 18px;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid;
+
+
+    svg {
+        padding: 9px;
+        font-size: 28px;
+        border-radius: 100px;
+        position: absolute;
+        left: calc(100% - 52px);
+        top: 50%;
+        transform: translateY(-50%);
+        transition: transform 0.4s ease, left 0.4s ease 0.1s;
+    }
+
+    &:hover {
+        padding: 18px 18px 18px 70px;
+
+        svg {
+            left: 4px;
+            transform: translateY(-50%) rotate(180deg);
+        }
+    }
+}

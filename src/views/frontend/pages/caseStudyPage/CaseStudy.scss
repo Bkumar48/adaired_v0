@@ -1,0 +1,115 @@
+.case__study-categories-items {
+    color: #515151;
+    text-align: center;
+    justify-content: flex-start;
+    gap: 25px;
+
+    button {
+        border: 1px solid #D9D9D9;
+        border-radius: 100px;
+        padding: 12px 40px;
+        background: #ffffff;
+        font-size: 20px;
+        font-family: 'Nunito Sans', sans-serif;
+
+        &:hover {
+            background: #038EB0;
+            color: #ffffff;
+            border: 1px solid #038EB0;
+            transition: all 0.3s ease;
+        }
+    }
+}
+
+.case__study-card {
+    border-radius: 40px;
+    border: 1px solid #d9d9d9;
+    padding: 50px;
+    min-height: 500px;
+
+    .case__study-card-inner {
+        display: flex;
+        justify-content: space-between;
+        gap: 50px;
+    }
+
+    .case__study-card-text-box {
+        flex: 40%;
+
+        .case__study-card-text {
+
+            .case__study-card-heading {
+                color: #000;
+                font-size: 32px;
+                font-weight: 700;
+                font-family: 'Nunito Sans', sans-serif;
+                position: relative;
+                margin: 40px 0 20px 0;
+            }
+        }
+
+        .case__study-technologies {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-top: 50px;
+
+            .case__study-technologies-item {
+                background-color: #515151;
+                border-radius: 15px;
+                padding: 5px;
+
+                p {
+                    color: #FFFFFF;
+                    text-align: center;
+                    font-family: 'Nunito Sans', sans-serif;
+                    font-size: 16px;
+                    font-weight: 600;
+                    line-height: 22px;
+                    letter-spacing: 0px;
+                    text-align: center;
+                }
+            }
+        }
+
+        .btn__case-study {
+            position: absolute;
+            bottom: 8%;
+        }
+
+    }
+
+    .case__study-img-section {
+        flex: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .case__study-img-heading {
+            h3 {
+                color: #000;
+                font-family: 'Gilroy';
+                font-size: 40px;
+                font-style: normal;
+                font-weight: 800;
+                text-align: center;
+                position: relative;
+            }
+
+            p {
+                text-align: center;
+                width: 70%;
+                margin: 0 auto;
+            }
+
+        }
+
+        .case__study-img {
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}

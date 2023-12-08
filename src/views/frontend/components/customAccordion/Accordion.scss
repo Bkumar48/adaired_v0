@@ -1,0 +1,66 @@
+$primaryColor: #BC1D8D;
+$fontSize: 22px;
+
+.accordion {
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &.active {
+    background-color: #FFFAFD;
+
+    .svg_container svg {
+      transform: rotate(180deg);
+    }
+  }
+
+  .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 15px 0 15px;
+
+    p {
+      color: #000;
+      font-size: $fontSize;
+      font-weight: 600;
+      position: relative;
+      padding-left: 10px;
+
+      &::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        background: $primaryColor;
+        position: absolute;
+        left: -20px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .svg_container {
+      background: #515151;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      svg {
+        padding: 5px;
+        font-size: 24px;
+        color: #fff;
+        user-select: none;
+        -webkit-user-select: none;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  .accordion-content {
+    font-size: 14px;
+    text-align: justify;
+    line-height: 26px;
+    padding: 0 70px 15px 15px;
+  }
+}

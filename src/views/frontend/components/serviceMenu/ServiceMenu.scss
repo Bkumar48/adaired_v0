@@ -1,0 +1,44 @@
+.service__menu {
+    .service__menu-item {
+        ul {
+            li {
+                border: 1px solid #d9d9d9;
+                margin-bottom: 0;
+                padding: 15px 0;
+                padding-left: 30px;
+                font-weight: 700;
+                color: #000;
+                cursor: pointer;
+                position: relative;
+                transition: all 0.3s ease-in-out;
+
+                &::after {
+                    position: absolute;
+                    content: "";
+                    width: 20px;
+                    height: 15px;
+                    left: -25px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background-color: #fff;
+                    transition: all 0.3s ease-in-out;
+                    opacity: 0;
+                }
+
+                &:hover {
+                    background-color: #BC1D8D;
+                    border-color: #BC1D8D;
+                    color: #fff;
+
+                    &::after {
+                        left: -1px;
+                        opacity: 1;
+                    }
+                }
+
+
+
+            }
+        }
+    }
+}

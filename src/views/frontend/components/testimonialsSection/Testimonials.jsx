@@ -1,4 +1,4 @@
-import jsonData from "../JSON_files/testimonials_data.json";
+import jsonData from "../../JSON_files/testimonials_data.json";
 
 import { A11y, Autoplay, Navigation, Parallax } from "swiper/modules";
 
@@ -15,13 +15,15 @@ const Testimonials = () => {
     <>
       <section className="review-grid pt50 pb100">
         <div className="container">
-          <h5 className="sub-heading sub-hd">Testimonials</h5>
-          <h2 className="bigheading">Check What Our Clients Say!</h2>
+          <h5 className="sub-heading sub-hd">Not Convinced?</h5>
+          <h2 className="bigheading">
+            Check Out What Our Clients Want To Say!
+          </h2>
           <p>
-            We proudly employ the Industries most dedicated individuals, who are
-            all professionally
-            <br />
-            trained to Roofin service standards.
+            These are the genuine experiences of our clients regarding Adaired's
+            digital marketing services.The service quality
+            <br /> and client satisfaction we focus on define our unwavering
+            commitment and make us the most trusted digital marketing company.
           </p>
           <Swiper
             modules={[A11y, Autoplay, Parallax, Navigation]}

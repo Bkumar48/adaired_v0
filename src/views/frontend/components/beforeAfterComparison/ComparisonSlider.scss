@@ -1,0 +1,59 @@
+.comparison-slider {
+    margin: 80px auto;
+    position: relative;
+    height: auto;
+
+    img {
+        width: 100%;
+        height: auto;
+        margin: 0 auto;
+        vertical-align: middle;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .comparison-item {
+        overflow: hidden;
+        transition: none;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+    }
+
+    .comparison-item.top {
+        z-index: 1;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        background-color: #fff;
+
+        img {
+            // height: 100%;
+            // object-fit: cover;
+        }
+    }
+
+    .handle {
+        position: absolute;
+        width: 80px;
+        height: calc(100% + 60px);
+        z-index: 3;
+        cursor: move;
+        top: -30px;
+        transition: none;
+        background: linear-gradient(110.65deg, #cebdff 7.99%, #ffe2e7 95.83%) no-repeat 0 0/3px 100%, linear-gradient(90deg, rgba(33, 21, 65, .08), rgba(33, 21, 65, 0));
+
+        svg {
+            display: block;
+            position: absolute;
+            top: calc(50% - 15px);
+            right: calc(50% + 8px);
+            height: 60px;
+            width: 60px;
+        }
+    }
+}

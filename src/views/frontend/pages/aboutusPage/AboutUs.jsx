@@ -1,9 +1,183 @@
-import React, { lazy, Suspense, useEffect } from "react";
-import Testimonials from "../../components/Testimonials";
-import Blogs from "../../components/Blogs";
+import React, { lazy, useEffect } from "react";
 import jsonData from "../../JSON_files/our_journey.json";
 import Banner from "../../components/banners/Banner";
+import Testimonials from "../../components/testimonialsSection/Testimonials";
+import Blogs from "../../components/blogSection/Blogs";
+
 import { motion } from "framer-motion";
+
+const IntroSection = React.memo(() => {
+  return (
+    <>
+      <section className="about-outer pad50-50">
+        <div className="container d-flex">
+          <div className="w-50">
+            <div className="about-slider">
+              <div className="abt-img_big">
+                <img src="assets/images/big-image_ceo.jpg" alt="img" />
+                <img
+                  className="short-img"
+                  src="assets/images/ceo_sir-img.jpg"
+                ></img>
+              </div>
+            </div>
+          </div>
+          <div className="abt-text w-50">
+            <h5 className="sub-heading sub-hd">Adaired Digital Media</h5>
+            <h2 className="bigheading">
+              A Marketing Firm Driven To Accelerate Your Business Growth
+            </h2>
+            <p>
+              Founded in 2015, Adaired is a versatile digital marketing firm
+              that empowers businesses to thrive online through its time-tested
+              and effective digital marketing services. We are more than just
+              another industry survivor; we are creators, inventors, and
+              catalysts for your company's growth. We stand out by consistently
+              delivering innovative solutions, pushing limits, and redefining
+              the idea of success.
+            </p>
+            <div className="abt-card-group d-flex gap-20 mt25">
+              <div className="abt-card">
+                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+                <h4>Innovative Mindset</h4>
+                <p>
+                  Known for our innovative mindset, Adaired's qualified digital
+                  marketers use creativity to craft tailored strategies that
+                  meet your unique needs and goals.
+                </p>
+              </div>
+              <div className="abt-card">
+                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+                <h4>Data-Driven Strategies</h4>
+                <p>
+                  Adaired utilizes in-depth analysis of consumer behavior and
+                  market research to develop data-backed strategies for ongoing
+                  company success.
+                </p>
+              </div>
+            </div>
+            <p className="cursive-para">
+              "The internet is becoming the town square for the global village
+              of tomorrow." -<i>Bill Gates</i>
+            </p>
+            <div className="mt25">
+              <p>
+                At Adaired, we know very well how to turn visitors into leads,
+                leads into customers, and customers into business promoters. Our
+                comprehensive services aid businesses to grow online, increase
+                exposure, and ultimately become the leader in the industry.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="container abt-para">
+          <p>
+            We believe that a visually appealing website with decent traffic or
+            a handful of social media followers is not an indicator of a
+            successful digital marketing campaign. True success lies in making a
+            company a brand, creating a lasting impression on the audience, and
+            building loyalty among the audience for that brand.
+          </p>
+        </div>
+      </section>
+    </>
+  );
+});
+
+IntroSection.displayName = "IntroSection";
+
+const OurJourneyBlock = React.memo(({ orientation, from, till, img, text }) => {
+  const isRightOrientation = orientation === "right";
+  const orientationStyle = isRightOrientation ? "right-orientation" : "";
+
+  return (
+    <div
+      className={`journey__block ${orientationStyle} gap-30`}
+      key={`${from}-${till}`}
+    >
+      <div
+        className="journey__year"
+        style={{ textAlign: isRightOrientation ? "left" : "right" }}
+      >
+        <h4>{`${from} - ${till}`}</h4>
+        <p>{text}</p>
+      </div>
+      <div className="journey__block-img-box">
+        <div className="journey__block-img">
+          <img loading="lazy" src={img} alt="icon" />
+        </div>
+      </div>
+    </div>
+  );
+});
+
+OurJourneyBlock.displayName = "OurJourneyBlock";
+
+const OurJourney = React.memo(() => {
+  return (
+    <section
+      className="ourjourney_sec pad50-50"
+      style={{
+        background:
+          "url(assets/images/OBJECTS.png) no-repeat center center / cover",
+      }}
+    >
+      <div className="container">
+        <div className="our_jour_head">
+          <h4>Our Journey</h4>
+          <h2 className="main-heading">Our Journey</h2>
+          <p>
+            We are your 360° digital marketing agency helping you bring your
+            goals and visions to life with market-leading strategies and
+            exceptional customer service.
+          </p>
+        </div>
+
+        <div className="journey_head_card">
+          {jsonData.map((data, index) => (
+            <OurJourneyBlock
+              key={`${data.from}-${data.till}`}
+              from={data.from}
+              till={data.till}
+              img={data.image}
+              orientation={index % 2 === 0 ? "left" : "right"}
+              text={data.text}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+});
+
+OurJourney.displayName = "OurJourneyBlock";
+
+const OurWorkStation = React.memo(() => {
+  return (
+    <>
+      <section className="our_workstation pt50 pb100">
+        <div className="container">
+          <div className="d-flex">
+            <div className="work_left">
+              <img src="assets/images/work1.jpg" alt="img" />
+              <div className="work_text">
+                <h2>Our Workstataion</h2>
+              </div>
+            </div>
+            <div className="work_right">
+              <img src="assets/images/work2.jpg" alt="img" />
+              <div className="work_text">
+                <h2>40+ Team Members</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+});
+
+OurWorkStation.displayName = "OurWorkStation";
 
 const OurProcessSection = React.memo(() => {
   useEffect(() => {
@@ -62,10 +236,9 @@ const OurProcessSection = React.memo(() => {
             <h4>Our Process</h4>
             <h2 className="main-heading">Our Process</h2>
             <p>
-              We are your 360° digital marketing agency helping you bring your
-              goals and visions to life with market-
-              <br />
-              leading strategies and exceptional customer service.
+              No need to settle for okay when we can serve you the best! Our
+              strategies are meticulously crafted to spark creativity, boost
+              engagement, and achieve the impossible.
             </p>
           </div>
 
@@ -73,50 +246,54 @@ const OurProcessSection = React.memo(() => {
             <div className="process__cards-box">
               <div className="process_card d-flex wrap-flex" data-id="1">
                 <div className="process-text">
-                  <h3>Lorem Ipsum</h3>
+                  <h3>Discovery and Planning</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Research the business's landscape, target audience, and
+                    specific goals to create a roadmap, ensuring a solid
+                    foundation for success.
                   </p>
                 </div>
               </div>
 
               <div className="process_card d-flex wrap-flex" data-id="2">
                 <div className="process-text">
-                  <h3>Lorem Ipsum</h3>
+                  <h3>Strategic Execution</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Seamlessly execute tailored strategies to elevate your brand
+                    and maximize your digital impact.
                   </p>
                 </div>
               </div>
 
               <div className="process_card d-flex wrap-flex" data-id="3">
                 <div className="process-text">
-                  <h3>Lorem Ipsum</h3>
+                  <h3>Comprehensive Analysis</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    As the campaigns unfold, conduct in-depth analyses to
+                    measure performance, user engagement, and campaign
+                    effectiveness.
                   </p>
                 </div>
               </div>
 
               <div className="process_card d-flex wrap-flex" data-id="4">
                 <div className="process-text">
-                  <h3>Lorem Ipsum</h3>
+                  <h3>Ongoing Optimization</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Continuously optimize campaigns based on emerging trends,
+                    user behavior, and platform algorithms to remain adaptive
+                    and impactful.
                   </p>
                 </div>
               </div>
 
               <div className="process_card d-flex wrap-flex" data-id="5">
                 <div className="process-text">
-                  <h3>Lorem Ipsum</h3>
+                  <h3>Evaluation and Reporting</h3>
                   <p>
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry.
+                    Regular evaluation and reporting provide valuable insights
+                    into strategy effectiveness, progress tracking, and
+                    decision-making.
                   </p>
                 </div>
               </div>
@@ -417,181 +594,6 @@ const OurProcessSection = React.memo(() => {
 });
 
 OurProcessSection.displayName = "OurProcessSection";
-
-const IntroSection = React.memo(() => {
-  return (
-    <>
-      <section className="about-outer pad50-50">
-        <div className="container d-flex">
-          <div className="w-50">
-            <div className="about-slider">
-              <div className="abt-img_big">
-                <img src="assets/images/big-image_ceo.jpg" alt="img" />
-                <img
-                  className="short-img"
-                  src="assets/images/ceo_sir-img.jpg"
-                ></img>
-              </div>
-            </div>
-          </div>
-          <div className="abt-text w-50">
-            <h5 className="sub-heading sub-hd">About Us</h5>
-            <h2 className="bigheading">A Company Obsessed With ROI</h2>
-            <p>
-              Adaired is a multi-service digital marketing firm that has a
-              qualified team of professionals to help you get noticed online.
-              Our marketing solutions cater to many needs of our clients helping
-              them grow online, increase exposure, and ultimately become the
-              leader in the industry. What started as a small business, Adaired
-              has now grown into a successful leading marketing agency helping
-              businesses thrive online, worldwide.
-            </p>
-            <div className="abt-card-group d-flex gap-20 mt25">
-              <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
-                <h4>Lorem Ipsum</h4>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typeset
-                  indstry. Lorem Ipsum has been the industry's standard text 123
-                  dummy text .
-                </p>
-              </div>
-              <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
-                <h4>Lorem Ipsum</h4>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and typeset
-                  indstry. Lorem Ipsum has been the industry's standard text 123
-                  dummy text .
-                </p>
-              </div>
-            </div>
-            <p className="cursive-para">
-              "The internet is becoming the town square for the global village
-              of tomorrow." -<i>Bill Gates</i>
-            </p>
-            <div className="mt25">
-              <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="container abt-para">
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
-          </p>
-        </div>
-      </section>
-    </>
-  );
-});
-
-IntroSection.displayName = "IntroSection";
-
-const OurWorkStation = React.memo(() => {
-  return (
-    <>
-      <section className="our_workstation pt50 pb100">
-        <div className="container">
-          <div className="d-flex">
-            <div className="work_left">
-              <img src="assets/images/work1.jpg" alt="img" />
-              <div className="work_text">
-                <h2>Our Workstataion</h2>
-              </div>
-            </div>
-            <div className="work_right">
-              <img src="assets/images/work2.jpg" alt="img" />
-              <div className="work_text">
-                <h2>40+ Team Members</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-});
-
-OurWorkStation.displayName = "OurWorkStation";
-
-const OurJourneyBlock = React.memo(({ orientation, from, till, img, text }) => {
-  const isRightOrientation = orientation === "right";
-  const orientationStyle = isRightOrientation ? "right-orientation" : "";
-
-  return (
-    <div
-      className={`journey__block ${orientationStyle} gap-30`}
-      key={`${from}-${till}`}
-    >
-      <div
-        className="journey__year"
-        style={{ textAlign: isRightOrientation ? "left" : "right" }}
-      >
-        <h4>{`${from} - ${till}`}</h4>
-        <p>{text}</p>
-      </div>
-      <div className="journey__block-img-box">
-        <div className="journey__block-img">
-          <img loading="lazy" src={img} alt="icon" />
-        </div>
-      </div>
-    </div>
-  );
-});
-
-OurJourneyBlock.displayName = "OurJourneyBlock";
-
-const OurJourney = React.memo(() => {
-  return (
-    <section
-      className="ourjourney_sec pad50-50"
-      style={{
-        background:
-          "url(assets/images/OBJECTS.png) no-repeat center center / cover",
-      }}
-    >
-      <div className="container">
-        <div className="our_jour_head">
-          <h4>Our Journey</h4>
-          <h2 className="main-heading">Our Journey</h2>
-          <p>
-            We are your 360° digital marketing agency helping you bring your
-            goals and visions to life with market-leading strategies and
-            exceptional customer service.
-          </p>
-        </div>
-
-        <div className="journey_head_card">
-          {jsonData.map((data, index) => (
-            <OurJourneyBlock
-              key={`${data.from}-${data.till}`}
-              from={data.from}
-              till={data.till}
-              img={data.image}
-              orientation={index % 2 === 0 ? "left" : "right"}
-              text={data.text}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-});
-
-OurJourney.displayName = "OurJourneyBlock";
 
 const AboutUs = React.memo(() => {
   return (

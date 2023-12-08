@@ -1,0 +1,27 @@
+[
+  {
+    "id": 1,
+    "question": "Can I use these random paragraphs for my project?",
+    "answer": "Yes! All of the random paragraphs in our generator are free to use for your projects."
+  },
+  {
+    "id": 2,
+    "question": "Does a computer generate these paragraphs?",
+    "answer": "No! All of the paragraphs in the generator are written by humans, not computers. When first building this generator we thought about using computers to generate the paragraphs, but they weren't very good and many times didn't make any sense at all. We therefore took the time to create paragraphs specifically for this generator to make it the best that we could."
+  },
+  {
+    "id": 3,
+    "question": "Can I contribute random paragraphs?",
+    "answer": "Yes. We're always interested in improving this generator and one of the best ways to do that is to add new and interesting paragraphs to the generator. If you'd like to contribute some random paragraphs, please contact us."
+  },
+  {
+    "id": 4,
+    "question": "How many words are there in a paragraph?",
+    "answer": "There are usually about 200 words in a paragraph, but this can vary widely. Most paragraphs focus on a single idea that's expressed with an introductory sentence, then followed by two or more supporting sentences about the idea. A short paragraph may not reach even 50 words while long paragraphs can be over 400 words long, but generally speaking they tend to be approximately 200 words in length."
+  },
+  {
+    "id": 5,
+    "question": "Beginning Writing Routine",
+    "answer": "t's not only writers who can benefit from this free online tool. If you're a programmer who's working on a project where blocks of text are needed, this tool can be a great way to get that. It's a good way to test your programming and that the tool being created is working well."
+  }
+]
