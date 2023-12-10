@@ -11,6 +11,7 @@ const ContactUs = lazy(() => import("../pages/contactPage/ContactUs.jsx"));
 const MainBlog = lazy(() => import("../pages/mainBlogPage/MainBlog.jsx"));
 const Gallery = lazy(() => import("../pages/galleryPage/Gallery.jsx"));
 const CaseStudy = lazy(() => import("../pages/caseStudyPage/CaseStudy.jsx"));
+const SingleBlog = lazy(() => import("../pages/singleBlogPage/SingleBlog.jsx"));
 const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
@@ -73,7 +74,7 @@ const frontendRoutes = [
   { path: "/gallery", element: <Gallery /> },
   { path: "/main-service", element: <MainService /> },
   { path: "/case-studies", element: <CaseStudy /> },
-  { path: "/carrer", element: <Loader /> },
+  { path: "/carrer", element: <SingleBlog /> },
 ];
 
 export default FrontLayout;

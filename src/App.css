@@ -15,6 +15,7 @@
 @import './views/frontend/pages/mainServicePage/MainService.scss';
 @import './views/frontend/pages/mainBlogPage/MainBlog.scss';
 @import './views/frontend/pages/caseStudyPage/CaseStudy.scss';
+@import './views/frontend/pages/singleBlogPage/SingleBlog.scss';
 
 /********************************************************************* SERVICE SLIDER **************************************************************************/
 
