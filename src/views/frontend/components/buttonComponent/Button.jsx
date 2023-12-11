@@ -6,6 +6,8 @@ const Button = (props) => {
     color: props.textColor,
     borderColor: props.borderColor || " #A7A9AC",
     backgroundColor: props.backgroundColor || "#fff",
+    width: props.width || "auto",
+    textAlign: props.textAlign || "",
   };
 
   const svgStyles = {

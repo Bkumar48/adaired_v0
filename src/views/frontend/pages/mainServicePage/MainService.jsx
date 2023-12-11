@@ -184,6 +184,7 @@ const ServiceBuild = React.memo((props) => {
                         answer={item.answer}
                         key={item.id}
                         pl={60}
+                        titleBefore={true}
                       />
                     </>
                   );

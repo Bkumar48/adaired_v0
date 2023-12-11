@@ -19,22 +19,24 @@ $fontSize: 22px;
     justify-content: space-between;
     padding: 15px 15px 0 15px;
 
-    p {
+    p { 
       color: #000;
       font-size: $fontSize;
       font-weight: 600;
       position: relative;
       padding-left: 10px;
 
-      &::before {
-        content: "";
-        width: 10px;
-        height: 10px;
-        background: $primaryColor;
-        position: absolute;
-        left: -20px;
-        top: 50%;
-        transform: translateY(-50%);
+      &.with-before {
+        &::before {
+          content: "";
+          width: 10px;
+          height: 10px;
+          background: $primaryColor;
+          position: absolute;
+          left: -20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
       }
     }
 

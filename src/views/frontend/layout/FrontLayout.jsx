@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Headroom from "react-headroom";
 import Loader from "../components/loaders/Loader.jsx";
+import Career from "../pages/careerPage/Career.jsx";
 
 // Lazy load view components
 const Header = lazy(() => import("../global/header/Header.jsx"));
@@ -74,7 +75,7 @@ const frontendRoutes = [
   { path: "/gallery", element: <Gallery /> },
   { path: "/main-service", element: <MainService /> },
   { path: "/case-studies", element: <CaseStudy /> },
-  { path: "/carrer", element: <SingleBlog /> },
+  { path: "/carrer", element: <Career /> },
 ];
 
 export default FrontLayout;
