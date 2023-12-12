@@ -1,0 +1,291 @@
+.intro__section {
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: calc(100% + 100px);
+        height: 40%;
+        background-color: #F5FDFF;
+        left: -50px;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+        border-top-left-radius: 1500px 500px;
+        border-top-right-radius: 1500px 500px;
+        z-index: -1;
+    }
+
+    .text-center {
+        h4 {
+            color: #515151;
+            font-size: 20px;
+            font-weight: 400;
+            line-height: 20px;
+            margin-bottom: 15px !important;
+            font-family: 'Nunito Sans', sans-serif;
+            position: relative;
+            padding: 0;
+            display: inline-block;
+
+            &::after,
+            &::before {
+                position: absolute;
+                content: "";
+                width: 50px;
+                height: 1px;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: #515151;
+            }
+
+            &::before {
+                left: -60px;
+            }
+
+            &::after {
+                right: -60px;
+            }
+        }
+    }
+
+    .case_single_img {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            max-width: max-content;
+        }
+    }
+
+}
+
+// About section
+
+
+.challenges__section {
+  
+    
+
+
+}
+
+
+
+
+
+
+// Technology used section
+.technoloy__used {
+    .tech_grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        align-items: center;
+
+        .tech_grid_img {
+            border: 1px solid #A7A9AC;
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 8px;
+            min-height: 120px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                max-width: max-content;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+// Objectives section
+.case_goals {
+    position: relative;
+    padding-top: 100px;
+
+    &::after {
+        position: absolute;
+        content: "";
+        width: 100%;
+        height: 70%;
+        background-color: #F5FDFF;
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: auto;
+        border-bottom-left-radius: 1000px 300px;
+        border-bottom-right-radius: 1000px 300px;
+        z-index: -1;
+    }
+
+    .solution_head {
+        color: #010101;
+        font-family: 'Nunito Sans', sans-serif;
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 30px;
+        margin: 0;
+        position: relative;
+        padding: 0 0 0 15px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(0, -50%);
+            border-width: 6px;
+            border-style: solid;
+            border-color: transparent transparent transparent #BC1D8D;
+        }
+    }
+
+    .seo_stratergy {
+        gap: 50px;
+        padding: 50px 0;
+
+        .seo_objectives {
+            background: #fff;
+            border-radius: 10px;
+            padding: 40px 60px;
+
+            .seo_objective_head {
+                font-family: 'Nunito Sans', sans-serif;
+                font-size: 32px;
+                font-weight: 700;
+                line-height: 44px;
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                    content: "";
+                    width: 81px;
+                    height: 3px;
+                    background: #038EB0;
+                    bottom: -5px;
+                }
+            }
+        }
+    }
+
+    .seo_work_percentage {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0 40px;
+        justify-content: space-around;
+        max-width: 1300px;
+        margin: -70px auto 0;
+
+        .seo_work {
+            background: #ffffff;
+            border: 1px solid #038EB0;
+            padding: 40px 30px;
+            border-radius: 60px;
+            position: relative;
+            box-sizing: border-box;
+
+            .seo_work_head {
+                font-family: 'Nunito Sans', sans-serif;
+                font-size: 44px;
+                font-weight: 700;
+                line-height: 60px;
+                letter-spacing: 1px;
+                text-align: center;
+                color: #038EB0;
+                margin: 0 !important;
+            }
+
+            .seo_arr_up {
+                svg {
+                    background: #038EB0;
+                    width: 40px;
+                    height: 40px;
+                    top: -30px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    border-radius: 50%;
+                    text-align: center;
+                    margin: 0px auto;
+                    position: absolute;
+
+                    padding: 10px;
+                }
+            }
+
+            span {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+}
+
+// Result section
+.case_results {
+
+    h4 {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: "";
+            width: 147px;
+            height: 3px;
+            flex-shrink: 0;
+            background-color: #bc1d8d;
+            bottom: 0px;
+            left: 0;
+        }
+    }
+
+    .case_results_grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0 20px;
+
+        .result_box {
+            border: 1px solid #A7A9AC;
+            padding: 15px;
+            box-sizing: border-box;
+            border-radius: 8px;
+
+            .icon_container {
+                svg {
+                    height: 36px;
+                    width: 36px;
+                    border: 1px solid #A7A9AC;
+                    padding: 8px;
+                    border-radius: 8px;
+                }
+            }
+
+            .result_box_flex_wrap {
+                display: flex;
+                flex-wrap: wrap;
+
+                span {
+                    position: relative;
+                    font-weight: 700;
+
+                    &::after {
+                        position: absolute;
+                        content: "";
+                        bottom: 0px;
+                        left: 0;
+                        width: 44px;
+                        height: 2px;
+                        flex-shrink: 0;
+                        background: #BC1D8D;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -17,6 +17,7 @@
 @import './views/frontend/pages/caseStudyPage/CaseStudy.scss';
 @import './views/frontend/pages/singleBlogPage/SingleBlog.scss';
 @import './views/frontend/pages/careerPage/Career.scss';
+@import './views/frontend/pages/innerCaseStudyPages/InnerCaseStudy.scss';
 
 /********************************************************************* SERVICE SLIDER **************************************************************************/
 

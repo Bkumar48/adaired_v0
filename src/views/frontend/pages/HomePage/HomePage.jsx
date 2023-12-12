@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
 import Blogs from "../../components/blogSection/Blogs";
-import { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -9,10 +9,7 @@ import "swiper/css";
 import "swiper/css/bundle";
 import { A11y, Autoplay, Parallax } from "swiper/modules";
 
-// Import Framer Motion
-import { motion } from "framer-motion";
-
-const HomePage = () => {
+const Banner = React.memo(() => {
   return (
     <>
       <section className="banner">
@@ -22,9 +19,6 @@ const HomePage = () => {
           slidesPerView={1}
           loop={true}
           className="banner_slider-wrap-horizontal"
-          // draggable={true}
-          // direction="horizontal"
-          // autoplay={"false"}
         >
           <SwiperSlide>
             {" "}
@@ -238,7 +232,15 @@ const HomePage = () => {
           </Link>
         </div>
       </section>
+    </>
+  );
+});
 
+Banner.displayName = "Banner";
+
+const ManageGrid = React.memo(() => {
+  return (
+    <>
       <section className="manage-grid pad100">
         <Swiper
           // install Swiper modules
@@ -285,6 +287,18 @@ const HomePage = () => {
           </SwiperSlide>
         </Swiper>
       </section>
+    </>
+  );
+});
+
+ManageGrid.displayName = "ManageGrid";
+
+const HomePage = () => {
+  return (
+    <>
+      <Banner />
+
+      <ManageGrid />
 
       <section className="about-outer pb100">
         <div className="container d-flex">
@@ -755,7 +769,10 @@ const HomePage = () => {
         <div className="container d-flex align-start">
           <div className="cont-text w-50">
             <h2 className="bigheading">Ready To Win More Customers?</h2>
-            <p>Connect for more website traffic, qualified leads, and an established online brand image.</p>
+            <p>
+              Connect for more website traffic, qualified leads, and an
+              established online brand image.
+            </p>
             <div className="social-cont">
               <a href="#" className="d-flex just-start gap-20">
                 <img src="assets/images/conticon (2).png" />
