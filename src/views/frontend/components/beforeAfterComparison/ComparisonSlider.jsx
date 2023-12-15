@@ -85,10 +85,9 @@ const ComparisonSlider = ({ topImage, BackgroundImage }) => {
         <h4>Our Process</h4>
         <h2 className="main-heading">Our Process</h2>
         <p>
-          We are your 360° digital marketing agency helping you bring your goals
-          and visions to life with market-
-          <br />
-          leading strategies and exceptional customer service.
+          Before project kickoff, we prepare for the success of your business by
+          doing an in-depth review and identifying optimization possibilities
+          for a solid project foundation.
         </p>
       </div>
       <div className="comparison-slider">

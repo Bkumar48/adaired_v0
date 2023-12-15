@@ -1,0 +1,32 @@
+{
+  "navbar": [
+    {
+      "name": "home",
+      "link": "/"
+    },
+    {
+      "name": "about us",
+      "link": "/about"
+    },
+    {
+      "name": "blog",
+      "link": "/blog"
+    },
+    {
+      "name": "services",
+      "link": "/services"
+    },
+    {
+      "name": "case studies",
+      "link": "/case-studies"
+    },
+    {
+      "name": "career",
+      "link": "/career"
+    },
+    {
+      "name": "contact",
+      "link": "/contact"
+    }
+  ]
+}

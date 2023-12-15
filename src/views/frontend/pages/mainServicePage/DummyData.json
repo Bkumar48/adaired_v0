@@ -1,27 +1,32 @@
 [
   {
     "id": 1,
-    "question": "Can I use these random paragraphs for my project?",
-    "answer": "Yes! All of the random paragraphs in our generator are free to use for your projects."
+    "question": "Technical SEO Analysis",
+    "answer": "Evaluate and optimize the performance as well as the structure of your website to increase its visibility across search engines and enhance the user experience."
   },
   {
     "id": 2,
-    "question": "Does a computer generate these paragraphs?",
-    "answer": "No! All of the paragraphs in the generator are written by humans, not computers. When first building this generator we thought about using computers to generate the paragraphs, but they weren't very good and many times didn't make any sense at all. We therefore took the time to create paragraphs specifically for this generator to make it the best that we could."
+    "question": "Online Reputation Management (ORM) ",
+    "answer": "Proactive monitoring and engagement with online reviews of business profiles to safeguard and foster a favorable image of your brand."
   },
   {
     "id": 3,
-    "question": "Can I contribute random paragraphs?",
-    "answer": "Yes. We're always interested in improving this generator and one of the best ways to do that is to add new and interesting paragraphs to the generator. If you'd like to contribute some random paragraphs, please contact us."
+    "question": "Competitor Backlink Outreach",
+    "answer": "Boost the credibility of your website through our strategic acquisition of valuable backlinks from the domains of your competitors, employing knowledge gained from competitor analysis."
   },
   {
     "id": 4,
-    "question": "How many words are there in a paragraph?",
-    "answer": "There are usually about 200 words in a paragraph, but this can vary widely. Most paragraphs focus on a single idea that's expressed with an introductory sentence, then followed by two or more supporting sentences about the idea. A short paragraph may not reach even 50 words while long paragraphs can be over 400 words long, but generally speaking they tend to be approximately 200 words in length."
+    "question": "Guest Post Outreach",
+    "answer": "Enhance your digital footprint by actively guest posting on reputable platforms to solidify your brand's reputation as an authority and create backlinks of superior quality."
   },
   {
     "id": 5,
-    "question": "Beginning Writing Routine",
-    "answer": "t's not only writers who can benefit from this free online tool. If you're a programmer who's working on a project where blocks of text are needed, this tool can be a great way to get that. It's a good way to test your programming and that the tool being created is working well."
+    "question": "Off-Page and On-Page Optimization",
+    "answer": "Improve the search engine performance of your website by implementing comprehensive on-page SEO services, including content and meta tag refinement, in addition to employing successful off-page tactics such as link-building to bolster authority and relevance."
+  },
+  {
+    "id": 6,
+    "question": "Local SEO (Google My Business)",
+    "answer": "For prominent local search results, optimize your Google My Business profile to maximize local visibility by ensuring accurate business information, managing customer reviews, and implementing targeted local SEO strategies."
   }
 ]

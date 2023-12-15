@@ -5,7 +5,6 @@ import { lazy } from "react";
 import Map from "../../components/mapSection/map";
 // const Map = lazy(() => import("../../components/mapSection/map"));
 
-
 const ContactForm = () => {
   return (
     <div className="contact-form">
@@ -54,13 +53,14 @@ const ContactDetails = () => {
   const secondEmail = import.meta.env.VITE_ADAIRED_HR_EMAIL;
   return (
     <div className="contact-para">
-      <h4 className="sub-heading">Contact Us</h4>
-      <h2 className="main-heading">Hate Filling Forms</h2>
+      <h4 className="sub-heading">Ready to Elevate?</h4>
+      <h2 className="main-heading">Get In Touch</h2>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
-        exercitationem eos omnis sapiente, at officiis cumque reprehenderit
-        debitis laborum temporibus perferendis velit voluptate rem, porro
-        explicabo voluptatem repudiandae, dignissimos architecto!
+        Welcome to Adaired, your one-stop destination for comprehensive digital
+        marketing solutions. Every ambitious entrepreneur needs a digital
+        marketing partner like us. To get started, please fill out the form on
+        this page. We'll promptly connect with you to discuss your project and
+        provide a personalized plan tailored to your business objectives.
       </p>
       <div className="contact__us-cta">
         <div className="d-flex just-start gap-20 contact__us-cta-inner">
@@ -114,7 +114,7 @@ const ContactDetails = () => {
   );
 };
 
-const ContactUs = () => { 
+const ContactUs = () => {
   return (
     <>
       <Banner title="Contact Us" />

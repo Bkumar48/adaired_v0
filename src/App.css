@@ -2,7 +2,7 @@
 @import './views/frontend/stylesheets/Universals.css';
 
 /* Global Components */
-@import './views/frontend/global/header/Header.css';
+@import './views/frontend/global/header/Header.scss';
 @import './views/frontend/global/footer/Footer.css';
 
 /* Components CSS */

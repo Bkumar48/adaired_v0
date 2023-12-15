@@ -54,7 +54,7 @@ const FrontLayout = () => {
           <Header />
         </Headroom>
         {/* Wrap Routes with Suspense */}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Loader/>}>
           <Routes>
             {frontendRoutes.map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />
@@ -74,7 +74,7 @@ const frontendRoutes = [
   { path: "/blog", element: <MainBlog /> },
   { path: "/about", element: <AboutUs /> },
   { path: "/gallery", element: <Gallery /> },
-  { path: "/main-service", element: <MainService /> },
+  { path: "/services", element: <MainService /> },
   { path: "/case-studies", element: <CaseStudy /> },
   { path: "/carrer", element: <Loader /> },
 ];

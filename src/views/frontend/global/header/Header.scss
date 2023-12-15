@@ -1,0 +1,23 @@
+.main-header {
+    padding: 15px;
+
+    .navbar {
+        .d-flex {
+            gap: 50px;
+        }
+
+        ul {
+            li {
+                margin: 0;
+                padding: 0;
+                text-transform: uppercase;
+
+                a{
+                    font-size: 18px;
+                    font-weight: 600;
+                    
+                }
+            }
+        }
+    }
+}

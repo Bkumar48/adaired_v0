@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
 import Blogs from "../../components/blogSection/Blogs";
 import React, { useEffect, useRef } from "react";
+import BannerSlider from "../../components/bannerSlider/BannerSlider";
 
 // import Swiper core and required modules
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -235,7 +236,6 @@ const Banner = React.memo(() => {
     </>
   );
 });
-
 Banner.displayName = "Banner";
 
 const ManageGrid = React.memo(() => {
@@ -290,16 +290,11 @@ const ManageGrid = React.memo(() => {
     </>
   );
 });
-
 ManageGrid.displayName = "ManageGrid";
 
-const HomePage = () => {
+const AboutSection = React.memo(() => {
   return (
     <>
-      <Banner />
-
-      <ManageGrid />
-
       <section className="about-outer pb100">
         <div className="container d-flex">
           <div className="w-50">
@@ -355,7 +350,14 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </>
+  );
+});
+AboutSection.displayName = "AboutSection";
 
+const TrustedBy = React.memo(() => {
+  return (
+    <>
       <section className="trusted-outer pad100">
         <div className="container text-center">
           <h2 className="bigheading">Trusted By:</h2>
@@ -425,7 +427,14 @@ const HomePage = () => {
           </Swiper>
         </div>
       </section>
+    </>
+  );
+});
+TrustedBy.displayName = "TrustedBy";
 
+const Services = React.memo(() => {
+  return (
+    <>
       <section className="service-outer pad100">
         <div className="container">
           <div className="text-center">
@@ -608,7 +617,14 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </>
+  );
+});
+Services.displayName = "Services";
 
+const CaseStudy = React.memo(() => {
+  return (
+    <>
       <section className="case-study pad100">
         <div className="study_slider">
           <Swiper
@@ -679,7 +695,14 @@ const HomePage = () => {
           </Swiper>
         </div>
       </section>
+    </>
+  );
+});
+CaseStudy.displayName = "CaseStudy";
 
+const Growth = React.memo(() => {
+  return (
+    <>
       <section className="grow-grid pad100">
         <div className="container d-flex align-start">
           <div className="growth-img w-50">
@@ -698,8 +721,8 @@ const HomePage = () => {
               Adaired has helped numerous companies develop their brands with
               its digital marketing services worldwide. We understand the
               importance of leads, sales, and return on investment when it comes
-              to digital marketing. Our clients come from all industries of
-              every size.
+              import CaseStudy from './../caseStudyPage/CaseStudy'; to digital
+              marketing. Our clients come from all industries of every size.
             </p>
             <ul className="half-list d-flex wrap-flex">
               <li>Comprehensive Services</li>
@@ -723,7 +746,14 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </>
+  );
+});
+Growth.displayName = "Growth";
 
+const Rewards = React.memo(() => {
+  return (
+    <>
       <section className="rewards_outer pb100">
         <Swiper
           modules={[A11y, Autoplay, Parallax]}
@@ -760,11 +790,14 @@ const HomePage = () => {
           </SwiperSlide>
         </Swiper>
       </section>
+    </>
+  );
+});
+Rewards.displayName = "Rewards";
 
-      <Testimonials />
-
-      <Blogs limit={3} viewMoreBtn={true} />
-
+const ContactUs = React.memo(() => {
+  return (
+    <>
       <section className="contact-grid pb100">
         <div className="container d-flex align-start">
           <div className="cont-text w-50">
@@ -834,6 +867,35 @@ const HomePage = () => {
           </div>
         </div>
       </section>
+    </>
+  );
+});
+ContactUs.displayName = "ContactUs";
+
+const HomePage = () => {
+  return (
+    <>
+      <BannerSlider />
+
+      <ManageGrid />
+
+      <AboutSection />
+
+      <TrustedBy />
+
+      <Services />
+
+      <CaseStudy />
+
+      <Growth />
+
+      <Rewards />
+
+      <Testimonials />
+
+      <Blogs limit={3} viewMoreBtn={true} />
+
+      <ContactUs />
     </>
   );
 };
