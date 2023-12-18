@@ -12,7 +12,7 @@ const Header = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{
-              duration: 0.3,
+              duration: 1,
               ease: "easeInOut",
             }}
           >
@@ -58,9 +58,19 @@ const Header = () => {
               <ul className="menu d-flex">
                 {JsonData.navbar.map((data, index) => {
                   return (
-                    <li key={`navbar-${index}`}>
+                    <motion.li
+                      key={`navbar-${index}`}
+                      className="nav-item"
+                      initial={{ opacity: 0, y: -100 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{
+                        duration: 0.3,
+                        ease: "easeInOut",
+                        delay: 0.3 + index * 0.2,
+                      }}
+                    >
                       <Link to={data.link}>{data.name}</Link>
-                    </li>
+                    </motion.li>
                   );
                 })}
               </ul>

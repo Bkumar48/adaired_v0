@@ -1,27 +1,26 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Headroom from "react-headroom";
-import Loader from "../components/loaders/Loader.jsx";
 import Career from "../pages/careerPage/Career.jsx";
-import InnerCaseStudy from "../pages/innerCaseStudyPages/InnerCaseStudy.jsx";
+
+// components not to be lazy loaded
+import Header from "../global/header/Header.jsx";
+import HomePage from "../pages/HomePage/HomePage.jsx";
 
 // Lazy load view components
-const Header = lazy(() => import("../global/header/Header.jsx"));
-const HomePage = lazy(() => import("../pages/HomePage/HomePage.jsx"));
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
 const ContactUs = lazy(() => import("../pages/contactPage/ContactUs.jsx"));
 const MainBlog = lazy(() => import("../pages/mainBlogPage/MainBlog.jsx"));
 const Gallery = lazy(() => import("../pages/galleryPage/Gallery.jsx"));
 const CaseStudy = lazy(() => import("../pages/caseStudyPage/CaseStudy.jsx"));
-const SingleBlog = lazy(() => import("../pages/singleBlogPage/SingleBlog.jsx"));
 const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
 const Footer = lazy(() => import("../global/footer/Footer.jsx"));
 
 const FrontLayout = () => {
+  
   const [scrollY, setScrollY] = useState(0);
-
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
@@ -53,8 +52,7 @@ const FrontLayout = () => {
         >
           <Header />
         </Headroom>
-        {/* Wrap Routes with Suspense */}
-        <Suspense fallback={<Loader/>}>
+        <Suspense fallback={<div>Loading</div>}>
           <Routes>
             {frontendRoutes.map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />

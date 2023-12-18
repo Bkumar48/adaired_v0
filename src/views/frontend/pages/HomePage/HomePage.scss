@@ -1,0 +1,81 @@
+@mixin double-border {
+
+  &::after,
+  &::before {
+    position: absolute;
+    content: "";
+    background-color: #A7A9AC;
+    height: 1px;
+    width: 80px;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    pointer-events: none;
+  }
+
+  &::after {
+    left: 140%;
+    right: unset;
+  }
+
+  &::before {
+    left: unset;
+    right: 140%;
+  }
+}
+
+.mike-img {
+  position: relative;
+  max-width: max-content;
+  margin: 0 auto;
+
+  @include double-border;
+}
+
+.manage-grid {
+  .bigheading {
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 50px;
+  }
+}
+
+.manage-grid {
+  .big-para {
+    font-size: 40px;
+    line-height: normal;
+    margin-top: 20px;
+  }
+}
+
+// Diagonal Slider
+.about-slider {
+  position: relative;
+  transition: none;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 180px;
+    height: 180px;
+    bottom: -20px;
+    right: -20px;
+    background: rgba(146, 40, 141, 0.94);
+    z-index: -1;
+  }
+
+  img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    transition: none;
+  }
+
+  .small-image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 35%;
+    transition: none;
+  }
+}

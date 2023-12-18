@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const BackgroundImage = ({ transitionData }) => {
   const imageVariants = {
     enter: { opacity: 1, y: 0 },
-    exit: { opacity: 1, y: "100%" },
+    exit: { opacity: 1, y: "100%" }, 
   };
-
+ 
   return (
     <>
       <AnimatePresence exitBeforeEnter={false} initial={false}>
