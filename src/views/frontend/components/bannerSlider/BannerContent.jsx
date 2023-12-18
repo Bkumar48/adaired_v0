@@ -5,14 +5,14 @@ const AnimatedText = ({ data, className }) => {
   const item = {
     hidden: {
       y: "100%",
-      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.85 },
+      transition: { ease: [0.455, 0.03, 0.515, 0.955], duration: 0.6 },
     },
     visible: {
       y: 0,
       transition: {
         ease: [0.455, 0.03, 0.515, 0.955],
-        duration: 2,
-        type: "spring",
+        duration: 1.2,
+        // type: "spring",
       },
     },
   };
@@ -51,8 +51,15 @@ const BannerContent = ({ transitionData, currentSlideData }) => {
       <SlideInfoText
         data={transitionData ? transitionData : currentSlideData.data}
       />
-      <motion.div>
-        <Button title="Get Started" />
+      <motion.div layout className="banner-slider__btn">
+        <Button
+          title="Request A Callback"
+          type="button"
+          svgBackgroundColor="#F89520"
+          icon="solar:arrow-right-broken"
+          borderColor="transparent"
+          className="btn__case-study"
+        />
       </motion.div>
     </>
   );

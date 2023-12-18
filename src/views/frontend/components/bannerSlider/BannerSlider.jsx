@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import BackgroundImage from "./BackgroundImage";
 import BannerContent from "./BannerContent";
+import { AnimatePresence } from "framer-motion";
 
 const sliderData = [
   {
@@ -71,16 +72,18 @@ const BannerSlider = () => {
   }, [currentSlideData]);
 
   return (
-    <div className="banner__wrapper">
-      <BackgroundImage transitionData={transitionData} />
-      <div>
-        <div className="banner-slider__content__overlay">
-          <div className="banner-slider__content">
-            <BannerContent transitionData={transitionData} />
+    <AnimatePresence>
+      <div className="banner__wrapper">
+        <BackgroundImage transitionData={transitionData} />
+        <div>
+          <div className="banner-slider__content__overlay container">
+            <div className="banner-slider__content ">
+              <BannerContent transitionData={transitionData} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </AnimatePresence>
   );
 };
 

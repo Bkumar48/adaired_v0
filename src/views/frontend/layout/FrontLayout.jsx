@@ -76,7 +76,7 @@ const frontendRoutes = [
   { path: "/gallery", element: <Gallery /> },
   { path: "/services", element: <MainService /> },
   { path: "/case-studies", element: <CaseStudy /> },
-  { path: "/carrer", element: <Loader /> },
+  { path: "/career", element: <Career /> },
 ];
 
 export default FrontLayout;
