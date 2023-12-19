@@ -39,64 +39,71 @@ const ManageGrid = React.memo(() => {
 ManageGrid.displayName = "ManageGrid";
 
 const AboutSection = React.memo(() => {
-  const images = [
+  const imageSrc = [
     "assets/images/big-image_ceo.jpg",
     "assets/images/ceo_sir-img.jpg",
-    // Add more image URLs as needed
   ];
+  const [currentImage, setCurrentImage] = useState(0);
+  const [nextImage, setNextImage] = useState(1);
+  const [animate, setAnimate] = useState(false);
 
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const handleNextImage = () => {
+    setAnimate(true);
+    setCurrentImage(nextImage);
+    setNextImage((nextImage + 1) % imageSrc.length);
+  };
 
   const variants = {
-    initial: { opacity: 0, x: "100%" },
-    animate: { opacity: 1, x: "0%" },
-    exit: { opacity: 0, x: "-100%" },
+    backgroundInitial: {
+      x: "100%",
+      y: "100%",
+    },
+    backgroundAnimate: {
+      x: "0%",
+      y: "0%",
+    },
+    backgroundExit: {
+      x: "-100%",
+      y: "100%",
+    },
   };
 
-  const handleImageChange = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
   return (
     <>
-      <section className="about-outer pb100">
-        <div className="container d-flex">
-          <div className="w-50">
-            {/* <div className="about-slider">
-              <img src={"assets/images/big-image_ceo.jpg"} alt="Photo" />
-              <img
-                src={"assets/images/ceo_sir-img.jpg"}
-                alt="Photo"
-                className="small-image"
-              />
-            </div> */}
-            <div className="about-slider">
-              <motion.div
-                className="image-container"
-                initial="initial"
-                animate="animate"
-                exit="exit"
-                variants={variants}
-                onAnimationComplete={handleImageChange}
-              >
-                <img
-                  src={images[currentIndex]}
-                  alt={`Photo ${currentIndex}`}
-                  className="main-image"
-                />
+      <motion.section className="about-outer pb100">
+        <motion.div className="container d-flex">
+          <AnimatePresence>
+            <motion.div className="w-50">
+              <motion.div className="about-slider">
+                {/* <DiagonalSlider /> */}
+                <motion.div
+                  variants={variants}
+                  initial={animate ? "backgroundInitial" : "backgroundAnimate"}
+                  animate={animate ? "backgroundAnimate" : "backgroundInitial"}
+                  exit={animate ? "backgroundExit" : "backgroundAnimate"}
+                  className="about-slider__background_image"
+                >
+                  <motion.img src={imageSrc[currentImage]} />
+                </motion.div>
+                
+                <motion.div
+                  initial={{ x: 200, y: 400 }}
+                  animate={{ x: 0, y: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                  }}
+                  exit={{ x: -200, y: 400 }}
+                  className="about-slider__slide_image"
+                >
+                  <motion.img src={imageSrc[nextImage]} />
+                </motion.div>
               </motion.div>
-              <AnimatePresence initial={false} exitBeforeEnter={false}>
-                <motion.img
-                  key={currentIndex}
-                  src={images[(currentIndex + 1) % images.length]}
-                  alt={`Photo ${currentIndex + 1}`}
-                  className="small-image"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                />
-              </AnimatePresence>
-            </div>
-          </div>
+              <button onClick={handleNextImage}> Next Slide</button>
+            </motion.div>
+          </AnimatePresence>
+
           <div className="abt-text w-50">
             <h5 className="sub-heading sub-hd">About Us</h5>
             <h2 className="bigheading">A Company Obsessed With ROI</h2>
@@ -137,8 +144,8 @@ const AboutSection = React.memo(() => {
               View More Information
             </a>
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
     </>
   );
 });

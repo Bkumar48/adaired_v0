@@ -52,6 +52,7 @@
 .about-slider {
   position: relative;
   transition: none;
+  overflow: hidden;
 
   &::before {
     position: absolute;
@@ -64,18 +65,29 @@
     z-index: -1;
   }
 
-  img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    transition: none;
+  .about-slider__background_image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   }
 
-  .small-image {
+  .about-slider__slide_image {
     position: absolute;
     bottom: 0;
     right: 0;
+    height: 35%;
     width: 35%;
-    transition: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
   }
+
+
 }
