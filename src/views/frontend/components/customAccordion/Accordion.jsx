@@ -18,7 +18,9 @@ const Accordion = ({ title, answer, pl, titleBefore, className, svgBackground })
           <Icon icon="simple-line-icons:arrow-down" className="arrow-up" />
         </div>
       </div>
-      {isOpen && <div className="accordion-content">{answer}</div>}
+      {isOpen && <p className="accordion-content">
+        {answer}
+          </p>}
     </div>
   );
 };

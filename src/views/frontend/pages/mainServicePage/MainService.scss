@@ -3,8 +3,7 @@
     justify-content: space-between;
     gap: 50px;
 
-    .service__card-left,
-    .service__card-right {
+    .service__card {
         padding: 15px;
         border: 1px solid #d9d9d9;
         box-sizing: border-box;
@@ -61,8 +60,7 @@
 .arrow-flex {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-top: 40px;
+    gap: 15px;
 
     svg {
         height: 30px;
@@ -74,39 +72,38 @@
 }
 
 // Service Build Section
-
-.build_sec {
-
-    .right-img {
-        margin-right: 0px;
+    .full-container {
+     max-width: 1920px;
+     margin: 0 auto;
+        
+     .build_right {
+        padding: 0 238px 0 60px;
+        box-sizing: border-box;
     }
-
-    .left-img {
-        margin-left: 0px;
+    .build-text {
+        padding: 0 60px 0 238px;
+        box-sizing: border-box;
     }
-
-    .container {
-        // max-width: calc((100% - 1430px) / 2 + 1430px) !important;
-
-        .build_left,
-        .build-right_1 {
+    
+     .w-50 {
+      width: calc(100%  / 2 - 0px);
+     }
             img {
                 width: 100%;
-                object-fit: cover;
+                display: block;
             }
         }
 
-    }
 
 
-}
+
+
+
 
 // Pink Section
 
 .pink_sec {
-    background-color: #BC1D8D05;
-    padding-top: 100px;
-    padding-bottom: 200px;
+    background-color: rgba(188, 29, 141, 0.04);
 
     .lorem_grid {
         display: grid;
@@ -148,14 +145,28 @@
 
 
 // Consultation Section
-
 .consultation_flex {
-    background-color: #FB9100;
-    padding: 50px;
-    width: 70%;
-    margin: 0 auto;
-    border-radius: 10px;
-    margin-top: -105px;
+	background-color: #FB9100;
+	padding: 25px 50px;
+	width: 70%;
+	border-radius: 10px;
+	margin: -50px auto 30px;
+    position: relative;
+
+    
+    &::after {
+        position: absolute;
+        content: "";
+        background-color:  #fff;
+        height: 65px;
+        width: 2px;
+        top: 0;
+        left: 0px;
+        right: 0px;
+        bottom: 0;
+        margin: auto;
+    }
+
 
     h4 {
         color: #FFF;
@@ -176,18 +187,6 @@
         }
     }
 
-    .consul_left {
-        position: relative;
-
-        &::after {
-            position: absolute;
-            content: "";
-            border: 2px solid #fff;
-            height: 65px;
-            top: 0;
-            right: -50%;
-        }
-    }
 
     .icon_box_white {
         svg {

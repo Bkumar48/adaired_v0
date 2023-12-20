@@ -28,25 +28,20 @@
         position: absolute;
         height: 100%;
         width: 100%;
-        top: 0;
+        top: -30px;
         background-color: #fff;
-
-        img {
-            // height: 100%;
-            // object-fit: cover;
-        }
     }
 
     .handle {
         position: absolute;
         width: 80px;
-        height: calc(100% + 60px);
+        height: 100%;
         z-index: 3;
         cursor: move;
-        top: -30px;
+        top: -15px;
         transition: none;
-        background: linear-gradient(110.65deg, #cebdff 7.99%, #ffe2e7 95.83%) no-repeat 0 0/3px 100%, linear-gradient(90deg, rgba(33, 21, 65, .08), rgba(33, 21, 65, 0));
-
+        background: linear-gradient(110.65deg, #cebdff 7.99%, #ffe2e7 95.83%) no-repeat 0 0/3px 100%, linear-gradient(90deg, rgba(33, 21, 65, 0.08), rgba(33, 21, 65, 0));
+      
         svg {
             display: block;
             position: absolute;

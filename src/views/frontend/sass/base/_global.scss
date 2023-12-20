@@ -195,7 +195,7 @@ input,
 span,
 textarea {
     color: #515151;
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 300;
     line-height: 33px;
@@ -244,6 +244,49 @@ svg,
 img {
     transition: 0.6s all ease-in-out;
 }
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+@mixin left-border {
+    &::before {
+        position: absolute;
+        content: "";
+        width: 50px;
+        height: 1px;
+        background-color: #FFF;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+}
+
+@mixin double-border {
+    &::after,
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: #A7A9AC;
+      height: 1px;
+      width: 80px;
+      bottom: 0;
+      top: 0;
+      margin: auto;
+      pointer-events: none;
+    }
+  
+    &::after {
+      left: 140%;
+      right: unset;
+    }
+  
+    &::before {
+      left: unset;
+      right: 140%;
+    }
+  }
 
 .main-heading {
     color: #010101;
@@ -266,4 +309,23 @@ img {
     font-size: 40px;
     line-height: normal;
     margin-top: 30px;
+}
+
+.sub-heading {
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    font-family: 'Nunito Sans', sans-serif;
+    position: relative;
+    padding-left: 60px;
+    margin-bottom: 15px !important;
+
+    @include left-border;
+}
+.footer-bottom img {
+	max-width: max-content;
+}
+.user-details img {
+    max-width: max-content;
 }

@@ -13,7 +13,7 @@ import "swiper/css/scrollbar";
 const Testimonials = () => {
   return (
     <>
-      <section className="review-grid pt50 pb100">
+      <section className="review-grid pad100">
         <div className="container">
           <h5 className="sub-heading sub-hd">Not Convinced?</h5>
           <h2 className="bigheading">
@@ -36,8 +36,22 @@ const Testimonials = () => {
               nextEl: ".testimonials__button--n",
               prevEl: ".testimonials__button--p",
               clickable: true,
+            }} 
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 1,
+                spaceBetween: 20,
+              },
+              1240: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
             }}
-            className="review-slider mt50"
+            className="review-slider mt50 mb50"
           >
             {jsonData.map((data, index) => {
               return (

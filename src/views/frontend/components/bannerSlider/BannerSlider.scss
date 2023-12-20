@@ -1,3 +1,5 @@
+// @import "../../sass/base/global.scss";
+
 .banner__wrapper {
   position: relative;
   width: 100vw;
@@ -11,6 +13,35 @@
   transition: none;
   display: flex;
   justify-content: center;
+
+
+  .social-icon {
+    position: absolute;
+    top: 5%;
+    left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px 0;
+    z-index: 1;
+    transition:none;
+    text-align: center;
+
+    .line{
+      height:250px;
+      width: 1px;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition:none;
+      margin: 0 auto;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
 
   .banner-slider__image {
     position: absolute;
@@ -33,7 +64,7 @@
     grid-template-columns: repeat(10, minmax(0, 1fr));
 
     .banner-slider__content {
-      grid-column: span 4;
+      grid-column: span 5;
       margin-bottom: 3px;
       display: flex;
       flex: 1;
@@ -54,6 +85,10 @@
           font-family: Nunito Sans;
           font-size: 20px;
           transition: none;
+          position: relative;
+          padding-left:60px; 
+
+          @include left-border;
         }
 
         .banner-slider__title {

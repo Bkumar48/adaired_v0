@@ -8,11 +8,13 @@
 
         input,
         textarea {
-            width: calc(100% - 30px);
+            width: 100%;
             margin-bottom: 20px;
             border: solid #d9d9d9 1px;
             padding-left: 15px;
+            box-sizing: border-box;
             font-family: 'Nunito Sans', sans-serif;
+            text-transform: capitalize;
         }
 
         textarea {

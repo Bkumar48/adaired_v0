@@ -4,7 +4,7 @@
     line-height: 17px;
     text-transform: capitalize;
     text-align: left;
-    padding: 18px 70px 18px 18px;
+    padding: 15px 60px 15px 16px;
     outline: none;
     position: relative;
     cursor: pointer;
@@ -13,21 +13,21 @@
 
 
     svg {
-        padding: 9px;
-        font-size: 28px;
+        padding: 8px;
+        font-size: 22px;
         border-radius: 100px;
         position: absolute;
-        left: calc(100% - 52px);
+        left: calc(100% - 44px);
         top: 50%;
         transform: translateY(-50%);
         transition: transform 0.4s ease, left 0.4s ease 0.1s;
     }
 
     &:hover {
-        padding: 18px 18px 18px 70px;
+        padding: 15px 18px 15px 60px;
 
         svg {
-            left: 4px;
+            left: 5px;
             transform: translateY(-50%) rotate(180deg);
         }
     }

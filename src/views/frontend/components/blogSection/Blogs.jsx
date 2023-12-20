@@ -7,7 +7,7 @@ const Blogs = (props) => {
     <>
       <section className="blog-outer pad50-50">
         <div className="text-center">
-          <h4 className="min-heading">Blog</h4>
+          <h4 className="sub-heading sub_hd-mx">Blog</h4>
           <h2 className="bigheading">
             Update On The Latest Marketing Trends and Tech{" "}
           </h2>

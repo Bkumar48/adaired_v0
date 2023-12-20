@@ -26,7 +26,7 @@ const ContactUsCard = () => {
   return (
     <div className="contactus__card aside__cards-border ">
       <h4>Contact Us</h4>
-      <div className="contactus__card-inner">
+      <div className="contactus__card-inner d-flex wrap-flex gap-20">
         {ContactInfo.map(({ label, icon, text, link }, index) => (
           <Link key={index} to={link} target="_blank" className="d-flex align-start just-start">
             <Icon icon={icon} />

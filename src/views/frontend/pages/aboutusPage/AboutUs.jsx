@@ -125,7 +125,7 @@ const OurJourney = React.memo(() => {
       <div className="container">
         <div className="our_jour_head">
           <h4>Our Journey</h4>
-          <h2 className="main-heading">Our Journey</h2>
+          <h2 className="bigheading">Our Journey</h2>
           <p>
             We are your 360° digital marketing agency helping you bring your
             goals and visions to life with market-leading strategies and
@@ -234,7 +234,7 @@ const OurProcessSection = React.memo(() => {
         <div className="container">
           <div className="our_process_head">
             <h4>Our Process</h4>
-            <h2 className="main-heading">Our Process</h2>
+            <h2 className="bigheading">Our Process</h2>
             <p>
               No need to settle for okay when we can serve you the best! Our
               strategies are meticulously crafted to spark creativity, boost

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { lazy, useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useAnimation } from "framer-motion";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
@@ -16,22 +16,54 @@ const ManageGrid = React.memo(() => {
   return (
     <>
       <section className="manage-grid pad100">
-        <div className="container text-center">
-          <h2 className="bigheading">
-            Digital Marketing Services for The Most Ambitious Enterprises
-          </h2>
-          <div className="splash-box">
-            <span id="splash-overlay" className="splash-left"></span>
-            <div className="z-depth-4 mike-img" id="welcome">
-              <img src="assets/images/services_slider_icon.png" />
+        <AnimatePresence mode="wait">
+          <motion.div
+            className="splash__ball-left"
+            initial={{ width: 0, height: 0, opacity: 0 }}
+            animate={{ width: "60px", height: "60px", opacity: 1, left: "0%" }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+              duration: 2,
+            }}
+            exit={{ width: 0, height: 0, opacity: 0, left: "0%" }}
+            key="leftBall"
+          />
+          <div className="container text-center">
+            <h2 className="bigheading">
+              Digital Marketing Services for The Most Ambitious Enterprises
+            </h2>
+            <div className="splash-box">
+              <span className="splash-left"></span>
+
+              <div className="mike-img">
+                <img src="assets/images/services_slider_icon.png" />
+              </div>
+              <motion.div
+                className="splash__ball-right"
+                initial={{ width: 0, height: 0, opacity: 0 }}
+                animate={{
+                  width: "60px",
+                  height: "60px",
+                  opacity: 1,
+                  left: "100%",
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 260,
+                  damping: 20,
+                  duration: 2,
+                }}
+              />
+              <span className="splash-right"></span>
             </div>
-            <span id="splash-overlay" className="splash-right"></span>
+            <p className="big-para">
+              We work with businesses that want to engage better, dominate
+              SERPs, and achieve more than just website traffic.
+            </p>
           </div>
-          <p className="big-para">
-            We work with businesses that want to engage better, dominate SERPs,
-            and achieve more than just website traffic.
-          </p>
-        </div>
+        </AnimatePresence>
       </section>
     </>
   );
@@ -75,29 +107,30 @@ const AboutSection = React.memo(() => {
           <AnimatePresence>
             <motion.div className="w-50">
               <motion.div className="about-slider">
-                {/* <DiagonalSlider /> */}
-                <motion.div
-                  variants={variants}
-                  initial={animate ? "backgroundInitial" : "backgroundAnimate"}
-                  animate={animate ? "backgroundAnimate" : "backgroundInitial"}
-                  exit={animate ? "backgroundExit" : "backgroundAnimate"}
-                  className="about-slider__background_image"
-                >
-                  <motion.img src={imageSrc[currentImage]} />
-                </motion.div>
-                
-                <motion.div
-                  initial={{ x: 200, y: 400 }}
-                  animate={{ x: 0, y: 0 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 260,
-                    damping: 20,
-                  }}
-                  exit={{ x: -200, y: 400 }}
-                  className="about-slider__slide_image"
-                >
-                  <motion.img src={imageSrc[nextImage]} />
+                <motion.div className="about-slider__container">
+                  <motion.div
+                    // variants={variants}
+                    // initial={animate ? "backgroundInitial" : "backgroundAnimate"}
+                    // animate={animate ? "backgroundAnimate" : "backgroundInitial"}
+                    // exit={animate ? "backgroundExit" : "backgroundAnimate"}
+                    className="about-slider__background_image"
+                  >
+                    <motion.img src={imageSrc[currentImage]} />
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ x: 200, y: 400 }}
+                    animate={{ x: 0, y: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 260,
+                      damping: 20,
+                    }}
+                    exit={{ x: -200, y: 400 }}
+                    className="about-slider__slide_image"
+                  >
+                    <motion.img src={imageSrc[nextImage]} />
+                  </motion.div>
                 </motion.div>
               </motion.div>
               <button onClick={handleNextImage}> Next Slide</button>
@@ -234,7 +267,7 @@ const Services = React.memo(() => {
       <section className="service-outer pad100">
         <div className="container">
           <div className="text-center">
-            <h4 className="min-heading">Our Services</h4>
+            <h4 className="min-heading sub_hd-mx">Our Services</h4>
             <h2 className="bigheading">What We Offer</h2>
             <p>
               Whatever service we provide, we give a thought about every small
@@ -247,167 +280,198 @@ const Services = React.memo(() => {
               <div className="serv-img">
                 <img src="assets/images/serv-img (1).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Website Design & Development</h3>
-                <p>
-                  Website Design and development services that deliver exquisite
-                  design, a user-friendly interface, and robust functionality
-                  for lasting impressions on the audience.
-                </p>
-                <ul>
-                  <li>PHP Development</li>
-                  <li>Website management</li>
-                  <li>Website CMS migrations</li>
-                  <li>WordPress design & development</li>
-                  <li>Landing page design & development</li>
-                  <li>E-commerce website design & development </li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Website Design & Development</h3>
+                  <p>
+                    Website Design and development services that deliver
+                    exquisite design, a user-friendly interface, and robust
+                    functionality for lasting impressions on the audience.
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Website Design & Development</h3>
+                  <ul>
+                    <li>PHP Development</li>
+                    <li>Website management</li>
+                    <li>Website CMS migrations</li>
+                    <li>WordPress design & development</li>
+                    <li>Landing page design & development</li>
+                    <li>E-commerce website design & development </li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
             <div className="serv-card">
               <div className="serv-img">
                 <img src="assets/images/serv-img (2).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Social Media Management</h3>
-                <p>
-                  Enhance the social media presence of brands on diverse social
-                  platforms with engaging content to foster meaningful
-                  interactions and amplify reach.
-                </p>
-                <ul>
-                  <li>Profile Optimization</li>
-                  <li>Targeted Page Likes</li>
-                  <li>Targeted Page Likes</li>
-                  <li>Hashtag Trend Research</li>
-                  <li>Content Calendar</li>
-                  <li>Monthly Report</li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Social Media Management</h3>
+                  <p>
+                    Enhance the social media presence of brands on diverse
+                    social platforms with engaging content to foster meaningful
+                    interactions and amplify reach.
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Social Media Management</h3>
+                  <ul>
+                    <li>Profile Optimization</li>
+                    <li>Targeted Page Likes</li>
+                    <li>Targeted Page Likes</li>
+                    <li>Hashtag Trend Research</li>
+                    <li>Content Calendar</li>
+                    <li>Monthly Report</li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
             <div className="serv-card">
               <div className="serv-img">
                 <img src="assets/images/serv-img (3).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Content Development & Marketing</h3>
-                <p>
-                  Engaging and captivating content development that not only
-                  resonates with the audience but ranks well across all search
-                  engines.
-                </p>
-                <ul>
-                  <li>Infographics</li>
-                  <li>Website Blogs</li>
-                  <li>Press Releases</li>
-                  <li>Website Copy</li>
-                  <li>Guest Posting</li>
-                  <li>Social Media Posting </li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Web Development & Redesign</h3>
+                  <p>
+                    Engaging and captivating content development that not only
+                    resonates with the audience but ranks well across all search
+                    engines.
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Web Development & Redesign</h3>
+                  <ul>
+                    <li>Infographics</li>
+                    <li>Website Blogs</li>
+                    <li>Press Releases</li>
+                    <li>Website Copy</li>
+                    <li>Guest Posting</li>
+                    <li>Social Media Posting </li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
             <div className="serv-card">
               <div className="serv-img">
                 <img src="assets/images/serv-img (4).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Graphic Designing</h3>
-                <p>
-                  The creative team illustrates the brand's image and ideas in
-                  captivating visuals to communicate with the target audience.
-                </p>
-                <ul>
-                  <li>Digital Broucher</li>
-                  <li>Email Marketing Graphics</li>
-                  <li>Logos and Branded Elements</li>
-                  <li>Poster , Banner and Signage</li>
-                  <li>Business Card, Letterhead and Envelope</li>
-                  <li>Social media graphics & digital marketing ads </li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Graphic Designing</h3>
+                  <p>
+                    The creative team illustrates the brand's image and ideas in
+                    captivating visuals to communicate with the target audience.
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Graphic Designing</h3>
+                  <ul>
+                    <li>Digital Broucher</li>
+                    <li>Email Marketing Graphics</li>
+                    <li>Logos and Branded Elements</li>
+                    <li>Poster , Banner and Signage</li>
+                    <li>Business Card, Letterhead and Envelope</li>
+                    <li>Social media graphics & digital marketing ads </li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
             <div className="serv-card">
               <div className="serv-img">
                 <img src="assets/images/serv-img (4).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Search engine optimization</h3>
-                <p>
-                  Launch and maintain the websites on top of search results to
-                  enhance your online visibility with tried and tested Search
-                  Engine Optimization (SEO) services.
-                </p>
-                <ul>
-                  <li>Meta Tags Optimization</li>
-                  <li>Google tags Setup</li>
-                  <li>Schema Optimization</li>
-                  <li>Website Layout Optimization</li>
-                  <li>Website Broken Link Analysis</li>
-                  <li>Penalty review & recovery </li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Search engine optimization</h3>
+                  <p>
+                    Launch and maintain the websites on top of search results to
+                    enhance your online visibility with tried and tested Search
+                    Engine Optimization (SEO) services.
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Search engine optimization</h3>
+                  <ul>
+                    <li>Meta Tags Optimization</li>
+                    <li>Google tags Setup</li>
+                    <li>Schema Optimization</li>
+                    <li>Website Layout Optimization</li>
+                    <li>Website Broken Link Analysis</li>
+                    <li>Penalty review & recovery </li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
             <div className="serv-card">
               <div className="serv-img">
                 <img src="assets/images/serv-img (1).jpg" />
               </div>
-              <div className="serv-content">
-                <img
-                  className="serv-icon"
-                  src="assets/images/services_cards_tick.svg"
-                />
-                <h3 className="hd-block">Pay Per Click</h3>
-                <p>
-                  Building strategic ad campaigns and carrying data-driven
-                  optimizations to drive targeted traffic with our Pay-Per-Click
-                  (PPC) solutions.
-                </p>
-                <ul>
-                  <li>Social Ads</li>
-                  <li>Google Ads</li>
-                  <li>Conversion Tracking</li>
-                  <li>Google Analytics set up</li>
-                  <li>Overall performance Analysis</li>
-                  <li>Campaign management and optimization </li>
-                </ul>
-                <a href="#" className="arrow-btn defbtn">
-                  View More
-                </a>
+              <div className="serv__text">
+                <div className="serv-content">
+                  <h3>Pay Per Click</h3>
+                  <p>
+                    Building strategic ad campaigns and carrying data-driven
+                    optimizations to drive targeted traffic with our
+                    Pay-Per-Click (PPC) solutions.utfmdlksd kwnmdlkas knaslkdnl
+                    lsadlkasj lndlksa lsnadlkas l sadl vyrbfur ytfb trfhg trdb
+                  </p>
+                </div>
+                <div className="serv-hide">
+                  <img
+                    className="serv-icon"
+                    src="assets/images/services_cards_tick.svg"
+                  />
+                  <h3>Pay Per Click</h3>
+                  <ul>
+                    <li>Social Ads</li>
+                    <li>Google Ads</li>
+                    <li>Conversion Tracking</li>
+                    <li>Google Analytics set up</li>
+                    <li>Overall performance Analysis</li>
+                    <li>Campaign management and optimization </li>
+                  </ul>
+                  <a href="#" className="arrow-btn defbtn">
+                    View More
+                  </a>
+                </div>
               </div>
             </div>
           </div>
