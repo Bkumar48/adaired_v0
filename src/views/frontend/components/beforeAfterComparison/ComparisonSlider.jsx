@@ -194,6 +194,7 @@ const ComparisonSlider = ({
   sliderLineWidth = 2,
   sliderPositionPercentage = 0.5,
   vertical = false,
+  handleArrowBackgroundImage = "",
 }) => {
 
   const horizontal = !vertical;
@@ -436,6 +437,7 @@ const ComparisonSlider = ({
       flex: '0 1 auto',
       height: horizontal ? '100%' : `${sliderLineWidth}px`,
       width: horizontal ? `${sliderLineWidth}px` : '100%',
+      backgroundImage:`${handleArrowBackgroundImage}`,
     },
     handleCustom: {
       alignItems: 'center',
@@ -459,6 +461,7 @@ const ComparisonSlider = ({
       justifyContent: 'center',
       width: `${handleSize}px`,
       transform: horizontal ? 'none' : 'rotate(90deg)',
+      backgroundImage:`${handleArrowBackgroundImage}`,
     },
     leftArrow: {
       border: `inset ${handleSize * 0.15}px rgba(0,0,0,0)`,
@@ -531,7 +534,6 @@ const ComparisonSlider = ({
     }}
     ref={containerRef}
     data-testid="container"
-    // className={className}
   >
     <img
       onLoad={() => setRightImgLoaded(true)}

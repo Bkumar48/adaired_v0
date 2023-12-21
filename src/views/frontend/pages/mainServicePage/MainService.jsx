@@ -23,7 +23,7 @@ const IntroSection = React.memo(() => {
   ];
   return (
     <>
-      <div className="pad50-50">
+      <div className="service_top-grid pad100">
         <div className="container">
           <div className="service_flex">
             <div className="service_text w-70">
@@ -95,9 +95,7 @@ const IntroSection = React.memo(() => {
                   software like Aldus PageMaker including versions of Lorem
                   Ipsum.
                 </p>
-                <h2 className="bigheading">
-                  Lorem Ipsum is simply dummy text
-                </h2>
+                <h2 className="bigheading">Lorem Ipsum is simply dummy text</h2>
                 <p>
                   Lorem Ipsum is simply dummy text of the printing and
                   typesetting industry. Lorem Ipsum has been the industry's
@@ -144,7 +142,10 @@ const IntroSection = React.memo(() => {
           <div className="arrow-flex">
             {FourPoints.map((point, index) => {
               return (
-                <div key={index} className="full-list half-list d-flex wrap-flex">
+                <div
+                  key={index}
+                  className="full-list half-list d-flex wrap-flex"
+                >
                   <li>{point}</li>
                 </div>
               );
@@ -161,7 +162,7 @@ IntroSection.displayName = "IntroSection";
 const ServiceBuild = React.memo((props) => {
   return (
     <>
-      <div className="build_sec pb100">
+      <div className="build_sec pad100">
         <div className="build-faq full-container d-flex align-start">
           <div className="build_img w-50">
             <img src={"assets/images/build_img1.jpg"} alt="" />
@@ -202,9 +203,9 @@ const ServiceBuild = React.memo((props) => {
               <li>Lorem Ipsum Lorem Ipsum</li>
               <li>Lorem Ipsum Lorem Ipsum</li>
               <li>Lorem Ipsum Lorem Ipsum</li>
-              <li>Lorem Ipsum Lorem Ipsum</li>              
-              </ul>
-            
+              <li>Lorem Ipsum Lorem Ipsum</li>
+            </ul>
+
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry. Lorem Ipsum has been the industry's standard dummy text
@@ -252,16 +253,28 @@ const ServiceParagraph = React.memo((props) => {
             with desktop publishing software like Aldus PageMaker including
             versions of Lorem Ipsum.
           </p>
-            <ul class="half-list d-flex wrap-flex">
-              <li> Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.</li>
-              <li> Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.</li>
-              <li> Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.</li>
-              <li> Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry.</li>              
-              </ul>
+          <ul class="half-list d-flex wrap-flex">
+            <li>
+              {" "}
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </li>
+            <li>
+              {" "}
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </li>
+            <li>
+              {" "}
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </li>
+            <li>
+              {" "}
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </li>
+          </ul>
 
           <p>
             Lorem Ipsum is simply dummy text of the printing and typesetting
@@ -286,6 +299,37 @@ const ServiceParagraph = React.memo((props) => {
 });
 
 ServiceParagraph.displayName = "ServiceParagraph";
+
+const OurProcess = React.memo((props) => {
+  return (
+    <>
+      <section className="container our_process text-center">
+        <div className="doubal-border pad100">
+        <h5 className="sub-heading sub_hd-mx">Our Process</h5>
+        <h2 className="bigheading">Our Process</h2>
+        <p>
+          Lorem Ipsum is simply dummy text of the printing and typesetting
+          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          since the 1500s, when an unknown printer took a galley of type and
+        </p>
+        <div className="mt50">
+        <Suspense fallback={<div>Loading...</div>}>
+          <ComparisonSlider
+            rightImage={"assets/images/comparison_background.png"}
+            leftImage={"assets/images/comparison_foreground.png"}
+            handleArrowBackgroundImage={
+              "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
+            }
+          />
+        </Suspense>
+        </div>
+        </div>
+      </section>
+    </>
+  );
+});
+
+OurProcess.displayName = "OurProcess";
 
 const PinkSection = React.memo((props) => {
   return (
@@ -351,7 +395,7 @@ const Consultation = React.memo((props) => {
       <section className="consultation_sec">
         <div className="container">
           <div className="consultation_flex d-flex">
-            <div className="consul_left">
+            <div className="consul_card">
               <Link to="tel:+91-8907200008" className="d-flex gap-20">
                 <div className="icon_box_white">
                   <Icon icon="charm:phone-call" className="consul-icons" />
@@ -363,7 +407,7 @@ const Consultation = React.memo((props) => {
                 </h4>
               </Link>
             </div>
-            <div className="consul_right">
+            <div className="consul_card">
               <Link to="mailto:info@adaired.com" className="d-flex gap-20">
                 <div className="icon_box_white">
                   <Icon icon="mingcute:mail-open-fill" />
@@ -389,13 +433,8 @@ const MainService = () => {
     <div>
       <Banner title={"Main Service Page"} />
       <IntroSection />
-      <Suspense fallback={<div>Loading...</div>}>
-        <ComparisonSlider
-          rightImage={"assets/images/comparison_background.png"}
-          leftImage={"assets/images/comparison_foreground.png"}
-          className={"pad100 container"}
-        />
-      </Suspense>
+
+      <OurProcess />
       <ServiceBuild />
       <ServiceParagraph />
       <PinkSection />

@@ -153,13 +153,15 @@ body {
 .pad100 {
     padding: 100px 15px;
 }
-
+.pt100 {
+    padding: 100px 15px 0px;
+}
 .pt50 {
     padding-top: 50px;
 }
 
 .pb100 {
-    padding-bottom: 100px;
+    padding: 0 15px 100px;
 }
 
 .pad100-50 {
@@ -181,11 +183,12 @@ body {
     margin-bottom: 50px;
 }
 
-
-
-
 .toggle-menu svg {
     display: none;
+}
+
+button {
+    cursor: pointer;
 }
 
 p,
@@ -198,7 +201,7 @@ textarea {
     font-size: 18px;
     font-style: normal;
     font-weight: 300;
-    line-height: 33px;
+    line-height: 26px;
     text-decoration: none;
     list-style: none;
     transition: 0.6s all ease-in-out;
@@ -234,7 +237,7 @@ h3:not(:last-child),
 h4:not(:last-child),
 h5:not(:last-child),
 h6:not(:last-child) {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
 }
 
 button,
@@ -253,7 +256,7 @@ img {
     &::before {
         position: absolute;
         content: "";
-        width: 50px;
+        width: 40px;
         height: 1px;
         background-color: #FFF;
         top: 0;
@@ -299,7 +302,7 @@ img {
 }
 
 .bigheading {
-    font-size: 44px;
+    font-size: 40px;
     font-weight: 400;
     line-height: 50px;
 }
@@ -328,4 +331,8 @@ img {
 }
 .user-details img {
     max-width: max-content;
+}
+.doubal-border {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
 }

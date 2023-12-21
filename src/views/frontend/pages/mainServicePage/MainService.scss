@@ -72,27 +72,29 @@
 }
 
 // Service Build Section
-    .full-container {
-     max-width: 1920px;
-     margin: 0 auto;
-        
-     .build_right {
+.full-container {
+    max-width: 1920px;
+    margin: 0 auto;
+
+    .build_right {
         padding: 0 238px 0 60px;
         box-sizing: border-box;
     }
+
     .build-text {
         padding: 0 60px 0 238px;
         box-sizing: border-box;
     }
-    
-     .w-50 {
-      width: calc(100%  / 2 - 0px);
-     }
-            img {
-                width: 100%;
-                display: block;
-            }
-        }
+
+    .w-50 {
+        width: calc(100% / 2 - 0px);
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+}
 
 
 
@@ -138,7 +140,7 @@
     }
 
     .pink_right {
-      padding-left: 20px;
+        padding-left: 20px;
     }
 
 }
@@ -146,24 +148,25 @@
 
 // Consultation Section
 .consultation_flex {
-	background-color: #FB9100;
-	padding: 25px 50px;
-	width: 70%;
-	border-radius: 10px;
-	margin: -50px auto 30px;
+    background-color: #FB9100;
+    padding: 25px 50px;
+    width: 70%;
+    border-radius: 10px;
+    margin: -50px auto 30px;
     position: relative;
 
-    
+
     &::after {
         position: absolute;
         content: "";
-        background-color:  #fff;
+        background-color: #fff;
         height: 65px;
         width: 2px;
         top: 0;
         left: 0px;
         right: 0px;
         bottom: 0;
+        pointer-events: none;
         margin: auto;
     }
 
@@ -198,5 +201,18 @@
             font-size: 20px;
             border: 1px solid #FFFFFF;
         }
+    }
+}
+
+// OurPrcess Section
+
+.our_process {
+
+    .sub {
+        position: relative;
+        max-width: max-content;
+        margin: 0 auto;
+
+        @include double-border;
     }
 }

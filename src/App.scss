@@ -63,27 +63,6 @@
 /************************************************************************* ABOUT US *****************************************************************************/
 
 /************************************************************************* TRUSTED BY: *****************************************************************************/
-.trusted-outer {
-    background-color: #F8F8F8;
-}
-
-.trust-icon {
-    max-width: 100px;
-    margin: 0 auto;
-    padding: 20px 0;
-    align-items: center;
-}
-
-.trust-icon img {
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-}
-
-.trust-slider .swiper-wrapper {
-    display: flex;
-    align-items: center;
-}
 
 /************************************************************************* TRUSTED BY: *****************************************************************************/
 
@@ -312,9 +291,8 @@
 /************************************************************************* CASE STUDIES *****************************************************************************/
 /************************************************************************* LOGO SLIDER *****************************************************************************/
 .reward-col {
-    width: calc(100% / 7 - 50px);
     overflow: hidden;
-    margin: 0 auto;
+    margin: 0.5pc;
     padding: 10px;
     border: 1px solid transparent;
 }
@@ -474,7 +452,7 @@
 .home-form form::after {
     position: absolute;
     content: "";
-    height: 125px;
+    height: 155px;
     pointer-events: none;
     border-radius: 10px 10px 0px 0px;
     border: 7px solid #A7A9AC;
@@ -496,6 +474,7 @@
     border: 0px;
     border-bottom: 1px solid #A7A9AC;
     padding-bottom: 10px;
+    background-color: #fff;
     outline: none;
 }
 
@@ -515,6 +494,7 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 300;
+    opacity: 1;
     line-height: normal;
 }
 
@@ -645,7 +625,7 @@
     right: -65px;
   }
   .full-list {
-	margin-bottom: 0;
+	margin-bottom: 0px !important;
 	gap: 0px !important;
 	max-width: 100%;
 }
@@ -758,6 +738,9 @@
 
     .pad100 {
         padding: 80px 15px;
+    }
+    .pt100 {
+        padding: 80px 15px 0px;
     }
 
     .pb100 {
@@ -891,6 +874,14 @@
     .aside__cards-border {
         border-radius: 5px;
         padding: 20px 15px;
+    }
+    .case__study-categories-items {
+        gap: 10px;
+    }
+    .case__study-categories-items button {
+        padding: 12px 15px;
+        font-size: 17px;
+        border-radius: 15px;
     }
 
 }
@@ -1027,7 +1018,17 @@
         .contactus__card .contactus__card-inner a h6 {
             font-size: 16px;
         }
-        
+        .case__study-categories-items {
+            gap: 15px;
+        }
+        .case__study-card .case__study-card-inner {
+            gap: 20px;
+        }        
+        .case__study-card {
+            border-radius: 20px;
+            padding: 35px 25px;
+            min-height: 550px;
+        }
 
 
 }
@@ -1341,6 +1342,9 @@
     .pad100 {
         padding: 60px 15px;
     }
+    .pt100 {
+        padding: 60px 15px 0px;
+    }
     .mt25 {
         margin-top: 20px;
     }
@@ -1390,6 +1394,9 @@
         .serv-card:hover .serv-hide {
             bottom: -5%;
         }
+            .sub_hd-mx::before {
+        display: block !important;
+    }
         .ft-top_bar a:nth-child(1) {
             max-width: 100%;
             width: 100%;
@@ -1472,6 +1479,9 @@
         }
         .sub-heading::before {
             display: none;
+        }
+        .sub_hd-mx::before {
+            display: block !important;
         }
         .testimonials__buttons {
             gap: 10px;
@@ -1673,6 +1683,13 @@
         padding: 6px;
         font-size: 20px;
     }
+    .accordion .accordion-header p {
+        font-size: 20px;
+        font-weight: 500;
+     }
+     .service_accordion .accordion:not(:last-child) {
+        border-bottom: 1px solid #ddd;
+    }
     
 
 }
@@ -1792,12 +1809,12 @@
 
     .pb100 {
         padding: 0 15px 40px;
-    }
-    .pad50-50 {
+    } 
+    .pad100, .pad50-50 {
         padding: 40px 15px;
     }
-    .pad100 {
-        padding: 40px 15px;
+    .pt100 {
+        padding: 40px 15px 0px;
     }
 
     .pl-60 {
@@ -1931,6 +1948,24 @@
      .service_text .d-flex {
         flex-direction: column;
      }
+     .consultation_flex::after {
+        height: 135px;
+     }
+     .consultation_flex h4, .consultation_flex h4 strong {
+        text-align: center;
+    }
+    .consultation_flex {
+        padding: 25px 15px;
+        width: 80%;
+        margin: 40px auto 20px;
+    }
+    .consul_card .d-flex.gap-20 {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .sub-heading {
+        font-size: 18px;
+     }
 
 }
 
@@ -1993,6 +2028,28 @@
     .pink_sec .lorem_grid {
         grid-template-columns: repeat(1, 1fr);
         gap: 10px;
+    }
+    .consultation_flex {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .consultation_flex::after {
+        height: 1px;
+        width: 80%;
+    }
+    .aside__cards-border h4 {
+        font-size: 25px;
+        line-height: 46px;
+    }
+    .consultation_flex h4 strong {
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .mt50 {
+        margin-top: 20px;
+    }
+    .mb-50 {
+        margin-bottom: 20px;
     }
 
 }
@@ -2124,6 +2181,10 @@
     .inner-banner .container h1 {
         font-size: 32px;
         line-height: 42px;
+    }
+    .aside__cards-border {
+        border-radius: 3px;
+        padding: 20px 10px;
     }
 
 

@@ -4,7 +4,6 @@ import Banner from "../../components/banners/Banner";
 import Button from "../../components/buttonComponent/Button";
 import { Icon } from "@iconify/react";
 import DOMPurify from "dompurify";
-import BannerSlider from "../../components/bannerSlider/BannerSlider";
 
 // Memoized component for rendering HTML
 const RenderHtml = memo(({ data }) => {
@@ -91,7 +90,7 @@ const CurrentRecruitments = memo(() => {
               <div className="job__description">
                 <h3>Job Description</h3>
                 <p>
-                  We are seeking a motivated and talented Digital Marketing
+                  We are seeking a motivated and talented Digital Marketing 
                   Executive to join our team.
                 </p>
               </div>
@@ -157,7 +156,7 @@ CareerForm.displayName = "CareerForm";
 const Career = () => {
   return (
     <>
-      {/* <Banner title="Career" />
+      <Banner title="Career" />
       <div className="career_wrapper">
         <div className="career_container container pad100">
           <h2>We Are Currently Recruiting For :</h2>
@@ -170,9 +169,8 @@ const Career = () => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
 
-      <BannerSlider />
     </>
   );
 };

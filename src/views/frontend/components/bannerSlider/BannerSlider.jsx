@@ -21,6 +21,7 @@ const sliderData = [
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands 2",
   },
+
 ];
 
 const socialIcons = [
@@ -69,12 +70,12 @@ const BannerSlider = () => {
     ]);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      SlideToNext();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentSlideData]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     SlideToNext();
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, [currentSlideData]);
 
   const staggerDuration = 0.25;
 

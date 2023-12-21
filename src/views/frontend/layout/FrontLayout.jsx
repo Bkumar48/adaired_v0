@@ -1,7 +1,6 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Headroom from "react-headroom";
-import Career from "../pages/careerPage/Career.jsx";
 
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
@@ -13,13 +12,13 @@ const ContactUs = lazy(() => import("../pages/contactPage/ContactUs.jsx"));
 const MainBlog = lazy(() => import("../pages/mainBlogPage/MainBlog.jsx"));
 const Gallery = lazy(() => import("../pages/galleryPage/Gallery.jsx"));
 const CaseStudy = lazy(() => import("../pages/caseStudyPage/CaseStudy.jsx"));
+const Career = lazy(() => import("../pages/careerPage/Career.jsx"));
 const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
 const Footer = lazy(() => import("../global/footer/Footer.jsx"));
 
 const FrontLayout = () => {
-  
   const [scrollY, setScrollY] = useState(0);
   useEffect(() => {
     const handleScroll = () => {
@@ -75,6 +74,7 @@ const frontendRoutes = [
   { path: "/services", element: <MainService /> },
   { path: "/case-studies", element: <CaseStudy /> },
   { path: "/career", element: <Career /> },
+  { path: "/contact", element: <ContactUs /> },
 ];
 
 export default FrontLayout;

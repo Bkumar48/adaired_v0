@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom";
-import React, { lazy, useState, useEffect } from "react";
-import { motion, AnimatePresence, useAnimation } from "framer-motion";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useAnimation,
+} from "framer-motion";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
@@ -13,56 +18,88 @@ import "swiper/css/bundle";
 import { A11y, Autoplay, Parallax } from "swiper/modules";
 
 const ManageGrid = React.memo(() => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, {
+    once: true,
+  });
+
+  const variants = {
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+    splashLeftInitial: {
+      x: "-100%",
+    },
+
+    splashRightInitial: {
+      x: "100%",
+    },
+    splashLeftAnimate: {
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+
+    splashRightAnimate: {
+      x: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   return (
     <>
-      <section className="manage-grid pad100">
-        <AnimatePresence mode="wait">
+      <section className="manage-grid pad100" ref={ref}>
+        <AnimatePresence>
           <motion.div
-            className="splash__ball-left"
-            initial={{ width: 0, height: 0, opacity: 0 }}
-            animate={{ width: "60px", height: "60px", opacity: 1, left: "0%" }}
+            className="splash-left"
+            variants={variants}
+            initial={isInView ? "splashLeftInitial" : "splashLeftInitial"}
+            animate={isInView ? "splashLeftAnimate" : "exit"}
             transition={{
-              type: "spring",
-              stiffness: 260,
-              damping: 20,
-              duration: 2,
+              duration: 0.8,
             }}
-            exit={{ width: 0, height: 0, opacity: 0, left: "0%" }}
-            key="leftBall"
-          />
+            exit={"ballExit"}
+            key="leftSplash"
+          >
+            <motion.img src="assets/images/left_splash-img.png" />
+          </motion.div>
+
           <div className="container text-center">
             <h2 className="bigheading">
               Digital Marketing Services for The Most Ambitious Enterprises
             </h2>
             <div className="splash-box">
-              <span className="splash-left"></span>
-
               <div className="mike-img">
                 <img src="assets/images/services_slider_icon.png" />
               </div>
-              <motion.div
-                className="splash__ball-right"
-                initial={{ width: 0, height: 0, opacity: 0 }}
-                animate={{
-                  width: "60px",
-                  height: "60px",
-                  opacity: 1,
-                  left: "100%",
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 260,
-                  damping: 20,
-                  duration: 2,
-                }}
-              />
-              <span className="splash-right"></span>
             </div>
             <p className="big-para">
               We work with businesses that want to engage better, dominate
               SERPs, and achieve more than just website traffic.
             </p>
           </div>
+          <motion.div
+            className="splash-right"
+            variants={variants}
+            initial={isInView ? "splashRightInitial" : "splashRightInitial"}
+            animate={isInView ? "splashRightAnimate" : "exit"}
+            transition={{
+              duration: 0.8,
+            }}
+            exit={"ballExit"}
+            key="rightSplash"
+          >
+            <motion.img src="assets/images/right_splash-img.png" />
+          </motion.div>
         </AnimatePresence>
       </section>
     </>
@@ -76,12 +113,13 @@ const AboutSection = React.memo(() => {
     "assets/images/ceo_sir-img.jpg",
   ];
   const [currentImage, setCurrentImage] = useState(0);
+  const [transitionImage, setTransitionImage] = useState(null);
   const [nextImage, setNextImage] = useState(1);
   const [animate, setAnimate] = useState(false);
 
   const handleNextImage = () => {
     setAnimate(true);
-    setCurrentImage(nextImage);
+    setTransitionImage(nextImage);
     setNextImage((nextImage + 1) % imageSrc.length);
   };
 
@@ -95,8 +133,19 @@ const AboutSection = React.memo(() => {
       y: "0%",
     },
     backgroundExit: {
-      x: "-100%",
+      opacity: 0,
+    },
+
+    nextImageInitial: {
+      x: "100%",
       y: "100%",
+    },
+    nextImageAnimate: {
+      x: "0%",
+      y: "0%",
+    },
+    nextImageExit: {
+      opacity: 0,
     },
   };
 
@@ -108,25 +157,44 @@ const AboutSection = React.memo(() => {
             <motion.div className="w-50">
               <motion.div className="about-slider">
                 <motion.div className="about-slider__container">
-                  <motion.div
-                    // variants={variants}
-                    // initial={animate ? "backgroundInitial" : "backgroundAnimate"}
-                    // animate={animate ? "backgroundAnimate" : "backgroundInitial"}
-                    // exit={animate ? "backgroundExit" : "backgroundAnimate"}
-                    className="about-slider__background_image"
-                  >
+                  <motion.div className="about-slider__background_image">
+                    {animate && (
+                      <motion.img
+                        src={imageSrc[transitionImage]}
+                        style={{
+                          transition: "none",
+                        }}
+                        variants={variants}
+                        initial={{
+                          x: 500,
+                          y: 500,
+                        }}
+                        animate={{
+                          x: 0,
+                          y: 0,
+                        }}
+                        exit={"backgroundExit"}
+                        transition={{
+                          opacity: { ease: "circIn", duration: 0.95 },
+                          y: { type: "tween", ease: "easeOut", duration: 0.95 },
+                          x: { type: "tween", ease: "easeOut", duration: 0.95 },
+                        }}
+                        onAnimationComplete={() => {
+                          setAnimate(false);
+                          setCurrentImage(transitionImage);
+                        }}
+                        className="about-slider__slide_image"
+                      />
+                    )}
                     <motion.img src={imageSrc[currentImage]} />
                   </motion.div>
 
                   <motion.div
-                    initial={{ x: 200, y: 400 }}
-                    animate={{ x: 0, y: 0 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 260,
-                      damping: 20,
+                  initial={animate ? "nextImageInitial" : "backgroundInitial"}
+                  animate={animate ? "nextImageAnimate" : "backgroundAnimate"}
+                    style={{
+                      transition: "none",
                     }}
-                    exit={{ x: -200, y: 400 }}
                     className="about-slider__slide_image"
                   >
                     <motion.img src={imageSrc[nextImage]} />
@@ -185,9 +253,52 @@ const AboutSection = React.memo(() => {
 AboutSection.displayName = "AboutSection";
 
 const TrustedBy = React.memo(() => {
+  const Icons = {
+    1: "assets/images/trust-icon_1.png",
+    2: "assets/images/trust-icon_2.png",
+    3: "assets/images/trust-icon_3.png",
+    4: "assets/images/trust-icon_4.png",
+    5: "assets/images/trust-icon_5.png",
+    6: "assets/images/trust-icon_6.png",
+    7: "assets/images/trust-icon_7.png",
+    8: "assets/images/trust-icon_8.png",
+    9: "assets/images/trust-icon_9.png",
+    10: "assets/images/trust-icon_10.png",
+    11: "assets/images/trust-icon_11.png",
+    12: "assets/images/trust-icon_12.png",
+  };
+
+  const controls = useAnimation();
+
+  useEffect(() => {
+    // If a user hasn't opted in for reduced motion, then we add the animation
+    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      addAnimation();
+    }
+  }, []);
+
+  const addAnimation = async () => {
+    // Trigger the animation
+    controls.start({
+      x: ["0%", "-150%"], // Adjust the values based on your design
+      transition: {
+        x: {
+          duration: 40, // Set your desired animation duration
+          ease: "linear",
+          repeat: Infinity,
+          repeatType: "loop",
+        },
+      },
+      onComplete: () => {
+        // Reset the position to the starting point when the animation completes
+        controls.start({ x: "-50%", transition: { duration: 0 } });
+      },
+    });
+  };
+
   return (
     <>
-      <section className="trusted-outer pad100">
+      <section className="trusted-outer pad50-50">
         <div className="container text-center">
           <h2 className="bigheading">Trusted By:</h2>
           <p>
@@ -199,7 +310,7 @@ const TrustedBy = React.memo(() => {
             modules={[A11y, Autoplay, Parallax]}
             spaceBetween={20}
             slidesPerView={6}
-            autoplay={{ delay: 1000 }}
+            autoplay={{ delay: 2000 }}
             parallax={true}
             loop={true}
             breakpoints={{
@@ -218,42 +329,57 @@ const TrustedBy = React.memo(() => {
             }}
             className="trust-slider mt50"
           >
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (1).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (2).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (3).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (4).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (5).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (6).png" />
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link to="#" className="trust-icon">
-                <img src="assets/images/trust-icon (6).png" />
-              </Link>
-            </SwiperSlide>
+            {Object.keys(Icons).map((key, index) => {
+              return (
+                <SwiperSlide key={index}>
+                  <Link to="#" className="trust-icon">
+                    <motion.img
+                      style={{ filter: "grayscale(1)" }}
+                      whileHover={{ filter: "grayscale(0)" }}
+                      src={Icons[key]}
+                    />
+                  </Link>
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
+
+          {/* <motion.div
+            className="scroller"
+            data-speed="slow"
+            style={{
+              overflow: "hidden",
+              WebkitMask:
+                "linear-gradient(90deg, transparent, white 20%, white 80%, transparent)",
+              mask: "linear-gradient(90deg, transparent, white 20%, white 80%, transparent)",
+            }}
+          >
+            <motion.ul
+              className="tag-list scroller__inner"
+              style={{
+                paddingBlock: "1rem",
+                display: "flex",
+                flexWrap: "nowrap", // Set to nowrap for horizontal scrolling
+                // gap: "1rem",
+                width: "max-content",
+              }}
+              animate={controls}
+            >
+              {Object.keys(Icons).map((key, index) => {
+                return (
+                  <motion.li key={index}>
+                    <Link to="#" className="trust-icon">
+                      <motion.img
+                        style={{ filter: "grayscale(1)" }}
+                        whileHover={{ scale: 1.2, filter: "grayscale(0)" }}
+                        src={Icons[key]}
+                      />
+                    </Link>
+                  </motion.li>
+                );
+              })}
+            </motion.ul>
+          </motion.div> */}
         </div>
       </section>
     </>
@@ -667,14 +793,20 @@ const ContactUs = React.memo(() => {
               established online brand image.
             </p>
             <div className="social-cont">
-              <a href="#" className="d-flex just-start gap-20">
+              <a
+                href="mailto:Salesadaired@gmail.com"
+                className="d-flex just-start gap-20"
+              >
                 <img src="assets/images/conticon (2).png" />
                 <p>
                   Mail Id Of Sales Executive
                   <strong>Salesadaired@gmail.com</strong>
                 </p>
               </a>
-              <a href="#" className="d-flex just-start gap-20">
+              <a
+                href="skype:adaireddigital"
+                className="d-flex just-start gap-20"
+              >
                 <img src="assets/images/conticon (1).png" />
                 <p>
                   Our Skpe ID
