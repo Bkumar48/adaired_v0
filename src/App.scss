@@ -242,14 +242,14 @@
 }
 
 .growth-img::before {
-    position: absolute;
-    content: "";
-    border: 1px solid #BC1D8D;
-    width: 561px;
-    height: 524px;
-    right: 60px;
-    top: -20px;
-    z-index: -1;
+	position: absolute;
+	content: "";
+	border: 1px solid #BC1D8D;
+	width: 75%;
+	height: 60%;
+	right: 60px;
+	top: -20px;
+	z-index: -1;
 }
 
 .pink-para {
@@ -728,6 +728,39 @@
     .pad50-50 {
         padding: 50px 15px;
     }
+    .banner__wrapper .social-icon {
+        left: -10px;
+        gap: 25px 0;
+    }
+    .banner__wrapper .social-icon .line {
+        height: 200px;
+     }
+     .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
+        padding: 0 15px 150px;
+        grid-column: span 5;
+    }
+    .container {
+    max-width: 86%;
+}
+.main-header .navbar ul li a {
+	font-size: 16px;
+	line-height: 24px;
+}
+.logo img {
+	max-width: 165px;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title {
+	font-size: 50px;
+}
+.bigheading {
+	font-size: 36px;
+	line-height: 46px;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__subhead {
+	font-size: 18px;
+	transition: none;
+	padding-left: 50px;
+}
 }
 
 @media screen and (max-width:1450px) {
@@ -842,6 +875,22 @@
     .w-50 {
         width: calc(50% - 30px);
     }
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
+        grid-column: span 7;
+    }
+    .serv__text h3 {
+        font-size: 20px;
+     }
+     .serv__text {
+        padding: 60px 30px 60px;
+    }
+    .serv-card:hover .serv-hide {
+        bottom: 25px;
+        
+     }
+     .serv-card ul {
+        padding: 0px 0 10px 20px;
+    }
 
 
   
@@ -883,6 +932,11 @@
         font-size: 17px;
         border-radius: 15px;
     }
+        .ambitious-col {
+        max-width: 68%;
+    }
+    
+
 
 }
 
@@ -892,7 +946,7 @@
     }
 
     .bigheading {
-        font-size: 35px;
+        font-size: 32px;
         line-height: 40px;
     }
 
@@ -1029,7 +1083,19 @@
             padding: 35px 25px;
             min-height: 550px;
         }
-
+        
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
+        grid-column: span 9;
+    }
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title {
+	font-size: 50px;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info {
+	margin-bottom:30px;
+}
+.container {
+    max-width: 98%;
+}
 
 }
 
@@ -1286,8 +1352,8 @@
     }
 
     .bigheading {
-        font-size: 30px;
-        line-height: 35px;
+        font-size: 28px;
+        line-height: 32px;
     }
     .pink-para {
         padding: 10px;
@@ -1295,7 +1361,8 @@
     }
 
     .manage-grid .big-para {
-        font-size: 25px;
+        font-size: 23px;
+        margin: 10px auto 0;
     }
 
     .logo a img {
@@ -1690,6 +1757,38 @@
      .service_accordion .accordion:not(:last-child) {
         border-bottom: 1px solid #ddd;
     }
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
+	padding: 0 20px 100px ;
+	text-align: center;
+	grid-column: span 12;
+}
+.banner__wrapper .social-icon {
+	display: none;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__subhead::before {
+	display: none;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__subhead {
+ padding: 0px;
+}
+.banner__wrapper {
+	min-height: 80vh;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title {
+	font-size: 42px;
+}
+.banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info {
+	margin-bottom: 20px;
+}
+.ambitious-col {
+	max-width: 590px;
+}
+.mike-img img {
+	max-width: 40px;
+}
+.mike-img::after, .mike-img::before {
+	width: 60px;
+}
     
 
 }
@@ -1972,7 +2071,7 @@
 @media screen and (max-width:540px) {
 
     .bigheading {
-        font-size: 25px;
+        font-size: 24px;
         line-height: 28px;
     }
 

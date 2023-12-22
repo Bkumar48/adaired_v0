@@ -4,6 +4,7 @@ import {
   motion,
   AnimatePresence,
   useInView,
+  useScroll,
   useAnimation,
 } from "framer-motion";
 
@@ -16,6 +17,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/bundle";
 import { A11y, Autoplay, Parallax } from "swiper/modules";
+import DiagonalSlider from "../../components/diagonalSlider/DiagonalSlider";
 
 const ManageGrid = React.memo(() => {
   const ref = useRef(null);
@@ -73,7 +75,7 @@ const ManageGrid = React.memo(() => {
             <motion.img src="assets/images/left_splash-img.png" />
           </motion.div>
 
-          <div className="container text-center">
+          <div className="ambitious-col container text-center">
             <h2 className="bigheading">
               Digital Marketing Services for The Most Ambitious Enterprises
             </h2>
@@ -108,104 +110,54 @@ const ManageGrid = React.memo(() => {
 ManageGrid.displayName = "ManageGrid";
 
 const AboutSection = React.memo(() => {
-  const imageSrc = [
-    "assets/images/big-image_ceo.jpg",
-    "assets/images/ceo_sir-img.jpg",
-  ];
-  const [currentImage, setCurrentImage] = useState(0);
-  const [transitionImage, setTransitionImage] = useState(null);
-  const [nextImage, setNextImage] = useState(1);
-  const [animate, setAnimate] = useState(false);
-
-  const handleNextImage = () => {
-    setAnimate(true);
-    setTransitionImage(nextImage);
-    setNextImage((nextImage + 1) % imageSrc.length);
-  };
-
-  const variants = {
-    backgroundInitial: {
-      x: "100%",
-      y: "100%",
-    },
-    backgroundAnimate: {
-      x: "0%",
-      y: "0%",
-    },
-    backgroundExit: {
-      opacity: 0,
-    },
-
-    nextImageInitial: {
-      x: "100%",
-      y: "100%",
-    },
-    nextImageAnimate: {
-      x: "0%",
-      y: "0%",
-    },
-    nextImageExit: {
-      opacity: 0,
-    },
-  };
+  const ref = useRef(null);
+  const isInView = useInView(ref, { threshold: 0.2 });
 
   return (
     <>
-      <motion.section className="about-outer pb100">
+      <motion.section className="about-outer pb100" ref={ref}>
         <motion.div className="container d-flex">
-          <AnimatePresence>
-            <motion.div className="w-50">
-              <motion.div className="about-slider">
-                <motion.div className="about-slider__container">
-                  <motion.div className="about-slider__background_image">
-                    {animate && (
-                      <motion.img
-                        src={imageSrc[transitionImage]}
-                        style={{
-                          transition: "none",
-                        }}
-                        variants={variants}
-                        initial={{
-                          x: 500,
-                          y: 500,
-                        }}
-                        animate={{
-                          x: 0,
-                          y: 0,
-                        }}
-                        exit={"backgroundExit"}
-                        transition={{
-                          opacity: { ease: "circIn", duration: 0.95 },
-                          y: { type: "tween", ease: "easeOut", duration: 0.95 },
-                          x: { type: "tween", ease: "easeOut", duration: 0.95 },
-                        }}
-                        onAnimationComplete={() => {
-                          setAnimate(false);
-                          setCurrentImage(transitionImage);
-                        }}
-                        className="about-slider__slide_image"
-                      />
-                    )}
-                    <motion.img src={imageSrc[currentImage]} />
-                  </motion.div>
-
-                  <motion.div
-                  initial={animate ? "nextImageInitial" : "backgroundInitial"}
-                  animate={animate ? "nextImageAnimate" : "backgroundAnimate"}
-                    style={{
-                      transition: "none",
-                    }}
-                    className="about-slider__slide_image"
-                  >
-                    <motion.img src={imageSrc[nextImage]} />
-                  </motion.div>
-                </motion.div>
-              </motion.div>
-              <button onClick={handleNextImage}> Next Slide</button>
+          <motion.div
+            initial={
+              isInView ? { x: "100%", opacity: 0 } : { x: "-100%", opacity: 0 }
+            }
+            animate={
+              isInView ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }
+            }
+            transition={{
+              type: "spring",
+              // stiffness: 100,
+              // damping: 20,
+              duration: 2.0,
+              ease: [0.21, 0.09, 0.4, 0.72],
+              opacity: { ease: "linear" },
+            }}
+            style={{
+              transition: "none",
+            }}
+            className="w-50"
+          >
+            <motion.div className="about__slider">
+              <AnimatePresence>
+                <DiagonalSlider />
+              </AnimatePresence>
             </motion.div>
-          </AnimatePresence>
+          </motion.div>
 
-          <div className="abt-text w-50">
+          <motion.div
+            initial={isInView ? { opacity: 0 } : { opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
+            transition={{
+              ease: [0.21, 0.09, 0.4, 0.72],
+
+              delay: 0.5,
+              duration: 1.0,
+            }}
+            style={{
+              transition: "none",
+            }}
+            className="abt-text w-50"
+          >
             <h5 className="sub-heading sub-hd">About Us</h5>
             <h2 className="bigheading">A Company Obsessed With ROI</h2>
             <p>
@@ -244,7 +196,7 @@ const AboutSection = React.memo(() => {
             <a href="#" className="mt25 arrow-btn defbtn">
               View More Information
             </a>
-          </div>
+          </motion.div>
         </motion.div>
       </motion.section>
     </>
