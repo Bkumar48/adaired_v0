@@ -101,12 +101,17 @@ body {
     padding-left: 60px;
 }
 
+
 .gap-30 {
     gap: 30px;
 }
 
 .gap-20 {
     gap: 20px;
+}
+
+.gap-10 {
+    gap: 10px;
 }
 
 .mt50 {
@@ -153,9 +158,11 @@ body {
 .pad100 {
     padding: 100px 15px;
 }
+
 .pt100 {
     padding: 100px 15px 0px;
 }
+
 .pt50 {
     padding-top: 50px;
 }
@@ -183,9 +190,10 @@ body {
     margin-bottom: 50px;
 }
 
-.toggle-menu svg {
+.mobile-toggle {
     display: none;
 }
+
 
 button {
     cursor: pointer;
@@ -240,13 +248,7 @@ h6:not(:last-child) {
     margin: 0 0 15px;
 }
 
-button,
-div,
-svg path,
-svg,
-img {
-    transition: 0.6s all ease-in-out;
-}
+
 img {
     width: 100%;
     max-width: 100%;
@@ -267,29 +269,30 @@ img {
 }
 
 @mixin double-border {
+
     &::after,
     &::before {
-      position: absolute;
-      content: "";
-      background-color: #A7A9AC;
-      height: 1px;
-      width: 80px;
-      bottom: 0;
-      top: 0;
-      margin: auto;
-      pointer-events: none;
+        position: absolute;
+        content: "";
+        background-color: #A7A9AC;
+        height: 1px;
+        width: 80px;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+        pointer-events: none;
     }
-  
+
     &::after {
-      left: 140%;
-      right: unset;
+        left: 140%;
+        right: unset;
     }
-  
+
     &::before {
-      left: unset;
-      right: 140%;
+        left: unset;
+        right: 140%;
     }
-  }
+}
 
 .main-heading {
     color: #010101;
@@ -326,13 +329,16 @@ img {
 
     @include left-border;
 }
+
 .footer-bottom img {
-	max-width: max-content;
+    max-width: max-content;
 }
+
 .user-details img {
     max-width: max-content;
 }
+
 .doubal-border {
-	border-top: 1px solid #ddd;
-	border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }

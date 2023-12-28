@@ -1,35 +1,26 @@
 [
   {
-    "image": "assets/images/rev-user (1).png",
-    "name": "John Wick 1",
+    "image": "",
+    "name": "Tom Allen Jr.",
     "designation": "CEO Founder",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "description": "I was impressed with their work, the team is very experienced. They are able to manage all my social media accounts in a very professional manner.",
     "stars": 5,
     "id": 1
   },
   {
-    "image": "assets/images/rev-user (1).png",
-    "name": "John Wick 2",
+    "image": "",
+    "name": "Marianne Thomas",
     "designation": "CEO Founder",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "description": "They worked incredibly hard on my projects and consistently delivered excellent outcomes 💥. All I can say this is the best IT firm I've ever worked with.",
     "stars": 5,
     "id": 1
   },
   {
-    "image": "assets/images/rev-user (1).png",
-    "name": "John Wick 3",
+    "image": "",
+    "name": "Gloria Oliver",
     "designation": "CEO Founder",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
-    "stars": 5,
-    "id": 1
-  },
-  {
-    "image": "assets/images/rev-user (1).png",
-    "name": "John Wick 4",
-    "designation": "CEO Founder",
-    "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been theindustry's standard dummy text ever since the 1500s, when an unknown printer took.",
+    "description": "My experience with the company was amazing. They worked incredibly well on our recent project. We are more than happy with the final results.",
     "stars": 5,
     "id": 1
   }
-  
 ]

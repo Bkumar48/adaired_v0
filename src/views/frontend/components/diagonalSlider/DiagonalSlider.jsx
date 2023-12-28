@@ -40,16 +40,18 @@ const DiagonalSlider = () => {
           <Slides data={data} />
         </div>
       </div>
-      <Controls
-        currentSlideData={currentSlideData}
-        data={data}
-        transitionData={transitionData}
-        initData={initData}
-        handleData={setData}
-        handleTransitionData={setTransitionData}
-        handleCurrentSlideData={setCurrentSlideData}
-        sliderData={sliderData}
-      />
+      
+        <Controls
+          currentSlideData={currentSlideData}
+          data={data}
+          transitionData={transitionData}
+          initData={initData}
+          handleData={setData}
+          handleTransitionData={setTransitionData}
+          handleCurrentSlideData={setCurrentSlideData}
+          sliderData={sliderData}
+        />
+      
     </>
   );
 };

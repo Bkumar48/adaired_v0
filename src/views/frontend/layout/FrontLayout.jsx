@@ -17,6 +17,7 @@ const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
 const Footer = lazy(() => import("../global/footer/Footer.jsx"));
+import SingleBlog from './../pages/singleBlogPage/SingleBlog';
 
 const FrontLayout = () => {
   const [scrollY, setScrollY] = useState(0);

@@ -1,9 +1,14 @@
-import { Icon } from "@iconify/react";
-const SliderButton = ({ children, handleClick }) => {
+import "./DiagonalSlider.scss";
+import { useEffect, useState } from "react";
+
+const SliderButton = ({ children, handleClick, className }) => {
   return (
-    <button className="diagonalSlider__button" onClick={handleClick}>
+    <div
+      className={`diagonalSlider__button ${className}`}
+      onClick={handleClick}
+    >
       {children}
-    </button>
+    </div>
   );
 };
 
@@ -44,13 +49,47 @@ const Controls = ({
       ]);
     }, 500);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [data]);
+
   return (
-    <div className="diagonalSlider__control-btn">
-      <SliderButton handleClick={handlePrev}>
-        <Icon icon="mingcute:arrow-left-line" />
+    <div className="diagonalSlider__control-btn d-flex just-start gap-30">
+      <SliderButton handleClick={handlePrev} className={"left-arrow"}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="testimonials__button-icon "
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
+          />
+        </svg>
       </SliderButton>
       <SliderButton handleClick={handleNext}>
-        <Icon icon="mingcute:arrow-right-line" />
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          stroke="currentColor"
+          className="testimonials__button-icon"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3"
+          />
+        </svg>
       </SliderButton>
     </div>
   );

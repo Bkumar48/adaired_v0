@@ -1,9 +1,8 @@
 .diagonalSlider {
     position: relative;
     transition: none;
-    // overflow: hidden;
-    max-height: 700px;
-    height: 700px;
+    max-height: 650px;
+    height: 650px;
 
     &::before {
         position: absolute;
@@ -37,11 +36,6 @@
         transition: none;
     }
 
-    .diagonalSlider__control-btn{
-        .diagonalSlider__button {
-          
-        }
-    }
 
     .diagonalSlider__slides {
         position: absolute;
@@ -57,6 +51,32 @@
                 height: auto;
             }
 
+        }
+    }
+}
+
+
+.diagonalSlider__control-btn {
+    padding-top: 10px;
+
+    .diagonalSlider__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .left-arrow {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: 2px;
+            height: 25px;
+            top: 50%;
+            right: -16px;
+            transform: translateY(-50%);
+            background-color: #A7A9AC;
         }
     }
 }

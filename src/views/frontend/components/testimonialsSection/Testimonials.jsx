@@ -58,7 +58,13 @@ const Testimonials = () => {
                 <SwiperSlide key={index}>
                   <div className="review-col">
                     <div className="user-details d-flex just-start gap-30">
-                      <img src={data.image} />
+                    {data.image ? (
+                        <img src={data.image} alt={data.name} />
+                      ) : (
+                        <div className="initial-avatar">
+                          {data.name[0].toUpperCase()}
+                        </div>
+                      )}
                       <div className="review-hd">
                         <h4>{data.name}</h4>
                         <span>{data.designation}</span>

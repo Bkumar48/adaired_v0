@@ -113,13 +113,13 @@ const CaseStudy = ({
               </div>
               <div className="case__study-img-section ">
                 <div className="case__study-img-heading">
-                  <h3>
+                <h2 className="bigheading text-center">
                     {heading}
                     <span
                       className="ImageHeadingStyles"
                       style={ImageHeadingStyles}
                     ></span>
-                  </h3>
+                  </h2>
                   <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Officia blanditiis neque vero. Minus, modi eaque.
@@ -168,13 +168,13 @@ const CaseStudy = ({
               </div>
               <div className="case__study-img-section ">
                 <div className="case__study-img-heading">
-                  <h3>
+                  <h2 className="bigheading text-center">
                     {heading}
                     <span
                       className="ImageHeadingStyles"
                       style={ImageHeadingStyles}
                     ></span>
-                  </h3>
+                  </h2>
                   <p>
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                     Officia blanditiis neque vero. Minus, modi eaque.

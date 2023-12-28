@@ -54,7 +54,7 @@ const ContactDetails = () => {
   return (
     <div className="contact-para">
       <h4 className="sub-heading">Ready to Elevate?</h4>
-      <h2 className="main-heading">Get In Touch</h2>
+      <h2 className="bigheading">Get In Touch</h2>
       <p>
         Welcome to Adaired, your one-stop destination for comprehensive digital
         marketing solutions. Every ambitious entrepreneur needs a digital

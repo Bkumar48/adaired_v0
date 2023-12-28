@@ -159,7 +159,7 @@ const Career = () => {
       <Banner title="Career" />
       <div className="career_wrapper">
         <div className="career_container container pad100">
-          <h2>We Are Currently Recruiting For :</h2>
+          <h2 className="bigheading">We Are Currently Recruiting For :</h2>
           <div className="d-flex career_content align-start">
             <div className="career__left">
               <CurrentRecruitments />

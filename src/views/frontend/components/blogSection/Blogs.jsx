@@ -1,6 +1,7 @@
 import BlogCard from "../singleBlogCard/BlogCard";
 import jsonData from "../../JSON_files/blogs_data.json";
 import { Link } from "react-router-dom";
+import Button from "../buttonComponent/Button";
 const Blogs = (props) => {
   const blogData = jsonData.slice(0, props.limit ? props.limit : 3);
   return (
@@ -23,9 +24,16 @@ const Blogs = (props) => {
           })}
         </div>
         {props.viewMoreBtn && (
-          <Link to="/blogs" className="defbtn arrow-btn">
-            View More
-          </Link>
+          <div className="text-center mt25">
+          <Button
+            title="View More"
+            type="button"
+            svgBackgroundColor="#F89520"
+            icon="solar:arrow-right-broken"
+            navigateTo="/blogs"
+            className="blog-view-more-btn text-center"
+          />
+        </div>
         )}
       </section>
     </>

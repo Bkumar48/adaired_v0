@@ -78,3 +78,16 @@
     transform: scale(1.2);
     color: #F89520;
 }
+
+.initial-avatar{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background-color: #c2c2c2;
+    color: #fff;
+    font-size: 30px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

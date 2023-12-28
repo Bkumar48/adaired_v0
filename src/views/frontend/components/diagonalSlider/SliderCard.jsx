@@ -1,31 +1,27 @@
-import React from "react";
 import { motion } from "framer-motion";
 const SliderCard = ({ data }) => {
   return (
     <motion.div
       layout
-      initial={{ scale: 1, opacity: 0 }}
+      initial={{ opacity: 0 }}
       animate={{
-        scale: 1,
         opacity: 1,
         transition: {
-          duration: 0.5,
+          duration: 1.0,
         },
       }}
-      exit={{
-        scale: 1,
-        opacity: 0,
-        transition: {
-          duration: 0.5,
-        },
-      }}
-
-    
-      transition={{
-        type: "spring",
-        damping: 20,
-        stiffness: 100,
-      }}
+      // exit={{
+      //   scale: 1,
+      //   opacity: 0,
+      //   transition: {
+      //     duration: 0.5,
+      //   },
+      // }}
+      // transition={{
+      //   type: "spring",
+      //   damping: 20,
+      //   stiffness: 100,
+      // }}
       className="diagonalSlider__SlideCard"
     >
       <motion.img

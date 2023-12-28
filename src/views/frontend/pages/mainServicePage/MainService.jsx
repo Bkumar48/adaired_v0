@@ -134,17 +134,17 @@ const IntroSection = React.memo(() => {
               <div className="mb-50">
                 <GetInTouchForm />
               </div>
-              <div className="mb-50">
+              <div className="contact-card">
                 <ContactUsCard />
               </div>
             </aside>
           </div>
-          <div className="arrow-flex">
+          <div className="arrow-flex mt50">
             {FourPoints.map((point, index) => {
               return (
                 <div
                   key={index}
-                  className="full-list half-list d-flex wrap-flex"
+                  className="full-list half-list d-flex wrap-flex "
                 >
                   <li>{point}</li>
                 </div>

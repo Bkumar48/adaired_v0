@@ -4,8 +4,8 @@ import "./App.scss";
 
 const App = () => {
   return (
-    <>
-      <Router>
+    <> 
+      <Router >
         <Routes>
           <Route path="*" element={<FrontLayout />} />
         </Routes>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Button from "../buttonComponent/Button";
 
 const BlogCard = (props) => {
   // Access data from props
@@ -10,7 +11,6 @@ const BlogCard = (props) => {
   };
   return (
     <>
-    
       <div className="blog-col">
         <div className="blog-img">
           <img src={data.image} alt={data.imageAlt} />
@@ -18,18 +18,22 @@ const BlogCard = (props) => {
         <div className="blog-text">
           <h4 className="short-hd">{data.title}</h4>
           <p>{data.description}</p>
-          <Link to={data.link} className="post-btn">
-            Read More
-          </Link>
+          <Button
+            title="Read More"
+            type="button"
+            svgBackgroundColor="#F89520"
+            icon="solar:arrow-right-broken"
+            borderColor="transparent"
+          />
           <div className="blog-bottom d-flex">
-            <Link to="#">
-              <i className="fa-solid fa-calendar-days"></i>
-              <span>{formatDate(data.created_at)}</span>
-            </Link>
-            <Link to="#">
-              <i className="fa-solid fa-clock"></i>
-              <span>{data.readTime}</span>
-            </Link>
+            <div className="d-flex gap-10">
+            <i className="fa-solid fa-calendar-days"></i>
+            <span>{formatDate(data.created_at)}</span>
+            </div>
+            <div className="d-flex gap-10">
+            <i className="fa-solid fa-clock"></i>
+            <span>{data.readTime}</span>
+            </div>
           </div>
         </div>
       </div>

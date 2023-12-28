@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import JsonData from "./Header.json";
 import { useState } from "react";
+import Button from "../../components/buttonComponent/Button";
 
 const Header = (props) => {
-
-  const [showNavbar, setShowNavbar] = useState(false)
+  const [showNavbar, setShowNavbar] = useState(false);
 
   const handleShowNavbar = () => {
-    setShowNavbar(!showNavbar)
-  }
+    setShowNavbar(!showNavbar);
+  };
 
   return (
     <>
@@ -31,8 +31,8 @@ const Header = (props) => {
           </motion.div>
           <div className="header-left d-flex gap-20">
             <div className="navbar">
-              <div className="toggle-menu"  onClick={handleShowNavbar}>
-                <Icon icon="icon-park:hamburger-button" />
+              <div className="toggle-menu" onClick={handleShowNavbar}>
+                <Icon icon="icon-park:hamburger-button" className="mobile-toggle" />
                 <ul className={`menu d-flex ${showNavbar && "active"}`}>
                   {JsonData.navbar.map((data, index) => {
                     return (
@@ -51,6 +51,25 @@ const Header = (props) => {
                       </motion.li>
                     );
                   })}
+                  <motion.li
+                    className="nav-item"
+                    initial={{ opacity: 0, y: -100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{
+                      duration: 0.1,
+                      ease: "easeInOut",
+                      delay: 0.1 + 5 * 0.1,
+                    }}
+                  >
+                    {" "}
+                    <Button
+                      title="Contact"
+                      type="button"
+                      svgBackgroundColor="#000"
+                      icon="solar:arrow-right-broken"
+                      navigateTo="/contact"
+                    />
+                  </motion.li>
                 </ul>
               </div>
             </div>

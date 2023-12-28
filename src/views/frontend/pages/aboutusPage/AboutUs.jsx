@@ -3,8 +3,14 @@ import jsonData from "../../JSON_files/our_journey.json";
 import Banner from "../../components/banners/Banner";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
 import Blogs from "../../components/blogSection/Blogs";
-
-import { motion } from "framer-motion";
+import DiagonalSlider from "../../components/diagonalSlider/DiagonalSlider";
+import {
+  motion,
+  AnimatePresence,
+  useInView,
+  useScroll,
+  useAnimation,
+} from "framer-motion";
 
 const IntroSection = React.memo(() => {
   return (
@@ -12,14 +18,10 @@ const IntroSection = React.memo(() => {
       <section className="about-outer pad50-50">
         <div className="container d-flex">
           <div className="w-50">
-            <div className="about-slider">
-              <div className="abt-img_big">
-                <img src="assets/images/big-image_ceo.jpg" alt="img" />
-                <img
-                  className="short-img"
-                  src="assets/images/ceo_sir-img.jpg"
-                ></img>
-              </div>
+            <div className="about__slider">
+              <AnimatePresence>
+                <DiagonalSlider />
+              </AnimatePresence>
             </div>
           </div>
           <div className="abt-text w-50">

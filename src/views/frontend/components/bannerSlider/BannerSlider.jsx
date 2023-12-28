@@ -9,17 +9,17 @@ const sliderData = [
   {
     img: "assets/images/1.png",
     subHead: "Adaired Digital Media",
-    title: "Digital Marketing Agency That Turns Businesses Into Brands 0 ",
+    title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
     img: "assets/images/2.png",
     subHead: "Adaired Digital Media",
-    title: "Digital Marketing Agency That Turns Businesses Into Brands 1 ",
+    title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
     img: "assets/images/3.png",
     subHead: "Adaired Digital Media",
-    title: "Digital Marketing Agency That Turns Businesses Into Brands 2",
+    title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
 
 ];
@@ -70,12 +70,12 @@ const BannerSlider = () => {
     ]);
   };
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     SlideToNext();
-  //   }, 3000);
-  //   return () => clearInterval(interval);
-  // }, [currentSlideData]);
+    useEffect(() => {
+      const interval = setInterval(() => {
+        SlideToNext();
+      }, 3000);
+      return () => clearInterval(interval);
+    }, [currentSlideData]);
 
   const staggerDuration = 0.25;
 
@@ -108,7 +108,7 @@ const BannerSlider = () => {
             variants={socialIconVariants}
             initial="hidden"
             animate="visible"
-            transition={{ duration: 0.5, delay: staggerDuration }}
+            transition={{ duration: 0.5 }}
             className="line before"
           ></motion.div>
 
@@ -118,7 +118,7 @@ const BannerSlider = () => {
                 variants={svgVariants}
                 initial="hidden"
                 animate="visible"
-                transition={{ duration: 0.5, delay: index * staggerDuration }}
+                transition={{ duration: 0.5, delay: index * staggerDuration + 0.5}}
                 xmlns="http://www.w3.org/2000/svg"
                 width="33"
                 height="33"

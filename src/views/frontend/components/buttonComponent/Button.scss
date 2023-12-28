@@ -5,11 +5,15 @@
     text-transform: capitalize;
     text-align: left;
     padding: 15px 60px 15px 16px;
+    transition: transform 0.4s ease, left 0.4s ease 0.1s;
     outline: none;
     position: relative;
     cursor: pointer;
     border: 1px solid;
-
+    font-family: "Nunito Sans", sans-serif;
+    color: #515151;
+    font-weight: 400;
+    transition: all 0.6s ease;
 
 
     svg {
@@ -24,11 +28,11 @@
     }
 
     &:hover {
-        padding: 15px 18px 15px 60px;
+        padding: 15px 18px 15px 58px;
 
         svg {
             left: 5px;
-            transform: translateY(-50%) rotate(180deg);
+            transform: translateY(-50%) ;
         }
     }
 }
