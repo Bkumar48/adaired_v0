@@ -690,22 +690,18 @@ const ContactUs = React.memo(() => {
     formState: { errors },
   } = useForm();
 
-  function sendDataToDatabase(data) {
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwC1kBUTm0TuXY1NcD-lhoOVQVyYkNAtBl2g0wir_7r0qroqXBpClX16VoP_izl99s8ow/exec",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-        redirect: "follow",
-      }
-    )
-      .then((response) => response.json())
-      .then((result) => console.log(result))
-      .catch((error) => console.log("error", error));
-  }
+ 
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbw5yS4jO5_yQ7GUhTqm6bZyfr1eT_Rv3txPos934jcrGmlEIl-Z01GIqnkpM_lbStDnWg/exec";
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      await axios.post(scriptUrl, JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <>
@@ -748,7 +744,7 @@ const ContactUs = React.memo(() => {
           </div>
 
           <div className="home-form w-50">
-            <form onSubmit={handleSubmit(sendDataToDatabase)}>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <input
                 className="half-col"
                 type="text"
@@ -806,7 +802,7 @@ const ContactUs = React.memo(() => {
               <textarea
                 className="full-col"
                 rows="8"
-                {...register("message")} // No validation for message
+                {...register("Message")} // No validation for message
               />
 
               <div className="checkbox full-col">
