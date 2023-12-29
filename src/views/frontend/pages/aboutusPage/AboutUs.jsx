@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from "react";
+import React, { useEffect } from "react";
 import jsonData from "../../JSON_files/our_journey.json";
 import Banner from "../../components/banners/Banner";
 import Testimonials from "../../components/testimonialsSection/Testimonials";

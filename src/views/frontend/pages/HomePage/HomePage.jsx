@@ -8,7 +8,7 @@ import {
   useAnimation,
 } from "framer-motion";
 import Button from "../../components/buttonComponent/Button";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import axios from "axios";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
@@ -113,32 +113,49 @@ const ManageGrid = React.memo(() => {
 ManageGrid.displayName = "ManageGrid";
 
 const AboutSection = React.memo(() => {
-  const ref = useRef(null);
-  const isInView = useInView(ref, {
-    once: true,
-  });
-
+  const sliderVariants = {
+    initial: {
+      opacity: 0,
+      x: "-100%",
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1.0,
+        ease: "easeInOut",
+      },
+    },
+  };
+  const textVariants = {
+    initial: {
+      opacity: 0,
+      x: "100%",
+    },
+    animate: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 1.0,
+        ease: "easeInOut",
+      },
+    },
+  };
   return (
     <>
-      <motion.section className="about-outer pb100" ref={ref}>
-        <motion.div className="container d-flex">
+      <motion.section className="about-outer pb100">
+        <motion.div
+          initial="initial"
+          whileInView={"animate"}
+          viewport={{ once: false, amount: 0.2 }}
+          transition={{ staggerChildren: 0.2 }}
+          className="container d-flex"
+        >
           <motion.div
-            initial={
-              isInView ? { x: "100%", opacity: 0 } : { x: "-100%", opacity: 0 }
-            }
-            animate={
-              isInView ? { x: 0, opacity: 1 } : { x: "-100%", opacity: 0 }
-            }
-            transition={{
-              type: "tween",
-
-              duration: 1.0,
-              ease: [0.21, 0.09, 0.4, 0.72],
-              opacity: { ease: "linear" },
-            }}
             style={{
               transition: "none",
             }}
+            variants={sliderVariants}
             className="w-50 about__slider-wrapper"
           >
             <motion.div className="about__slider">
@@ -149,17 +166,10 @@ const AboutSection = React.memo(() => {
           </motion.div>
 
           <motion.div
-            initial={isInView ? { opacity: 0 } : { opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-            transition={{
-              ease: [0.21, 0.09, 0.4, 0.72],
-
-              delay: 0.5,
-              duration: 1.0,
-            }}
             style={{
               transition: "none",
             }}
+            variants={textVariants}
             className="abt-text w-50"
           >
             <h5 className="sub-heading sub-hd">About Us</h5>
@@ -230,81 +240,114 @@ const TrustedBy = React.memo(() => {
     12: "assets/images/trust-icon_12.png",
   };
 
-  const controls = useAnimation();
+  // const controls = useAnimation();
 
-  useEffect(() => {
-    // If a user hasn't opted in for reduced motion, then we add the animation
-    if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      addAnimation();
-    }
-  }, []);
+  // useEffect(() => {
+  //   // If a user hasn't opted in for reduced motion, then we add the animation
+  //   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  //     addAnimation();
+  //   }
+  // }, []);
 
-  const addAnimation = async () => {
-    // Trigger the animation
-    controls.start({
-      x: ["0%", "-150%"], // Adjust the values based on your design
+  // const addAnimation = async () => {
+  //   // Trigger the animation
+  //   controls.start({
+  //     x: ["0%", "-150%"], // Adjust the values based on your design
+  //     transition: {
+  //       x: {
+  //         duration: 40, // Set your desired animation duration
+  //         ease: "linear",
+  //         repeat: Infinity,
+  //         repeatType: "loop",
+  //       },
+  //     },
+  //     onComplete: () => {
+  //       // Reset the position to the starting point when the animation completes
+  //       controls.start({ x: "-50%", transition: { duration: 0 } });
+  //     },
+  //   });
+  // };
+
+  const variants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
       transition: {
-        x: {
-          duration: 40, // Set your desired animation duration
-          ease: "linear",
-          repeat: Infinity,
-          repeatType: "loop",
-        },
+        duration: 0.5,
+        ease: "easeInOut",
       },
-      onComplete: () => {
-        // Reset the position to the starting point when the animation completes
-        controls.start({ x: "-50%", transition: { duration: 0 } });
-      },
-    });
+    },
   };
 
   return (
     <>
       <section className="trusted-outer pad50-50">
-        <div className="container text-center">
-          <h2 className="bigheading">Trusted By:</h2>
-          <p>
-            The success of our clients is what determines our success. <br />
-            Below are a few of our favorite clients who we have worked for; we
-            have reserved a spot for you!
-          </p>
-          <Swiper
-            modules={[A11y, Autoplay, Parallax]}
-            spaceBetween={20}
-            slidesPerView={6}
-            autoplay={{ delay: 2000 }}
-            parallax={true}
-            loop={true}
-            breakpoints={{
-              0: {
-                slidesPerView: 2,
-              },
-              640: {
-                slidesPerView: 3,
-              },
-              768: {
-                slidesPerView: 4,
-              },
-              1024: {
-                slidesPerView: 6,
-              },
-            }}
-            className="trust-slider mt50"
-          >
-            {Object.keys(Icons).map((key, index) => {
-              return (
-                <SwiperSlide key={index}>
-                  <Link to="#" className="trust-icon">
-                    <motion.img
-                      style={{ filter: "grayscale(1)" }}
-                      whileHover={{ filter: "grayscale(0)" }}
-                      src={Icons[key]}
-                    />
-                  </Link>
-                </SwiperSlide>
-              );
-            })}
-          </Swiper>
+        <motion.div
+          initial="initial"
+          whileInView={"animate"}
+          viewport={{ once: false, amount: 1 }}
+          transition={{ staggerChildren: 0.2 }}
+          className="container text-center"
+        >
+          <motion.div variants={variants}>
+            <motion.h2 className="bigheading">Trusted By:</motion.h2>
+          </motion.div>
+
+          <motion.div variants={variants} className="" style={{
+            padding:"15px 0 0 0 "
+          }}>
+            {" "}
+            <motion.p>
+              The success of our clients is what determines our success. <br />
+              Below are a few of our favorite clients who we have worked for; we
+              have reserved a spot for you!
+            </motion.p>
+          </motion.div>
+
+          <motion.div variants={variants} className="trust-slider-outer">
+            <Swiper
+              modules={[A11y, Autoplay, Parallax]}
+              spaceBetween={20}
+              slidesPerView={6}
+              autoplay={{ delay: 2000 }}
+              parallax={true}
+              loop={true}
+              breakpoints={{
+                0: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 6,
+                },
+              }}
+              className="trust-slider mt50"
+            >
+              {Object.keys(Icons).map((key, index) => {
+                return (
+                  <SwiperSlide key={index}>
+                    <Link to="#" className="trust-icon">
+                      <motion.img
+                        style={{ filter: "grayscale(1)" }}
+                        whileHover={{ filter: "grayscale(0)" }}
+                        src={Icons[key]}
+                      />
+                    </Link>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            
+          </motion.div>
 
           {/* <motion.div
             className="scroller"
@@ -322,7 +365,7 @@ const TrustedBy = React.memo(() => {
                 paddingBlock: "1rem",
                 display: "flex",
                 flexWrap: "nowrap", // Set to nowrap for horizontal scrolling
-                // gap: "1rem",
+                gap: "2rem",
                 width: "max-content",
               }}
               animate={controls}
@@ -333,7 +376,7 @@ const TrustedBy = React.memo(() => {
                     <Link to="#" className="trust-icon">
                       <motion.img
                         style={{ filter: "grayscale(1)" }}
-                        whileHover={{ scale: 1.2, filter: "grayscale(0)" }}
+                        whileHover={{ scale: 1.1, filter: "grayscale(0)" }}
                         src={Icons[key]}
                       />
                     </Link>
@@ -342,7 +385,7 @@ const TrustedBy = React.memo(() => {
               })}
             </motion.ul>
           </motion.div> */}
-        </div>
+        </motion.div>
       </section>
     </>
   );
@@ -350,6 +393,21 @@ const TrustedBy = React.memo(() => {
 TrustedBy.displayName = "TrustedBy";
 
 const Services = React.memo(() => {
+  const variants = {
+    initial: {
+      opacity: 0,
+      y: 50,
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.5,
+        ease: "easeInOut",
+      },
+    },
+  };
+
   const servicesData = [
     {
       title: "Website Design & Development",
@@ -363,6 +421,7 @@ const Services = React.memo(() => {
         "E-commerce website design & development",
       ],
       imageSrc: "assets/images/services_cards-webdev-img.png",
+      custom: 1,
     },
     {
       title: "Social Media Management",
@@ -376,6 +435,7 @@ const Services = React.memo(() => {
         "Monthly Report",
       ],
       imageSrc: "assets/images/services_cards-smm-img.png",
+      custom: 2,
     },
     {
       title: "Content Development & Marketing",
@@ -390,6 +450,7 @@ const Services = React.memo(() => {
         "Social Media Posting",
       ],
       imageSrc: "assets/images/services_cards-contentwriting-img.png",
+      custom: 3,
     },
     {
       title: "Graphic Designing",
@@ -404,6 +465,7 @@ const Services = React.memo(() => {
         "Social media graphics & digital marketing ads",
       ],
       imageSrc: "assets/images/services_cards-logodesign-img.png",
+      custom: 4,
     },
     {
       title: "Search engine optimization",
@@ -418,6 +480,7 @@ const Services = React.memo(() => {
         "Penalty review & recovery",
       ],
       imageSrc: "assets/images/services_cards-seo-img.png",
+      custom: 5,
     },
     {
       title: "Pay Per Click",
@@ -432,11 +495,12 @@ const Services = React.memo(() => {
         "Campaign management and optimization",
       ],
       imageSrc: "assets/images/services_cards-ppc-img.png",
+      custom: 6,
     },
   ];
 
-  const ServiceItem = ({ title, description, list, imageSrc }) => (
-    <div className="serv-card">
+  const ServiceItem = ({ title, description, list, imageSrc, custom }) => (
+    <motion.div className="serv-card" variants={variants} custom={custom}>
       <div className="serv-img">
         <img src={imageSrc} alt={title} />
       </div>
@@ -466,28 +530,60 @@ const Services = React.memo(() => {
           />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 
+  const textVariants = {
+    initial: {
+      opacity: 0,
+      y: "100%",
+    },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        ease: [0.78, 0.77, 0.41, 0.42],
+      },
+    },
+  };
   return (
     <>
       <section className="service-outer pad100">
-        <div className="container">
-          <div className="text-center">
-            <h4 className="min-heading sub_hd-mx">Our Services</h4>
-            <h2 className="bigheading">What We Offer</h2>
-            <p>
+        <motion.div className="container">
+          <motion.div
+            initial="initial"
+            whileInView={"animate"}
+            viewport={{ once: false, amount: 1 }}
+            transition={{ staggerChildren: 0.1 }}
+            className="text-center"
+          >
+            <motion.h4
+              variants={textVariants}
+              className="min-heading sub_hd-mx"
+            >
+              Our Services
+            </motion.h4>
+            <motion.h2 variants={textVariants} className="bigheading">
+              What We Offer
+            </motion.h2>
+            <motion.p variants={textVariants}>
               Whatever service we provide, we give a thought about every small
               detail. Our main motive is brand growth and this is what leaves a
               mark on every customer.
-            </p>
-          </div>
-          <div className="service-grid d-flex wrap-flex mt50">
+            </motion.p>
+          </motion.div>
+          <motion.div
+            initial={"initial"}
+            whileInView={"animate"}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ staggerChildren: 0.5 }}
+            className="service-grid d-flex wrap-flex mt50"
+          >
             {servicesData.map((service, index) => (
               <ServiceItem key={index} {...service} />
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </section>
     </>
   );
@@ -503,9 +599,9 @@ const CaseStudy = React.memo(() => {
             modules={[A11y, Autoplay, Parallax]}
             spaceBetween={0}
             slidesPerView={1}
-            autoplay={{ delay: 3000 }}
-            parallax={true}
-            loop={true}
+            // autoplay={{ delay: 3000 }}
+            // parallax={true}
+            // loop={true}
           >
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
@@ -690,7 +786,6 @@ const ContactUs = React.memo(() => {
     formState: { errors },
   } = useForm();
 
- 
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbw5yS4jO5_yQ7GUhTqm6bZyfr1eT_Rv3txPos934jcrGmlEIl-Z01GIqnkpM_lbStDnWg/exec";
 

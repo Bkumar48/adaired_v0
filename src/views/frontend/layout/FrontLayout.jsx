@@ -5,6 +5,7 @@ import Headroom from "react-headroom";
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
+// import Footer from "../global/footer/Footer.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -13,11 +14,10 @@ const MainBlog = lazy(() => import("../pages/mainBlogPage/MainBlog.jsx"));
 const Gallery = lazy(() => import("../pages/galleryPage/Gallery.jsx"));
 const CaseStudy = lazy(() => import("../pages/caseStudyPage/CaseStudy.jsx"));
 const Career = lazy(() => import("../pages/careerPage/Career.jsx"));
+const Footer = lazy(() => import("../global/footer/Footer.jsx"));
 const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
-const Footer = lazy(() => import("../global/footer/Footer.jsx"));
-import SingleBlog from './../pages/singleBlogPage/SingleBlog';
 
 const FrontLayout = () => {
   const [scrollY, setScrollY] = useState(0);

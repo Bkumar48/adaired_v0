@@ -39,10 +39,7 @@
   }
 }
 
-// Diagonal Slider
-// .about__slider-wrapper{
-//   max-height: 650px;
-// }
+
 
 // trusted by section
 .trusted-outer {
@@ -245,11 +242,22 @@
 
 // case study
 .case-study {
-  background-image: url(assets/images/brown-vector.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center bottom;
+  // background-image: url(assets/images/brown-vector.png);
+  // background-repeat: no-repeat;
+  // background-size: cover;
+  // background-position: center bottom;
+  background-image: ;
+
+  img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width:500px;
+    object-fit: cover;
+  }
 }
+
+.case-study-col 
 
 .growth-img {
   position: relative;
