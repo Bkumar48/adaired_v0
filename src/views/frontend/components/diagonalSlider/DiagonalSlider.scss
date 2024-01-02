@@ -57,7 +57,22 @@
 
 
 .diagonalSlider__control-btn {
-    padding-top: 10px;
+    margin-top: 10px;
+   position: relative;
+   max-width: max-content;
+     
+    &::after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 25px;
+        top: 0;
+        bottom: 0;
+        right: 0px;
+        left: 0;
+        margin: auto;
+        background-color: #A7A9AC;
+    }
 
     .diagonalSlider__button {
         display: flex;
@@ -65,18 +80,4 @@
         justify-content: center;
     }
 
-    .left-arrow {
-        position: relative;
-
-        &::after {
-            content: "";
-            position: absolute;
-            width: 2px;
-            height: 25px;
-            top: 50%;
-            right: -16px;
-            transform: translateY(-50%);
-            background-color: #A7A9AC;
-        }
-    }
 }

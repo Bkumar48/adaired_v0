@@ -46,9 +46,10 @@
   background-color: #f8f8f8;
 
   .trust-icon {
-    max-width: 100px;
-    margin: 0 auto;
-    padding: 20px 0;
+    margin: 0 auto !important;
+    padding: 15px 10px;
+    display: inline-block;
+    border-radius: 10px;
     align-items: center;
     background: #fff;
 
@@ -57,8 +58,6 @@
       display: block;
       margin: 0 auto;
       background: #fff;
-      padding: 10px;
-      border-radius: 10px;
     }
   }
 
@@ -66,7 +65,6 @@
     .swiper-wrapper {
       display: flex;
       align-items: center;
-      gap: 20px;
     }
   }
 }
@@ -129,7 +127,7 @@
     p {
       overflow: hidden;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
     }
 
@@ -214,7 +212,7 @@
     }
 
     &:hover .serv-hide {
-      bottom: 50px;
+      bottom: 20px;
       height: 380px;
       opacity: 1;
     }
@@ -246,26 +244,26 @@
   // background-repeat: no-repeat;
   // background-size: cover;
   // background-position: center bottom;
-  background-image: ;
+  // background-image: ;
+  background-color: #ECEDE6;
+  clip-path: polygon(100% 0%, 0% 0%, 0.00% 99.89%, 2.50% 99.74%, 5.00% 99.29%, 7.50% 98.57%, 10.00% 97.64%, 12.50% 96.57%, 15.00% 95.42%, 17.50% 94.28%, 20.00% 93.23%, 22.50% 92.35%, 25.00% 91.69%, 27.50% 91.31%, 30.00% 91.23%, 32.50% 91.46%, 35.00% 91.97%, 37.50% 92.74%, 40.00% 93.71%, 42.50% 94.81%, 45.00% 95.96%, 47.50% 97.09%, 50.00% 98.10%, 52.50% 98.94%, 55.00% 99.53%, 57.50% 99.85%, 60.00% 99.85%, 62.50% 99.56%, 65.00% 98.98%, 67.50% 98.16%, 70.00% 97.15%, 72.50% 96.03%, 75.00% 94.88%, 77.50% 93.77%, 80.00% 92.79%, 82.50% 92.01%, 85.00% 91.48%, 87.50% 91.24%, 90.00% 91.30%, 92.50% 91.66%, 95.00% 92.31%, 97.50% 93.18%, 100.00% 94.22%);
 
   img {
     display: block;
     margin: 0 auto;
     width: 100%;
-    max-width:500px;
+    max-width: 500px;
     object-fit: cover;
   }
 }
 
-.case-study-col 
-
-.growth-img {
+.case-study-col .growth-img {
   position: relative;
 }
 
 .growth-img .team-img {
   position: absolute;
-  right: -40px;
+  right: -70px;
   width: auto;
   top: 40%;
 }
@@ -275,8 +273,8 @@
   content: "";
   border: 1px solid #bc1d8d;
   width: 75%;
-  height: 60%;
-  right: 60px;
+  height: 90%;
+  right: -20px;
   top: -20px;
   z-index: -1;
 }
@@ -319,11 +317,9 @@
 
 // Contact Us
 .contact-grid {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 19%,
-    rgba(255, 251, 228, 1) -6%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 1) 19%,
+      rgba(255, 251, 228, 1) -6%);
 
   .cont-text {
     ul {
@@ -395,46 +391,38 @@
       &::after {
         position: absolute;
         content: "";
-        height: 142px;
+        height: 20.7%;
         pointer-events: none;
-        border-radius: 10px 10px 0px 0px;
-        border: 7px solid #a7a9ac;
         top: 0;
-        left: -6px;
+        left: -8px;
         right: 0;
         margin: 0 auto;
-        border-bottom: 0;
         width: 100%;
+        border-radius: 10px 10px 0px 0px;
+        border: 7px solid #E7E7E7;
+        border-bottom: 0;
       }
 
       input,
-      select {
+      select, textarea {
         border: 0px;
         border-bottom: 1px solid #a7a9ac;
         padding-bottom: 10px;
         background-color: #fff;
+        text-transform: capitalize;
+        font-weight: 300;
         outline: none;
       }
 
       textarea {
-          padding-bottom: 10px;
-          background-color: #fff;
-          outline: none;
-          border: 1px solid #b0b0b0;
-        
+        border: 1px solid #b0b0b0;
+
       }
 
-      .half-col {
-        width: calc(100% / 2 - 20px);
-      }
-
-      .full-col {
-        width: 100%;
-      }
 
       input::placeholder,
       select,
-      label {
+      label, textarea::placeholder {
         color: #515151;
         font-family: Nunito Sans;
         font-size: 20px;
@@ -442,11 +430,13 @@
         font-weight: 300;
         opacity: 1;
         line-height: normal;
+        text-transform: capitalize;
       }
 
       .checkbox {
         display: flex;
         align-items: center;
+        flex-wrap: wrap;
 
         input {
           width: 20px;

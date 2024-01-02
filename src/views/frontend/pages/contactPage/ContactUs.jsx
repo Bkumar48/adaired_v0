@@ -7,8 +7,9 @@ import Map from "../../components/mapSection/map";
 
 const ContactForm = () => {
   return (
-    <div className="contact-form">
+    <div className="contact-form home-form">
       <form action="">
+        <div className="full-col">
         <label htmlFor="name">Name</label>
         <input
           type="text"
@@ -16,6 +17,8 @@ const ContactForm = () => {
           name="name"
           placeholder="Enter Your Name"
         />
+        </div>
+        <div className="full-col">
         <label htmlFor="email">Email</label>
         <input
           type="email"
@@ -23,6 +26,8 @@ const ContactForm = () => {
           name="email"
           placeholder="Enter Your Email"
         />
+        </div>
+        <div className="full-col">
         <label htmlFor="phone">Phone Number</label>
         <input
           type="tel"
@@ -30,6 +35,8 @@ const ContactForm = () => {
           name="phone"
           placeholder="Enter Your Phone Number"
         />
+        </div>
+        <div className="full-col">
         <label htmlFor="message">Your Message</label>
         <textarea
           id="message"
@@ -37,7 +44,7 @@ const ContactForm = () => {
           placeholder="Enter Your Name"
           rows={5}
         />
-
+        </div>
         <button type="submit" className="contact__us-submit-btn defbtn">
           Submit
         </button>

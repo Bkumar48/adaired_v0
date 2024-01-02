@@ -12,33 +12,6 @@
             text-align: center;
         }
 
-        h4 {
-            position: relative;
-            color: #515151;
-            text-align: center;
-            font-size: 20px;
-            line-height: 42.64px;
-            font-weight: 400;
-            font-family: 'Nunito Sans', sans-serif;
-
-            &::before,
-            &::after {
-                content: "";
-                position: absolute;
-                border: 1px solid #A7A9AC;
-                width: 60px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            &::before {
-                left: 40%;
-            }
-
-            &::after {
-                right: 40%;
-            }
-        }
 
     }
 
@@ -150,8 +123,7 @@
 
 // Our Team Section
 
-.work_left,
-.work_right {
+.work_card {
     img {
         z-index: 1;
         position: relative;
@@ -202,16 +174,6 @@
 
     .our_process_head {
         margin-bottom: 50px;
-
-        h4 {
-            color: #515151;
-            text-align: center;
-            font-family: "Nunito Sans", sans-serif;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 42.64px;
-        }
 
         h2,
         p {

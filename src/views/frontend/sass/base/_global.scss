@@ -57,7 +57,14 @@ body {
     overflow-x: hidden;
 }
 
+section {
+    overflow: hidden;
+}
 
+::before, ::after {
+    pointer-events: none;
+}
+ 
 .text-left {
     text-align: left;
 }
@@ -85,7 +92,7 @@ body {
 }
 
 .container {
-    max-width: 1430px;
+    max-width: 1400px;
     margin: 0 auto;
 }
 
@@ -310,6 +317,13 @@ img {
     font-weight: 400;
     line-height: 50px;
 }
+.error {
+	display: block;
+	width: 100%;
+	color: #f00;
+	font-weight: 500;
+	margin-top: 8px;
+}
 
 
 .big-para {
@@ -325,7 +339,7 @@ img {
     line-height: 20px;
     font-family: 'Nunito Sans', sans-serif;
     position: relative;
-    padding-left: 60px;
+    padding-left: 50px;
     margin-bottom: 15px !important;
 
     @include left-border;
@@ -342,4 +356,37 @@ img {
 .doubal-border {
     border-top: 1px solid #ddd;
     border-bottom: 1px solid #ddd;
+}
+
+.half-col {
+    width: calc(100% / 2 - 20px);
+  }
+
+  .full-col {
+    width: 100%;
+  }
+  .sub_hd-mx {
+    position: relative;
+    max-width: max-content;
+    padding: 0px !important;
+    color: #515151;
+    margin: 0 auto 8px !important;
+}
+
+.sub_hd-mx::before,
+.sub_hd-mx::after {
+    content: "";
+    position: absolute;
+    background: #A7A9AC;
+    width: 50px;
+    top: 0;
+    height: 1px;
+    bottom: 0;
+    margin: auto;
+    left: -65px;
+}
+
+.sub_hd-mx::after {
+    left: unset;
+    right: -65px;
 }

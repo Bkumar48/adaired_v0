@@ -313,9 +313,9 @@ const TrustedBy = React.memo(() => {
               modules={[A11y, Autoplay, Parallax]}
               spaceBetween={20}
               slidesPerView={6}
-              autoplay={{ delay: 2000 }}
-              parallax={true}
-              loop={true}
+              // autoplay={{ delay: 2000 }}
+              // parallax={true}
+              // loop={true}
               breakpoints={{
                 0: {
                   slidesPerView: 2,
@@ -559,7 +559,7 @@ const Services = React.memo(() => {
           >
             <motion.h4
               variants={textVariants}
-              className="min-heading sub_hd-mx"
+              className="sub-heading sub_hd-mx"
             >
               Our Services
             </motion.h4>
@@ -740,37 +740,68 @@ const Rewards = React.memo(() => {
     <>
       <section className="rewards_outer pb100">
         <Swiper
-          modules={[A11y, Autoplay, Parallax]}
-          spaceBetween={0}
-          slidesPerView={7}
-          autoplay={{ delay: 1000 }}
+          modules={[A11y, Autoplay, Parallax]}          
+          autoplay={{ delay: 3000 }}
+          spaceBetween={20}
           parallax={true}
           loop={true}
-          className="container d-flex"
-        >
+           breakpoints={{
+                0: {
+                  slidesPerView: 2,
+                },
+                640: {
+                  slidesPerView: 3,
+                },
+                768: {
+                  slidesPerView: 4,
+                },
+                1024: {
+                  slidesPerView: 5,
+                },
+                1366: {
+                  slidesPerView: 7,
+                },
+              }}
+          className="container d-flex">
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (1).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (7).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (6).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (5).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (4).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (3).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (2).png" />
+            </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
+            <div className="reward__img">
             <img src="assets/images/reward (2).png" />
+            </div>
           </SwiperSlide>
         </Swiper>
       </section>

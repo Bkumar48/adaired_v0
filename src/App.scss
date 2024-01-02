@@ -64,82 +64,39 @@
 
 
 /************************************************************************* LOGO SLIDER *****************************************************************************/
-.reward-col {
-    overflow: hidden;
-    margin: 0.5pc;
-    padding: 10px;
-    border: 1px solid transparent;
+.reward-col .reward__img {
+	overflow: hidden;
+	padding: 20px 10px;
+	border: 1px solid #fff;
+	transition: 0.4s all ease-in-out;
 }
 
-.reward-col:hover {
+.reward-col:hover .reward__img {
     border: 1px solid #bc1d8d;
 }
 
-.reward-col img {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-}
 
 .reward-col:hover img {
-    transform: scale(0.7);
+    transform: scale(0.8);
 
 }
-
 .reward-col img {
-    max-width: 140px;
+    max-height: 115px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transition: 0.6s all ease-in-out;
+}
+
+
+.reward-col:hover img {
+    transform: scale(1.2);
 }
 
 
 
 .footer-bottom li:hover a {
     color: #fb9100;
-}
-
-.reward-col {
-    overflow: hidden;
-    transition: 0.6s all ease-in-out;
-    margin: 0 auto;
-    padding: 10px;
-    border: 1px solid transparent;
-}
-
-.reward-col img {
-    transition: 0.6s all ease-in-out;
-    margin: 0 auto;
-    display: block;
-    border: 1px solid #dddddd00;
-    cursor: pointer;
-}
-
-.reward-col:hover img {
-    transform: scale(1.2);
-}
-
-.sub_hd-mx {
-    position: relative;
-    max-width: max-content;
-    padding: 0px !important;
-    color: #515151;
-    margin: 0 auto 8px !important;
-}
-
-.sub_hd-mx::before,
-.sub_hd-mx::after {
-    content: "";
-    position: absolute;
-    background: #A7A9AC;
-    width: 50px;
-    top: 0;
-    height: 1px;
-    bottom: 0;
-    margin: auto;
-    left: -65px;
-}
-
-.sub_hd-mx::after {
-    left: unset;
-    right: -65px;
 }
 
 .full-list {
@@ -158,14 +115,20 @@
 .case__study-img-section .bigheading {
 	text-transform: uppercase;
 }
+.growth-img {
+    position: relative;
+  }
+  .consultation_sec {
+    overflow: visible;
+  }
 
 
 /* *********************************************************************** RESPONSIVE *************************************************************************************** */
 
 
-@media screen and (max-width:1660px) {
+@media screen and (max-width:1650px) {
     .full-container {
-        max-width: 1430px;
+        max-width: 1400px;
     }
 
     .full-container .build_right {
@@ -196,10 +159,11 @@
     .banner__wrapper .social-icon {
         left: -10px;
         gap: 25px 0;
+        top: 16%;
     }
 
     .banner__wrapper .social-icon .line {
-        height: 200px;
+        height: 170px;
     }
 
     .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
@@ -233,6 +197,10 @@
         font-size: 18px;
         transition: none;
         padding-left: 50px;
+    }
+    .inner-banner .container h1 {
+        font-size: 48px;
+        line-height: 60px;
     }
 }
 
@@ -372,7 +340,7 @@
     }
 
     .w-50 {
-        width: calc(50% - 30px);
+        width: calc(50% - 35px);
     }
 
     .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
@@ -415,7 +383,7 @@
     }
 
     .service-grid .serv-card {
-        width: calc(100% / 2 - 20px);
+        width: calc(100% / 2 - 12px);
     }
 
     .service-grid {
@@ -429,8 +397,18 @@
     .popular__posts {
         padding: 30px 18px;
     }
-
+    .btn {
+        border-radius: 100px;
+        font-size: 17px;
+        line-height: 17px;
+        padding: 12px 50px 12px 16px;
+    }
+    .btn:hover {
+        padding: 12px 15px 12px 50px;
+    }
+    
     .btn svg {
+        left: calc(100% - 37px);
         padding: 5px;
         font-size: 20px;
     }
@@ -677,6 +655,7 @@
         left: unset;
         gap: 15px 0;
         right: 0px;
+        display: none;
     }
 
     .manage-grid .splash-left {
@@ -699,11 +678,45 @@
         top: 35px !important;
         left: 26px !important;
     }
+    .contact-grid .cont-text .social-cont a p {
+        font-size: 16px;
+        line-height: 22px;
+    }
+    .contact-grid .cont-text .social-cont a strong {
+        font-size: 20px;
+        line-height: 20px;
+        margin-top: 2px;
+    }
     .career_container .career_content .career__right form {
         padding: 25px 20px;
     }
     .career_container .career_content .career__left .current_recruitments .current__recruitment-card {
         padding: 20px;
+    }
+    .contact-grid .home-form form {
+        gap: 15px 25px;
+        padding: 35px;
+    }
+    .pink_sec .lorem_grid .lorem_box h6 {
+        font-size: 20px;
+        padding-left: 10px;
+    }
+    .consultation_flex .icon_box_white svg {
+        width: 35px;
+        height: 35px;
+        min-width: 20px;
+        padding: 6px;
+        font-size: 20px;
+    }
+    .consultation_flex h4 strong {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 35px;
+    }
+    .consultation_flex h4 {
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 18px;
     }
 
 }
@@ -711,6 +724,9 @@
 @media screen and (max-width:991px) {
     .banner-slider .banner-box {
         transform: translate(-8%, -70%);
+    }
+    .container {
+        max-width: 100%;
     }
 
     .banner h1 {
@@ -723,7 +739,7 @@
         gap: 20px;
     }
 
-    .contact-grid .d-flex {
+    .contact-grid .d-flex, .contact-grid .cont-text .social-cont a {
         flex-wrap: wrap;
         gap: 20px;
     }
@@ -768,13 +784,12 @@
         padding-left: 0px;
         text-align: center;
     }
-
-    .review-grid {
+    .review-grid p, .review-grid h2 {
         text-align: center;
     }
 
-    .review-text {
-        text-align: left;
+    .review-text, .review-text p {
+        text-align: left !important;
     }
 
     .half-list li {
@@ -838,7 +853,7 @@
         gap: 0;
     }
 
-    .main-header .navbar ul li:last-child a .btn {
+    .main-header .navbar .menu li .btn {
         border: 0;
         padding: 0;
         text-transform: uppercase;
@@ -846,8 +861,8 @@
         line-height: 18px;
     }
 
-    .main-header .navbar ul li:last-child a .btn svg {
-        display: none;
+    .main-header .navbar .menu li .btn svg {
+        display: none !important;
     }
 
     .menu.active {
@@ -862,20 +877,6 @@
 
     .menu li:not(:last-child) {
         border-bottom: 1px solid #d9d9d96b;
-    }
-
-    .main-header .defbtn {
-        text-align: left;
-        border: 0;
-        padding: 0 !important;
-        text-transform: uppercase;
-        color: #515151;
-        font-size: 18px;
-        line-height: 18px;
-    }
-
-    .main-header .defbtn::after {
-        display: none !important;
     }
 
     .footer-bottom {
@@ -930,7 +931,7 @@
 
     .about-outer .d-flex {
         flex-wrap: wrap;
-        gap: 40px;
+        gap: 30px;
         text-align: center;
     }
 
@@ -952,10 +953,18 @@
     .about-outer .w-50 {
         width: 100%;
     }
+    .about__slider-wrapper {
+        max-width: 650px;
+        margin: 0 auto;
+    }
 
-    .about-outer .about-slider::before {
+    .about-outer  .diagonalSlider::before {
         display: none;
     }
+    .diagonalSlider__control-btn {
+        margin: 10px auto 0;
+    }
+    
 
     .abt-img_big>img {
         max-width: 600px;
@@ -989,6 +998,12 @@
     .manage-grid .big-para {
         font-size: 23px;
         margin: 10px auto 0;
+    }
+    .manage-grid .splash-left {
+        left: -33px;
+    }
+    .manage-grid .splash-right {
+        right: -33px;
     }
 
     .logo a img {
@@ -1184,8 +1199,9 @@
         right: 89px;
     }
 
-    .contact-grid .d-flex {
+    .contact-grid .cont-text .social-cont a {
         width: 100%;
+        max-width: 100%;
     }
 
     .social-cont {
@@ -1241,6 +1257,9 @@
     .about-outer .abt-para {
         padding-top: 20px;
         text-align: center;
+    }
+    .about-outer .diagonalSlider img {
+        object-position: top;
     }
 
     .ourjourney_sec .journey_head_card .journey__block .journey__block-img-box {
@@ -1444,7 +1463,7 @@
     .consultation_flex {
         padding: 25px 50px;
         width: 80%;
-        margin: 40px auto 20px;
+        margin: 40px auto 0px;
     }
 
     .pink_sec_flex {
@@ -1458,7 +1477,7 @@
     }
 
     .pink_sec .lorem_grid .lorem_box h6 {
-        font-size: 20px;
+        font-size: 18px;
         padding-left: 0px;
         text-align: center;
     }
@@ -1544,10 +1563,10 @@
         display: none;
     }
     .case__study-categories-items {
-        gap: 2px;
+        gap: 8px;
     }
     .case__study-categories-items button {
-        padding: 10px 8px;
+        padding: 10px;
         font-size: 16px;
         line-height: 18px;
     }
@@ -1577,6 +1596,21 @@
     }
     .career__form {
         margin-top: 20px;
+    }
+    .case-study-col  .sub-heading {
+        margin: 0 0 10px !important;
+    }
+    .sub-heading {
+    font-size: 18px;
+    }
+    .ourjourney_sec .journey_head_card {
+        padding: 50px 15px;
+    }
+    .contact-grid .home-form form input::placeholder, .contact-grid .home-form form select, .contact-grid .home-form form label {
+        font-size: 18px;
+     }
+     .contact-grid .cont-text .social-cont {
+        margin: 25px 0 0px;
     }
 
 
@@ -1626,8 +1660,10 @@
     }
 
     .growth-img .team-img {
-        right: 10px;
+        right: 0;
         bottom: 20px;
+        left: 0;
+        margin: 0 auto;
     }
 
     .blog-outer .d-flex {
@@ -1652,6 +1688,14 @@
         padding-right: 0px;
         padding-left: 0px;
     }
+    .footer_social a {
+        width: 25px;
+        height: 25px;
+        padding: 3px;
+    }
+    // .ft_navbar {
+    //     order: 1;
+    // }
 
     .blog-outer .d-flex {
         display: flex;
@@ -1788,7 +1832,7 @@
         font-size: 16px;
     }
 
-    .cont-text li {
+    .contact-grid .cont-text li {
         font-size: 16px;
         line-height: 20px;
         margin-bottom: 6px;
@@ -1809,6 +1853,7 @@
 
     .testimonials__buttons {
         justify-content: center;
+        margin: 10px auto 0;
     }
 
     .ourjourney_sec .journey_head_card .journey__block .journey__year {
@@ -1905,7 +1950,8 @@
     .consultation_flex {
         padding: 25px 15px;
         width: 80%;
-        margin: 40px auto 20px;
+        justify-content: center;
+        gap: 35px;
     }
 
     .consul_card .d-flex.gap-20 {
@@ -1948,7 +1994,7 @@
         display: block;
     }
     .case__study-card .case__study-card-text-box .case__study-technologies {
-           padding-top: 20px;
+           padding-top: 30px;
     }
     .case__study-card {
         min-height: auto;
@@ -1957,7 +2003,7 @@
         text-align: center;
     }
     .case__study-card {
-     background: linear-gradient(rgb(255, 255, 255) 82%, rgb(123, 151, 188) 25%) !important;
+     background: linear-gradient(rgb(255, 255, 255) 81%, rgb(123, 151, 188) 25%) !important;
     }
     .case__study-card .case__study-card-text-box .case__study-card-text .case__study-card-heading {
         margin-top: 0;
@@ -1968,6 +2014,28 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+    .manage-grid .splash-left {
+        left: -43px;
+    }
+    .manage-grid .splash-right {
+     right: -43px;
+    }
+    .case-study-col .sub-heading {
+        margin: 0 auto 8px !important;
+    }
+    .case-study-col .sub-heading::before {
+        display: block;
+    } 
+    .case-study {
+        clip-path: unset;
+    }
+    .case-study-col .sub-heading::before {
+        display: none;
+    }
+    .ourjourney_sec .journey_head_card {
+        padding: 40px 0px 0;
+    } 
+    
     
 
 }
@@ -1988,8 +2056,8 @@
     }
 
     .half-list li {
-        width: calc(100% / 2 - 32px);
-        padding: 8px 5px 8px 20px;
+        width: calc(50% - 16px);
+        padding: 5px 4px;
     }
 
     .half-list li::before {
@@ -2095,10 +2163,31 @@
     .case__study-categories-items {
         grid-template-columns: repeat(1, 2fr);
     }
+    .diagonalSlider {
+        max-height: 500px;
+        height: 500px;
+    }
+    .sub-heading {
+        font-size: 16px;
+    }
+    
+    .contact-grid .cont-text .social-cont {
+        margin: 20px 0;
+    }
+    .contact-grid .home-form form input::placeholder, .contact-grid .home-form form select, .contact-grid .home-form form label {
+        font-size: 16px;
+     }
 
 }
 
 @media screen and (max-width:450px) {
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title {
+        font-size: 25px;
+    } 
+    .bigheading {
+        font-size: 22px;
+        line-height: 30px;
+    }
 
     .review-col::after,
     .review-col::before {
@@ -2276,13 +2365,37 @@
 
     .manage-grid .splash-right,
         {
-        max-width: 35%;
+        max-width: 30%;
         right: 0;
     }
 
     .manage-grid .splash-left {
         left: 0;
-        max-width: 35%;
+        max-width: 30%;
+    }
+    .manage-grid .big-para {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .diagonalSlider {
+        max-height: 430px;
+        height: 430px;
+    }
+    .contact-grid .d-flex, .contact-grid .cont-text .social-cont a {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    .case__study-card .case__study-card-text-box .case__study-technologies .case__study-technologies-item {
+        border-radius: 10px;
+        padding: 5px 8px;
+    }
+    .case__study-card .case__study-card-text-box .case__study-technologies {
+        gap: 10px;
+        padding-top:25px;
+    }
+    .case__study-card {
+        background: linear-gradient(rgb(255, 255, 255) 79%, rgb(123, 151, 188) 25%) !important;
     }
 
 

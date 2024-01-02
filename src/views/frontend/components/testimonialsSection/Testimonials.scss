@@ -62,8 +62,21 @@
 
 .testimonials__buttons {
     display: flex;
-    gap: 20px;
-    padding: 20px 0 0 0;
+    gap: 15px;
+    max-width: max-content;
+    position: relative;
+}
+.testimonials__buttons::before {
+content: "";
+  position: absolute;
+  width: 2px;
+  height: 22px;
+  top: -4px;
+  bottom: 0;
+  right: 0px;
+  left: 0;
+  margin: auto;
+  background-color: #aaa;
 }
 
 .testimonials__button-icon {

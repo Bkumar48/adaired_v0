@@ -126,7 +126,7 @@ const OurJourney = React.memo(() => {
     >
       <div className="container">
         <div className="our_jour_head">
-          <h4>Our Journey</h4>
+          <h4 className="sub-heading sub_hd-mx">Our Journey</h4>
           <h2 className="bigheading">Our Journey</h2>
           <p>
             We are your 360° digital marketing agency helping you bring your
@@ -159,14 +159,14 @@ const OurWorkStation = React.memo(() => {
     <>
       <section className="our_workstation pt50 pb100">
         <div className="container">
-          <div className="d-flex">
-            <div className="work_left">
+          <div className="d-flex gap-20">
+            <div className="work_card">
               <img src="assets/images/work1.jpg" alt="img" />
               <div className="work_text">
                 <h2>Our Workstataion</h2>
               </div>
             </div>
-            <div className="work_right">
+            <div className="work_card">
               <img src="assets/images/work2.jpg" alt="img" />
               <div className="work_text">
                 <h2>40+ Team Members</h2>
@@ -235,7 +235,7 @@ const OurProcessSection = React.memo(() => {
       <section className="process_outer pt50 pb100">
         <div className="container">
           <div className="our_process_head">
-            <h4>Our Process</h4>
+            <h4 className="sub-heading sub_hd-mx">Our Process</h4>
             <h2 className="bigheading">Our Process</h2>
             <p>
               No need to settle for okay when we can serve you the best! Our

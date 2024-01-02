@@ -6,7 +6,7 @@ const Blogs = (props) => {
   const blogData = jsonData.slice(0, props.limit ? props.limit : 3);
   return (
     <>
-      <section className="blog-outer pad50-50">
+      <section className="blog-outer pad100">
         <div className="text-center">
           <h4 className="sub-heading sub_hd-mx">Blog</h4>
           <h2 className="bigheading">
