@@ -1,14 +1,10 @@
-
 .contact__us-main {
     gap: 90px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .contact-para,
 .contact-form {
-    flex: 0 0 50%;
+    flex: 0 0 47%;
 }
 
 .contact-form {
@@ -27,7 +23,7 @@
 .contact-form form label {
     display: block;
     font-family: 'Nunito Sans', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     padding-bottom: 10px;
 }
 
@@ -35,9 +31,22 @@
 .contact-form form textarea {
     border-radius: 9px;
     border: 1px solid rgb(var(--gray-300));
+    font-family: 'Nunito Sans', sans-serif;
+    text-transform: capitalize;
     width: 100%;
+    
     margin-bottom: 25px;
     padding: 12px 10px;
+    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    background-size: 28px;
+}
+.contact-form form input::placeholder,
+.contact-form form textarea::placeholder {
+    font-size: 18px;
+    line-height: 18px;
+    opacity: 0.9;
 }
 
 .contact-form form textarea {
@@ -55,18 +64,11 @@
     color: rgb(var(--gray-500));
 }
 
-.contact-para .sub-heading::before {
-    height: 2px;
-    background: #A7A9AC;
-}
-
-
-
 .contact__us-cta-icon {
-    height: 56px;
-    width: 56px;
+    height: 45px;
+    width: 45px;
     border: 1px solid rgb(var(--gray-300));
-    border-radius: 10px;
+    border-radius: 8px;
     padding: 10px;
     flex-shrink: 0;
 }
@@ -100,3 +102,23 @@
     flex-direction: column;
 }
 
+.name-col {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%231b5a96" d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"%2F%3E%3C%2Fsvg%3E');
+}
+
+.email-col {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%231b5a96" d="M4 20q-.825 0-1.412-.587T2 18V6q0-.825.588-1.412T4 4h16q.825 0 1.413.588T22 6v12q0 .825-.587 1.413T20 20zm8-7l8-5V6l-8 5l-8-5v2z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.phone-col {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%231b5a96" d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24c1.12.37 2.33.57 3.57.57c.55 0 1 .45 1 1V20c0 .55-.45 1-1 1c-9.39 0-17-7.61-17-17c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1c0 1.25.2 2.45.57 3.57c.11.35.03.74-.25 1.02z"%2F%3E%3C%2Fsvg%3E');
+}
+
+.msg-col {
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="%231b5a96" d="M20 2H4c-1.103 0-2 .894-2 1.992v12.016C2 17.106 2.897 18 4 18h3v4l6.351-4H20c1.103 0 2-.894 2-1.992V3.992A1.998 1.998 0 0 0 20 2"%2F%3E%3C%2Fsvg%3E');
+    background-position: top 10px right 10px !important;
+}
+
+.contact__us-cta svg path {
+    color: #1b5a96;
+}

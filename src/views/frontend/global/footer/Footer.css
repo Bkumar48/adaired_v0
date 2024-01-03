@@ -167,21 +167,23 @@ footer p {
 }
 .footer_social a {
   width: 30px;
-  border-radius: 5px;
   height: 30px;
-  padding: 5px;
+  border-radius: 3px;
+  padding: 2px 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.footer_social a:hover img {
-    filter: brightness(0) saturate(100%) invert(33%) sepia(63%) saturate(408%) hue-rotate(144deg) brightness(95%) contrast(85%);
+.footer_social a:hover i {
+    color: #316c7a;
 }
 .footer_social a:hover {
     background-color: #fff;
 }
 
-.footer_social a img {
-    border-radius: 10px;
-    max-width: 35px;
-
+.footer_social a i {
+    font-size: 25px;
+    line-height: 25px;
 }
 
 .footer-bottom .footer_social h3 {

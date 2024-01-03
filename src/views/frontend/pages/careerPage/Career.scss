@@ -24,11 +24,6 @@
                     }
 
                     .job__description p {
-                        color: #515151;
-                        font-family: 'Nunito Sans';
-                        font-size: 18px;
-                        font-weight: 300;
-                        line-height: normal;
                         padding: 10px 0;
                     }
 
@@ -227,7 +222,7 @@
                         height: 50px;
                         border: none;
                         border-radius: 8px;
-                        padding: 0 20px;
+                        padding: 10px 15px;
                         outline: none;
                         font-size: 18px;
                         color: #515151;
@@ -239,6 +234,7 @@
                         &::placeholder {
                             color: #515151;
                             opacity: 1;
+                            font-size: 18px;
                         }
                     }
 
@@ -260,4 +256,33 @@
             }
         }
     }
+}
+.resume-file {
+	font-size: 0px !important;
+}
+.upload-col {
+	top: 50%;
+	left: 0;
+	position: absolute;
+	transform: translate(0%, 0%);
+	pointer-events: none;
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+span {
+    background: #515151;
+    border-radius: 5px;
+    padding: 5px 20px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    max-width: max-content;
+    
+}
+
+label {
+	padding: 0 !important;
+}
+
 }

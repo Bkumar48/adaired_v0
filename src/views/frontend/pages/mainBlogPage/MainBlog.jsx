@@ -41,6 +41,7 @@ const RenderHtml = React.memo(({ data, limit }) => {
 RenderHtml.displayName = "RenderHtml";
 
 const BlogCard = React.memo(() => {
+  const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams({
     skip: 0,
     limit: 5,
@@ -71,11 +72,11 @@ const BlogCard = React.memo(() => {
 
   const handleMove = (moveCount) => {
     setSearchParams((prev) => {
-      prev.set("skip", Math.max(skip + moveCount, 0));
-      
+      const newSkip = Math.max(skip + moveCount, 0);
+      prev.set("skip", newSkip);
+      setCurrentPage(Math.floor(newSkip / limit) + 1);
       return prev;
     });
-    
   };
 
   return (
@@ -117,16 +118,33 @@ const BlogCard = React.memo(() => {
                 </div>
               );
             })}
-          <Pagination
-            itemsCount={blogs.totalBlogsCount}
-            itemsPerPage={5}
-            onNext={()=>{
-              handleMove(limit)
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: "100%",
             }}
-            onPrev={()=>{
-              handleMove(-limit)
-            }}
-          />
+          >
+            <Pagination
+              itemsCount={blogs.totalBlogsCount}
+              itemsPerPage={5}
+              currentPage={currentPage}
+              onPrev={() => {
+                handleMove(-limit);
+              }}
+              onNext={() => {
+                handleMove(limit);
+              }}
+              onPageClick={(page) => {
+                const newSkip = (page - 1) * limit;
+                setSearchParams((prev) => {
+                  prev.set("skip", newSkip);
+                  return prev;
+                });
+                setCurrentPage(page);
+              }}
+            />
+          </div>
         </div>
 
         <aside className="blog__aside-items">

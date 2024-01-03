@@ -72,7 +72,7 @@ const IntroSection = React.memo(() => {
             </div>
           </div>
         </div>
-        <div className="container abt-para">
+        <div className="container abt-para mt25">
           <p>
             We believe that a visually appealing website with decent traffic or
             a handful of social media followers is not an indicator of a

@@ -56,16 +56,16 @@ const Footer = () => {
                 <h3>Follow Us</h3>
                 <div className=" d-flex gap-20">
                   <Link to="#">
-                    <img src="assets/images/ft-icon (1).png" alt="icon" />
+                  <i class="fa-brands fa-facebook-f"></i>
                   </Link>
                   <Link to="#">
-                    <img src="assets/images/ft-icon (4).png" alt="icon" />
+                  <i class="fa-brands fa-x-twitter"></i>
                   </Link>
                   <Link to="#">
-                    <img src="assets/images/ft-icon (3).png" alt="icon" />
+                  <i class="fa-brands fa-instagram"></i>
                   </Link>
                   <Link to="#">
-                    <img src="assets/images/ft-icon (2).png" alt="icon" />
+                  <i class="fa-brands fa-youtube"></i>
                   </Link>
                 </div>
               </div>

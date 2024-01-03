@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
 import Banner from "../../components/banners/Banner";
 import { lazy } from "react";
+import Button from "../../components/buttonComponent/Button";
 import Map from "../../components/mapSection/map";
 // const Map = lazy(() => import("../../components/mapSection/map"));
 
@@ -14,7 +15,7 @@ const ContactForm = () => {
         <input
           type="text"
           id="name"
-          name="name"
+          name="name" className="name-col"
           placeholder="Enter Your Name"
         />
         </div>
@@ -24,6 +25,7 @@ const ContactForm = () => {
           type="email"
           id="email"
           name="email"
+          className="email-col"
           placeholder="Enter Your Email"
         />
         </div>
@@ -32,6 +34,7 @@ const ContactForm = () => {
         <input
           type="tel"
           id="phone"
+          className="phone-col"
           name="phone"
           placeholder="Enter Your Phone Number"
         />
@@ -40,14 +43,21 @@ const ContactForm = () => {
         <label htmlFor="message">Your Message</label>
         <textarea
           id="message"
+          className="msg-col"
           name="message"
-          placeholder="Enter Your Name"
+          placeholder="Enter Your Message"
           rows={5}
         />
         </div>
-        <button type="submit" className="contact__us-submit-btn defbtn">
-          Submit
-        </button>
+        <Button
+          title="Submit"
+          type="submit"
+          svgBackgroundColor="#000"
+          icon="solar:arrow-right-broken"
+          borderColor="#FB9100"
+          width="100%"
+          textAlign="center"
+        />
       </form>
     </div>
   );
@@ -60,7 +70,7 @@ const ContactDetails = () => {
   const secondEmail = import.meta.env.VITE_ADAIRED_HR_EMAIL;
   return (
     <div className="contact-para">
-      <h4 className="sub-heading">Ready to Elevate?</h4>
+      <h4 className="sub-heading sub-hd">Ready to Elevate?</h4>
       <h2 className="bigheading">Get In Touch</h2>
       <p>
         Welcome to Adaired, your one-stop destination for comprehensive digital
@@ -125,10 +135,10 @@ const ContactUs = () => {
   return (
     <>
       <Banner title="Contact Us" />
-      <div className="contact__us-main container pad100">
+      <section className="contact__us-main d-flex align-start container pad100">
         <ContactForm />
         <ContactDetails />
-      </div>
+      </section>
 
       <Map />
     </>

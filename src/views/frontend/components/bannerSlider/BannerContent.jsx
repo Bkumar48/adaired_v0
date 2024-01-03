@@ -25,9 +25,9 @@ const AnimatedText = ({ data, className }) => {
           overflow: "hidden",
         }}
       >
-        <motion.p className={`${className}`} variants={item} key={data}>
+        <motion.h1 className={`${className}`} variants={item} key={data}>
           {data}
-        </motion.p>
+        </motion.h1>
       </span>
     </>
   );

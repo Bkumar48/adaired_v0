@@ -4,6 +4,7 @@ import Banner from "../../components/banners/Banner";
 import Button from "../../components/buttonComponent/Button";
 import { Icon } from "@iconify/react";
 import DOMPurify from "dompurify";
+import { useState } from "react";
 
 // Memoized component for rendering HTML
 const RenderHtml = memo(({ data }) => {
@@ -110,6 +111,7 @@ CurrentRecruitments.displayName = "CurrentRecruitments";
 
 // Memoized component for career form
 const CareerForm = memo(() => {
+  const [imageName, setImageName]  = useState("")
   return (
     <div className="form">
       <form action="" className="career__form">
@@ -130,11 +132,20 @@ const CareerForm = memo(() => {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="resume">Upload Resume : </label>
-          <input type="file" id="resume" />
+          <label htmlFor="resume">Upload Resume :</label>
+          <input type="file" id="file" className="resume-file" onChange={(e)=>{
+           const name = e.target.files[0];
+           setImageName(name.name)
+            
+          }}/>
+          <div className="upload-col">
+          <span type="button" className="resume-upload">Choose File</span>
+          <label className="file" id="file" >{imageName !== "" ? imageName : "No File choosen"}</label>
+          </div>
         </div>
+
         <div className="form-group">
-          <textarea name="" id="" rows="5" placeholder="Query"></textarea>
+          <textarea rows="5" placeholder="Query"></textarea>
         </div>
         <Button
           title="Submit"

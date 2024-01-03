@@ -277,7 +277,6 @@ img {
 }
 
 @mixin double-border {
-
     &::after,
     &::before {
         position: absolute;
@@ -292,24 +291,14 @@ img {
     }
 
     &::after {
-        left: 140%;
+        left: 120%;
         right: unset;
     }
 
     &::before {
         left: unset;
-        right: 140%;
+        right: 120%;
     }
-}
-
-.main-heading {
-    color: #010101;
-    font-family: 'DM Serif Display', serif;
-    font-size: 44px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    letter-spacing: 1px;
 }
 
 .bigheading {

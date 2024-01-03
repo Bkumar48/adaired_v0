@@ -4,30 +4,29 @@ import "./Pagination.scss";
 
 const Pagination = (props) => {
   const [pages, setPages] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageLimit, setPageLimit] = useState(props.itemsPerPage);
-  const [totalItems, setTotalItems] = useState(props.itemsCount);
+  //   const [pageLimit, setPageLimit] = useState(props.itemsPerPage);
+  //   const [totalItems, setTotalItems] = useState(props.itemsCount);
+
+  //   useEffect(() => {
+  //     setTotalItems(props.itemsCount);
+  //     setPageLimit(props.itemsPerPage);
+  //     setCurrentPage(1);
+  //   }, [props.itemsCount, props.itemsPerPage]);
 
   useEffect(() => {
-    setTotalItems(props.itemsCount);
-    setPageLimit(props.itemsPerPage);
-    setCurrentPage(1);
-  }, [props.itemsCount, props.itemsPerPage]);
-
-  useEffect(() => {
-    let totalPages = Math.ceil(totalItems / pageLimit);
+    let totalPages = Math.ceil(props.itemsCount / props.itemsPerPage);
     let pages = [];
     for (let i = 1; i <= totalPages; i++) {
       pages.push(i);
     }
     setPages(pages);
-  }, [totalItems, pageLimit]);
+  }, [props.itemsCount, props.itemsPerPage]);
 
   return (
     <div className="pagination">
       <ul>
         <li className="button prev">
-          <button disabled={currentPage === 1} onClick={props.onPrev}>
+          <button onClick={props.onPrev}>
             <Icon icon="uil:angle-left" />
             Prev
           </button>
@@ -36,8 +35,8 @@ const Pagination = (props) => {
         {pages.map((page) => (
           <li
             key={page}
-            className={`number ${page === currentPage ? "active" : ""}`}
-            onClick={() => setCurrentPage(page)}
+            className={`number ${page === props.currentPage ? "active" : ""}`}
+            onClick={() => props.onPageClick(page)}
           >
             {page}
           </li>
@@ -45,7 +44,7 @@ const Pagination = (props) => {
 
         <li className="button nxt">
           <button
-            disabled={currentPage === pages.length}
+            disabled={props.currentPage === pages.length}
             onClick={props.onNext}
           >
             Next
