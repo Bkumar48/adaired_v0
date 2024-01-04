@@ -38,9 +38,9 @@ const IntroSection = React.memo(() => {
               delivering innovative solutions, pushing limits, and redefining
               the idea of success.
             </p>
-            <div className="abt-card-group d-flex gap-20 mt25">
+            <div className="abt-card-group d-flex gap-20 mt25 align-start">
               <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+              <img className="abt-icon" src="/src/assets/images/Tailored Approach-1.svg" />
                 <h4>Innovative Mindset</h4>
                 <p>
                   Known for our innovative mindset, Adaired's qualified digital
@@ -49,7 +49,7 @@ const IntroSection = React.memo(() => {
                 </p>
               </div>
               <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+              <img className="abt-icon" src="/src/assets/images/Tangible Results-2.svg" />
                 <h4>Data-Driven Strategies</h4>
                 <p>
                   Adaired utilizes in-depth analysis of consumer behavior and

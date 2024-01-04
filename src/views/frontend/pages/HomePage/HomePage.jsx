@@ -185,7 +185,10 @@ const AboutSection = React.memo(() => {
             </p>
             <div className="abt-card-group d-flex gap-20 mt25">
               <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+                <img
+                  className="abt-icon"
+                  src="/src/assets/images/Tailored Approach-1.svg"
+                />
                 <h4>Tailored Approach</h4>
                 <p>
                   Our obsession with ROI means crafting personalized strategies,
@@ -194,7 +197,10 @@ const AboutSection = React.memo(() => {
                 </p>
               </div>
               <div className="abt-card">
-                <img className="abt-icon" src="assets/images/tick_svg.svg" />
+                <img
+                  className="abt-icon"
+                  src="/src/assets/images/Tangible Results-2.svg"
+                />
                 <h4>Tangible Results</h4>
                 <p>
                   Experience transparency in your marketing endeavors with
@@ -297,9 +303,13 @@ const TrustedBy = React.memo(() => {
             <motion.h2 className="bigheading">Trusted By:</motion.h2>
           </motion.div>
 
-          <motion.div variants={variants} className="" style={{
-            padding:"15px 0 0 0 "
-          }}>
+          <motion.div
+            variants={variants}
+            className=""
+            style={{
+              padding: "15px 0 0 0 ",
+            }}
+          >
             {" "}
             <motion.p>
               The success of our clients is what determines our success. <br />
@@ -313,9 +323,9 @@ const TrustedBy = React.memo(() => {
               modules={[A11y, Autoplay, Parallax]}
               spaceBetween={20}
               slidesPerView={6}
-              // autoplay={{ delay: 2000 }}
-              // parallax={true}
-              // loop={true}
+              autoplay={{ delay: 2000 }}
+              parallax={true}
+              loop={true}
               breakpoints={{
                 0: {
                   slidesPerView: 2,
@@ -346,7 +356,6 @@ const TrustedBy = React.memo(() => {
                 );
               })}
             </Swiper>
-            
           </motion.div>
 
           {/* <motion.div
@@ -421,6 +430,8 @@ const Services = React.memo(() => {
         "E-commerce website design & development",
       ],
       imageSrc: "assets/images/services_cards-webdev-img.png",
+      svgImage:
+        "/src/assets/images/serviceCardsSVGs/Website Design & Development.svg",
       custom: 1,
     },
     {
@@ -435,6 +446,8 @@ const Services = React.memo(() => {
         "Monthly Report",
       ],
       imageSrc: "assets/images/services_cards-smm-img.png",
+      svgImage:
+        "/src/assets/images/serviceCardsSVGs/Social Media Management.svg",
       custom: 2,
     },
     {
@@ -450,6 +463,8 @@ const Services = React.memo(() => {
         "Social Media Posting",
       ],
       imageSrc: "assets/images/services_cards-contentwriting-img.png",
+      svgImage:
+        "/src/assets/images/serviceCardsSVGs/Content Development & Marketing.svg",
       custom: 3,
     },
     {
@@ -465,12 +480,13 @@ const Services = React.memo(() => {
         "Social media graphics & digital marketing ads",
       ],
       imageSrc: "assets/images/services_cards-logodesign-img.png",
+      svgImage: "/src/assets/images/serviceCardsSVGs/Graphic Designing.svg",
       custom: 4,
     },
     {
       title: "Search engine optimization",
       description:
-        "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience. ",
+        "Launch and maintain the websites on top of search results to enhance your online visibility with tried and tested Search Engine Optimization (SEO) services.",
       list: [
         "Meta Tags Optimization",
         "Google tags Setup",
@@ -480,6 +496,8 @@ const Services = React.memo(() => {
         "Penalty review & recovery",
       ],
       imageSrc: "assets/images/services_cards-seo-img.png",
+      svgImage:
+        "/src/assets/images/serviceCardsSVGs/Search Engine Optimization.svg",
       custom: 5,
     },
     {
@@ -495,11 +513,19 @@ const Services = React.memo(() => {
         "Campaign management and optimization",
       ],
       imageSrc: "assets/images/services_cards-ppc-img.png",
+      svgImage: "/src/assets/images/serviceCardsSVGs/Pay Per Click.svg",
       custom: 6,
     },
   ];
 
-  const ServiceItem = ({ title, description, list, imageSrc, custom }) => (
+  const ServiceItem = ({
+    title,
+    description,
+    list,
+    imageSrc,
+    custom,
+    svgImage,
+  }) => (
     <motion.div className="serv-card" variants={variants} custom={custom}>
       <div className="serv-img">
         <img src={imageSrc} alt={title} />
@@ -510,11 +536,7 @@ const Services = React.memo(() => {
           <p>{description}</p>
         </div>
         <div className="serv-hide">
-          <img
-            className="serv-icon"
-            src="assets/images/services_cards_tick.svg"
-            alt="Tick"
-          />
+          <img className="serv-icon" src={svgImage} alt="Tick" />
           <h3>{title}</h3>
           <ul>
             {list.map((item, index) => (
@@ -599,9 +621,9 @@ const CaseStudy = React.memo(() => {
             modules={[A11y, Autoplay, Parallax]}
             spaceBetween={0}
             slidesPerView={1}
-            // autoplay={{ delay: 3000 }}
-            // parallax={true}
-            // loop={true}
+            autoplay={{ delay: 3000}}
+            parallax={true}
+            loop={true}
           >
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
@@ -616,9 +638,36 @@ const CaseStudy = React.memo(() => {
                   <Button
                     title="View More"
                     type="button"
-                    svgBackgroundColor="#F89520"
+                    color="#000"
+                    svgBackgroundColor="#000"
                     icon="solar:arrow-right-broken"
-                    borderColor="transparent"
+                    borderColor="#F89520"
+                    backgroundColor="transparent"
+                  />
+                </div>
+                <div className="w-50">
+                  <img src="assets/images/laptop.png" />
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide className="case-study-col">
+              <div className="container d-flex">
+                <div className="w-50">
+                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
+                  <h2 className="bigheading">Case Studies </h2>
+                  <p>
+                    When we provide you with the best Digital Marketing
+                    Services, we mean it. Check out the results we have
+                    successfully fetched for our clients.
+                  </p>
+                  <Button
+                    title="View More"
+                    color="#000"
+                    type="button"
+                    svgBackgroundColor="#000"
+                    icon="solar:arrow-right-broken"
+                    borderColor="#F89520"
+                    backgroundColor="transparent"
                   />
                 </div>
                 <div className="w-50">
@@ -639,32 +688,11 @@ const CaseStudy = React.memo(() => {
                   <Button
                     title="View More"
                     type="button"
-                    svgBackgroundColor="#F89520"
+                    color="#000"
+                    svgBackgroundColor="#000"
                     icon="solar:arrow-right-broken"
-                    borderColor="transparent"
-                  />
-                </div>
-                <div className="w-50">
-                  <img src="assets/images/laptop.png" />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="case-study-col">
-              <div className="container d-flex">
-                <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
-                  <h2 className="bigheading">Case Studies </h2>
-                  <p>
-                    When we provide you with the best Digital Marketing
-                    Services, we mean it. Check out the results we have
-                    successfully fetched for our clients.
-                  </p>
-                  <Button
-                    title="View More"
-                    type="button"
-                    svgBackgroundColor="#F89520"
-                    icon="solar:arrow-right-broken"
-                    borderColor="transparent"
+                    borderColor="#F89520"
+                    backgroundColor="transparent"
                   />
                 </div>
                 <div className="w-50">
@@ -740,67 +768,68 @@ const Rewards = React.memo(() => {
     <>
       <section className="rewards_outer pb100">
         <Swiper
-          modules={[A11y, Autoplay, Parallax]}          
+          modules={[A11y, Autoplay, Parallax]}
           autoplay={{ delay: 3000 }}
           spaceBetween={20}
           parallax={true}
           loop={true}
-           breakpoints={{
-                0: {
-                  slidesPerView: 2,
-                },
-                640: {
-                  slidesPerView: 3,
-                },
-                768: {
-                  slidesPerView: 4,
-                },
-                1024: {
-                  slidesPerView: 5,
-                },
-                1366: {
-                  slidesPerView: 7,
-                },
-              }}
-          className="container d-flex">
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+            },
+            640: {
+              slidesPerView: 3,
+            },
+            768: {
+              slidesPerView: 4,
+            },
+            1024: {
+              slidesPerView: 5,
+            },
+            1366: {
+              slidesPerView: 7,
+            },
+          }}
+          className="container d-flex"
+        >
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (1).png" />
+              <img src="assets/images/reward (1).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (7).png" />
+              <img src="assets/images/reward (7).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (6).png" />
+              <img src="assets/images/reward (6).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (5).png" />
+              <img src="assets/images/reward (5).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (4).png" />
+              <img src="assets/images/reward (4).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (3).png" />
+              <img src="assets/images/reward (3).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (2).png" />
+              <img src="assets/images/reward (2).png" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-            <img src="assets/images/reward (2).png" />
+              <img src="assets/images/reward (2).png" />
             </div>
           </SwiperSlide>
         </Swiper>

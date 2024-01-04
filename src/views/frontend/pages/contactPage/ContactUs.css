@@ -65,8 +65,8 @@
 }
 
 .contact__us-cta-icon {
-    height: 45px;
-    width: 45px;
+    height: 40px;
+    width: 40px;
     border: 1px solid rgb(var(--gray-300));
     border-radius: 8px;
     padding: 10px;
@@ -74,8 +74,6 @@
 }
 
 .contact__us-cta .contact__us-cta-inner {
-    display: flex;
-    align-items: center;
     border: 1px solid #D9D9D9;
     padding: 30px;
     margin-bottom: 30px;
@@ -91,6 +89,7 @@
     letter-spacing: 0em;
     text-align: left;
     margin: 0;
+    color: #515151 !important;
 }
 
 
@@ -98,6 +97,7 @@
 .contact__us-cta .contact__us-cta-inner strong a {
     font-weight: 600;
     line-height: 26px;
+    color: #171C24 !important;
     display: flex;
     flex-direction: column;
 }

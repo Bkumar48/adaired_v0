@@ -80,7 +80,7 @@ const ContactDetails = () => {
         provide a personalized plan tailored to your business objectives.
       </p>
       <div className="contact__us-cta">
-        <div className="d-flex just-start gap-20 contact__us-cta-inner">
+        <div className="d-flex just-start align-start gap-20 contact__us-cta-inner">
           <Icon
             icon="carbon:location-filled"
             className="contact__us-cta-icon"
@@ -94,7 +94,7 @@ const ContactDetails = () => {
           </h6>
         </div>
 
-        <div className="d-flex just-start gap-20 contact__us-cta-inner">
+        <div className="d-flex just-start align-start gap-20 contact__us-cta-inner">
           <Icon
             icon="solar:outgoing-call-bold"
             className="contact__us-cta-icon"
@@ -109,7 +109,7 @@ const ContactDetails = () => {
           </h6>
         </div>
 
-        <div className="d-flex just-start gap-20 contact__us-cta-inner">
+        <div className="d-flex just-start align-start gap-20 contact__us-cta-inner">
           <Icon
             icon="mingcute:mail-open-fill"
             className="contact__us-cta-icon"

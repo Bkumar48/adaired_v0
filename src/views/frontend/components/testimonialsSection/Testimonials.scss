@@ -33,10 +33,10 @@
     margin: auto;
     border-radius: 100px;
     border: 6px solid #fff;
-    background-image: url(assets/images/qoute.png);
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="8" height="8" viewBox="0 0 8 8"%3E%3Cpath fill="white" d="M0 1v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3V1zm5 0v3h2c0 1.11-.89 2-2 2v1c1.65 0 3-1.35 3-3V1z"%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: center center;
-    background-size: 20px;
+    background-size: 25px;
 }
 
 .review-col::after {

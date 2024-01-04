@@ -47,25 +47,25 @@ const Footer = () => {
                 <img src="assets/images/ft-logo.png" alt="logo" />
               </Link>
               <p className="ft-para">
-                Lorem Ipsum is simply dummy text of the printing and
-                typesettingindustry. Lorem Ipsum has been the industry's
-                standard dummy text ever.{" "}
+              AdAired Digital Media is a digital marketing company located in Mohali.
+              We are a team of marketing and design experts who are committed to your online growth.
+{" "}
               </p>
 
               <div className="footer_social">
                 <h3>Follow Us</h3>
                 <div className=" d-flex gap-20">
-                  <Link to="#">
+                  <Link to="https://www.facebook.com/adaired.digital/">
                   <i class="fa-brands fa-facebook-f"></i>
                   </Link>
-                  <Link to="#">
+                  <Link to="https://twitter.com/adaireddigital">
                   <i class="fa-brands fa-x-twitter"></i>
                   </Link>
-                  <Link to="#">
+                  <Link to="https://www.instagram.com/adaired.digital/">
                   <i class="fa-brands fa-instagram"></i>
                   </Link>
-                  <Link to="#">
-                  <i class="fa-brands fa-youtube"></i>
+                  <Link to="https://www.linkedin.com/company/adaired/">
+                  <i class="fa-brands fa-linkedin"></i>
                   </Link>
                 </div>
               </div>
@@ -76,23 +76,23 @@ const Footer = () => {
               <ul>
                 <li>
                   {" "}
-                  <Link to="#">About Us</Link>{" "}
+                  <Link to="/about">About Us</Link>{" "}
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Our Team </Link>
+                  <Link to="/gallery">Gallery </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Case Study</Link>
+                  <Link to="/case-studies">Case Study</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Carrer</Link>
+                  <Link to="/career">Career</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Blogs </Link>
+                  <Link to="/blog">Blogs </Link>
                 </li>
               </ul>
             </div>
@@ -114,7 +114,7 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Search engine optimizationr</Link>
+                  <Link to="#">Search Engine optimization</Link>
                 </li>
                 <li>
                   {" "}
@@ -130,8 +130,7 @@ const Footer = () => {
             <div className="footer-contact ft-col">
               <h3>subscribe</h3>
               <p>
-                Don,t miss to subscribe to our new trends. Kindly fill the form
-                below.
+              Share your email address to subscribe to Adaired's newsletter. 
               </p>
               <div className="ft-form">
                 <input
@@ -149,8 +148,8 @@ const Footer = () => {
           <div className="copyright-col d-flex">
             <Link to="#">Copyright © 2023 - AdAired Digital Media</Link>
             <p>
-              <Link to="#">Terms & Conditions / </Link>
-              <Link to="#">Privacy Policy</Link>
+              <Link to="/Terms-Conditions">Terms & Conditions / </Link>
+              <Link to="/privacy-policy">Privacy Policy</Link>
             </p>
           </div>
         </div>

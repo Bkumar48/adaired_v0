@@ -27,12 +27,15 @@ const sliderData = [
 const socialIcons = [
   {
     icon: "line-md:facebook",
+    link:"https://www.facebook.com/adaired.digital/"
   },
   {
     icon: "line-md:instagram",
+    link:"https://www.facebook.com/adaired.digital/"
   },
   {
     icon: "line-md:twitter-x",
+    link:"https://twitter.com/adaireddigital"
   },
 ];
 
@@ -84,7 +87,7 @@ const BannerSlider = () => {
           ></motion.div>
 
           {socialIcons.map((icon, index) => (
-            <Link to="#" key={index}>
+            <Link to={icon.link} key={index}>
               <motion.div>
                 <Icon
                   icon={icon.icon}

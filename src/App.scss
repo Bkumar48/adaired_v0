@@ -132,7 +132,7 @@
     }
 
     .full-container .build_right {
-        padding: 0 0 0 40px;
+        padding: 0 0 0 0px;
     }
 
     .full-container .build-text {
@@ -447,7 +447,7 @@
     .contact__us-cta .contact__us-cta-inner strong, .contact__us-cta .contact__us-cta-inner strong a {
         font-weight: 500;
         line-height: 20px;
-        }
+    }
         .contact__us-cta .contact__us-cta-inner h6 {
             font-size: 16px;
         }
@@ -752,6 +752,14 @@
     .contact-grid .home-form.w-50 {
         width: 100%;
     }
+    .home-form form .btn {
+        width: 100% !important;
+        max-width: 270px;
+        margin: 0 auto;
+    }
+    .contact-grid .home-form form::after {
+            height: 50%;
+    }
 
     .contact-grid {
         background: linear-gradient(0deg, rgba(255, 255, 255, 1) -180%, rgba(255, 251, 228, 1) 100%);
@@ -1004,12 +1012,6 @@
         font-size: 23px;
         margin: 10px auto 0;
     }
-    // .manage-grid .splash-left {
-    //     left: -33px;
-    // }
-    // .manage-grid .splash-right {
-    //     right: -33px;
-    // }
 
     .logo a img {
         width: 100%;
@@ -1086,7 +1088,16 @@
         margin-top: 10px;
     }
     .service-grid .serv-card:hover .serv-hide {
-        bottom: -5%;
+        bottom: 2%;
+    }
+    .service-grid .serv-card .serv__text .serv-hide h3 {
+        margin: 0px 0px 10px !important;
+    }
+    .service-grid .serv-card {
+     min-height: 400px; 
+    }
+    .service-grid .serv-card p {
+        -webkit-line-clamp: 3;
     }
 
     .sub_hd-mx::before {
@@ -1357,7 +1368,6 @@
         min-height: auto;
     }
 
-    .full-container .build_right,
     .full-container .build-text {
         padding: 0px;
     }
@@ -1639,6 +1649,19 @@
     .career_container .career_content .career__right form .form-group label {
         font-size: 16px;
     }
+    .contactus__card {
+        margin-bottom: 20px;
+    }
+    .accordion {
+        padding: 0 20px !important  ;
+    }
+    .accordion.active {
+        background-image: linear-gradient(#FFFAFD 100%, #fff 0%) !important;
+    }
+    .accordion .accordion-content {
+        padding: 0 40px 15px 15px !important    ;
+    }
+
     
 
 

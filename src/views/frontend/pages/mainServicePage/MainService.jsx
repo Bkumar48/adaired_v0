@@ -168,7 +168,7 @@ const ServiceBuild = React.memo((props) => {
             <img src={"assets/images/build_img1.jpg"} alt="" />
           </div>
           <div className="build_right w-50">
-            <h2 className="bigheading">
+            <h2 className="bigheading pl60">
               Building Websites That Are Designed To Convert
             </h2>
             <div className="serv_acc mt25">

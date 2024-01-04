@@ -13,7 +13,7 @@
     font-size: 26px;
     line-height: normal;
     margin: 20px auto 0;
-    max-width: 85%;
+    max-width: 65%;
   }
 
   .splash-left,
@@ -27,6 +27,7 @@
       height: 100%;
       object-fit: contain;
       display: block;
+      max-width: 150px;
     }
   }
 
@@ -38,8 +39,6 @@
     right: 0px;
   }
 }
-
-
 
 // trusted by section
 .trusted-outer {
@@ -78,6 +77,7 @@
     width: calc(100% / 3 - 30px);
     position: relative;
     overflow: hidden;
+    cursor: pointer;
     border: 1px solid #d9d9d9;
 
     &::before {
@@ -163,7 +163,7 @@
     .serv__text {
       padding: 50px 40px 50px;
 
-      .serv-content {
+      
         h3 {
           font-family: Nunito Sans;
           font-size: 22px;
@@ -171,12 +171,23 @@
           font-weight: 600;
           line-height: normal;
           text-transform: capitalize;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
+          position: relative;
+          max-width: max-content;
+          margin-bottom: 25px;
+       
+          &::before {
+            position: absolute;
+            content: "";
+            bottom: -8px;
+            left: 0;
+            width: 80%;
+            height: 1px;
+            background: #515151;
+          }
+
         }
-      }
+
+      
 
       .serv-hide {
         position: absolute;
@@ -186,23 +197,16 @@
         transition: 0.6s all ease-in-out;
 
         h3 {
-          font-family: Nunito Sans;
-          font-size: 22px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          text-transform: capitalize;
-          overflow: hidden;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
           color: #fff;
-          margin-top: 15px !important;
+          
+          &::before {
+            background: #fff;
+          }
         }
 
         .serv-icon {
           width: 100%;
-          max-width: 35px;
+          max-width: 60px;
         }
       }
     }
@@ -238,15 +242,53 @@
   margin-bottom: 15px !important;
 }
 
-// case study
 .case-study {
-  // background-image: url(assets/images/brown-vector.png);
-  // background-repeat: no-repeat;
-  // background-size: cover;
-  // background-position: center bottom;
-  // background-image: ;
-  background-color: #ECEDE6;
-  clip-path: polygon(100% 0%, 0% 0%, 0.00% 99.89%, 2.50% 99.74%, 5.00% 99.29%, 7.50% 98.57%, 10.00% 97.64%, 12.50% 96.57%, 15.00% 95.42%, 17.50% 94.28%, 20.00% 93.23%, 22.50% 92.35%, 25.00% 91.69%, 27.50% 91.31%, 30.00% 91.23%, 32.50% 91.46%, 35.00% 91.97%, 37.50% 92.74%, 40.00% 93.71%, 42.50% 94.81%, 45.00% 95.96%, 47.50% 97.09%, 50.00% 98.10%, 52.50% 98.94%, 55.00% 99.53%, 57.50% 99.85%, 60.00% 99.85%, 62.50% 99.56%, 65.00% 98.98%, 67.50% 98.16%, 70.00% 97.15%, 72.50% 96.03%, 75.00% 94.88%, 77.50% 93.77%, 80.00% 92.79%, 82.50% 92.01%, 85.00% 91.48%, 87.50% 91.24%, 90.00% 91.30%, 92.50% 91.66%, 95.00% 92.31%, 97.50% 93.18%, 100.00% 94.22%);
+  background-color: #fff0dc;
+  clip-path: polygon(
+    100% 0%,
+    0% 0%,
+    0% 99.89%,
+    2.5% 99.74%,
+    5% 99.29%,
+    7.5% 98.57%,
+    10% 97.64%,
+    12.5% 96.57%,
+    15% 95.42%,
+    17.5% 94.28%,
+    20% 93.23%,
+    22.5% 92.35%,
+    25% 91.69%,
+    27.5% 91.31%,
+    30% 91.23%,
+    32.5% 91.46%,
+    35% 91.97%,
+    37.5% 92.74%,
+    40% 93.71%,
+    42.5% 94.81%,
+    45% 95.96%,
+    47.5% 97.09%,
+    50% 98.1%,
+    52.5% 98.94%,
+    55% 99.53%,
+    57.5% 99.85%,
+    60% 99.85%,
+    62.5% 99.56%,
+    65% 98.98%,
+    67.5% 98.16%,
+    70% 97.15%,
+    72.5% 96.03%,
+    75% 94.88%,
+    77.5% 93.77%,
+    80% 92.79%,
+    82.5% 92.01%,
+    85% 91.48%,
+    87.5% 91.24%,
+    90% 91.3%,
+    92.5% 91.66%,
+    95% 92.31%,
+    97.5% 93.18%,
+    100% 94.22%
+  );
 
   img {
     display: block;
@@ -297,10 +339,10 @@
   content: "";
   width: 20px;
   height: 20px;
-  background-image: url(assets/images/pink-arrow.png);
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cg transform="rotate(90 12 12)"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cpath d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"%2F%3E%3Cpath fill="%23bc1d8d" d="M12 5a1 1 0 0 1 .707.293l5 5a1 1 0 0 1-1.414 1.414L12 7.414l-4.293 4.293a1 1 0 0 1-1.414-1.414l5-5A1 1 0 0 1 12 5m0 6a1 1 0 0 1 .707.293l5 5a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414l5-5A1 1 0 0 1 12 11"%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 16px;
+  background-size: 25px;
   top: 0;
   bottom: 0;
   left: 2px;
@@ -317,9 +359,11 @@
 
 // Contact Us
 .contact-grid {
-  background: linear-gradient(180deg,
-      rgba(255, 255, 255, 1) 19%,
-      rgba(255, 251, 228, 1) -6%);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 19%,
+    rgba(255, 251, 228, 1) -6%
+  );
 
   .cont-text {
     ul {
@@ -399,12 +443,13 @@
         margin: 0 auto;
         width: 100%;
         border-radius: 10px 10px 0px 0px;
-        border: 7px solid #E7E7E7;
+        border: 7px solid #e7e7e7;
         border-bottom: 0;
       }
 
       input,
-      select, textarea {
+      select,
+      textarea {
         border: 0px;
         border-bottom: 1px solid #a7a9ac;
         padding-bottom: 10px;
@@ -416,13 +461,12 @@
 
       textarea {
         border: 1px solid #b0b0b0;
-
       }
-
 
       input::placeholder,
       select,
-      label, textarea::placeholder {
+      label,
+      textarea::placeholder {
         color: #515151;
         font-family: Nunito Sans;
         font-size: 20px;
