@@ -10,7 +10,7 @@ const Map = () => {
         referrerPolicy="no-referrer-when-downgrade"
         style={{
           display:"block",
-          border: "none"
+          border: "none"  
         }}
       ></iframe>
     </div>

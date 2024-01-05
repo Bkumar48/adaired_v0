@@ -6,7 +6,7 @@ const Footer = () => {
     <>
       <footer className="main-footer">
         <div className="container">
-          <div className="ft-top_bar d-flex">
+          <div className="ft-top_bar d-flex align-start">
             <Link
               to="#"
               className="ft-link d-flex just-start gap-20 align-start"
