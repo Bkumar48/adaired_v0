@@ -1,130 +1,63 @@
 import React, { Suspense, lazy } from "react";
-import Banner from "../../components/banners/Banner";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import DOMPurify from "dompurify";
+
+// Query Imports
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
+import axios from "axios";
+
+// Components Imports
+import Banner from "../../components/banners/Banner";
 import Blogs from "./../../components/blogSection/Blogs";
-import DummyData from "./DummyData.json";
 import Accordion from "../../components/customAccordion/Accordion";
 import ContactUsCard from "../../components/contactusCard/ContactUsCard";
 import GetInTouchForm from "../../components/getInTouchForm/GetInTouchForm";
 import ServiceMenu from "../../components/serviceMenu/ServiceMenu";
 import Button from "../../components/buttonComponent/Button";
+import ComparisonSlider from "../../components/beforeAfterComparison/ComparisonSlider";
 
-const ComparisonSlider = lazy(() =>
-  import("../../components/beforeAfterComparison/ComparisonSlider")
-);
+const RenderHtml = React.memo(({ data }) => {
+  const sanitizedHtml = DOMPurify.sanitize(data);
 
-const IntroSection = React.memo(() => {
-  const FourPoints = [
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-  ];
+  return <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
+});
+
+RenderHtml.displayName = "RenderHtml";
+
+const IntroSection = React.memo((props) => {
   return (
     <>
       <div className="service_top-grid pad100">
         <div className="container">
           <div className="service_flex">
             <div className="service_text w-70">
-              <h2 className="bigheading">Digital Creative & Logo Design</h2>
-              <p>
-                Lorem ipsum is simply dummy text of the printing and typesetting
-                industry.Lorem Ipsum has been the industry's standard dummy text
-                ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with zdesktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
-              </p>
-
+              <h2 className="bigheading">{props.title}</h2>
+              <RenderHtml data={props.description_1} />
               <div className="d-flex gap-20">
-                <div className="service__card">
-                  <Link to="#" className="d-flex align-start just-start gap-20">
-                    <Icon
-                      icon="mdi:progress-tick"
-                      color="#bc1d8d"
-                      className="service-cta-icon"
-                    />
-                    <div>
-                      <h6 className="new_head_1">Lorem Ipsum Dolor Sit</h6>
-                      <p>
-                        Lorem ipsum is simply dummy text of the printing and
-                        typeset indstry. Lorem Ipsum has been the industry's
-                        stan dummy text .
-                      </p>
+                {props.mainTwoPoints.map((point, index) => {
+                  return (
+                    <div className="service__card" key={index}>
+                      <div className="d-flex align-start just-start gap-20">
+                        <Icon
+                          icon="mdi:progress-tick"
+                          color="#bc1d8d"
+                          className="service-cta-icon"
+                        />
+                        <div>
+                          <h6 className="new_head_1">{point.title}</h6>
+                          <RenderHtml data={point.content} />
+                        </div>
+                      </div>
                     </div>
-                  </Link>
-                </div>
-
-                <div className="service__card">
-                  <Link className="d-flex align-start just-start gap-20">
-                    <Icon
-                      icon="mdi:progress-tick"
-                      color="#bc1d8d"
-                      className="service-cta-icon"
-                    />
-                    <div>
-                      <h6 className="new_head_1">Lorem Ipsum Dolor Sit</h6>
-                      <p>
-                        Lorem ipsum is simply dummy text of the printing and
-                        typeset indstry. Lorem Ipsum has been the industry's
-                        stan dummy text .
-                      </p>
-                    </div>
-                  </Link>
-                </div>
+                  );
+                })}
               </div>
               <div className="service-img mt25">
                 <img src="assets/images/Pc_guy.jpg" alt="service-img" />
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum. Lorem
-                  Ipsum passages, and more recently with desktop publishing
-                  software like Aldus PageMaker including versions of Lorem
-                  Ipsum.
-                </p>
-                <h2 className="bigheading">Lorem Ipsum is simply dummy text</h2>
-                <p>
-                  Lorem Ipsum is simply dummy text of the printing and
-                  typesetting industry. Lorem Ipsum has been the industry's
-                  standard dummy text ever since the 1500s, when an unknown
-                  printer took a galley of type and scrambled it to make a type
-                  specimen book. It has survived not only five centuries, but
-                  also the leap into electronic typesetting, remaining
-                  essentially unchanged. It was popularised in the 1960s with
-                  the release of Letraset sheets containing Lorem Ipsum
-                  passages, and more recently with desktop publishing software
-                  like Aldus PageMaker including versions of Lorem Ipsum.Lorem
-                  Ipsum is simply dummy text of the printing and typesetting
-                  industry. Lorem Ipsum has been the industry's standard dummy
-                  text ever since the 1500s, when an unknown printer took a
-                  galley of type and scrambled it to make a type specimen book.
-                  It has survived not only five centuries, but also the leap
-                  into electronic typesetting, remaining essentially unchanged.
-                  It was popularised in the 1960s with the release of Letraset
-                  sheets containing Lorem Ipsum passages, and more recently with
-                  desktop publishing software like Aldus PageMaker including
-                  versions of Lorem Ipsum. Lorem Ipsum is simply dummy text of
-                  the printing and typesetting industry. Lorem Ipsum has been
-                  the industry's standard dummy text ever since the 1500s, when
-                  an unknown printer took a galley of type and scrambled it to
-                  make a type specimen book. It has survived not only five
-                  centuries, but also the leap into electronic typesetting,
-                  remaining essentially unchanged. It was popularised in the
-                  1960s with the release of Letraset.{" "}
-                </p>
+                <RenderHtml data={props.description_2} />
+                <h2 className="bigheading">{props.serviceHeadingII}</h2>
+                <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
             <aside className="w-30">
@@ -140,7 +73,7 @@ const IntroSection = React.memo(() => {
             </aside>
           </div>
           <div className="arrow-flex mt50">
-            {FourPoints.map((point, index) => {
+            {props.fourPoints.map((point, index) => {
               return (
                 <div
                   key={index}
@@ -159,67 +92,100 @@ const IntroSection = React.memo(() => {
 
 IntroSection.displayName = "IntroSection";
 
+const OurProcess = React.memo((props) => {
+  return (
+    <>
+      <section className="container our_process text-center">
+        <div className="doubal-border pad100">
+          <h5 className="sub-heading sub_hd-mx">Our Process</h5>
+          <h2 className="bigheading">Our Process</h2>
+          <p>{props.ourProcessSubHeading}</p>
+          <div className="mt50">
+            <Suspense fallback={<div>Loading...</div>}>
+              <ComparisonSlider
+                rightImage={"assets/images/comparison_background.png"}
+                leftImage={"assets/images/comparison_foreground.png"}
+                handleArrowBackgroundImage={
+                  "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
+                }
+              />
+            </Suspense>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+});
+
+OurProcess.displayName = "OurProcess";
+
 const ServiceBuild = React.memo((props) => {
   return (
     <>
-      <div className="build_sec pad100">
-        <div className="build-faq full-container d-flex align-start">
-          <div className="build_img w-50">
-            <img src={"assets/images/build_img1.jpg"} alt="" />
-          </div>
-          <div className="build_right w-50">
-            <h2 className="bigheading pl60">
-              Building Websites That Are Designed To Convert
-            </h2>
-            <div className="serv_acc mt25">
-              <div className="service_accordion">
-                {DummyData.map((item) => {
-                  return (
-                    <>
-                      <Accordion
-                        title={item.question}
-                        answer={item.answer}
-                        key={item.id}
-                        titleBefore={true}
-                      />
-                    </>
-                  );
-                })}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="full-container d-flex">
-          <div className="build-right build-text w-50">
-            <h2 className="bigheading">
-              We Develop Websites That Drive Your Business Forward
-            </h2>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took.
-            </p>
-            <ul class="half-list d-flex wrap-flex">
-              <li>Lorem Ipsum Lorem Ipsum</li>
-              <li>Lorem Ipsum Lorem Ipsum</li>
-              <li>Lorem Ipsum Lorem Ipsum</li>
-              <li>Lorem Ipsum Lorem Ipsum</li>
-            </ul>
+      <div className="build_sec pad100_noRightLeft">
+        {props.data.map((item, index) => {
+          if (item.editorValue) {
+            item.editorValue = item.editorValue.replace(
+              /<ul>/g,
+              '<ul class="half-list d-flex wrap-flex">'
+            );
+          }
 
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took.Lorem Ipsum is
-              simply dummy text of the printing and typesetting industry. Lorem
-              Ipsum has been the industry's standard dummy text ever since the
-              1500s, when an unknown printer took. Lorem Ipsum is simply dummy
-              text of the printing.
-            </p>
-          </div>
-          <div className="build-img w-50">
-            <img src={"assets/images/build_img2.jpg"} alt="" />
-          </div>
-        </div>
+          return (
+            <>
+              <div
+                className={`full-container d-flex ${
+                  index % 2 === 0 ? "even" : "odd"
+                }`}
+                key={`field-${index}`}
+              >
+                <div className="build_img w-50">
+                  <img src={"assets/images/build_img1.jpg"} alt="Image" />
+                </div>
+                {item.accordion ? (
+                  <div className="build_right w-50">
+                    <h2 className="bigheading pl60">{item.heading}</h2>
+                    {item.accordion.map((item, index) => {
+                      return (
+                        <div
+                          className="service_accordion"
+                          key={`accordion-${index}`}
+                        >
+                          <Accordion
+                            title={item.title}
+                            answer={<RenderHtml data={item.content} />}
+                            key={item.id}
+                            titleBefore={true}
+                          />
+                        </div>
+                      );
+                    })}
+                    <Button
+                      title="Let's Talk"
+                      type="button"
+                      svgBackgroundColor="#000000"
+                      icon="solar:arrow-right-broken"
+                      borderColor="#FB9100"
+                    />
+                  </div>
+                ) : (
+                  <div className="build_right build-text w-50">
+                    <h2 className="bigheading">{item.heading}</h2>
+
+                    <RenderHtml data={item.editorValue} />
+                    <Button
+                      title="Let's Talk"
+                      type="button"
+                      svgBackgroundColor="#000000"
+                      icon="solar:arrow-right-broken"
+                      borderColor="#FB9100"
+                    />
+                  </div>
+                )}
+              </div>
+            </>
+          );
+        })}
       </div>
     </>
   );
@@ -232,66 +198,8 @@ const ServiceParagraph = React.memo((props) => {
     <>
       <div className="service_paragraph pb100">
         <div className="container">
-          <h2 className="bigheading">Lorem Ipsum is simply dummy text</h2>
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard dummy text ever since the 1500s, when
-            an unknown printer took a galley of type and scrambled it to make a
-            type specimen book. It has survived not only five centuries, but
-            also the leap into electronic typesetting, remaining essentially
-            unchanged. It was popularised in the 1960s with the release of
-            Letraset sheets containing Lorem Ipsum passages, and more recently
-            with desktop publishing software like Aldus PageMaker including
-            versions of Lorem Ipsum.
-          </p>
-          <ul class="half-list d-flex wrap-flex">
-            <li>
-              {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </li>
-            <li>
-              {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </li>
-            <li>
-              {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </li>
-            <li>
-              {" "}
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </li>
-          </ul>
-
-          <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged.
-          </p>
-
-          <p className="pink-para mt25">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also th.
-          </p>
+          <h2 className="bigheading">{props.serviceHeadingIII}</h2>
+          <RenderHtml data={props.serviceDescriptionIV} />
         </div>
       </div>
     </>
@@ -300,46 +208,24 @@ const ServiceParagraph = React.memo((props) => {
 
 ServiceParagraph.displayName = "ServiceParagraph";
 
-const OurProcess = React.memo((props) => {
-  return (
-    <>
-      <section className="container our_process text-center">
-        <div className="doubal-border pad100">
-        <h5 className="sub-heading sub_hd-mx">Our Process</h5>
-        <h2 className="bigheading">Our Process</h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
-          since the 1500s, when an unknown printer took a galley of type and
-        </p>
-        <div className="mt50">
-        <Suspense fallback={<div>Loading...</div>}>
-          <ComparisonSlider
-            rightImage={"assets/images/comparison_background.png"}
-            leftImage={"assets/images/comparison_foreground.png"}
-            handleArrowBackgroundImage={
-              "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
-            }
-          />
-        </Suspense>
-        </div>
-        </div>
-      </section>
-    </>
-  );
-});
-
-OurProcess.displayName = "OurProcess";
-
 const PinkSection = React.memo((props) => {
+  const modifiedText = props.text.replace(/<h2>/g, '<h2 class="bigheading">');
+
   return (
     <>
       <section className="pink_sec pad100">
         <div className="container">
           <div className="pink_sec_flex d-flex">
             <div className="pink_left w-50">
-              <h5 className="sub-heading sub-hd">Lorem Ipsum</h5>
-              <h2 className="bigheading">Lorem Ipsum</h2>
+              <h5 className="sub-heading sub-hd">Performance Analysis</h5>
+              <RenderHtml data={modifiedText} />
+              <ul className="lorem_grid">
+                <li className="lorem_box d-flex just-start gap-20">
+                  <Icon icon="fluent-mdl2:bullseye" />
+                  Lorem Ipsum
+                </li>
+              </ul>
+              {/* <h2 className="bigheading">Lorem Ipsum</h2>
               <p>
                 Adaired is a multi-service digital marketing firm that has a
                 qualified team of professionals to help you get noticed online.
@@ -375,7 +261,7 @@ const PinkSection = React.memo((props) => {
                   </div>
                   <h6 className="lorem_text">Lorem Ipsum</h6>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="pink_right w-50">
               <img src={"assets/images/clients.jpg"} alt="" />
@@ -429,15 +315,52 @@ const Consultation = React.memo((props) => {
 Consultation.displayName = "Consultation";
 
 const MainService = () => {
+  const {
+    isLoading,
+    error,
+    data: services,
+  } = useQuery({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/admin/services/`
+      );
+      const data = await response.data.data[0];
+      return data;
+    },
+    placeholderData: keepPreviousData,
+    onError: (error) => {
+      console.error("Error fetching data:", error);
+    },
+  });
+
+  if (isLoading) return "Loading...";
+  if (error) return "An error has occurred: " + error.message;
+
+  console.log(services);
   return (
     <div>
       <Banner title={"Main Service Page"} />
-      <IntroSection />
-
-      <OurProcess />
-      <ServiceBuild />
-      <ServiceParagraph />
-      <PinkSection />
+      <IntroSection
+        title={services.serviceTitle}
+        description_1={services.serviceDescription}
+        mainTwoPoints={services.mainTwoPoints}
+        serviceImg={services.serviceImage}
+        description_2={services.serviceDescriptionII}
+        serviceHeadingII={services.serviceHeadingII}
+        serviceDescriptionIII={services.serviceDescriptionIII}
+        fourPoints={services.fourPoints}
+      />
+      <OurProcess ourProcessSubHeading={services.ourProcessSubHeading} />
+      <ServiceBuild data={services.combinedSection} />
+      <ServiceParagraph
+        serviceHeadingIII={services.serviceHeadingIII}
+        serviceDescriptionIV={services.serviceDescriptionIV}
+      />
+      <PinkSection
+        text={services.LastSectionText}
+        image={services.LastSectionImage}
+      />
       <Consultation />
       <Blogs limit={3} />
     </div>

@@ -76,6 +76,14 @@
     max-width: 1920px;
     margin: 0 auto;
 
+    &.odd{
+        flex-direction: row-reverse;
+    }
+
+    &.even{
+        flex-direction: row;
+    }
+
     .build_right {
         padding: 0 238px 0 0px;
         box-sizing: border-box;
