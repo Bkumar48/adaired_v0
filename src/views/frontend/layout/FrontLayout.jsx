@@ -5,6 +5,7 @@ import Headroom from "react-headroom";
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
+import ContentMarketing from "../pages/servicePages/contentMarketingPage/ContentMarketing.jsx";
 // import Footer from "../global/footer/Footer.jsx";
 
 // Lazy load view components
@@ -72,7 +73,7 @@ const frontendRoutes = [
   { path: "/blog", element: <MainBlog /> },
   { path: "/about", element: <AboutUs /> },
   { path: "/gallery", element: <Gallery /> },
-  { path: "/services", element: <MainService /> },
+  { path: "/services/content-marketing", element: <ContentMarketing /> },
   { path: "/case-studies", element: <CaseStudy /> },
   { path: "/career", element: <Career /> },
   { path: "/contact", element: <ContactUs /> },
