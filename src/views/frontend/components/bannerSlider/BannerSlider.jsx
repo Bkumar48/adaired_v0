@@ -6,19 +6,25 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
+
+// images import
+import image1 from "../../../../assets/images/bannerImages/1.webp";
+import image2 from "../../../../assets/images/bannerImages/2.webp";
+import image3 from "../../../../assets/images/bannerImages/3.webp";
+
 const sliderData = [
   {
-    img: "../../../../assets/images/1.png",
+    img: image1,
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: "./../../../assets/images/2.png",
+    img: image2,
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: "./../../../assets/images/3.png",
+    img: image3,
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
@@ -27,15 +33,15 @@ const sliderData = [
 const socialIcons = [
   {
     icon: "line-md:facebook",
-    link:"https://www.facebook.com/adaired.digital/"
+    link: "https://www.facebook.com/adaired.digital/",
   },
   {
     icon: "line-md:instagram",
-    link:"https://www.facebook.com/adaired.digital/"
+    link: "https://www.facebook.com/adaired.digital/",
   },
   {
     icon: "line-md:twitter-x",
-    link:"https://twitter.com/adaireddigital"
+    link: "https://twitter.com/adaireddigital",
   },
 ];
 

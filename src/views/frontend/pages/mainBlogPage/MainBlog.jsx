@@ -89,7 +89,9 @@ const BlogCard = React.memo(() => {
                 <div className="blog-main-col" key={blog._id}>
                   <div className="blog-main-img">
                     <img
-                      src={`https://localhost:5000/upload/blog/${blog.image}`}
+                      src={`${import.meta.env.VITE_API_IMAGE_URL}/blog/${
+                        blog.image
+                      }`}
                       alt="Image"
                     />
                   </div>

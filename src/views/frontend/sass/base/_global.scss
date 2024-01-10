@@ -61,10 +61,11 @@ section {
     overflow: hidden;
 }
 
-::before, ::after {
+::before,
+::after {
     pointer-events: none;
 }
- 
+
 .text-left {
     text-align: left;
 }
@@ -163,7 +164,7 @@ section {
     padding: 100px 15px;
 }
 
-.pad100_noRightLeft{
+.pad100_noRightLeft {
     padding: 100px 0;
 }
 
@@ -285,6 +286,7 @@ img {
 }
 
 @mixin double-border {
+
     &::after,
     &::before {
         position: absolute;
@@ -314,12 +316,13 @@ img {
     font-weight: 400;
     line-height: 50px;
 }
+
 .error {
-	display: block;
-	width: 100%;
-	color: #f00;
-	font-weight: 500;
-	margin-top: 8px;
+    display: block;
+    width: 100%;
+    color: #f00;
+    font-weight: 500;
+    margin-top: 8px;
 }
 
 
@@ -358,12 +361,13 @@ img {
 
 .half-col {
     width: calc(100% / 2 - 20px);
-  }
+}
 
-  .full-col {
+.full-col {
     width: 100%;
-  }
-  .sub_hd-mx {
+}
+
+.sub_hd-mx {
     position: relative;
     max-width: max-content;
     padding: 0px !important;
@@ -387,4 +391,64 @@ img {
 .sub_hd-mx::after {
     left: unset;
     right: -65px;
+}
+
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
+    padding: 10px;
+}
+
+.col {
+    padding: 0 10px;
+}
+
+.col-1 {
+    grid-column: span 1;
+}
+
+.col-2 {
+    grid-column: span 2;
+}
+
+.col-3 {
+    grid-column: span 3;
+}
+
+.col-4 {
+    grid-column: span 4;
+}
+
+.col-5 {
+    grid-column: span 5;
+}
+
+.col-6 {
+    grid-column: span 6;
+}
+
+.col-7 {
+    grid-column: span 7;
+}
+
+.col-8 {
+    grid-column: span 8;
+}
+
+.col-9 {
+    grid-column: span 9;
+}
+
+.col-10 {
+    grid-column: span 10;
+}
+
+.col-11 {
+    grid-column: span 11;
+}
+
+.col-12 {
+    grid-column: span 12;
 }

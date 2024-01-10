@@ -1,5 +1,4 @@
 .main-header {
-    padding: 15px;
 
     .navbar {
         .d-flex {
@@ -7,16 +6,111 @@
         }
 
         ul {
+            margin: 0;
+            padding: 0;
+
             li {
                 margin: 0;
-                padding: 0;
-                text-transform: uppercase;
+                text-transform: capitalize;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                position: relative;
+
+
+                svg {
+                    color: green;
+                }
 
                 a {
                     font-size: 18px;
                     font-weight: 500;
-                    line-height: 27px;
                     text-decoration: none;
+                    padding: 35px 0px;
+                }
+
+                &:hover {
+                    .dropdown_menu {
+                        opacity: 1;
+                        visibility: inherit;
+                    }
+                }
+
+                .dropdown_menu {
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    min-width: 150px;
+                    height: auto;
+                    background-color: #fff;
+                    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
+                    padding: 10px 0;
+                    z-index: 10;
+                    border-bottom-right-radius: 10px;
+                    border-bottom-left-radius: 10px;
+                    visibility: hidden;
+                    opacity: 0;
+
+                    ul {
+                        li {
+
+                            text-align: left;
+                            justify-content: flex-start;
+                            transition: all 0.3s ease-in-out;
+
+                            a {
+                                padding: 10px 15px;
+                            }
+
+                            &:hover {
+                                color: #ccc;
+                            }
+                        }
+                    }
+
+                    h4 {
+                        position: relative;
+
+                        // &::after {
+                        //     content: "";
+                        //     position: absolute;
+                        //     bottom: -15%;
+                        //     left: 0;
+                        //     width: 60%;
+                        //     height: 3px;
+
+                            
+                        // }
+
+                        &:nth-child(1)::after {
+                            background-color: #038EB0;
+                            content: "";
+                            position: absolute;
+                            bottom: -15%;
+                            left: 0;
+                            width: 60%;
+                            height: 3px;
+                        }
+
+                        &:nth-child(2)::after {
+                            background-color: #F5A623;
+                        }
+                    }
+                }
+
+                .megaMenu {
+                    width: 80%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: flex;
+
+                    .row {
+                        flex: 70%;
+                    }
+
+                    .dropdown_slider {
+                        flex: 30%;
+                    }
                 }
             }
         }

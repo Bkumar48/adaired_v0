@@ -5,20 +5,146 @@
       "link": "/"
     },
     {
-      "name": "about us",
-      "link": "/about"
-    },
-    {
-      "name": "blog",
-      "link": "/blog"
-    },
-    {
       "name": "services",
-      "link": "/services/content-marketing"
+      "link": "",
+      "icon": "line-md:plus",
+      "childrens": [
+        {
+          "name": "Web Designing & Development",
+          "link": "/services/web-designing-development",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        },
+        {
+          "name": "Search Engine Optimization (SEO)",
+          "link": "/services/seo",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        },
+        {
+          "name": "Paid Media & Advertising (PPC)",
+          "link": "/services/ppc",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        },
+        {
+          "name": "Strategic Social Media Management",
+          "link": "/services/ppc",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        },
+        {
+          "name": "Compelling Content Marketing",
+          "link": "/services/ppc",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        },
+        {
+          "name": "Digital Creative & Logo Design",
+          "link": "/services/ppc",
+          "childrens": [
+            {
+              "name": "Technical SEO Analysis",
+              "link": "/services/seo/technical-seo-analysis"
+            },
+            {
+              "name": "Online Reputation Management",
+              "link": "/seo"
+            },
+            {
+              "name": "Competitor Backlink Outreach",
+              "link": "/seo"
+            }
+          ]
+        }
+      ]
     },
+    {
+      "name": "portfolio",
+      "link": "",
+      "icon": "line-md:plus",
+      "submenu_icon": "dashicons:portfolio",
+      "submenu_heading": "overview",
+      "childrens": [
+        {
+          "name": "about us",
+          "link": "/about"
+        },
+        {
+          "name": "blog",
+          "link": "/blog"
+        },
+        {
+          "name": "gallery",
+          "link": "/gallery"
+        }
+      ]
+    },
+
     {
       "name": "case studies",
-      "link": "/case-studies"
+      "link": "/case-studies",
+      "icon": "fa fa-angle-down"
     },
     {
       "name": "career",

@@ -5,8 +5,6 @@ import Headroom from "react-headroom";
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
-import ContentMarketing from "../pages/servicePages/contentMarketingPage/ContentMarketing.jsx";
-// import Footer from "../global/footer/Footer.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -16,6 +14,9 @@ const Gallery = lazy(() => import("../pages/galleryPage/Gallery.jsx"));
 const CaseStudy = lazy(() => import("../pages/caseStudyPage/CaseStudy.jsx"));
 const Career = lazy(() => import("../pages/careerPage/Career.jsx"));
 const Footer = lazy(() => import("../global/footer/Footer.jsx"));
+const ContentMarketing = lazy(() =>
+  import("../pages/servicePages/contentMarketingPage/ContentMarketing.jsx")
+);
 const MainService = lazy(() =>
   import("../pages/mainServicePage/MainService.jsx")
 );
@@ -49,14 +50,29 @@ const FrontLayout = () => {
             zIndex: "9999",
             boxShadow,
             backdropFilter: "blur(10px)",
+            height: "auto",
           }}
         >
           <Header />
         </Headroom>
         <Suspense fallback={<div>Loading</div>}>
-          <Routes>
+          {/* <Routes>
             {frontendRoutes.map((route, index) => (
               <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes> */}
+          <Routes>
+            {frontendRoutes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element}>
+                {route.children &&
+                  route.children.map((childRoute, childIndex) => (
+                    <Route
+                      key={childIndex}
+                      path={childRoute.path}
+                      element={childRoute.element}
+                    />
+                  ))}
+              </Route>
             ))}
           </Routes>
         </Suspense>
@@ -69,14 +85,22 @@ const FrontLayout = () => {
 // Separate route configuration
 const frontendRoutes = [
   { path: "/", element: <HomePage /> },
-  { path: "/contact-us", element: <ContactUs /> },
   { path: "/blog", element: <MainBlog /> },
   { path: "/about", element: <AboutUs /> },
   { path: "/gallery", element: <Gallery /> },
-  { path: "/services/content-marketing", element: <ContentMarketing /> },
   { path: "/case-studies", element: <CaseStudy /> },
   { path: "/career", element: <Career /> },
   { path: "/contact", element: <ContactUs /> },
+  {
+    path: "/services",
+    children: [
+      { path: "seo", element: <MainService /> },
+      {
+        path: "content-marketing",
+        element: <ContentMarketing />,
+      },
+    ],
+  },
 ];
 
 export default FrontLayout;
