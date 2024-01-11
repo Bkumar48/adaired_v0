@@ -6,25 +6,19 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 
-
-// images import
-import image1 from "../../../../assets/images/bannerImages/1.webp";
-import image2 from "../../../../assets/images/bannerImages/2.webp";
-import image3 from "../../../../assets/images/bannerImages/3.webp";
-
 const sliderData = [
   {
-    img: image1,
+    img: "assets/images/homePage/1.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: image2,
+    img: "assets/images/homePage/2.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: image3,
+    img: "assets/images/homePage/3.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },

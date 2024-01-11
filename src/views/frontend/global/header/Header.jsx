@@ -4,7 +4,6 @@ import { Icon } from "@iconify/react";
 import JsonData from "./Header.json";
 import { useState, useEffect } from "react";
 import Button from "../../components/buttonComponent/Button";
-import logo from "../../../../assets/images/logoMain.svg";
 const Header = (props) => {
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -26,7 +25,10 @@ const Header = (props) => {
             }}
           >
             <Link to="/">
-              <img src={logo} alt="logo" />
+              <img
+                src={"assets/images/header_footer/logoMain.svg"}
+                alt="logo"
+              />
             </Link>
           </motion.div>
           <div className="header-left d-flex gap-20">
@@ -96,10 +98,10 @@ const Header = (props) => {
                               })}
                             </div>
                             <div className="dropdown_slider">
-                              <img
+                              {/* <img
                                 src={"../../../../assets/images/1.png"}
                                 alt=""
-                              />
+                              /> */}
                             </div>
                           </div>
                         )}

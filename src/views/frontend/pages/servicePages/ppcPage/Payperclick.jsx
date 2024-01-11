@@ -108,10 +108,10 @@ const OurProcess = React.memo((props) => {
           <div className="mt50">
             <ComparisonSlider
               rightImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                props.ourProcessImage2
+                props.ourProcessImage1
               }`}
               leftImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                props.ourProcessImage1
+                props.ourProcessImage2
               }`}
               handleArrowBackgroundImage={
                 "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
@@ -206,12 +206,17 @@ const ServiceBuild = React.memo((props) => {
 ServiceBuild.displayName = "ServiceBuild";
 
 const ServiceParagraph = React.memo((props) => {
+  const modifiedText = props.serviceDescriptionIV.replace(
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
+  console.log(modifiedText)
   return (
     <>
       <div className="service_paragraph pb100">
         <div className="container">
           <h2 className="bigheading">{props.serviceHeadingIII}</h2>
-          <RenderHtml data={props.serviceDescriptionIV} />
+          <RenderHtml data={modifiedText} />
         </div>
       </div>
     </>
@@ -221,7 +226,12 @@ const ServiceParagraph = React.memo((props) => {
 ServiceParagraph.displayName = "ServiceParagraph";
 
 const PinkSection = React.memo((props) => {
-  const modifiedText = props.text.replace(/<h2>/g, '<h2 class="bigheading">');
+  const modifiedText = props.text.replace(
+    /<h2>/g,
+    '<h2 class="bigheading">',
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
 
   return (
     <>
@@ -229,7 +239,8 @@ const PinkSection = React.memo((props) => {
         <div className="container">
           <div className="pink_sec_flex d-flex">
             <div className="pink_left w-50">
-              <h5 className="sub-heading sub-hd">Performance Analysis</h5>
+              {/* <h5 className="sub-heading sub-hd">Performance Analysis</h5> */}
+              <h2 className="bigheading">{props.heading}</h2>
               <RenderHtml data={modifiedText} />
               {props.points && (
                 <ul className="lorem_grid">
@@ -252,48 +263,48 @@ const PinkSection = React.memo((props) => {
                 </ul>
               )}
               {/* <ul className="lorem_grid">
-                  <li className="lorem_box d-flex just-start gap-20">
-                    <Icon icon="fluent-mdl2:bullseye" />
-                    Lorem Ipsum
-                  </li>
-                </ul> */}
+                    <li className="lorem_box d-flex just-start gap-20">
+                      <Icon icon="fluent-mdl2:bullseye" />
+                      Lorem Ipsum
+                    </li>
+                  </ul> */}
               {/* <h2 className="bigheading">Lorem Ipsum</h2>
-                <p>
-                  Adaired is a multi-service digital marketing firm that has a
-                  qualified team of professionals to help you get noticed online.
-                  Our marketing solutions cater to many needs of our clients
-                  helping them grow online, increase exposure, and ultimately
-                  become the leader in the industry. What started as a small
-                  business, Adaired has now grown into a successful leading
-                  marketing agency helping businesses thrive online, worldwide.
-                </p>
-  
-                <div className="lorem_grid">
-                  <div className="lorem_box d-flex just-start">
-                    <div className="icon_box">
-                      <Icon icon="fluent-mdl2:bullseye" />
+                  <p>
+                    Adaired is a multi-service digital marketing firm that has a
+                    qualified team of professionals to help you get noticed online.
+                    Our marketing solutions cater to many needs of our clients
+                    helping them grow online, increase exposure, and ultimately
+                    become the leader in the industry. What started as a small
+                    business, Adaired has now grown into a successful leading
+                    marketing agency helping businesses thrive online, worldwide.
+                  </p>
+    
+                  <div className="lorem_grid">
+                    <div className="lorem_box d-flex just-start">
+                      <div className="icon_box">
+                        <Icon icon="fluent-mdl2:bullseye" />
+                      </div>
+                      <h6 className="lorem_text">Lorem Ipsum</h6>
                     </div>
-                    <h6 className="lorem_text">Lorem Ipsum</h6>
-                  </div>
-                  <div className="lorem_box d-flex just-start">
-                    <div className="icon_box">
-                      <Icon icon="fluent-mdl2:bullseye" />
+                    <div className="lorem_box d-flex just-start">
+                      <div className="icon_box">
+                        <Icon icon="fluent-mdl2:bullseye" />
+                      </div>
+                      <h6 className="lorem_text">Lorem Ipsum</h6>
                     </div>
-                    <h6 className="lorem_text">Lorem Ipsum</h6>
-                  </div>
-                  <div className="lorem_box d-flex just-start">
-                    <div className="icon_box">
-                      <Icon icon="fluent-mdl2:bullseye" />
+                    <div className="lorem_box d-flex just-start">
+                      <div className="icon_box">
+                        <Icon icon="fluent-mdl2:bullseye" />
+                      </div>
+                      <h6 className="lorem_text">Lorem Ipsum</h6>
                     </div>
-                    <h6 className="lorem_text">Lorem Ipsum</h6>
-                  </div>
-                  <div className="lorem_box d-flex just-start">
-                    <div className="icon_box">
-                      <Icon icon="fluent-mdl2:bullseye" />
+                    <div className="lorem_box d-flex just-start">
+                      <div className="icon_box">
+                        <Icon icon="fluent-mdl2:bullseye" />
+                      </div>
+                      <h6 className="lorem_text">Lorem Ipsum</h6>
                     </div>
-                    <h6 className="lorem_text">Lorem Ipsum</h6>
-                  </div>
-                </div> */}
+                  </div> */}
               <p>{props.hookline}</p>
             </div>
             <div className="pink_right w-50">
@@ -352,18 +363,18 @@ const Consultation = React.memo((props) => {
 
 Consultation.displayName = "Consultation";
 
-const ContentMarketing = () => {
+const Payperclick = () => {
   const {
     isLoading,
     error,
     data: pageData,
   } = useQuery({
-    queryKey: ["contentMarketingPage"],
+    queryKey: ["ppcPageData"],
     queryFn: async () => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_API_URL
-        }/api/v1/admin/services/?Id=659d2cfe5bc93c87f39af8d4`
+        }/api/v1/admin/services/?Id=659fd3a0958d96a7c710089b`
       );
       const data = response.data.data[0];
       return data;
@@ -402,7 +413,7 @@ const ContentMarketing = () => {
         serviceDescriptionIV={pageData.serviceDescriptionIV}
       />
       <PinkSection
-      heading={pageData.LastSectionHeading}
+        heading={pageData.LastSectionHeading}
         text={pageData.LastSectionText}
         image={pageData.LastSectionImage}
         hookline={pageData.LastSectionHookLine}
@@ -414,4 +425,4 @@ const ContentMarketing = () => {
   );
 };
 
-export default ContentMarketing;
+export default Payperclick;

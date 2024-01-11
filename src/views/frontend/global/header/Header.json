@@ -14,16 +14,32 @@
           "link": "/services/web-designing-development",
           "childrens": [
             {
-              "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
+              "name": "WordPress Development",
+              "link": "/services/web-designing-development/wordpress-development"
             },
             {
-              "name": "Online Reputation Management",
-              "link": "/seo"
+              "name": "Custom web development",
+              "link": "/services/web-designing-development/custom-web-development"
             },
             {
-              "name": "Competitor Backlink Outreach",
-              "link": "/seo"
+              "name": "WooCommerce",
+              "link": "/services/web-designing-development/woocommerce"
+            },
+            {
+              "name": "Shopify Development",
+              "link": "/services/web-designing-development/shopify-development"
+            },
+            {
+              "name": "PHP Development",
+              "link": "/services/web-designing-development/php-development"
+            },
+            {
+              "name": "Laravel Development",
+              "link": "/services/web-designing-development/laravel-development"
+            },
+            {
+              "name": "Website Maintenance",
+              "link": "/services/web-designing-development/website-maintenance"
             }
           ]
         },
@@ -37,11 +53,23 @@
             },
             {
               "name": "Online Reputation Management",
-              "link": "/seo"
+              "link": "/services/seo/online-reputation-management"
             },
             {
               "name": "Competitor Backlink Outreach",
-              "link": "/seo"
+              "link": "/services/seo/competitor-backlink-outreach"
+            },
+            {
+              "name": "Guest Post Outreach",
+              "link": "/services/seo/guest-post-outreach"
+            },
+            {
+              "name": "On-Page and Off-Page Optimization",
+              "link": "/services/seo/on-page-and-off-page-optimization"
+            },
+            {
+              "name": "Local SEO (GBP)",
+              "link": "/services/seo/local-seo-gbp"
             }
           ]
         },
@@ -50,75 +78,129 @@
           "link": "/services/ppc",
           "childrens": [
             {
-              "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
+              "name": "AdWords Audit",
+              "link": "/services/ppc/adwords-audit"
             },
             {
-              "name": "Online Reputation Management",
-              "link": "/seo"
+              "name": "Keyword Research",
+              "link": "/services/ppc/keyword-research"
             },
             {
-              "name": "Competitor Backlink Outreach",
-              "link": "/seo"
+              "name": "Campaign Optimization",
+              "link": "/services/ppc/campaign-optimization"
+            },
+            {
+              "name": "PPC Bid Management",
+              "link": "/services/ppc/ppc-bid-management"
+            },
+            {
+              "name": "Customized Ad Extensions",
+              "link": "/services/ppc/customized-ad-extensions"
+            },
+            {
+              "name": "Creative Display Ads",
+              "link": "/services/ppc/creative-display-ads"
+            },
+            {
+              "name": "Local Targeting Strategies",
+              "link": "/services/ppc/local-targeting-strategies"
+            },
+            {
+              "name": "Conversion Tracking",
+              "link": "/services/ppc/conversion-tracking"
             }
           ]
         },
-        {
-          "name": "Strategic Social Media Management",
-          "link": "/services/ppc",
-          "childrens": [
-            {
-              "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
-            },
-            {
-              "name": "Online Reputation Management",
-              "link": "/seo"
-            },
-            {
-              "name": "Competitor Backlink Outreach",
-              "link": "/seo"
-            }
-          ]
-        },
+
         {
           "name": "Compelling Content Marketing",
-          "link": "/services/ppc",
+          "link": "/services/content-marketing",
           "childrens": [
             {
-              "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
+              "name": "Content Audit",
+              "link": "/services/content-marketing/content-audit"
             },
             {
-              "name": "Online Reputation Management",
-              "link": "/seo"
+              "name": "Blogs & Articles",
+              "link": "/services/content-marketing/blogs-articles"
             },
             {
-              "name": "Competitor Backlink Outreach",
-              "link": "/seo"
+              "name": "Social Media Posts",
+              "link": "/services/content-marketing/social-media-posts"
+            },
+            {
+              "name": "Infographics",
+              "link": "/services/content-marketing/infographics"
+            },
+            {
+              "name": "Email Marketing Draft",
+              "link": "/services/content-marketing/email-marketing-draft"
+            },
+            {
+              "name": "Website Copies",
+              "link": "/services/content-marketing/website-copies"
+            },
+            {
+              "name": "Guest Posting",
+              "link": "/services/content-marketing/guest-posting"
+            },
+            {
+              "name": "Google Business Profile Posts",
+              "link": "/services/content-marketing/google-business-profile-posts"
             }
           ]
         },
         {
           "name": "Digital Creative & Logo Design",
-          "link": "/services/ppc",
+          "link": "/services/digital-creative-logo-design",
           "childrens": [
             {
-              "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
+              "name": "Website Graphics",
+              "link": "/services/digital-creative-logo-design/website-graphics"
             },
             {
-              "name": "Online Reputation Management",
-              "link": "/seo"
+              "name": "Website Logo",
+              "link": "/services/digital-creative-logo-design/website-logo"
             },
             {
-              "name": "Competitor Backlink Outreach",
-              "link": "/seo"
+              "name": "Digital Broucher",
+              "link": "/services/digital-creative-logo-design/digital-broucher"
+            },
+            {
+              "name": "Email Marketing Graphics",
+              "link": "/services/digital-creative-logo-design/email-marketing-graphics"
+            },
+            {
+              "name": "Business card, Letterhead etc.",
+              "link": "/services/digital-creative-logo-design/business-card-letterhead-etc"
+            },
+            {
+              "name": "Poster, Banner, Flyer and Signage",
+              "link": "/services/digital-creative-logo-design/poster-banner-flyer-and-signage"
+            },
+            {
+              "name": "Social Media Graphics",
+              "link": "/services/digital-creative-logo-design/social-media-graphics"
+            }
+          ]
+        },
+        {
+          "name": "Strategic Social Media Management",
+          "link": "/services/smm",
+          "childrens": [
+            {
+              "name": "Social Media Optimization",
+              "link": "/services/smm/social-media-optimization"
+            },
+            {
+              "name": "Social Media Marketing",
+              "link": "/services/smm/social-media-marketing"
             }
           ]
         }
       ]
     },
+
     {
       "name": "portfolio",
       "link": "",

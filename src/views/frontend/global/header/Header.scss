@@ -44,7 +44,7 @@
                     height: auto;
                     background-color: #fff;
                     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16), 0px 3px 6px rgba(0, 0, 0, 0.23);
-                    padding: 10px 0;
+                    padding: 10px 15px;
                     z-index: 10;
                     border-bottom-right-radius: 10px;
                     border-bottom-left-radius: 10px;
@@ -53,13 +53,20 @@
 
                     ul {
                         li {
-
                             text-align: left;
                             justify-content: flex-start;
                             transition: all 0.3s ease-in-out;
 
                             a {
-                                padding: 10px 15px;
+                                padding: 0;
+                                color: #1d1d1d;
+                                line-height: normal;
+                                font-size: 16px;
+                                font-weight: 500;
+                                position: relative;
+                                background: transparent !important;
+                                margin-bottom: 10px;
+                                padding: 10px 10px;
                             }
 
                             &:hover {
@@ -69,33 +76,17 @@
                     }
 
                     h4 {
-                        position: relative;
+                        font-family: "Nunito Sans", sans-serif;
+                        margin-bottom: 10px;
+                        font-size: 18px;
+                        font-weight: 700;
+                        border-bottom: 2px solid rgba(0, 0, 0, .17);
+                        padding-bottom: 10px;
+                        width: fit-content;
+                        line-height: 1rem;
 
-                        // &::after {
-                        //     content: "";
-                        //     position: absolute;
-                        //     bottom: -15%;
-                        //     left: 0;
-                        //     width: 60%;
-                        //     height: 3px;
-
-                            
-                        // }
-
-                        &:nth-child(1)::after {
-                            background-color: #038EB0;
-                            content: "";
-                            position: absolute;
-                            bottom: -15%;
-                            left: 0;
-                            width: 60%;
-                            height: 3px;
-                        }
-
-                        &:nth-child(2)::after {
-                            background-color: #F5A623;
-                        }
                     }
+
                 }
 
                 .megaMenu {
@@ -103,13 +94,35 @@
                     left: 50%;
                     transform: translateX(-50%);
                     display: flex;
+                    padding: 0;
+
+                    ul {
+                        li {
+                            a {
+                                padding: 0;
+                                color: #1d1d1d;
+                                line-height: normal;
+                                font-size: 16px;
+                                font-weight: 500;
+                                position: relative;
+                                background: transparent !important;
+                                margin-bottom: 10px;
+                            }
+                        }
+                    }
 
                     .row {
-                        flex: 70%;
+                        flex: 0 0 65%;
+                        padding: 20px;
                     }
 
                     .dropdown_slider {
-                        flex: 30%;
+                        flex: 0 0 35%;
+                        background-image: url("../../../../assets/images/1.png");
+                        background-size: cover;
+                        background-position: center;
+                        background-repeat: no-repeat;
+                        border-bottom-right-radius: 10px;
                     }
                 }
             }

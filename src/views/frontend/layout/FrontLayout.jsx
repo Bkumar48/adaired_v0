@@ -5,6 +5,7 @@ import Headroom from "react-headroom";
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
+import Payperclick from "../pages/servicePages/ppcPage/Payperclick.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -98,6 +99,10 @@ const frontendRoutes = [
       {
         path: "content-marketing",
         element: <ContentMarketing />,
+      },
+      {
+        path: "ppc",
+        element: <Payperclick />,
       },
     ],
   },
