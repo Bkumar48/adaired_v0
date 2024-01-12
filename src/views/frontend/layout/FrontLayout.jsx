@@ -6,6 +6,7 @@ import Headroom from "react-headroom";
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import Payperclick from "../pages/servicePages/ppcPage/Payperclick.jsx";
+import MainDevService from "../pages/servicePages/developmentPages/Index.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -104,6 +105,10 @@ const frontendRoutes = [
         path: "ppc",
         element: <Payperclick />,
       },
+      {
+        path:"web-designing-development",
+        element:<MainDevService/>
+      }
     ],
   },
 ];

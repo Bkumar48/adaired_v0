@@ -98,10 +98,10 @@ const Header = (props) => {
                               })}
                             </div>
                             <div className="dropdown_slider">
-                              {/* <img
+                              <img
                                 src={"../../../../assets/images/1.png"}
                                 alt=""
-                              /> */}
+                              />
                             </div>
                           </div>
                         )}

@@ -2,8 +2,36 @@ import BlogCard from "../singleBlogCard/BlogCard";
 import jsonData from "../../JSON_files/blogs_data.json";
 import { Link } from "react-router-dom";
 import Button from "../buttonComponent/Button";
-const Blogs = (props) => {
-  const blogData = jsonData.slice(0, props.limit ? props.limit : 3);
+
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
+const Blogs = React.memo((props) => {
+  
+
+
+  const {
+    isLoading,
+    error,
+    data: blogs,
+  } = useQuery({
+    queryKey: ["blogs", props.limit],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/user/blog/findBlog?limit=${props.limit}&skip=0`
+      );
+      const data = await response.data.result;
+      console.log(data)
+      return data;
+    },
+  });
+
+  if (isLoading) return "Loading...";
+  if (error) return "An error has occurred: " + error.message;
+
+
+
   return (
     <>
       <section className="blog-outer pad100">
@@ -16,10 +44,10 @@ const Blogs = (props) => {
             You can never miss an update with Adaried! Explore our blogs for
             insightful information and stay ahead with specially curated content
             by industry experts.
-          </p>
+          </p> 
         </div>
         <div className="container d-flex mt50">
-          {blogData.map((data, index) => {
+          {blogs.map((data, index) => {
             return <BlogCard key={index} data={data} />;
           })}
         </div>
@@ -38,6 +66,10 @@ const Blogs = (props) => {
       </section>
     </>
   );
-};
+}
+);
+
+Blogs.displayName = "Blogs";
 
 export default Blogs;
+ 
