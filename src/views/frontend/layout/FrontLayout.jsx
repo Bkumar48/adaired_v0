@@ -42,7 +42,7 @@ const FrontLayout = () => {
   return (
     <div>
       <div>
-        <Headroom
+        {/* <Headroom
           style={{
             WebkitTransition: "all .5s ease-in-out",
             MozTransition: "all .5s ease-in-out",
@@ -54,9 +54,9 @@ const FrontLayout = () => {
             backdropFilter: "blur(10px)",
             height: "auto",
           }}
-        >
+        > */}
           <Header />
-        </Headroom>
+        {/* </Headroom> */}
         <Suspense fallback={<div>Loading</div>}>
           {/* <Routes>
             {frontendRoutes.map((route, index) => (

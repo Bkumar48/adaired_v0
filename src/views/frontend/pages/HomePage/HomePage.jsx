@@ -1003,7 +1003,7 @@ const HomePage = () => {
       <Growth />
       <Rewards />
       <Testimonials />
-      <Blogs limit={3} viewMoreBtn={true} />
+      {/* <Blogs limit={3} viewMoreBtn={true} /> */}
       <ContactUs />
     </>
   );

@@ -7,7 +7,7 @@
     {
       "name": "services",
       "link": "",
-      "icon": "line-md:plus",
+      "icon": "ic:baseline-arrow-drop-down",
       "childrens": [
         {
           "name": "Web Designing & Development",
@@ -204,7 +204,7 @@
     {
       "name": "portfolio",
       "link": "",
-      "icon": "line-md:plus",
+      "icon": "ic:baseline-arrow-drop-down",
       "submenu_icon": "dashicons:portfolio",
       "submenu_heading": "overview",
       "childrens": [

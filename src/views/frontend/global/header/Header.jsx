@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react";
 import JsonData from "./Header.json";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Button from "../../components/buttonComponent/Button";
 const Header = (props) => {
   const [showNavbar, setShowNavbar] = useState(false);
@@ -11,49 +11,50 @@ const Header = (props) => {
     setShowNavbar(!showNavbar);
   };
 
+  const variants = {
+    open: { opacity: 1, y: 0 },
+    closed: { opacity: 0, y: "-100%" },
+  };
+
   return (
     <>
-      <header className={`main-header`}>
-        <div className="container d-flex">
-          <motion.div
-            className="logo"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-            }}
-          >
+      <motion.div
+        className={`main-header`}
+        variants={variants}
+        initial="closed"
+        animate="open"
+        transition={{
+          duration: 0.5,
+        }}
+      >
+        <motion.div className="container d-flex">
+          <motion.div>
             <Link to="/">
-              <img
+              <motion.img
                 src={"assets/images/header_footer/logoMain.svg"}
                 alt="logo"
               />
             </Link>
           </motion.div>
-          <div className="header-left d-flex gap-20">
-            <div className="navbar">
-              <div className="toggle-menu" onClick={handleShowNavbar}>
+          <motion.div className="header-left d-flex gap-20">
+            <motion.div className="navbar">
+              <motion.div className="toggle-menu" onClick={handleShowNavbar}>
                 <Icon
                   icon="icon-park:hamburger-button"
                   className="mobile-toggle"
                 />
-                <ul className={`menu d-flex ${showNavbar && "active"}`}>
+                <motion.ul className={`menu d-flex ${showNavbar && "active"}`}>
                   {JsonData.navbar.map((data, index) => {
                     return (
                       <motion.li
                         key={`navbar-${index}`}
                         className="nav-item"
-                        initial={{ opacity: 0, y: -100 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        variants={variants}
+                        initial="closed"
+                        animate="open"
                         transition={{
-                          duration: 0.1,
-                          ease: "easeInOut",
-                          delay: 0.1 + index * 0.1,
-                        }}
-                        style={{
-                          position: data.name === "services" && "static",
-                          borderRadius: "0px",
+                          delay: 0.5 + index * 0.1,
+                          duration: 0.5,
                         }}
                       >
                         <Link to={data.link}>{data.name}</Link>
@@ -110,12 +111,12 @@ const Header = (props) => {
                   })}
                   <motion.li
                     className="nav-item"
-                    initial={{ opacity: 0, y: -100 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    variants={variants}
+                    initial="closed"
+                    animate="open"
                     transition={{
-                      duration: 0.1,
-                      ease: "easeInOut",
-                      delay: 0.1 + 5 * 0.1,
+                      delay: 0.5 + 6 * 0.1,
+                      duration: 0.5,
                     }}
                   >
                     {" "}
@@ -127,12 +128,12 @@ const Header = (props) => {
                       navigateTo="/contact"
                     />
                   </motion.li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </header>
+                </motion.ul>
+              </motion.div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </>
   );
 };
