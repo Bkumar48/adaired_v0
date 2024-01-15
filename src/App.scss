@@ -12,7 +12,7 @@
 @import './views/frontend/pages/HomePage/HomePage.scss';
 @import './views//frontend/pages/aboutusPage/AboutUs.scss';
 @import './views/frontend/pages/contactPage/ContactUs.css';
-@import './views/frontend/pages/mainServicePage/MainService.scss';
+@import './views/frontend/pages/servicePages/services.scss';
 @import './views/frontend/pages/mainBlogPage/MainBlog.scss';
 @import './views/frontend/pages/caseStudyPage/CaseStudy.scss';
 @import './views/frontend/pages/singleBlogPage/SingleBlog.scss';
@@ -64,34 +64,8 @@
 
 
 /************************************************************************* LOGO SLIDER *****************************************************************************/
-.reward-col .reward__img {
-	overflow: hidden;
-	padding: 20px 10px;
-	border: 1px solid #fff;
-	transition: 0.4s all ease-in-out;
-}
-
-.reward-col:hover .reward__img {
-    border: 1px solid #bc1d8d;
-}
 
 
-.reward-col:hover img {
-    transform: scale(0.8);
-
-}
-.reward-col img {
-    max-height: 115px;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    transition: 0.6s all ease-in-out;
-}
-
-
-.reward-col:hover img {
-    transform: scale(1.2);
-}
 
 
 
@@ -112,16 +86,35 @@
 .row-reverse {
     flex-direction: row-reverse;
 }
+
 .case__study-img-section .bigheading {
-	text-transform: uppercase;
+    text-transform: uppercase;
 }
+
 .growth-img {
     position: relative;
-  }
-  .consultation_sec {
-    overflow: visible;
-  }
+}
 
+.consultation_sec {
+    overflow: visible;
+}
+
+.build_img img {
+    min-height: 720px;
+    object-fit: cover;
+}
+
+.drop-menu li:not(last-child) {
+    border-bottom: 1px solid #dddddd54;
+}
+
+.header-wrapper .nav-links li>a {
+    transition: 0.6s all ease-in;
+}
+
+.header-wrapper .nav-links li:hover>a {
+    color: #fb9100;
+}
 
 /* *********************************************************************** RESPONSIVE *************************************************************************************** */
 
@@ -183,7 +176,8 @@
         max-width: 165px;
     }
 
-    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title, .inner-banner .container h1 {
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title,
+    .inner-banner .container h1 {
         font-size: 50px;
     }
 
@@ -197,12 +191,15 @@
         transition: none;
         padding-left: 50px;
     }
+
     .contact__us-main {
         gap: 50px;
     }
+
     .contact-form form {
         padding: 40px;
     }
+
     .contact__us-cta .contact__us-cta-inner {
         padding: 20px;
         margin-bottom: 25px;
@@ -247,6 +244,7 @@
         width: 100%;
         max-width: 610px;
     }
+
     .blog-col p {
         overflow: hidden;
         display: -webkit-box;
@@ -349,6 +347,7 @@
         bottom: 25px;
 
     }
+
     .manage-grid .big-para {
         font-size: 24px;
         line-height: normal;
@@ -359,10 +358,11 @@
     .main-header .navbar .d-flex {
         gap: 35px;
     }
+
     .contact-form form {
         padding: 30px;
     }
-    
+
 
 
 
@@ -385,16 +385,18 @@
     .popular__posts {
         padding: 30px 18px;
     }
+
     .btn {
         border-radius: 100px;
         font-size: 17px;
         line-height: 17px;
         padding: 12px 50px 12px 16px;
     }
+
     .btn:hover {
         padding: 12px 15px 12px 50px;
     }
-    
+
     .btn svg {
         left: calc(100% - 37px);
         padding: 5px;
@@ -428,15 +430,18 @@
     .ambitious-col {
         max-width: 68% !important;
     }
+
     .case__study-card .case__study-card-text-box .case__study-card-text .case__study-card-heading {
         font-size: 28px;
         font-weight: 600;
         margin: 30px 0 15px 0;
     }
+
     .case__study-card .case__study-card-text-box .case__study-technologies {
         gap: 15px;
         padding-top: 40px;
     }
+
     .contact__us-cta-icon {
         height: 35px;
         width: 35px;
@@ -444,16 +449,20 @@
         padding: 8px;
         flex-shrink: 0;
     }
-    .contact__us-cta .contact__us-cta-inner strong, .contact__us-cta .contact__us-cta-inner strong a {
+
+    .contact__us-cta .contact__us-cta-inner strong,
+    .contact__us-cta .contact__us-cta-inner strong a {
         font-weight: 500;
         line-height: 20px;
     }
-        .contact__us-cta .contact__us-cta-inner h6 {
-            font-size: 16px;
-        }
-        .contact__us-cta .contact__us-cta-inner {
-            align-items: flex-start;
-        }
+
+    .contact__us-cta .contact__us-cta-inner h6 {
+        font-size: 16px;
+    }
+
+    .contact__us-cta .contact__us-cta-inner {
+        align-items: flex-start;
+    }
 
 
 }
@@ -639,6 +648,7 @@
     .banner__wrapper .banner-slider__content__overlay .banner-slider__content {
         grid-column: span 9;
     }
+
     .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info {
         margin-bottom: 30px;
     }
@@ -665,38 +675,47 @@
     .banner__wrapper .banner-slider__content__overlay {
         grid-template-columns: repeat(12, minmax(0, 1fr));
     }
+
     .contact-grid .cont-text ul li {
         font-size: 20px;
         line-height: 20px;
         margin-bottom: 10px;
     }
+
     .case__study-card-text span {
         top: 35px !important;
         left: 26px !important;
     }
+
     .contact-grid .cont-text .social-cont a p {
         font-size: 16px;
         line-height: 22px;
     }
+
     .contact-grid .cont-text .social-cont a strong {
         font-size: 20px;
         line-height: 20px;
         margin-top: 2px;
     }
+
     .career_container .career_content .career__right form {
         padding: 25px 20px;
     }
+
     .career_container .career_content .career__left .current_recruitments .current__recruitment-card {
         padding: 20px;
     }
+
     .contact-grid .home-form form {
         gap: 15px 25px;
         padding: 35px;
     }
+
     .pink_sec .lorem_grid .lorem_box h6 {
         font-size: 20px;
         padding-left: 10px;
     }
+
     .consultation_flex .icon_box_white svg {
         width: 35px;
         height: 35px;
@@ -704,16 +723,19 @@
         padding: 6px;
         font-size: 20px;
     }
+
     .consultation_flex h4 strong {
         font-size: 24px;
         font-weight: 600;
         line-height: 35px;
     }
+
     .consultation_flex h4 {
         font-size: 18px;
         font-weight: 300;
         line-height: 18px;
     }
+
     .contact__us-main {
         gap: 30px;
     }
@@ -721,10 +743,11 @@
 }
 
 @media screen and (max-width:991px) {
-    
+
     .banner-slider .banner-box {
         transform: translate(-8%, -70%);
     }
+
     .container {
         max-width: 100%;
     }
@@ -739,7 +762,8 @@
         gap: 20px;
     }
 
-    .contact-grid .d-flex, .contact-grid .cont-text .social-cont a {
+    .contact-grid .d-flex,
+    .contact-grid .cont-text .social-cont a {
         flex-wrap: wrap;
         gap: 20px;
     }
@@ -752,13 +776,15 @@
     .contact-grid .home-form.w-50 {
         width: 100%;
     }
+
     .home-form form .btn {
         width: 100% !important;
         max-width: 270px;
         margin: 0 auto;
     }
+
     .contact-grid .home-form form::after {
-            height: 50%;
+        height: 50%;
     }
 
     .contact-grid {
@@ -797,11 +823,14 @@
         padding-left: 0px;
         text-align: center;
     }
-    .review-grid p, .review-grid h2 {
+
+    .review-grid p,
+    .review-grid h2 {
         text-align: center;
     }
 
-    .review-text, .review-text p {
+    .review-text,
+    .review-text p {
         text-align: left !important;
     }
 
@@ -961,23 +990,26 @@
     .abt-icon {
         display: block;
         margin: 0 auto;
+        max-width: 60px;
     }
 
     .about-outer .w-50 {
         width: 100%;
     }
+
     .about__slider-wrapper {
         max-width: 650px;
         margin: 0 auto;
     }
 
-    .about-outer  .diagonalSlider::before {
+    .about-outer .diagonalSlider::before {
         display: none;
     }
+
     .diagonalSlider__control-btn {
         margin: 10px auto 0;
     }
-    
+
 
     .abt-img_big>img {
         max-width: 600px;
@@ -1087,15 +1119,19 @@
     .post-btn {
         margin-top: 10px;
     }
+
     .service-grid .serv-card:hover .serv-hide {
         bottom: 2%;
     }
+
     .service-grid .serv-card .serv__text .serv-hide h3 {
         margin: 0px 0px 10px !important;
     }
+
     .service-grid .serv-card {
-     min-height: 400px; 
+        min-height: 400px;
     }
+
     .service-grid .serv-card p {
         -webkit-line-clamp: 3;
     }
@@ -1191,6 +1227,8 @@
     .contact-grid .home-form form {
         gap: 15px 20px;
         padding: 30px;
+        max-width: 750px;
+        margin: 0 auto;
     }
 
     .contact-grid .home-form form textarea {
@@ -1227,6 +1265,7 @@
     .about-outer .abt-para {
         text-align: center;
     }
+
     .about-outer .diagonalSlider img {
         object-position: top;
     }
@@ -1368,8 +1407,16 @@
         min-height: auto;
     }
 
-    .full-container .build-text {
+    .full-container .build-text:last-child {
         padding: 0px;
+    }
+
+    .build_right .bigheading.pl60 {
+        padding: 0;
+    }
+
+    .full-container .build-text {
+        padding-bottom: 30px;
     }
 
     .full-container .w-50 {
@@ -1495,7 +1542,8 @@
         min-height: 80vh;
     }
 
-    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title, .inner-banner .container h1 {
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title,
+    .inner-banner .container h1 {
         font-size: 42px;
     }
 
@@ -1523,69 +1571,87 @@
     .banner__wrapper .banner-slider__content__overlay {
         grid-template-columns: auto;
     }
+
     .review-grid br {
         display: none;
     }
+
     .case__study-categories-items {
         gap: 8px;
     }
+
     .case__study-categories-items button {
         padding: 10px;
         font-size: 16px;
         line-height: 18px;
     }
+
     .case__study-card {
         border-radius: 10px;
         padding: 35px 20px;
         min-height: 420px;
     }
+
     .case__study-card .case__study-card-text-box .case__study-card-text .case__study-card-heading {
         font-size: 24px;
         font-weight: 600;
     }
+
     .case__study-card .case__study-img-section .case__study-img-heading p {
         width: 90%;
     }
+
     .career_container .career_content .career__left .current_recruitments .current__recruitment-card .job__title h3 {
         font-size: 20px;
         line-height: 25px;
     }
-    .career_container .career_content .career__right, .career_container .career_content .career__left {
+
+    .career_container .career_content .career__right,
+    .career_container .career_content .career__left {
         flex: 100%;
         width: 100%;
     }
-      .career_container .career_content {
+
+    .career_container .career_content {
         gap: 30px;
         flex-direction: column-reverse;
     }
+
     .career__form {
         margin-top: 20px;
     }
-   
+
 
     .sub-heading {
-    font-size: 18px;
+        font-size: 18px;
     }
+
     .sub-hd.sub-heading {
         max-width: max-content;
         margin: 0 auto;
         padding: 0;
     }
+
     .sub-heading {
-        @include double-border;   
+        @include double-border;
     }
-    .sub-hd.sub-heading::before, .sub-hd.sub-heading::after {
+
+    .sub-hd.sub-heading::before,
+    .sub-hd.sub-heading::after {
         width: 50px;
     }
+
     .case-study-col .sub-heading {
         padding-left: 60px;
         margin: 0px 0px 10px !important;
         max-width: max-content;
 
     }
+
     .case-study-col .sub-heading::before {
         display: none;
     }
+
     .case-study-col .sub-heading::after {
         left: 0%;
     }
@@ -1593,78 +1659,104 @@
     .ourjourney_sec .journey_head_card {
         padding: 50px 15px;
     }
-    .contact-grid .home-form form input::placeholder, .contact-grid .home-form form select, .contact-grid .home-form form label {
+
+    .contact-grid .home-form form input::placeholder,
+    .contact-grid .home-form form select,
+    .contact-grid .home-form form label {
         font-size: 18px;
-     }
-     .contact-grid .cont-text .social-cont {
+    }
+
+    .contact-grid .cont-text .social-cont {
         margin: 25px 0 0px;
     }
+
     .contact__us-main {
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
-    .contact-para, .contact-form {
+
+    .contact-para,
+    .contact-form {
         flex: 100%;
         margin: 0 auto;
     }
+
     .contact__us-cta {
         display: grid;
         gap: 20px;
-        grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
     }
+
     .contact__us-cta div {
         width: auto;
         margin-bottom: 0px !important;
     }
+
     .contact-form form {
         max-width: 700px;
         margin: 0 auto;
         text-align: center;
         justify-content: center;
     }
-    .contact-form form input, .contact-form form textarea {
+
+    .contact-form form input,
+    .contact-form form textarea {
         background-size: 22px;
         border-radius: 5px;
         margin-bottom: 18px;
         padding: 8px;
     }
-    .contact__us-cta  div:nth-child(1) {
+
+    .contact__us-cta div:nth-child(1) {
         grid-column: span 2;
     }
+
     .contact-form form label {
         font-size: 16px;
         text-align: left;
         padding-bottom: 5px;
     }
-    .contact-form form input::placeholder, .contact-form form textarea::placeholder {
+
+    .contact-form form input::placeholder,
+    .contact-form form textarea::placeholder {
         font-size: 16px;
         line-height: 16px;
     }
-    
+
     .contact-form form textarea {
         min-height: 120px;
         margin-bottom: 20px;
     }
+
     .career_container .career_content .career__right form .form-group label {
         font-size: 16px;
     }
+
     .contactus__card {
         margin-bottom: 20px;
     }
+
     .accordion {
-        padding: 0 20px !important  ;
+        padding: 0 20px !important;
     }
+
     .accordion.active {
         background-image: linear-gradient(#FFFAFD 100%, #fff 0%) !important;
     }
+
     .accordion .accordion-content {
-        padding: 0 40px 15px 15px !important    ;
+        padding: 0 40px 15px 15px !important;
     }
-   .gap-30 {
-    gap: 20px;
-   }
-    
+
+    .gap-30 {
+        gap: 20px;
+    }
+
+    .acc-btn.pl60 {
+        padding: 0px;
+    }
+
 
 
 
@@ -1682,9 +1774,11 @@
         align-items: center;
         text-align: center;
     }
+
     .banner-slider__content {
         position: relative;
     }
+
     .banner-slider__content::before {
         position: absolute;
         content: "";
@@ -1756,6 +1850,7 @@
         padding-right: 0px;
         padding-left: 0px;
     }
+
     .footer_social a {
         width: 25px;
         height: 25px;
@@ -2025,48 +2120,60 @@
         width: 100%;
     }
 
-    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title, .inner-banner .container h1 {
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title,
+    .inner-banner .container h1 {
         font-size: 35px;
     }
+
     .contact-grid .cont-text ul li {
         font-size: 17px;
         line-height: 17px;
         margin-bottom: 10px;
     }
+
     .case__study-card .case__study-card-inner {
         gap: 30px;
         flex-direction: column-reverse;
         justify-content: center;
     }
+
     .case__study-card-text span {
         display: none;
     }
+
     .case__study-card .case__study-card-text-box .btn__case-study {
         margin: 20px auto 0;
         position: relative;
         display: block;
     }
+
     .case__study-card .case__study-card-text-box .case__study-technologies {
-           padding-top: 30px;
+        padding-top: 30px;
     }
+
     .case__study-card {
         min-height: auto;
     }
+
     .case__study-card-text {
         text-align: center;
     }
+
     .case__study-card {
-     background: linear-gradient(rgb(255, 255, 255) 81%, rgb(123, 151, 188) 25%) !important;
+        background: linear-gradient(rgb(255, 255, 255) 81%, rgb(123, 151, 188) 25%) !important;
     }
+
     .case__study-card .case__study-card-text-box .case__study-card-text .case__study-card-heading {
         margin-top: 0;
         font-weight: 600;
     }
+
     .case__study-categories-items {
         gap: 10px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
     // .manage-grid .splash-left {
     //     left: -43px;
     // }
@@ -2077,37 +2184,46 @@
         margin: 0 auto 8px !important;
         padding: 0;
     }
+
     .case-study-col .sub-heading::before {
         display: block;
         right: -40%;
-    } 
-  .case-study-col .sub-heading::after {
-            left: -40%;
     }
+
+    .case-study-col .sub-heading::after {
+        left: -40%;
+    }
+
     .case-study {
         clip-path: unset;
     }
+
     .ourjourney_sec .journey_head_card {
         padding: 40px 0px 0;
-    } 
+    }
+
     .contact__us-cta .contact__us-cta-inner {
         flex-direction: column;
         justify-content: center;
         text-align: center;
     }
+
     .contact__us-cta-icon {
-        height:28px;
+        height: 28px;
         width: 28px;
         margin: 0 auto;
     }
+
     .contact__us-cta .contact__us-cta-inner h6 {
         text-align: center;
         margin: 0 auto;
     }
+
     .contact-form form {
         padding: 25px 15px;
     }
-    
+
+
 
 }
 
@@ -2207,6 +2323,7 @@
     .mb-50 {
         margin-bottom: 20px;
     }
+
     .service-grid .serv-card:hover {
         min-height: 420px;
     }
@@ -2222,57 +2339,86 @@
     .sub-heading {
         font-size: 16px;
     }
-    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title, .inner-banner .container h1  {
+
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title,
+    .inner-banner .container h1 {
         font-size: 30px;
     }
+
     .case__study-card .case__study-card-text-box .case__study-card-text .case__study-card-heading {
         font-size: 20px;
     }
+
     .case__study-categories-items {
         grid-template-columns: repeat(1, 2fr);
     }
+
     .diagonalSlider {
         max-height: 500px;
         height: 500px;
     }
-    
+
     .contact-grid .cont-text .social-cont {
         margin: 20px 0;
     }
-    .contact-grid .home-form form input::placeholder, .contact-grid .home-form form select, .contact-grid .home-form form label {
+
+    .contact-grid .home-form form input::placeholder,
+    .contact-grid .home-form form select,
+    .contact-grid .home-form form label {
         font-size: 16px;
-     }
-     .upload-col span {
+    }
+
+    .upload-col span {
         border-radius: 3px;
         padding: 2px 10px;
-     }
-     .career_container .career_content .career__right form .form-group label {
+    }
+
+    .career_container .career_content .career__right form .form-group label {
         font-size: 15px;
+    }
+
+    .abt-icon {
+        max-width: 50px;
+    }
+
+    .footer-bottom h3 {
+        font-size: 20px;
     }
 
 }
 
 @media screen and (max-width:450px) {
-.logo a img {
-	max-width: 100px;
-}
-.toggle-menu svg {
-	font-size: 32px;
-	padding: 3px;
-	border-radius: 2px;
-}
-.main-header {
-	padding: 10px 15PX;
-}
-.headroom-wrapper {
-	height: auto !important;
-}
-.menu {
-	top: 50px;
-}
-   .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title, .inner-banner .container h1 {
+    .logo a img {
+        max-width: 100px;
+    }
+
+    .ft-logo img {
+        max-width: 120px;
+    }
+
+    .toggle-menu svg {
+        font-size: 32px;
+        padding: 3px;
+        border-radius: 2px;
+    }
+
+    .main-header {
+        padding: 10px 15PX;
+    }
+
+    .headroom-wrapper {
+        height: auto !important;
+    }
+
+    .menu {
+        top: 50px;
+    }
+
+    .banner__wrapper .banner-slider__content__overlay .banner-slider__content .banner-slider__info .banner-slider__title,
+    .inner-banner .container h1 {
         font-size: 25px;
-    } 
+    }
+
     .bigheading {
         font-size: 22px;
         line-height: 30px;
@@ -2304,7 +2450,7 @@
     span,
     textarea {
         font-size: 15px;
-        line-height: 25px;
+        line-height: 24px;
     }
 
     .service-grid .serv-card .serv__text h3 {
@@ -2317,24 +2463,17 @@
 
     .footer-bottom {
         grid-template-columns: repeat(1, 1fr);
-        gap: 20px 0px;
-        text-align: center;
-        margin-top: 40px;
-        padding-top: 40px;
+        gap: 25px 0px;
+        margin-top: 30px;
+        padding-top: 30px;
+    }
+
+    .copyright-col.d-flex {
+        gap: 3px;
     }
 
     .footer_social .d-flex {
-        justify-content: center;
-    }
-
-    .ft-col {
-        margin: 0 auto;
-    }
-
-    .footer-bottom h3::before {
-        left: 0;
-        right: 0;
-        margin: 0 auto;
+        justify-content: flex-start;
     }
 
     .blog-col {
@@ -2440,7 +2579,7 @@
     .accordion .accordion-header p {
         font-size: 17px !important;
         padding-left: 5px !important;
-      }
+    }
 
     .aside__cards-border {
         border-radius: 3px;
@@ -2456,34 +2595,57 @@
         left: 0;
         max-width: 30%;
     }
+
     .manage-grid .big-para {
         font-size: 16px;
         line-height: 24px;
     }
+
     .diagonalSlider {
         max-height: 430px;
         height: 430px;
     }
-    .contact-grid .d-flex, .contact-grid .cont-text .social-cont a {
+
+    .contact-grid .d-flex,
+    .contact-grid .cont-text .social-cont a {
         flex-direction: column;
         gap: 20px;
         text-align: center;
     }
+
     .case__study-card .case__study-card-text-box .case__study-technologies .case__study-technologies-item {
         border-radius: 10px;
         padding: 5px 8px;
     }
+
     .case__study-card .case__study-card-text-box .case__study-technologies {
         gap: 10px;
-        padding-top:25px;
+        padding-top: 25px;
     }
+
     .case__study-card {
         background: linear-gradient(rgb(255, 255, 255) 79%, rgb(123, 151, 188) 25%) !important;
     }
+
     .contact__us-cta .contact__us-cta-inner {
         grid-column: span 2;
     }
 
+    .footer_social a i {
+        font-size: 20px;
+        line-height: 20px;
+    }
+
+    p:not(:last-child),
+    li:not(:last-child),
+    h1:not(:last-child),
+    h2:not(:last-child),
+    h3:not(:last-child),
+    h4:not(:last-child),
+    h5:not(:last-child),
+    h6:not(:last-child) {
+        margin: 0 0 12px;
+    }
 
 }
 

@@ -8,14 +8,14 @@ import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import axios from "axios";
 
 // Components Imports
-import Banner from "../../components/banners/Banner";
-import Blogs from "./../../components/blogSection/Blogs";
-import Accordion from "../../components/customAccordion/Accordion";
-import ContactUsCard from "../../components/contactusCard/ContactUsCard";
-import GetInTouchForm from "../../components/getInTouchForm/GetInTouchForm";
-import ServiceMenu from "../../components/serviceMenu/ServiceMenu";
-import Button from "../../components/buttonComponent/Button";
-import ComparisonSlider from "../../components/beforeAfterComparison/ComparisonSlider";
+import Banner from "../../../components/banners/Banner";
+import Blogs from "../../../components/blogSection/Blogs";
+import Accordion from "../../../components/customAccordion/Accordion";
+import ContactUsCard from "../../../components/contactusCard/ContactUsCard";
+import GetInTouchForm from "../../../components/getInTouchForm/GetInTouchForm";
+import ServiceMenu from "../../../components/serviceMenu/ServiceMenu";
+import ComparisonSlider from "../../../components/beforeAfterComparison/ComparisonSlider";
+import Button from "../../../components/buttonComponent/Button";
 
 const RenderHtml = React.memo(({ data }) => {
   const sanitizedHtml = DOMPurify.sanitize(data);
@@ -34,7 +34,7 @@ const IntroSection = React.memo((props) => {
             <div className="service_text w-70">
               <h2 className="bigheading">{props.title}</h2>
               <RenderHtml data={props.description_1} />
-              <div className="d-flex gap-20">
+              <div className="d-flex gap-20 mt25">
                 {props.mainTwoPoints.map((point, index) => {
                   return (
                     <div className="service__card" key={index}>
@@ -54,7 +54,12 @@ const IntroSection = React.memo((props) => {
                 })}
               </div>
               <div className="service-img mt25">
-                <img src="assets/images/Pc_guy.jpg" alt="service-img" />
+                <img
+                  src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                    props.serviceImage
+                  }`}
+                  alt="service-img"
+                />
                 <RenderHtml data={props.description_2} />
                 <h2 className="bigheading">{props.serviceHeadingII}</h2>
                 <RenderHtml data={props.serviceDescriptionIII} />
@@ -102,8 +107,12 @@ const OurProcess = React.memo((props) => {
           <p>{props.ourProcessSubHeading}</p>
           <div className="mt50">
             <ComparisonSlider
-              rightImage={"assets/images/comparison_background.png"}
-              leftImage={"assets/images/comparison_foreground.png"}
+              rightImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                props.ourProcessImage1
+              }`}
+              leftImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                props.ourProcessImage2
+              }`}
               handleArrowBackgroundImage={
                 "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
               }
@@ -138,7 +147,12 @@ const ServiceBuild = React.memo((props) => {
                 key={`field-${index}`}
               >
                 <div className="build_img w-50">
-                  <img src={"assets/images/build_img1.jpg"} alt="Image" />
+                  <img
+                    src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                      item.combinedSectionImage
+                    }`}
+                    alt="Image"
+                  />
                 </div>
                 {item.accordion ? (
                   <div className="build_right w-50">
@@ -164,6 +178,7 @@ const ServiceBuild = React.memo((props) => {
                       svgBackgroundColor="#000000"
                       icon="solar:arrow-right-broken"
                       borderColor="#FB9100"
+                      navigateTo="/contact"
                     />
                   </div>
                 ) : (
@@ -192,12 +207,17 @@ const ServiceBuild = React.memo((props) => {
 ServiceBuild.displayName = "ServiceBuild";
 
 const ServiceParagraph = React.memo((props) => {
+  const modifiedText = props.serviceDescriptionIV.replace(
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
+  console.log(modifiedText);
   return (
     <>
       <div className="service_paragraph pb100">
         <div className="container">
           <h2 className="bigheading">{props.serviceHeadingIII}</h2>
-          <RenderHtml data={props.serviceDescriptionIV} />
+          <RenderHtml data={modifiedText} />
         </div>
       </div>
     </>
@@ -207,7 +227,12 @@ const ServiceParagraph = React.memo((props) => {
 ServiceParagraph.displayName = "ServiceParagraph";
 
 const PinkSection = React.memo((props) => {
-  const modifiedText = props.text.replace(/<h2>/g, '<h2 class="bigheading">');
+  const modifiedText = props.text.replace(
+    /<h2>/g,
+    '<h2 class="bigheading">',
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
 
   return (
     <>
@@ -215,54 +240,81 @@ const PinkSection = React.memo((props) => {
         <div className="container">
           <div className="pink_sec_flex d-flex">
             <div className="pink_left w-50">
-              <h5 className="sub-heading sub-hd">Performance Analysis</h5>
+              {/* <h5 className="sub-heading sub-hd">Performance Analysis</h5> */}
+              <h2 className="bigheading">{props.heading}</h2>
               <RenderHtml data={modifiedText} />
-              <ul className="lorem_grid">
-                <li className="lorem_box d-flex just-start gap-20">
-                  <Icon icon="fluent-mdl2:bullseye" />
-                  Lorem Ipsum
-                </li>
-              </ul>
+              {props.points && (
+                <ul className="lorem_grid mb-25">
+                  {props.points.map((point, index) => {
+                    return (
+                      <li
+                        className="lorem_box d-flex just-start gap-20"
+                        key={index}
+                      >
+                        <img
+                          src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                            point.LastSectionPointsImage
+                          }`}
+                          alt=""
+                        />
+                        <p>{point.title}</p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+              {/* <ul className="lorem_grid">
+                      <li className="lorem_box d-flex just-start gap-20">
+                        <Icon icon="fluent-mdl2:bullseye" />
+                        Lorem Ipsum
+                      </li>
+                    </ul> */}
               {/* <h2 className="bigheading">Lorem Ipsum</h2>
-              <p>
-                Adaired is a multi-service digital marketing firm that has a
-                qualified team of professionals to help you get noticed online.
-                Our marketing solutions cater to many needs of our clients
-                helping them grow online, increase exposure, and ultimately
-                become the leader in the industry. What started as a small
-                business, Adaired has now grown into a successful leading
-                marketing agency helping businesses thrive online, worldwide.
-              </p>
-
-              <div className="lorem_grid">
-                <div className="lorem_box d-flex just-start">
-                  <div className="icon_box">
-                    <Icon icon="fluent-mdl2:bullseye" />
-                  </div>
-                  <h6 className="lorem_text">Lorem Ipsum</h6>
-                </div>
-                <div className="lorem_box d-flex just-start">
-                  <div className="icon_box">
-                    <Icon icon="fluent-mdl2:bullseye" />
-                  </div>
-                  <h6 className="lorem_text">Lorem Ipsum</h6>
-                </div>
-                <div className="lorem_box d-flex just-start">
-                  <div className="icon_box">
-                    <Icon icon="fluent-mdl2:bullseye" />
-                  </div>
-                  <h6 className="lorem_text">Lorem Ipsum</h6>
-                </div>
-                <div className="lorem_box d-flex just-start">
-                  <div className="icon_box">
-                    <Icon icon="fluent-mdl2:bullseye" />
-                  </div>
-                  <h6 className="lorem_text">Lorem Ipsum</h6>
-                </div>
-              </div> */}
+                    <p>
+                      Adaired is a multi-service digital marketing firm that has a
+                      qualified team of professionals to help you get noticed online.
+                      Our marketing solutions cater to many needs of our clients
+                      helping them grow online, increase exposure, and ultimately
+                      become the leader in the industry. What started as a small
+                      business, Adaired has now grown into a successful leading
+                      marketing agency helping businesses thrive online, worldwide.
+                    </p>
+      
+                    <div className="lorem_grid">
+                      <div className="lorem_box d-flex just-start">
+                        <div className="icon_box">
+                          <Icon icon="fluent-mdl2:bullseye" />
+                        </div>
+                        <h6 className="lorem_text">Lorem Ipsum</h6>
+                      </div>
+                      <div className="lorem_box d-flex just-start">
+                        <div className="icon_box">
+                          <Icon icon="fluent-mdl2:bullseye" />
+                        </div>
+                        <h6 className="lorem_text">Lorem Ipsum</h6>
+                      </div>
+                      <div className="lorem_box d-flex just-start">
+                        <div className="icon_box">
+                          <Icon icon="fluent-mdl2:bullseye" />
+                        </div>
+                        <h6 className="lorem_text">Lorem Ipsum</h6>
+                      </div>
+                      <div className="lorem_box d-flex just-start">
+                        <div className="icon_box">
+                          <Icon icon="fluent-mdl2:bullseye" />
+                        </div>
+                        <h6 className="lorem_text">Lorem Ipsum</h6>
+                      </div>
+                    </div> */}
+              <p>{props.hookline}</p>
             </div>
             <div className="pink_right w-50">
-              <img src={"assets/images/clients.jpg"} alt="" />
+              <img
+                src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                  props.image
+                }`}
+                alt=""
+              />
             </div>
           </div>
         </div>
@@ -312,18 +364,20 @@ const Consultation = React.memo((props) => {
 
 Consultation.displayName = "Consultation";
 
-const MainService = () => {
+const Index = () => {
   const {
     isLoading,
     error,
-    data: services,
+    data: pageData,
   } = useQuery({
-    queryKey: ["services"],
+    queryKey: ["seoPageData"],
     queryFn: async () => {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/v1/admin/services/`
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/v1/admin/services/?Id=65a531972d811da58ffd35a0`
       );
-      const data = await response.data.data[0];
+      const data = response.data.data[0];
       return data;
     },
     placeholderData: keepPreviousData,
@@ -334,30 +388,37 @@ const MainService = () => {
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-
-  console.log(services);
   return (
     <div>
-      <Banner title={"Main Service Page"} />
+      <Banner title={pageData.serviceBanner} />
       <IntroSection
-        title={services.serviceTitle}
-        description_1={services.serviceDescription}
-        mainTwoPoints={services.mainTwoPoints}
-        serviceImg={services.serviceImage}
-        description_2={services.serviceDescriptionII}
-        serviceHeadingII={services.serviceHeadingII}
-        serviceDescriptionIII={services.serviceDescriptionIII}
-        fourPoints={services.fourPoints}
+        title={pageData.serviceTitle}
+        description_1={pageData.serviceDescription}
+        mainTwoPoints={pageData.mainTwoPoints}
+        serviceImg={pageData.serviceImage}
+        description_2={pageData.serviceDescriptionII}
+        serviceHeadingII={pageData.serviceHeadingII}
+        serviceDescriptionIII={pageData.serviceDescriptionIII}
+        fourPoints={pageData.fourPoints}
+        serviceImage={pageData.serviceImage}
       />
-      <OurProcess ourProcessSubHeading={services.ourProcessSubHeading} />
-      <ServiceBuild data={services.combinedSection} />
+      <OurProcess
+        ourProcessSubHeading={pageData.ourProcessSubHeading}
+        ourProcessImage1={pageData.ourProcessImageI}
+        ourProcessImage2={pageData.ourProcessImageII}
+      />
+
+      <ServiceBuild data={pageData.combinedSection} />
       <ServiceParagraph
-        serviceHeadingIII={services.serviceHeadingIII}
-        serviceDescriptionIV={services.serviceDescriptionIV}
+        serviceHeadingIII={pageData.serviceHeadingIII}
+        serviceDescriptionIV={pageData.serviceDescriptionIV}
       />
       <PinkSection
-        text={services.LastSectionText}
-        image={services.LastSectionImage}
+        heading={pageData.LastSectionHeading}
+        text={pageData.LastSectionText}
+        image={pageData.LastSectionImage}
+        hookline={pageData.LastSectionHookLine}
+        points={pageData.LastSectionPoints}
       />
       <Consultation />
       <Blogs limit={3} />
@@ -365,4 +426,4 @@ const MainService = () => {
   );
 };
 
-export default MainService;
+export default Index;

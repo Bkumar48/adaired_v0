@@ -163,31 +163,31 @@
     .serv__text {
       padding: 50px 40px 50px;
 
-      
-        h3 {
-          font-family: Nunito Sans;
-          font-size: 22px;
-          font-style: normal;
-          font-weight: 600;
-          line-height: normal;
-          text-transform: capitalize;
-          position: relative;
-          max-width: max-content;
-          margin-bottom: 25px;
-       
-          &::before {
-            position: absolute;
-            content: "";
-            bottom: -8px;
-            left: 0;
-            width: 80%;
-            height: 1px;
-            background: #515151;
-          }
 
+      h3 {
+        font-family: Nunito Sans;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        text-transform: capitalize;
+        position: relative;
+        max-width: max-content;
+        margin-bottom: 25px;
+
+        &::before {
+          position: absolute;
+          content: "";
+          bottom: -8px;
+          left: 0;
+          width: 80%;
+          height: 1px;
+          background: #515151;
         }
 
-      
+      }
+
+
 
       .serv-hide {
         position: absolute;
@@ -198,7 +198,7 @@
 
         h3 {
           color: #fff;
-          
+
           &::before {
             background: #fff;
           }
@@ -244,51 +244,49 @@
 
 .case-study {
   background-color: #fff0dc;
-  clip-path: polygon(
-    100% 0%,
-    0% 0%,
-    0% 99.89%,
-    2.5% 99.74%,
-    5% 99.29%,
-    7.5% 98.57%,
-    10% 97.64%,
-    12.5% 96.57%,
-    15% 95.42%,
-    17.5% 94.28%,
-    20% 93.23%,
-    22.5% 92.35%,
-    25% 91.69%,
-    27.5% 91.31%,
-    30% 91.23%,
-    32.5% 91.46%,
-    35% 91.97%,
-    37.5% 92.74%,
-    40% 93.71%,
-    42.5% 94.81%,
-    45% 95.96%,
-    47.5% 97.09%,
-    50% 98.1%,
-    52.5% 98.94%,
-    55% 99.53%,
-    57.5% 99.85%,
-    60% 99.85%,
-    62.5% 99.56%,
-    65% 98.98%,
-    67.5% 98.16%,
-    70% 97.15%,
-    72.5% 96.03%,
-    75% 94.88%,
-    77.5% 93.77%,
-    80% 92.79%,
-    82.5% 92.01%,
-    85% 91.48%,
-    87.5% 91.24%,
-    90% 91.3%,
-    92.5% 91.66%,
-    95% 92.31%,
-    97.5% 93.18%,
-    100% 94.22%
-  );
+  clip-path: polygon(100% 0%,
+      0% 0%,
+      0% 99.89%,
+      2.5% 99.74%,
+      5% 99.29%,
+      7.5% 98.57%,
+      10% 97.64%,
+      12.5% 96.57%,
+      15% 95.42%,
+      17.5% 94.28%,
+      20% 93.23%,
+      22.5% 92.35%,
+      25% 91.69%,
+      27.5% 91.31%,
+      30% 91.23%,
+      32.5% 91.46%,
+      35% 91.97%,
+      37.5% 92.74%,
+      40% 93.71%,
+      42.5% 94.81%,
+      45% 95.96%,
+      47.5% 97.09%,
+      50% 98.1%,
+      52.5% 98.94%,
+      55% 99.53%,
+      57.5% 99.85%,
+      60% 99.85%,
+      62.5% 99.56%,
+      65% 98.98%,
+      67.5% 98.16%,
+      70% 97.15%,
+      72.5% 96.03%,
+      75% 94.88%,
+      77.5% 93.77%,
+      80% 92.79%,
+      82.5% 92.01%,
+      85% 91.48%,
+      87.5% 91.24%,
+      90% 91.3%,
+      92.5% 91.66%,
+      95% 92.31%,
+      97.5% 93.18%,
+      100% 94.22%);
 
   img {
     display: block;
@@ -357,13 +355,47 @@
   margin-bottom: 20px;
 }
 
+.reward-col {
+  .swiper-wrapper{
+    display: flex;
+    align-items: center;
+  
+  }
+}
+
+.reward-col .reward__img {
+  overflow: hidden;
+  padding: 20px 10px;
+  border: 1px solid #fff;
+  transition: 0.4s all ease-in-out;
+}
+
+.reward-col:hover .reward__img {
+  border: 1px solid #bc1d8d;
+}
+
+
+.reward-col:hover img {
+  transform: scale(0.8);
+
+}
+
+.reward-col img {
+  max-height: 115px;
+  width: auto;
+  display: block;
+  margin: 0 auto;
+  transition: 0.6s all ease-in-out;
+}
+
+
+.reward-col:hover img {
+  transform: scale(1.2);
+}
+
 // Contact Us
 .contact-grid {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 19%,
-    rgba(255, 251, 228, 1) -6%
-  );
+  background: linear-gradient(180deg, rgb(255, 255, 255) 28%, rgb(255, 251, 228) -4%);
 
   .cont-text {
     ul {

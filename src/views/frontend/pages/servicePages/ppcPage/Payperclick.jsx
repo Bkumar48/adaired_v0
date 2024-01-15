@@ -34,7 +34,7 @@ const IntroSection = React.memo((props) => {
             <div className="service_text w-70">
               <h2 className="bigheading">{props.title}</h2>
               <RenderHtml data={props.description_1} />
-              <div className="d-flex gap-20">
+              <div className="mt25 d-flex gap-20">
                 {props.mainTwoPoints.map((point, index) => {
                   return (
                     <div className="service__card" key={index}>
@@ -60,8 +60,8 @@ const IntroSection = React.memo((props) => {
                   }`}
                   alt="service-img"
                 />
-                <RenderHtml data={props.description_2} />
-                <h2 className="bigheading">{props.serviceHeadingII}</h2>
+                <RenderHtml className="mb-25" data={props.description_2} />
+                <h2 className="bigheading ">{props.serviceHeadingII}</h2>
                 <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
@@ -141,7 +141,7 @@ const ServiceBuild = React.memo((props) => {
           return (
             <>
               <div
-                className={`full-container d-flex ${
+                className={`full-container d-flex  ${
                   index % 2 === 0 ? "even" : "odd"
                 }`}
                 key={`field-${index}`}
@@ -172,13 +172,16 @@ const ServiceBuild = React.memo((props) => {
                         </div>
                       );
                     })}
+                    <div className="acc-btn pl60">
                     <Button
                       title="Let's Talk"
                       type="button"
                       svgBackgroundColor="#000000"
                       icon="solar:arrow-right-broken"
                       borderColor="#FB9100"
+                      navigateTo="/contact"
                     />
+                    </div>
                   </div>
                 ) : (
                   <div className="build_right build-text w-50">
@@ -210,7 +213,6 @@ const ServiceParagraph = React.memo((props) => {
     /<ul>/g,
     '<ul class="half-list d-flex wrap-flex">'
   );
-  console.log(modifiedText)
   return (
     <>
       <div className="service_paragraph pb100">
@@ -243,7 +245,7 @@ const PinkSection = React.memo((props) => {
               <h2 className="bigheading">{props.heading}</h2>
               <RenderHtml data={modifiedText} />
               {props.points && (
-                <ul className="lorem_grid">
+                <ul className="lorem_grid mb-25">
                   {props.points.map((point, index) => {
                     return (
                       <li
@@ -420,7 +422,7 @@ const Payperclick = () => {
         points={pageData.LastSectionPoints}
       />
       <Consultation />
-      <Blogs limit={3} />
+      {/* <Blogs limit={3} /> */}
     </div>
   );
 };

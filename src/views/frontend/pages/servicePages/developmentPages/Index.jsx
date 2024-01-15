@@ -34,7 +34,7 @@ const IntroSection = React.memo((props) => {
             <div className="service_text w-70">
               <h2 className="bigheading">{props.title}</h2>
               <RenderHtml data={props.description_1} />
-              <div className="d-flex gap-20">
+              <div className="d-flex gap-20 mt25">
                 {props.mainTwoPoints.map((point, index) => {
                   return (
                     <div className="service__card" key={index}>
@@ -244,7 +244,7 @@ const PinkSection = React.memo((props) => {
               <h2 className="bigheading">{props.heading}</h2>
               <RenderHtml data={modifiedText} />
               {props.points && (
-                <ul className="lorem_grid">
+                <ul className="lorem_grid mb-25">
                   {props.points.map((point, index) => {
                     return (
                       <li

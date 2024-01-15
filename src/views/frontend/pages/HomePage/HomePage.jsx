@@ -149,7 +149,7 @@ const AboutSection = React.memo(() => {
           whileInView={"animate"}
           viewport={{ once: false, amount: 0.2 }}
           transition={{ staggerChildren: 0.2 }}
-          className="container d-flex"
+          className="container d-flex align-start"
         >
           <motion.div
             style={{
@@ -769,7 +769,7 @@ const Rewards = React.memo(() => {
       <section className="rewards_outer pb100">
         <Swiper
           modules={[A11y, Autoplay, Parallax]}
-          autoplay={{ delay: 3000 }}
+          // autoplay={{ delay: 3000 }}
           spaceBetween={20}
           parallax={true}
           loop={true}
@@ -791,45 +791,46 @@ const Rewards = React.memo(() => {
             },
           }}
           className="container d-flex"
+          
         >
-          <SwiperSlide className="reward-col">
+          <SwiperSlide className="reward-col" >
             <div className="reward__img">
-              <img src="assets/images/reward (1).png" />
+              <img src="assets/images/certificationImages/image1.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (7).png" />
+              <img src="assets/images/certificationImages/image2.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (6).png" />
+              <img src="assets/images/certificationImages/image3.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (5).png" />
+              <img src="assets/images/certificationImages/image4.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (4).png" />
+              <img src="assets/images/certificationImages/image5.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (3).png" />
+              <img src="assets/images/certificationImages/image6.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (2).png" />
+              <img src="assets/images/certificationImages/image7.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/reward (2).png" />
+              <img src="assets/images/certificationImages/image8.webp" />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -860,7 +861,7 @@ const ContactUs = React.memo(() => {
 
   return (
     <>
-      <section className="contact-grid pb100">
+      <section className="contact-grid pad100">
         <div className="container d-flex align-start">
           <div className="cont-text w-50">
             <h2 className="bigheading">Ready To Win More Customers?</h2>

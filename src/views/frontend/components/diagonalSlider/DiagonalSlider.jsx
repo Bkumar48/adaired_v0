@@ -7,17 +7,34 @@ import "./DiagonalSlider.scss";
 
 const sliderData = [
   {
-    img: "assets/images/big-image_ceo.jpg",
+    img: "assets/images/diagonalSliderImages/image1.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/ceo_sir-img.jpg",
+    img: "assets/images/diagonalSliderImages/image2.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/growth-img.jpg",
+    img: "assets/images/diagonalSliderImages/image3.webp",
     alt: "CEO",
   },
+  {
+    img: "assets/images/diagonalSliderImages/image4.webp",
+    alt: "CEO",
+  },
+  {
+    img: "assets/images/diagonalSliderImages/image5.webp",
+    alt: "CEO",
+  },
+  {
+    img: "assets/images/diagonalSliderImages/image6.webp",
+    alt: "CEO",
+  },
+  {
+    img: "assets/images/diagonalSliderImages/image7.webp",
+    alt: "CEO",
+  },
+  
 ];
 
 const initData = sliderData[0];

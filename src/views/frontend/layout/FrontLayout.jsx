@@ -7,6 +7,7 @@ import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import Payperclick from "../pages/servicePages/ppcPage/Payperclick.jsx";
 import MainDevService from "../pages/servicePages/developmentPages/Index.jsx";
+import SeoMainService from "../pages/servicePages/seoPages/Index.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -19,9 +20,7 @@ const Footer = lazy(() => import("../global/footer/Footer.jsx"));
 const ContentMarketing = lazy(() =>
   import("../pages/servicePages/contentMarketingPage/ContentMarketing.jsx")
 );
-const MainService = lazy(() =>
-  import("../pages/mainServicePage/MainService.jsx")
-);
+
 
 const FrontLayout = () => {
   const [scrollY, setScrollY] = useState(0);
@@ -42,21 +41,9 @@ const FrontLayout = () => {
   return (
     <div>
       <div>
-        {/* <Headroom
-          style={{
-            WebkitTransition: "all .5s ease-in-out",
-            MozTransition: "all .5s ease-in-out",
-            OTransition: "all .5s ease-in-out",
-            transition: "all .5s ease-in-out",
-            background: "#fff",
-            zIndex: "9999",
-            boxShadow,
-            backdropFilter: "blur(10px)",
-            height: "auto",
-          }}
-        > */}
+       
           <Header />
-        {/* </Headroom> */}
+      
         <Suspense fallback={<div>Loading</div>}>
           {/* <Routes>
             {frontendRoutes.map((route, index) => (
@@ -96,7 +83,7 @@ const frontendRoutes = [
   {
     path: "/services",
     children: [
-      { path: "seo", element: <MainService /> },
+      { path: "seo", element: <SeoMainService /> },
       {
         path: "content-marketing",
         element: <ContentMarketing />,

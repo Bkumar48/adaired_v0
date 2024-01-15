@@ -34,11 +34,11 @@ const IntroSection = React.memo((props) => {
             <div className="service_text w-70">
               <h2 className="bigheading">{props.title}</h2>
               <RenderHtml data={props.description_1} />
-              <div className="d-flex gap-20">
+              <div className="d-flex gap-20 mt25">
                 {props.mainTwoPoints.map((point, index) => {
                   return (
                     <div className="service__card" key={index}>
-                      <div className="d-flex align-start just-start gap-20">
+                      <div className="d-flex align-start just-start gap-20 mt25">
                         <Icon
                           icon="mdi:progress-tick"
                           color="#bc1d8d"
@@ -61,7 +61,7 @@ const IntroSection = React.memo((props) => {
                   alt="service-img"
                 />
                 <RenderHtml data={props.description_2} />
-                <h2 className="bigheading">{props.serviceHeadingII}</h2>
+                <h2 className="bigheading mt25">{props.serviceHeadingII}</h2>
                 <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
@@ -179,7 +179,7 @@ const ServiceBuild = React.memo((props) => {
                       icon="solar:arrow-right-broken"
                       borderColor="#FB9100"
                     />
-                  </div>
+                    </div>
                 ) : (
                   <div className="build_right build-text w-50">
                     <h2 className="bigheading">{item.heading}</h2>
@@ -232,7 +232,7 @@ const PinkSection = React.memo((props) => {
               <h5 className="sub-heading sub-hd">Performance Analysis</h5>
               <RenderHtml data={modifiedText} />
               {props.points && (
-                <ul className="lorem_grid">
+                <ul className="lorem_grid mb-25">
                   {props.points.map((point, index) => {
                     return (
                       <li

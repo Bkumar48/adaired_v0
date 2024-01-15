@@ -1,4 +1,4 @@
-// @import "../../sass/base/global.scss";
+
 
 .banner__wrapper {
   position: relative;
@@ -13,6 +13,7 @@
   transition: none;
   display: flex;
   justify-content: center;
+  z-index: -1;
 
 
   .social-icon {
