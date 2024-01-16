@@ -129,7 +129,7 @@ OurProcess.displayName = "OurProcess";
 const ServiceBuild = React.memo((props) => {
   return (
     <>
-      <div className="build_sec pad100_noRightLeft">
+      <div className="build_sec pad100">
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
@@ -156,7 +156,7 @@ const ServiceBuild = React.memo((props) => {
                 </div>
                 {item.accordion ? (
                   <div className="build_right w-50">
-                    <h2 className="bigheading pl60">{item.heading}</h2>
+                    <h2 className="bigheading">{item.heading}</h2>
                     {item.accordion.map((item, index) => {
                       return (
                         <div
@@ -211,7 +211,6 @@ const ServiceParagraph = React.memo((props) => {
     /<ul>/g,
     '<ul class="half-list d-flex wrap-flex">'
   );
-  console.log(modifiedText);
   return (
     <>
       <div className="service_paragraph pb100">
@@ -421,7 +420,7 @@ const Index = () => {
         points={pageData.LastSectionPoints}
       />
       <Consultation />
-      <Blogs limit={3} />
+      {/* <Blogs limit={3} /> */}
     </div>
   );
 };

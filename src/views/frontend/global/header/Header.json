@@ -231,6 +231,10 @@
     {
       "name": "career",
       "link": "/career"
+    },
+    {
+      "name": "contact us",
+      "link": "/contact"
     }
   ]
 }

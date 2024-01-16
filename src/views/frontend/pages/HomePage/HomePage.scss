@@ -326,9 +326,9 @@
 }
 
 .half-list li {
-  width: calc(100% / 2 - 70px);
+  width: calc(100% / 2 - 45px);
   margin: 0;
-  position: relative;
+  position: relative; 
   padding-left: 28px;
 }
 
@@ -341,16 +341,16 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 25px;
-  top: 0;
-  bottom: 0;
+  top: 4px;
   left: 2px;
   margin: auto;
 }
 
 .half-list {
   flex-wrap: wrap;
-  gap: 25px 20px;
+  gap: 20px;
   padding: 0;
+  align-items: flex-start;
   justify-content: space-between;
   margin-bottom: 20px;
 }

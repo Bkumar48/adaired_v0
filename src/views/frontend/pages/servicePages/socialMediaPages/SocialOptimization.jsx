@@ -14,7 +14,6 @@ import Accordion from "../../../components/customAccordion/Accordion";
 import ContactUsCard from "../../../components/contactusCard/ContactUsCard";
 import GetInTouchForm from "../../../components/getInTouchForm/GetInTouchForm";
 import ServiceMenu from "../../../components/serviceMenu/ServiceMenu";
-import ComparisonSlider from "../../../components/beforeAfterComparison/ComparisonSlider";
 import Button from "../../../components/buttonComponent/Button";
 
 const RenderHtml = React.memo(({ data }) => {
@@ -38,7 +37,7 @@ const IntroSection = React.memo((props) => {
                 {props.mainTwoPoints.map((point, index) => {
                   return (
                     <div className="service__card" key={index}>
-                      <div className="d-flex align-start just-start gap-20 mt25">
+                      <div className="d-flex align-start just-start gap-20">
                         <Icon
                           icon="mdi:progress-tick"
                           color="#bc1d8d"
@@ -61,7 +60,7 @@ const IntroSection = React.memo((props) => {
                   alt="service-img"
                 />
                 <RenderHtml data={props.description_2} />
-                <h2 className="bigheading mt25">{props.serviceHeadingII}</h2>
+                <h2 className="bigheading">{props.serviceHeadingII}</h2>
                 <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
@@ -77,20 +76,18 @@ const IntroSection = React.memo((props) => {
               </div>
             </aside>
           </div>
-          {props.fourPoints.length !== 0 && (
-            <div className="arrow-flex mt50">
-              {props.fourPoints.map((point, index) => {
-                return (
-                  <div
-                    key={index}
-                    className="full-list half-list d-flex wrap-flex "
-                  >
-                    <li>{point}</li>
-                  </div>
-                );
-              })}
-            </div>
-          )}
+          <div className="arrow-flex mt50">
+            {props.fourPoints.map((point, index) => {
+              return (
+                <div
+                  key={index}
+                  className="full-list half-list d-flex wrap-flex "
+                >
+                  <li>{point}</li>
+                </div>
+              );
+            })}
+          </div>
         </div>
       </div>
     </>
@@ -98,35 +95,6 @@ const IntroSection = React.memo((props) => {
 });
 
 IntroSection.displayName = "IntroSection";
-
-const OurProcess = React.memo((props) => {
-  return (
-    <>
-      <section className="container our_process text-center">
-        <div className="doubal-border pad100">
-          <h5 className="sub-heading sub_hd-mx">Our Process</h5>
-          <h2 className="bigheading">Our Process</h2>
-          <p>{props.ourProcessSubHeading}</p>
-          <div className="mt50">
-            <ComparisonSlider
-              rightImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                props.ourProcessImage1
-              }`}
-              leftImage={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                props.ourProcessImage2
-              }`}
-              handleArrowBackgroundImage={
-                "linear-gradient(90deg, rgba(251,145,0,1) 12%, rgba(188,29,158,1) 100%)"
-              }
-            />
-          </div>
-        </div>
-      </section>
-    </>
-  );
-});
-
-OurProcess.displayName = "OurProcess";
 
 const ServiceBuild = React.memo((props) => {
   return (
@@ -174,15 +142,14 @@ const ServiceBuild = React.memo((props) => {
                         </div>
                       );
                     })}
-                    <div>
-                      <Button
-                        title="Let's Talk"
-                        type="button"
-                        svgBackgroundColor="#000000"
-                        icon="solar:arrow-right-broken"
-                        borderColor="#FB9100"
-                      />
-                    </div>
+                    <Button
+                      title="Let's Talk"
+                      type="button"
+                      svgBackgroundColor="#000000"
+                      icon="solar:arrow-right-broken"
+                      borderColor="#FB9100"
+                      navigateTo="/contact"
+                    />
                   </div>
                 ) : (
                   <div className="build_right build-text w-50">
@@ -209,123 +176,18 @@ const ServiceBuild = React.memo((props) => {
 
 ServiceBuild.displayName = "ServiceBuild";
 
-const ServiceParagraph = React.memo((props) => {
-  return (
-    <>
-      <div className="service_paragraph pb100">
-        <div className="container">
-          <h2 className="bigheading">{props.serviceHeadingIII}</h2>
-          <RenderHtml data={props.serviceDescriptionIV} />
-        </div>
-      </div>
-    </>
-  );
-});
-
-ServiceParagraph.displayName = "ServiceParagraph";
-
-const PinkSection = React.memo((props) => {
-  const modifiedText = props.text.replace(/<h2>/g, '<h2 class="bigheading">');
-
-  return (
-    <>
-      <section className="pink_sec pad100">
-        <div className="container">
-          <div className="pink_sec_flex d-flex">
-            <div className="pink_left w-50">
-              <h5 className="sub-heading sub-hd">Performance Analysis</h5>
-              <RenderHtml data={modifiedText} />
-              {props.points && (
-                <ul className="lorem_grid mb-25">
-                  {props.points.map((point, index) => {
-                    return (
-                      <li
-                        className="lorem_box d-flex just-start gap-20"
-                        key={index}
-                      >
-                        <img
-                          src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                            point.LastSectionPointsImage
-                          }`}
-                          alt=""
-                        />
-                        <p>{point.title}</p>
-                      </li>
-                    );
-                  })}
-                </ul>
-              )}
-
-              <p>{props.hookline}</p>
-            </div>
-            <div className="pink_right w-50">
-              <img
-                src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
-                  props.image
-                }`}
-                alt=""
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-});
-
-PinkSection.displayName = "PinkSection";
-
-const Consultation = React.memo((props) => {
-  return (
-    <>
-      <section className="consultation_sec">
-        <div className="container">
-          <div className="consultation_flex d-flex">
-            <div className="consul_card">
-              <Link to="tel:+91-8907200008" className="d-flex gap-20">
-                <div className="icon_box_white">
-                  <Icon icon="charm:phone-call" className="consul-icons" />
-                </div>
-                <h4 className="conusl_head">
-                  Get A Free Consultation
-                  <br />
-                  <strong>+91-8907200008</strong>
-                </h4>
-              </Link>
-            </div>
-            <div className="consul_card">
-              <Link to="mailto:info@adaired.com" className="d-flex gap-20">
-                <div className="icon_box_white">
-                  <Icon icon="mingcute:mail-open-fill" />
-                </div>
-                <h4 className="conusl_head">
-                  Mail Us
-                  <br />
-                  <strong>info@adaired.com</strong>
-                </h4>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
-  );
-});
-
-Consultation.displayName = "Consultation";
-
-const ContentMarketing = () => {
+const SocialOptimization = () => {
   const {
     isLoading,
     error,
     data: pageData,
   } = useQuery({
-    queryKey: ["contentMarketingPage"],
+    queryKey: ["smmPageData"],
     queryFn: async () => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_API_URL
-        }/api/v1/admin/services/?Id=65a6656119c4bed662ceaca6`
+        }/api/v1/admin/services/?Id=65a672a819c4bed662ceaecd`
       );
       const data = response.data.data[0];
       return data;
@@ -352,28 +214,9 @@ const ContentMarketing = () => {
         fourPoints={pageData.fourPoints}
         serviceImage={pageData.serviceImage}
       />
-      <OurProcess
-        ourProcessSubHeading={pageData.ourProcessSubHeading}
-        ourProcessImage1={pageData.ourProcessImageI}
-        ourProcessImage2={pageData.ourProcessImageII}
-      />
-
       <ServiceBuild data={pageData.combinedSection} />
-      <ServiceParagraph
-        serviceHeadingIII={pageData.serviceHeadingIII}
-        serviceDescriptionIV={pageData.serviceDescriptionIV}
-      />
-      <PinkSection
-        heading={pageData.LastSectionHeading}
-        text={pageData.LastSectionText}
-        image={pageData.LastSectionImage}
-        hookline={pageData.LastSectionHookLine}
-        points={pageData.LastSectionPoints}
-      />
-      <Consultation />
-      <Blogs limit={3} />
     </div>
   );
 };
 
-export default ContentMarketing;
+export default SocialOptimization;

@@ -188,7 +188,7 @@ const Header = () => {
         <div className="logo">
           <Link to="/">
             <motion.img
-              src={"assets/images/header_footer/logoMain.svg"}
+              src={"/assets/images/header_footer/logoMain.svg"}
               alt="logo"
             />
           </Link>
@@ -236,6 +236,7 @@ const Header = () => {
                               {child.childrens.map((subChild, index) => {
                                 return (
                                   <li key={`subChild-${index}`}>
+                                    <span className="sub-icon">icon</span>{" "}
                                     <Link to={subChild.link}>
                                       {subChild.name}
                                     </Link>
@@ -249,7 +250,7 @@ const Header = () => {
                     </div>
 
                     <div className="image">
-                      <img src="assets/images/banner.jpg" alt="" />
+                      <img src="/assets/images/banner.jpg" alt="" />
                     </div>
                   </div>
                 )}
@@ -264,11 +265,13 @@ const Header = () => {
             }}
           >
             <Button
-              title="Contact"
+              title="+91-8907200008"
               type="button"
               svgBackgroundColor="#000"
-              icon="solar:arrow-right-broken"
-              navigateTo="/contact"
+              icon="ic:round-phone"
+              onClick={() => {
+                window.location.href = "tel:+91-8907200008";
+              }}
             />
           </motion.li>
         </motion.ul>

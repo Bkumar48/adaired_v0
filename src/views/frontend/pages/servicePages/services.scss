@@ -7,6 +7,7 @@
         padding: 15px;
         border: 1px solid #d9d9d9;
         box-sizing: border-box;
+        min-height: 190px;
 
         & svg {
             height: 50px;
@@ -53,6 +54,9 @@
             width: 100%;
             margin-bottom: 20px;
         }
+        .bigheading {
+            margin-top: 45px;
+        }
 
     }
 }
@@ -78,21 +82,27 @@
 
     &.odd{
         flex-direction: row-reverse;
+        
+
+        .build_right {
+            padding: 0 0px 0 238px;
+            box-sizing: border-box;
+        }
     }
 
     &.even{
         flex-direction: row;
+
+        .build_right {
+            padding: 0 238px 0 0px;
+            box-sizing: border-box;
+        }
+        
     }
 
-    .build_right {
-        padding: 0 238px 0 0px;
-        box-sizing: border-box;
-    }
+    
 
-    .build-text {
-        padding: 0 60px 0 238px;
-        box-sizing: border-box;
-    }
+   
 
     .w-50 {
         width: calc(100% / 2 - 0px);
@@ -123,7 +133,7 @@
         .lorem_box {
             border: 1px solid #d9d9d9;
             padding: 12px;
-            // margin-bottom: ;
+            margin-bottom: 0px;
            
             p {
                 color: #515151;
@@ -133,9 +143,7 @@
             img {
                 color: #BC1D8D;
                 max-width: 50px;
-                padding: 5px;
-                border: 1px solid #D9D9D9;
-            }
+               }
         }
     }
 

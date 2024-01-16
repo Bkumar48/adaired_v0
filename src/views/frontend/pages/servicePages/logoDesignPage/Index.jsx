@@ -211,7 +211,6 @@ const ServiceParagraph = React.memo((props) => {
     /<ul>/g,
     '<ul class="half-list d-flex wrap-flex">'
   );
-  console.log(modifiedText);
   return (
     <>
       <div className="service_paragraph pb100">
@@ -263,49 +262,7 @@ const PinkSection = React.memo((props) => {
                   })}
                 </ul>
               )}
-              {/* <ul className="lorem_grid">
-                      <li className="lorem_box d-flex just-start gap-20">
-                        <Icon icon="fluent-mdl2:bullseye" />
-                        Lorem Ipsum
-                      </li>
-                    </ul> */}
-              {/* <h2 className="bigheading">Lorem Ipsum</h2>
-                    <p>
-                      Adaired is a multi-service digital marketing firm that has a
-                      qualified team of professionals to help you get noticed online.
-                      Our marketing solutions cater to many needs of our clients
-                      helping them grow online, increase exposure, and ultimately
-                      become the leader in the industry. What started as a small
-                      business, Adaired has now grown into a successful leading
-                      marketing agency helping businesses thrive online, worldwide.
-                    </p>
-      
-                    <div className="lorem_grid">
-                      <div className="lorem_box d-flex just-start">
-                        <div className="icon_box">
-                          <Icon icon="fluent-mdl2:bullseye" />
-                        </div>
-                        <h6 className="lorem_text">Lorem Ipsum</h6>
-                      </div>
-                      <div className="lorem_box d-flex just-start">
-                        <div className="icon_box">
-                          <Icon icon="fluent-mdl2:bullseye" />
-                        </div>
-                        <h6 className="lorem_text">Lorem Ipsum</h6>
-                      </div>
-                      <div className="lorem_box d-flex just-start">
-                        <div className="icon_box">
-                          <Icon icon="fluent-mdl2:bullseye" />
-                        </div>
-                        <h6 className="lorem_text">Lorem Ipsum</h6>
-                      </div>
-                      <div className="lorem_box d-flex just-start">
-                        <div className="icon_box">
-                          <Icon icon="fluent-mdl2:bullseye" />
-                        </div>
-                        <h6 className="lorem_text">Lorem Ipsum</h6>
-                      </div>
-                    </div> */}
+
               <p>{props.hookline}</p>
             </div>
             <div className="pink_right w-50">
@@ -370,12 +327,12 @@ const Index = () => {
     error,
     data: pageData,
   } = useQuery({
-    queryKey: ["seoPageData"],
+    queryKey: ["logoDesignPageData"],
     queryFn: async () => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_API_URL
-        }/api/v1/admin/services/?Id=65a531972d811da58ffd35a0`
+        }/api/v1/admin/services/?Id=65a66a5f19c4bed662cead92`
       );
       const data = response.data.data[0];
       return data;
@@ -421,7 +378,7 @@ const Index = () => {
         points={pageData.LastSectionPoints}
       />
       <Consultation />
-      <Blogs limit={3} />
+      {/* <Blogs limit={3} /> */}
     </div>
   );
 };

@@ -5,7 +5,6 @@ $fontSize: 22px;
   overflow: hidden;
   transition: transform 0.3s ease;
   cursor: pointer;
-  padding-left: 60px;
 
   &.active {
     background-image:
@@ -64,6 +63,6 @@ $fontSize: 22px;
   .accordion-content {
     font-size: 16px;
     line-height: 26px;
-    padding: 0 70px 25px 15px;
+    padding: 0 60px 25px 15px !important;
   }
 }

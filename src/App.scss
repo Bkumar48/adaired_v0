@@ -109,7 +109,7 @@
 }
 
 .header-wrapper .nav-links li>a {
-    transition: 0.6s all ease-in;
+    transition: color 0.6s ease-out;
 }
 
 .header-wrapper .nav-links li:hover>a {
@@ -123,18 +123,20 @@
     .full-container {
         max-width: 1400px;
     }
-
-    .full-container .build_right {
-        padding: 0 0 0 0px;
+    .full-container.even .build_right,  .full-container.odd .build_right  {
+        padding: 0px 0 0px;
     }
-
-    .full-container .build-text {
-        padding: 0 40px 0 0px;
+    .build_sec .odd .bigheading, .build_sec .odd .accordion, .build_sec .odd p, .build_sec .odd ul {
+        padding-right: 40px;
     }
-
-    .full-container img {
-        min-height: 580px;
-        object-fit: cover;
+    .build_sec .odd .btn {
+        margin-right: 40px;
+    }
+    .build_sec .even .bigheading, .build_sec .even .accordion, .build_sec .even p, .build_sec .even ul {
+        padding-left: 40px;
+    }
+    .build_sec .even .btn {
+        margin-left: 40px;
     }
 
     .full-container.d-flex {
@@ -362,7 +364,24 @@
     .contact-form form {
         padding: 30px;
     }
-
+    .header-wrapper .nav-links li .mega-box .content .row ul > li a {
+        padding: 3px 0 3px 0px;
+        font-size: 15px;
+    }
+    .header-wrapper .nav-links li .mega-box .content {
+        padding: 20px 10px;
+         }
+         .header-wrapper .nav-links li .mega-box .content .row a h4 {
+            min-height: 50px;
+        }
+        .service_flex .service__card {
+            padding: 10px;
+            min-height: 180px;
+        }
+        .service_flex .service__card svg {
+            height: 35px;
+            width: 35px;
+        }
 
 
 
@@ -583,27 +602,6 @@
         margin-left: 0;
     }
 
-    .contactus__card .contactus__card-inner a svg {
-        width: 20px;
-        height: 20px;
-        min-width: 20px;
-        padding: 5px;
-    }
-
-    .contactus__card-inner {
-        margin-top: 25px;
-    }
-
-    .contactus__card .contactus__card-inner a {
-        padding: 20px 10px;
-        border: 1px solid #ddd;
-        width: calc(100% / 2 - 36px);
-    }
-
-    .contactus__card .contactus__card-inner a:nth-child(1) {
-        width: 100%;
-    }
-
     .full-container img {
         min-height: 720px;
     }
@@ -739,10 +737,17 @@
     .contact__us-main {
         gap: 30px;
     }
+    .header-wrapper .nav-links li a {
+        font-size: 16px;
+        padding: 35px 10px;
+        }
+    .service_flex .service-img .bigheading {
+        margin-top: 35px;
+    }
 
 }
 
-@media screen and (max-width:991px) {
+@media screen and (max-width:999px) {
 
     .banner-slider .banner-box {
         transform: translate(-8%, -70%);
@@ -846,8 +851,8 @@
         position: relative;
         display: inline-flex;
         left: 0;
-        top: 6px;
-        background-size: 12px;
+        top: 3px;
+        background-size: 18px;
     }
 
     .grow-text.w-50 {
@@ -873,6 +878,13 @@
     .grow-text.w-50 {
         width: 100%;
         padding-left: 0px;
+    }
+
+    .header-wrapper {
+        padding: 15px;
+    }
+    .header-wrapper .nav-links {
+        display: none;
     }
 
     .menu {
@@ -1665,6 +1677,26 @@
     .contact-grid .home-form form label {
         font-size: 18px;
     }
+    .contactus__card .contactus__card-inner a svg {
+        width: 20px;
+        height: 20px;
+        min-width: 20px;
+        padding: 5px;
+    }
+
+    .contactus__card-inner {
+        margin-top: 25px;
+    }
+
+    .contactus__card .contactus__card-inner a {
+        padding: 20px 10px;
+        border: 1px solid #ddd;
+        width: calc(100% / 2 - 36px);
+    }
+
+    .contactus__card .contactus__card-inner a:nth-child(1) {
+        width: 100%;
+    }
 
     .contact-grid .cont-text .social-cont {
         margin: 25px 0 0px;
@@ -1755,6 +1787,9 @@
 
     .acc-btn.pl60 {
         padding: 0px;
+    }
+    .full-container.d-flex:not(:last-child) {
+        margin-bottom: 30px;
     }
 
 
@@ -2221,6 +2256,9 @@
 
     .contact-form form {
         padding: 25px 15px;
+    }
+    .service_flex .service-img .bigheading {
+        margin-top: 25px;
     }
 
 

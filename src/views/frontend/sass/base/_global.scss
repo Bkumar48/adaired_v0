@@ -396,11 +396,30 @@ img {
 }
 
 .full-container .btn {
-    margin-top: 25px;
+    margin-top: 20px;
+}
+.build_sec .even .bigheading, .build_sec .even .accordion, .build_sec .even p, .build_sec .even ul {
+	padding-left: 60px;
 }   
+.build_sec .even .btn {
+  margin-left: 60px;
+}
+.build_sec .odd .accordion p, .build_sec .even .accordion p, .build_sec .odd ul li p, .build_sec .even ul li p  {
+    padding: 0px;
+}
+// 
+.build_sec .odd .bigheading, .build_sec .odd .accordion, .build_sec .odd p, .build_sec .odd ul {
+	padding-right: 60px;
+}   
+.build_sec .odd .btn {
+  margin-right: 60px;
+}
 
-.swiper-wrapper {
+.build_sec .odd .build-text {
+    padding-top: 50px;
+}
+
+.swiper-slider {
     display: flex;
     align-items: center;
-
-}
+    }       

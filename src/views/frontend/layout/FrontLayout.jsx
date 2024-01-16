@@ -8,6 +8,18 @@ import HomePage from "../pages/HomePage/HomePage.jsx";
 import Payperclick from "../pages/servicePages/ppcPage/Payperclick.jsx";
 import MainDevService from "../pages/servicePages/developmentPages/Index.jsx";
 import SeoMainService from "../pages/servicePages/seoPages/Index.jsx";
+import LogoDesignService from "../pages/servicePages/logoDesignPage/Index.jsx";
+import SocialMediaService from "../pages/servicePages/socialMediaPages/Index.jsx";
+
+// dev
+import Wordpress from "../pages/servicePages/developmentPages/Wordpress.jsx";
+import CustomDevelopment from "../pages/servicePages/developmentPages/CustomDevelopment.jsx";
+import WooCommerce from "../pages/servicePages/developmentPages/WooCommerce.jsx";
+import Shopify from "../pages/servicePages/developmentPages/Shopify.jsx";
+import PhpDevelopment from "../pages/servicePages/developmentPages/PhpDevelopment.jsx";
+import LaravelDevelopment from "../pages/servicePages/developmentPages/LaravelDevelopment.jsx";
+import SocialOptimization from "../pages/servicePages/socialMediaPages/SocialOptimization.jsx";
+import SocialMarketing from "../pages/servicePages/socialMediaPages/SocialMarketing.jsx";
 
 // Lazy load view components
 const AboutUs = lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -21,46 +33,41 @@ const ContentMarketing = lazy(() =>
   import("../pages/servicePages/contentMarketingPage/ContentMarketing.jsx")
 );
 
-
 const FrontLayout = () => {
-  const [scrollY, setScrollY] = useState(0);
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const boxShadow = scrollY > 0 ? "0 10px 30px -10px rgba(0,0,0,.3)" : "none";
-
   return (
     <div>
       <div>
-       
-          <Header />
-      
+        <Header />
+
         <Suspense fallback={<div>Loading</div>}>
-          {/* <Routes>
-            {frontendRoutes.map((route, index) => (
-              <Route key={index} path={route.path} element={route.element} />
-            ))}
-          </Routes> */}
           <Routes>
             {frontendRoutes.map((route, index) => (
               <Route key={index} path={route.path} element={route.element}>
-                {route.children &&
-                  route.children.map((childRoute, childIndex) => (
-                    <Route
-                      key={childIndex}
-                      path={childRoute.path}
-                      element={childRoute.element}
-                    />
-                  ))}
+                {route.children && (
+                  <>
+                    {route.children.map((childRoute, childIndex) => (
+                      <Route
+                        key={childIndex}
+                        path={childRoute.path}
+                        element={childRoute.element}
+                      >
+                        {childRoute.children && (
+                          <>
+                            {childRoute.children.map(
+                              (grandChildRoute, grandChildIndex) => (
+                                <Route
+                                  key={grandChildIndex}
+                                  path={grandChildRoute.path}
+                                  element={grandChildRoute.element}
+                                />
+                              )
+                            )}
+                          </>
+                        )}
+                      </Route>
+                    ))}
+                  </>
+                )}
               </Route>
             ))}
           </Routes>
@@ -83,7 +90,36 @@ const frontendRoutes = [
   {
     path: "/services",
     children: [
-      { path: "seo", element: <SeoMainService /> },
+      {
+        path: "seo",
+        element: <SeoMainService />,
+        children: [
+          {
+            path: "technical-seo-analysis",
+            element: <Wordpress />,
+          },
+          {
+            path: "online-reputation-management",
+            element: <Wordpress />,
+          },
+          {
+            path: "competitor-backlink-outreach",
+            element: <Wordpress />,
+          },
+          {
+            path: "guest-post-outreach",
+            element: <Wordpress />,
+          },
+          {
+            path: "on-page-and-off-page-optimization",
+            element: <Wordpress />,
+          },
+          {
+            path: "local-seo-gbp",
+            element: <Wordpress />,
+          },
+        ],
+      },
       {
         path: "content-marketing",
         element: <ContentMarketing />,
@@ -93,9 +129,53 @@ const frontendRoutes = [
         element: <Payperclick />,
       },
       {
-        path:"web-designing-development",
-        element:<MainDevService/>
-      }
+        path: "web-designing-development",
+        element: <MainDevService />,
+        children: [
+          {
+            path: "wordpress-development",
+            element: <Wordpress />,
+          },
+          {
+            path: "custom-web-development",
+            element: <CustomDevelopment />,
+          },
+          {
+            path: "woocommerce",
+            element: <WooCommerce />,
+          },
+          {
+            path: "shopify-development",
+            element: <Shopify />,
+          },
+          {
+            path: "php-development",
+            element: <PhpDevelopment />,
+          },
+          {
+            path: "laravel-development",
+            element: <LaravelDevelopment />,
+          },
+        ],
+      },
+      {
+        path: "digital-creative-logo-design",
+        element: <LogoDesignService />,
+      },
+      {
+        path: "smm",
+        element: <SocialMediaService />,
+        children: [
+          {
+            path: "social-media-optimization",
+            element: <SocialOptimization />,
+          },
+          {
+            path: "social-media-marketing",
+            element: <SocialMarketing />,
+          },
+        ],
+      },
     ],
   },
 ];

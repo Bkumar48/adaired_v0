@@ -129,7 +129,7 @@ OurProcess.displayName = "OurProcess";
 const ServiceBuild = React.memo((props) => {
   return (
     <>
-      <div className="build_sec pad100_noRightLeft">
+      <div className="build_sec pad100">
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
@@ -156,7 +156,7 @@ const ServiceBuild = React.memo((props) => {
                 </div>
                 {item.accordion ? (
                   <div className="build_right w-50">
-                    <h2 className="bigheading pl60">{item.heading}</h2>
+                    <h2 className="bigheading">{item.heading}</h2>
                     {item.accordion.map((item, index) => {
                       return (
                         <div
@@ -172,7 +172,7 @@ const ServiceBuild = React.memo((props) => {
                         </div>
                       );
                     })}
-                    <div className="acc-btn pl60">
+                    
                     <Button
                       title="Let's Talk"
                       type="button"
@@ -181,7 +181,6 @@ const ServiceBuild = React.memo((props) => {
                       borderColor="#FB9100"
                       navigateTo="/contact"
                     />
-                    </div>
                   </div>
                 ) : (
                   <div className="build_right build-text w-50">
