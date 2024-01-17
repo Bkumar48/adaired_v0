@@ -156,7 +156,6 @@ import Button from "../../components/buttonComponent/Button";
 
 const Header = () => {
   const [headerFixed, setHeaderFixed] = useState(false);
-  
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {

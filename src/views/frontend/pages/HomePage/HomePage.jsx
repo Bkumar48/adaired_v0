@@ -10,6 +10,7 @@ import {
 import Button from "../../components/buttonComponent/Button";
 import { useForm } from "react-hook-form";
 import axios from "axios";
+import { Icon } from "@iconify/react";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
@@ -75,7 +76,7 @@ const ManageGrid = React.memo(() => {
             exit={"ballExit"}
             key="leftSplash"
           >
-            <motion.img src="assets/images/left_splash-img.png" />
+            <motion.img src="/assets/images/homePage/splashLeft-.webp" />
           </motion.div>
 
           <div className="ambitious-col container text-center">
@@ -84,7 +85,7 @@ const ManageGrid = React.memo(() => {
             </h2>
             <div className="splash-box">
               <div className="mike-img">
-                <img src="assets/images/services_slider_icon.png" />
+                <Icon icon="nimbus:marketing" />
               </div>
             </div>
             <p className="big-para">
@@ -103,7 +104,7 @@ const ManageGrid = React.memo(() => {
             exit={"ballExit"}
             key="rightSplash"
           >
-            <motion.img src="assets/images/right_splash-img.png" />
+            <motion.img src="/assets/images/homePage/splashRight-.webp" />
           </motion.div>
         </AnimatePresence>
       </section>
@@ -187,7 +188,7 @@ const AboutSection = React.memo(() => {
               <div className="abt-card">
                 <img
                   className="abt-icon"
-                  src="/src/assets/images/Tailored Approach-1.svg"
+                  src="/assets/images/homePage/homePage_about1.svg"
                 />
                 <h4>Tailored Approach</h4>
                 <p>
@@ -199,7 +200,7 @@ const AboutSection = React.memo(() => {
               <div className="abt-card">
                 <img
                   className="abt-icon"
-                  src="/src/assets/images/Tangible Results-2.svg"
+                  src="/assets/images/homePage/homePage_about2.svg"
                 />
                 <h4>Tangible Results</h4>
                 <p>
@@ -232,47 +233,19 @@ AboutSection.displayName = "AboutSection";
 
 const TrustedBy = React.memo(() => {
   const Icons = {
-    1: "assets/images/trust-icon_1.png",
-    2: "assets/images/trust-icon_2.png",
-    3: "assets/images/trust-icon_3.png",
-    4: "assets/images/trust-icon_4.png",
-    5: "assets/images/trust-icon_5.png",
-    6: "assets/images/trust-icon_6.png",
-    7: "assets/images/trust-icon_7.png",
-    8: "assets/images/trust-icon_8.png",
-    9: "assets/images/trust-icon_9.png",
-    10: "assets/images/trust-icon_10.png",
-    11: "assets/images/trust-icon_11.png",
-    12: "assets/images/trust-icon_12.png",
+    1: "/assets/images/homePage/trustedBy1.webp",
+    2: "/assets/images/homePage/trustedBy2.webp",
+    3: "/assets/images/homePage/trustedBy3.webp",
+    4: "/assets/images/homePage/trustedBy4.webp",
+    5: "/assets/images/homePage/trustedBy5.webp",
+    6: "/assets/images/homePage/trustedBy6.webp",
+    7: "/assets/images/homePage/trustedBy7.webp",
+    8: "/assets/images/homePage/trustedBy8.webp",
+    9: "/assets/images/homePage/trustedBy9.webp",
+    10: "/assets/images/homePage/trustedBy10.webp",
+    11: "/assets/images/homePage/trustedBy11.webp",
+    12: "/assets/images/homePage/trustedBy12.webp",
   };
-
-  // const controls = useAnimation();
-
-  // useEffect(() => {
-  //   // If a user hasn't opted in for reduced motion, then we add the animation
-  //   if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  //     addAnimation();
-  //   }
-  // }, []);
-
-  // const addAnimation = async () => {
-  //   // Trigger the animation
-  //   controls.start({
-  //     x: ["0%", "-150%"], // Adjust the values based on your design
-  //     transition: {
-  //       x: {
-  //         duration: 40, // Set your desired animation duration
-  //         ease: "linear",
-  //         repeat: Infinity,
-  //         repeatType: "loop",
-  //       },
-  //     },
-  //     onComplete: () => {
-  //       // Reset the position to the starting point when the animation completes
-  //       controls.start({ x: "-50%", transition: { duration: 0 } });
-  //     },
-  //   });
-  // };
 
   const variants = {
     initial: {
@@ -357,43 +330,6 @@ const TrustedBy = React.memo(() => {
               })}
             </Swiper>
           </motion.div>
-
-          {/* <motion.div
-            className="scroller"
-            data-speed="slow"
-            style={{
-              overflow: "hidden",
-              WebkitMask:
-                "linear-gradient(90deg, transparent, white 20%, white 80%, transparent)",
-              mask: "linear-gradient(90deg, transparent, white 20%, white 80%, transparent)",
-            }}
-          >
-            <motion.ul
-              className="tag-list scroller__inner"
-              style={{
-                paddingBlock: "1rem",
-                display: "flex",
-                flexWrap: "nowrap", // Set to nowrap for horizontal scrolling
-                gap: "2rem",
-                width: "max-content",
-              }}
-              animate={controls}
-            >
-              {Object.keys(Icons).map((key, index) => {
-                return (
-                  <motion.li key={index}>
-                    <Link to="#" className="trust-icon">
-                      <motion.img
-                        style={{ filter: "grayscale(1)" }}
-                        whileHover={{ scale: 1.1, filter: "grayscale(0)" }}
-                        src={Icons[key]}
-                      />
-                    </Link>
-                  </motion.li>
-                );
-              })}
-            </motion.ul>
-          </motion.div> */}
         </motion.div>
       </section>
     </>
@@ -430,9 +366,9 @@ const Services = React.memo(() => {
         "Landing page design & development",
         "E-commerce website design & development",
       ],
-      imageSrc: "assets/images/services_cards-webdev-img.png",
-      svgImage:
-        "/src/assets/images/serviceCardsSVGs/Website Design & Development.svg",
+      imageSrc: "/assets/images/homePage/serviceCard1.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack1.webp",
+      svgImage: "/assets/images/homePage/Website Design & Development.svg",
       custom: 1,
     },
     {
@@ -446,9 +382,9 @@ const Services = React.memo(() => {
         "Content Calendar",
         "Monthly Report",
       ],
-      imageSrc: "assets/images/services_cards-smm-img.png",
-      svgImage:
-        "/src/assets/images/serviceCardsSVGs/Social Media Management.svg",
+      imageSrc: "/assets/images/homePage/serviceCard2.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack2.webp",
+      svgImage: "/assets/images/homePage/Social Media Management.svg",
       custom: 2,
     },
     {
@@ -463,9 +399,9 @@ const Services = React.memo(() => {
         "Guest Posting",
         "Social Media Posting",
       ],
-      imageSrc: "assets/images/services_cards-contentwriting-img.png",
-      svgImage:
-        "/src/assets/images/serviceCardsSVGs/Content Development & Marketing.svg",
+      imageSrc: "/assets/images/homePage/serviceCard3.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack3.webp",
+      svgImage: "/assets/images/homePage/Content Development & Marketing.svg",
       custom: 3,
     },
     {
@@ -480,8 +416,9 @@ const Services = React.memo(() => {
         "Business Card, Letterhead and Envelope",
         "Social media graphics & digital marketing ads",
       ],
-      imageSrc: "assets/images/services_cards-logodesign-img.png",
-      svgImage: "/src/assets/images/serviceCardsSVGs/Graphic Designing.svg",
+      imageSrc: "/assets/images/homePage/serviceCard4.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack4.webp",
+      svgImage: "/assets/images/homePage/Graphic Designing.svg",
       custom: 4,
     },
     {
@@ -496,9 +433,9 @@ const Services = React.memo(() => {
         "Website Broken Link Analysis",
         "Penalty review & recovery",
       ],
-      imageSrc: "assets/images/services_cards-seo-img.png",
-      svgImage:
-        "/src/assets/images/serviceCardsSVGs/Search Engine Optimization.svg",
+      imageSrc: "/assets/images/homePage/serviceCard5.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack5.webp",
+      svgImage: "/assets/images/homePage/Search Engine Optimization.svg",
       custom: 5,
     },
     {
@@ -513,8 +450,9 @@ const Services = React.memo(() => {
         "Overall performance Analysis",
         "Campaign management and optimization",
       ],
-      imageSrc: "assets/images/services_cards-ppc-img.png",
-      svgImage: "/src/assets/images/serviceCardsSVGs/Pay Per Click.svg",
+      imageSrc: "/assets/images/homePage/serviceCard6.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack6.webp",
+      svgImage: "/assets/images/homePage/Pay Per Click.svg",
       custom: 6,
     },
   ];
@@ -526,8 +464,14 @@ const Services = React.memo(() => {
     imageSrc,
     custom,
     svgImage,
+    backgroundImage,
   }) => (
-    <motion.div className="serv-card" variants={variants} custom={custom}>
+    <motion.div
+      className="serv-card"
+      variants={variants}
+      custom={custom}
+      data-content={backgroundImage}
+    >
       <div className="serv-img">
         <img src={imageSrc} alt={title} />
       </div>
@@ -553,6 +497,29 @@ const Services = React.memo(() => {
           />
         </div>
       </div>
+
+      <style jsx>{`
+        .serv-card[data-content="${backgroundImage}"]::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-image: url(${backgroundImage});
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+          opacity: 0;
+          transition: opacity 0.3s ease-in;
+          pointer-events: none;
+          z-index: -1;
+        }
+
+        .serv-card[data-content="${backgroundImage}"]:hover::after {
+          opacity: 1;
+        }
+      `}</style>
     </motion.div>
   );
 
@@ -569,6 +536,7 @@ const Services = React.memo(() => {
       },
     },
   };
+
   return (
     <>
       <section className="service-outer pad100">
@@ -622,7 +590,7 @@ const CaseStudy = React.memo(() => {
             modules={[A11y, Autoplay, Parallax]}
             spaceBetween={0}
             slidesPerView={1}
-            autoplay={{ delay: 3000}}
+            autoplay={{ delay: 3000 }}
             parallax={true}
             loop={true}
           >
@@ -647,7 +615,7 @@ const CaseStudy = React.memo(() => {
                   />
                 </div>
                 <div className="w-50">
-                  <img src="assets/images/laptop.png" />
+                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
                 </div>
               </div>
             </SwiperSlide>
@@ -672,7 +640,7 @@ const CaseStudy = React.memo(() => {
                   />
                 </div>
                 <div className="w-50">
-                  <img src="assets/images/laptop.png" />
+                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
                 </div>
               </div>
             </SwiperSlide>
@@ -697,7 +665,7 @@ const CaseStudy = React.memo(() => {
                   />
                 </div>
                 <div className="w-50">
-                  <img src="assets/images/laptop.png" />
+                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
                 </div>
               </div>
             </SwiperSlide>
@@ -717,9 +685,12 @@ const Growth = React.memo(() => {
           <div className="growth-img w-50">
             <img
               className="grow_single-img"
-              src="assets/images/growth-img.jpg"
+              src="/assets/images/homePage/TeamsBig.webp"
             />
-            <img className="team-img" src="assets/images/team-img.png" />
+            <img
+              className="team-img"
+              src="/assets/images/homePage/TeamsSmall.webp"
+            />
           </div>
           <div className="grow-text w-50 pl60">
             <h4 className="sub-hd sub-heading">Holistic Expertise</h4>
@@ -792,46 +763,45 @@ const Rewards = React.memo(() => {
             },
           }}
           className="container d-flex"
-          
         >
-          <SwiperSlide className="reward-col" >
+          <SwiperSlide className="reward-col">
             <div className="reward__img">
               <img src="assets/images/certificationImages/image1.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image2.webp" />
+              <img src="/assets/images/certificationImages/image2.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image3.webp" />
+              <img src="/assets/images/certificationImages/image3.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image4.webp" />
+              <img src="/assets/images/certificationImages/image4.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image5.webp" />
+              <img src="/assets/images/certificationImages/image5.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image6.webp" />
+              <img src="/assets/images/certificationImages/image6.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image7.webp" />
+              <img src="/assets/images/certificationImages/image7.webp" />
             </div>
           </SwiperSlide>
           <SwiperSlide className="reward-col">
             <div className="reward__img">
-              <img src="assets/images/certificationImages/image8.webp" />
+              <img src="/assets/images/certificationImages/image8.webp" />
             </div>
           </SwiperSlide>
         </Swiper>
@@ -875,7 +845,13 @@ const ContactUs = React.memo(() => {
                 href="mailto:Salesadaired@gmail.com"
                 className="d-flex just-start gap-20"
               >
-                <img src="assets/images/conticon (2).png" />
+                <Icon
+                  icon="mingcute:mail-open-fill"
+                  style={{
+                    color: "#316C7A",
+                    fontSize: "3.5rem",
+                  }}
+                />
                 <p>
                   Mail Id Of Sales Executive
                   <strong>Salesadaired@gmail.com</strong>
@@ -885,7 +861,13 @@ const ContactUs = React.memo(() => {
                 href="skype:adaireddigital"
                 className="d-flex just-start gap-20"
               >
-                <img src="assets/images/conticon (1).png" />
+                <Icon
+                  icon="mdi:skype"
+                  style={{
+                    color: "#316C7A",
+                    fontSize: "3.5rem",
+                  }}
+                />
                 <p>
                   Our Skpe ID
                   <strong>adaireddigital</strong>

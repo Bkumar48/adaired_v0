@@ -8,17 +8,17 @@ import { Icon } from "@iconify/react";
 
 const sliderData = [
   {
-    img: "assets/images/homePage/1.webp",
+    img: "/assets/images/homePage/1.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: "assets/images/homePage/2.webp",
+    img: "/assets/images/homePage/2.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },
   {
-    img: "assets/images/homePage/3.webp",
+    img: "/assets/images/homePage/3.webp",
     subHead: "Adaired Digital Media",
     title: "Digital Marketing Agency That Turns Businesses Into Brands",
   },

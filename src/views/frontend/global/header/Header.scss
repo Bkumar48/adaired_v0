@@ -21,6 +21,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   margin: auto;
 
   .nav-links {

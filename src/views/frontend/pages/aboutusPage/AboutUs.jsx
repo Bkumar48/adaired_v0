@@ -36,7 +36,7 @@ const IntroSection = React.memo(() => {
               <div className="abt-card">
                 <img
                   className="abt-icon"
-                  src="/public/assets/images/Innovative-mindset.svg"
+                  src="/assets/images/aboutPage/aboutSvg1.svg"
                 />
                 <h4>Innovative Mindset</h4>
                 <p>
@@ -48,7 +48,7 @@ const IntroSection = React.memo(() => {
               <div className="abt-card">
                 <img
                   className="abt-icon"
-                  src="/public/assets/images/Data-Driven.svg"
+                  src="/assets/images/aboutPage/aboutSvg2.svg"
                 />
                 <h4>Data-Driven Strategies</h4>
                 <p>

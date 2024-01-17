@@ -7,8 +7,8 @@ const Footer = () => {
       <footer className="main-footer">
         <div className="container">
           <div className="ft-top_bar d-flex align-start">
-            <Link
-              to="#"
+            <Link target="_blank"
+              to="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
               className="ft-link d-flex just-start gap-20 align-start"
             >
             <Icon icon="mdi:location" color="white" />

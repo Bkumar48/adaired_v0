@@ -7,31 +7,31 @@ import "./DiagonalSlider.scss";
 
 const sliderData = [
   {
-    img: "assets/images/diagonalSliderImages/image1.webp",
+    img: "/assets/images/diagonalSliderImages/image1.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image2.webp",
+    img: "/assets/images/diagonalSliderImages/image2.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image3.webp",
+    img: "/assets/images/diagonalSliderImages/image3.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image4.webp",
+    img: "/assets/images/diagonalSliderImages/image4.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image5.webp",
+    img: "/assets/images/diagonalSliderImages/image5.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image6.webp",
+    img: "/assets/images/diagonalSliderImages/image6.webp",
     alt: "CEO",
   },
   {
-    img: "assets/images/diagonalSliderImages/image7.webp",
+    img: "/assets/images/diagonalSliderImages/image7.webp",
     alt: "CEO",
   },
   
