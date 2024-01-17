@@ -425,6 +425,7 @@ const Services = React.memo(() => {
       list: [
         "PHP Development",
         "Website management",
+        "Website CMS migrations",
         "WordPress design & development",
         "Landing page design & development",
         "E-commerce website design & development",

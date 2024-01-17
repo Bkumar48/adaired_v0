@@ -21,8 +21,8 @@ const Testimonials = () => {
           </h2>
           <p>
             These are the genuine experiences of our clients regarding Adaired's
-            digital marketing services.The service quality
-            <br /> and client satisfaction we focus on define our unwavering
+            digital marketing services. The service quality
+            <br/> and client satisfaction we focus on define our unwavering
             commitment and make us the most trusted digital marketing company.
           </p>
           <Swiper
@@ -77,8 +77,8 @@ const Testimonials = () => {
                     <div className="review-text mt25">
                       <p>{data.description}</p>
                     </div>
-                    <div className="rating-star">
-                      {/* <img src="image/rating.png" /> */}
+                    <div className="rating-star mt25">
+                      <img src="/public/assets/images/homePage/rating-star.svg" />
                     </div>
                   </div>
                 </SwiperSlide>

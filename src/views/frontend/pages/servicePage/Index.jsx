@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { lazy, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import DOMPurify from "dompurify";
 
@@ -7,15 +7,15 @@ import DOMPurify from "dompurify";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import axios from "axios";
 
-// Components Imports
-import Banner from "../../../components/banners/Banner";
-import Blogs from "../../../components/blogSection/Blogs";
-import Accordion from "../../../components/customAccordion/Accordion";
-import ContactUsCard from "../../../components/contactusCard/ContactUsCard";
-import GetInTouchForm from "../../../components/getInTouchForm/GetInTouchForm";
-import ServiceMenu from "../../../components/serviceMenu/ServiceMenu";
-import ComparisonSlider from "../../../components/beforeAfterComparison/ComparisonSlider";
-import Button from "../../../components/buttonComponent/Button";
+// Necessary imports
+import Banner from "../../components/banners/Banner";
+import ContactUsCard from "../../components/contactusCard/ContactUsCard";
+import GetInTouchForm from "../../components/getInTouchForm/GetInTouchForm";
+import ServiceMenu from "../../components/serviceMenu/ServiceMenu";
+import Button from "../../components/buttonComponent/Button";
+import Accordion from "../../components/customAccordion/Accordion";
+import ComparisonSlider from "../../components/beforeAfterComparison/ComparisonSlider";
+import Blogs from "../../components/blogSection/Blogs";
 
 const RenderHtml = React.memo(({ data }) => {
   const sanitizedHtml = DOMPurify.sanitize(data);
@@ -61,13 +61,13 @@ const IntroSection = React.memo((props) => {
                   alt="service-img"
                 />
                 <RenderHtml data={props.description_2} />
-                <h2 className="bigheading">{props.serviceHeadingII}</h2>
+                <h2 className="bigheading mt25">{props.serviceHeadingII}</h2>
                 <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
             <aside className="w-30">
               <div className="mb-50">
-                <ServiceMenu />
+                <ServiceMenu menu={props.menuData} />
               </div>
               <div className="mb-50">
                 <GetInTouchForm />
@@ -77,18 +77,20 @@ const IntroSection = React.memo((props) => {
               </div>
             </aside>
           </div>
-          <div className="arrow-flex mt50">
-            {props.fourPoints.map((point, index) => {
-              return (
-                <div
-                  key={index}
-                  className="full-list half-list d-flex wrap-flex "
-                >
-                  <li>{point}</li>
-                </div>
-              );
-            })}
-          </div>
+          {props.fourPoints.length !== 0 && (
+            <div className="arrow-flex mt50">
+              {props.fourPoints.map((point, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="full-list half-list d-flex wrap-flex "
+                  >
+                    <li>{point}</li>
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </div>
     </>
@@ -127,6 +129,12 @@ const OurProcess = React.memo((props) => {
 OurProcess.displayName = "OurProcess";
 
 const ServiceBuild = React.memo((props) => {
+  const [openAccordion, setOpenAccordion] = useState(null);
+
+  const handleAccordionToggle = (index) => {
+    setOpenAccordion((prevIndex) => (prevIndex === index ? null : index));
+  };
+
   return (
     <>
       <div className="build_sec pad100">
@@ -164,22 +172,25 @@ const ServiceBuild = React.memo((props) => {
                           key={`accordion-${index}`}
                         >
                           <Accordion
+                            key={index}
                             title={item.title}
                             answer={<RenderHtml data={item.content} />}
-                            key={item.id}
                             titleBefore={true}
+                            isOpen={openAccordion === index}
+                            onToggle={() => handleAccordionToggle(index)}
                           />
                         </div>
                       );
                     })}
-                    <Button
-                      title="Let's Talk"
-                      type="button"
-                      svgBackgroundColor="#000000"
-                      icon="solar:arrow-right-broken"
-                      borderColor="#FB9100"
-                      navigateTo="/contact"
-                    />
+                    <div>
+                      <Button
+                        title="Let's Talk"
+                        type="button"
+                        svgBackgroundColor="#000000"
+                        icon="solar:arrow-right-broken"
+                        borderColor="#FB9100"
+                      />
+                    </div>
                   </div>
                 ) : (
                   <div className="build_right build-text w-50">
@@ -207,16 +218,12 @@ const ServiceBuild = React.memo((props) => {
 ServiceBuild.displayName = "ServiceBuild";
 
 const ServiceParagraph = React.memo((props) => {
-  const modifiedText = props.serviceDescriptionIV.replace(
-    /<ul>/g,
-    '<ul class="half-list d-flex wrap-flex">'
-  );
   return (
     <>
       <div className="service_paragraph pb100">
         <div className="container">
           <h2 className="bigheading">{props.serviceHeadingIII}</h2>
-          <RenderHtml data={modifiedText} />
+          <RenderHtml data={props.serviceDescriptionIV} />
         </div>
       </div>
     </>
@@ -226,12 +233,7 @@ const ServiceParagraph = React.memo((props) => {
 ServiceParagraph.displayName = "ServiceParagraph";
 
 const PinkSection = React.memo((props) => {
-  const modifiedText = props.text.replace(
-    /<h2>/g,
-    '<h2 class="bigheading">',
-    /<ul>/g,
-    '<ul class="half-list d-flex wrap-flex">'
-  );
+  const modifiedText = props.text.replace(/<h2>/g, '<h2 class="bigheading">');
 
   return (
     <>
@@ -281,7 +283,6 @@ const PinkSection = React.memo((props) => {
 });
 
 PinkSection.displayName = "PinkSection";
-
 const Consultation = React.memo((props) => {
   return (
     <>
@@ -322,62 +323,80 @@ const Consultation = React.memo((props) => {
 Consultation.displayName = "Consultation";
 
 const Index = () => {
+  const { parentSlug } = useParams();
+  const { slug } = useParams();
+
+  // Fetch service data only when the path includes /service
   const {
+    data: servicesPages,
     isLoading,
     error,
-    data: pageData,
   } = useQuery({
-    queryKey: ["logoDesignPageData"],
+    queryKey: ["servicesPages", parentSlug, slug],
     queryFn: async () => {
-      const response = await axios.get(
-        `${
-          import.meta.env.VITE_API_URL
-        }/api/v1/admin/services/?Id=65a66a5f19c4bed662cead92`
-      );
-      const data = response.data.data[0];
-      return data;
+      if (parentSlug !== undefined) {
+        const response = await axios.get(
+          `${
+            import.meta.env.VITE_API_URL
+          }/api/v1/services/${parentSlug}/${slug}`
+        );
+        const data = response.data.data[0];
+        return data;
+      } else {
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/api/v1/services/${slug}`
+        );
+        const data = response.data.data[0];
+        return data;
+      }
     },
-    placeholderData: keepPreviousData,
-    onError: (error) => {
-      console.error("Error fetching data:", error);
-    },
+    keepPreviousData: keepPreviousData,
   });
-
+  console.log(servicesPages);
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
   return (
     <div>
-      <Banner title={pageData.serviceBanner} />
+      <Banner title={servicesPages.serviceBanner} />
       <IntroSection
-        title={pageData.serviceTitle}
-        description_1={pageData.serviceDescription}
-        mainTwoPoints={pageData.mainTwoPoints}
-        serviceImg={pageData.serviceImage}
-        description_2={pageData.serviceDescriptionII}
-        serviceHeadingII={pageData.serviceHeadingII}
-        serviceDescriptionIII={pageData.serviceDescriptionIII}
-        fourPoints={pageData.fourPoints}
-        serviceImage={pageData.serviceImage}
-      />
-      <OurProcess
-        ourProcessSubHeading={pageData.ourProcessSubHeading}
-        ourProcessImage1={pageData.ourProcessImageI}
-        ourProcessImage2={pageData.ourProcessImageII}
+        title={servicesPages.serviceTitle}
+        description_1={servicesPages.serviceDescription}
+        mainTwoPoints={servicesPages.mainTwoPoints}
+        serviceImg={servicesPages.serviceImage}
+        description_2={servicesPages.serviceDescriptionII}
+        serviceHeadingII={servicesPages.serviceHeadingII}
+        serviceDescriptionIII={servicesPages.serviceDescriptionIII}
+        fourPoints={servicesPages.fourPoints}
+        serviceImage={servicesPages.serviceImage}
+        menuData={servicesPages.childrens}
       />
 
-      <ServiceBuild data={pageData.combinedSection} />
-      <ServiceParagraph
-        serviceHeadingIII={pageData.serviceHeadingIII}
-        serviceDescriptionIV={pageData.serviceDescriptionIV}
-      />
-      <PinkSection
-        heading={pageData.LastSectionHeading}
-        text={pageData.LastSectionText}
-        image={pageData.LastSectionImage}
-        hookline={pageData.LastSectionHookLine}
-        points={pageData.LastSectionPoints}
-      />
-      <Consultation />
+      {servicesPages.isChildService === false && (
+        <OurProcess
+          ourProcessSubHeading={servicesPages.ourProcessSubHeading}
+          ourProcessImage1={servicesPages.ourProcessImageI}
+          ourProcessImage2={servicesPages.ourProcessImageII}
+        />
+      )}
+
+      <ServiceBuild data={servicesPages.combinedSection} />
+
+      {servicesPages.isChildService === false && (
+        <ServiceParagraph
+          serviceHeadingIII={servicesPages.serviceHeadingIII}
+          serviceDescriptionIV={servicesPages.serviceDescriptionIV}
+        />
+      )}
+      {servicesPages.isChildService === false && (
+        <PinkSection
+          heading={servicesPages.LastSectionHeading}
+          text={servicesPages.LastSectionText}
+          image={servicesPages.LastSectionImage}
+          hookline={servicesPages.LastSectionHookLine}
+          points={servicesPages.LastSectionPoints}
+        />
+      )}
+      {servicesPages.isChildService === false && <Consultation />}
       {/* <Blogs limit={3} /> */}
     </div>
   );

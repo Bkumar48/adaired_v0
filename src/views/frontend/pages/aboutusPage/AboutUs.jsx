@@ -4,19 +4,13 @@ import Banner from "../../components/banners/Banner";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
 import Blogs from "../../components/blogSection/Blogs";
 import DiagonalSlider from "../../components/diagonalSlider/DiagonalSlider";
-import {
-  motion,
-  AnimatePresence,
-  useInView,
-  useScroll,
-  useAnimation,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const IntroSection = React.memo(() => {
   return (
     <>
       <section className="about-outer pad50-50">
-        <div className="container d-flex">
+        <div className="container d-flex align-start">
           <div className="w-50">
             <div className="about__slider">
               <AnimatePresence>
@@ -40,7 +34,10 @@ const IntroSection = React.memo(() => {
             </p>
             <div className="abt-card-group d-flex gap-20 mt25 align-start">
               <div className="abt-card">
-              <img className="abt-icon" src="/src/assets/images/Tailored Approach-1.svg" />
+                <img
+                  className="abt-icon"
+                  src="/public/assets/images/Innovative-mindset.svg"
+                />
                 <h4>Innovative Mindset</h4>
                 <p>
                   Known for our innovative mindset, Adaired's qualified digital
@@ -49,7 +46,10 @@ const IntroSection = React.memo(() => {
                 </p>
               </div>
               <div className="abt-card">
-              <img className="abt-icon" src="/src/assets/images/Tangible Results-2.svg" />
+                <img
+                  className="abt-icon"
+                  src="/public/assets/images/Data-Driven.svg"
+                />
                 <h4>Data-Driven Strategies</h4>
                 <p>
                   Adaired utilizes in-depth analysis of consumer behavior and
@@ -606,7 +606,7 @@ const AboutUs = React.memo(() => {
       <OurWorkStation />
       <OurProcessSection />
       <Testimonials />
-      <Blogs limit={3} viewMoreBtn={true} />
+      {/* <Blogs limit={3} viewMoreBtn={true} /> */}
     </div>
   );
 });

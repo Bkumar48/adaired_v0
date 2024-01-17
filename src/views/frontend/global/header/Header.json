@@ -11,190 +11,189 @@
       "childrens": [
         {
           "name": "Web Designing & Development",
-          "link": "/services/web-designing-development",
+          "link": "/services/web-designing-and-development",
           "childrens": [
             {
               "name": "WordPress Development",
-              "link": "/services/web-designing-development/wordpress-development"
+              "link": "/services/web-designing-and-development/wordpress-development"
             },
             {
               "name": "Custom web development",
-              "link": "/services/web-designing-development/custom-web-development"
+              "link": "/services/web-designing-and-development/custom-web-development"
             },
             {
               "name": "WooCommerce",
-              "link": "/services/web-designing-development/woocommerce"
+              "link": "/services/web-designing-and-development/woocommerce"
             },
             {
               "name": "Shopify Development",
-              "link": "/services/web-designing-development/shopify-development"
+              "link": "/services/web-designing-and-development/shopify-development"
             },
             {
               "name": "PHP Development",
-              "link": "/services/web-designing-development/php-development"
+              "link": "/services/web-designing-and-development/php-development"
             },
             {
               "name": "Laravel Development",
-              "link": "/services/web-designing-development/laravel-development"
+              "link": "/services/web-designing-and-development/laravel-development"
             },
             {
               "name": "Website Maintenance",
-              "link": "/services/web-designing-development/website-maintenance"
+              "link": "/services/web-designing-and-development/website-maintenance"
             }
           ]
         },
         {
           "name": "Search Engine Optimization (SEO)",
-          "link": "/services/seo",
+          "link": "/services/search-engine-optimization",
           "childrens": [
             {
               "name": "Technical SEO Analysis",
-              "link": "/services/seo/technical-seo-analysis"
+              "link": "/services/search-engine-optimization/technical-seo-services"
             },
             {
               "name": "Online Reputation Management",
-              "link": "/services/seo/online-reputation-management"
+              "link": "/services/search-engine-optimization/online-reputation-management"
             },
             {
               "name": "Competitor Backlink Outreach",
-              "link": "/services/seo/competitor-backlink-outreach"
+              "link": "/services/search-engine-optimization/competitor-backlink-outreach"
             },
             {
               "name": "Guest Post Outreach",
-              "link": "/services/seo/guest-post-outreach"
+              "link": "/services/search-engine-optimization/guest-post-outreach"
             },
             {
               "name": "On-Page and Off-Page Optimization",
-              "link": "/services/seo/on-page-and-off-page-optimization"
+              "link": "/services/search-engine-optimization/on-page-and-off-page-optimization"
             },
             {
               "name": "Local SEO (GBP)",
-              "link": "/services/seo/local-seo-gbp"
+              "link": "/services/search-engine-optimization/local-seo"
             }
           ]
         },
         {
           "name": "Paid Media & Advertising (PPC)",
-          "link": "/services/ppc",
+          "link": "/services/paid-media-and-advertising",
           "childrens": [
             {
               "name": "AdWords Audit",
-              "link": "/services/ppc/adwords-audit"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Keyword Research",
-              "link": "/services/ppc/keyword-research"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Campaign Optimization",
-              "link": "/services/ppc/campaign-optimization"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "PPC Bid Management",
-              "link": "/services/ppc/ppc-bid-management"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Customized Ad Extensions",
-              "link": "/services/ppc/customized-ad-extensions"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Creative Display Ads",
-              "link": "/services/ppc/creative-display-ads"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Local Targeting Strategies",
-              "link": "/services/ppc/local-targeting-strategies"
+              "link": "/services/paid-media-and-advertising"
             },
             {
               "name": "Conversion Tracking",
-              "link": "/services/ppc/conversion-tracking"
+              "link": "/services/paid-media-and-advertising"
             }
           ]
         },
-
         {
           "name": "Compelling Content Marketing",
-          "link": "/services/content-marketing",
+          "link": "/services/compelling-content-marketing",
           "childrens": [
             {
               "name": "Content Audit",
-              "link": "/services/content-marketing/content-audit"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Blogs & Articles",
-              "link": "/services/content-marketing/blogs-articles"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Social Media Posts",
-              "link": "/services/content-marketing/social-media-posts"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Infographics",
-              "link": "/services/content-marketing/infographics"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Email Marketing Draft",
-              "link": "/services/content-marketing/email-marketing-draft"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Website Copies",
-              "link": "/services/content-marketing/website-copies"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Guest Posting",
-              "link": "/services/content-marketing/guest-posting"
+              "link": "/services/compelling-content-marketing"
             },
             {
               "name": "Google Business Profile Posts",
-              "link": "/services/content-marketing/google-business-profile-posts"
+              "link": "/services/compelling-content-marketing"
             }
           ]
         },
         {
           "name": "Digital Creative & Logo Design",
-          "link": "/services/digital-creative-logo-design",
+          "link": "/services/digital-creative-and-logo-design",
           "childrens": [
             {
               "name": "Website Graphics",
-              "link": "/services/digital-creative-logo-design/website-graphics"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Website Logo",
-              "link": "/services/digital-creative-logo-design/website-logo"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Digital Broucher",
-              "link": "/services/digital-creative-logo-design/digital-broucher"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Email Marketing Graphics",
-              "link": "/services/digital-creative-logo-design/email-marketing-graphics"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Business card, Letterhead etc.",
-              "link": "/services/digital-creative-logo-design/business-card-letterhead-etc"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Poster, Banner, Flyer and Signage",
-              "link": "/services/digital-creative-logo-design/poster-banner-flyer-and-signage"
+              "link": "/services/digital-creative-and-logo-design"
             },
             {
               "name": "Social Media Graphics",
-              "link": "/services/digital-creative-logo-design/social-media-graphics"
+              "link": "/services/digital-creative-and-logo-design"
             }
           ]
         },
         {
           "name": "Strategic Social Media Management",
-          "link": "/services/smm",
+          "link": "/services/strategic-social-media-management",
           "childrens": [
             {
               "name": "Social Media Optimization",
-              "link": "/services/smm/social-media-optimization"
+              "link": "/services/strategic-social-media-management/social-media-optimization"
             },
             {
               "name": "Social Media Marketing",
-              "link": "/services/smm/social-media-marketing"
+              "link": "/services/strategic-social-media-management/social-media-marketing"
             }
           ]
         }
@@ -233,7 +232,7 @@
       "link": "/career"
     },
     {
-      "name": "contact us",
+      "name": "contact",
       "link": "/contact"
     }
   ]

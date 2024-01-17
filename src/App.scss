@@ -12,7 +12,7 @@
 @import './views/frontend/pages/HomePage/HomePage.scss';
 @import './views//frontend/pages/aboutusPage/AboutUs.scss';
 @import './views/frontend/pages/contactPage/ContactUs.css';
-@import './views/frontend/pages/servicePages/services.scss';
+@import './views/frontend/pages/servicePage/services.scss';
 @import './views/frontend/pages/mainBlogPage/MainBlog.scss';
 @import './views/frontend/pages/caseStudyPage/CaseStudy.scss';
 @import './views/frontend/pages/singleBlogPage/SingleBlog.scss';
@@ -49,15 +49,30 @@
     font-family: 'Nunito Sans', sans-serif;
     color: #000;
     font-size: 20px;
+    padding-bottom: 8px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+    position: relative;
+}
+.abt-card h4::before {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 1.5px;
+    bottom: 0;
+    background-color: #A7A9AC;
 }
 
 .abt-icon {
-    display: block;
-    margin-bottom: 10px;
-    max-width: max-content;
+	display: block;
+	margin-bottom: 8px;
+	max-width: max-content;
+	border-radius: 4px;
+	border: 1px solid #dddddd3b;
+	padding: 5px;
+	width: 60px;
+	height: 60px;
 }
 
 
@@ -99,10 +114,6 @@
     overflow: visible;
 }
 
-.build_img img {
-    min-height: 720px;
-    object-fit: cover;
-}
 
 .drop-menu li:not(last-child) {
     border-bottom: 1px solid #dddddd54;
@@ -2492,7 +2503,7 @@
     }
 
     .service-grid .serv-card .serv__text h3 {
-        font-size: 18px;
+        font-size: 17px;
     }
 
     .ft-top_bar a {
@@ -2523,12 +2534,17 @@
     }
 
     .service-grid .serv-card:hover .serv-hide {
-        bottom: 5%;
+        bottom: -20px;
     }
-
+    .service-grid .serv-card {
+        min-height: auto;
+    }
     .service-grid .serv-card:hover {
-        min-height: 420px;
+        min-height: 390px;
     }
+    .service-grid .serv-card ul {
+        padding: 0px 0 10px 10px;
+        }
 
     .half-list li {
         width: 100%;

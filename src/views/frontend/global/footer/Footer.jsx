@@ -20,7 +20,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              to="#"
+              to="tel:+91-8907200008"
               className="ft-link d-flex just-start gap-20 align-start"
             >
             <Icon icon="carbon:phone-outgoing-filled" color="white" />
@@ -31,7 +31,7 @@ const Footer = () => {
             </Link>
 
             <Link
-              to="#"
+              to="mailto:info@adaired.com"
               className="ft-link d-flex just-start gap-20 align-start"
             >
             <Icon icon="mingcute:mail-open-fill" color="white" />
@@ -92,7 +92,11 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link to="/blog">Blogs </Link>
+                  <Link to="/blog">Blogs</Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </div>
@@ -102,7 +106,7 @@ const Footer = () => {
               <ul>
                 <li>
                   {" "}
-                  <Link to="#">Website Design & Development</Link>
+                  <Link to="/services/web-designing-and-development">Website Design & Development</Link>
                 </li>
                 <li>
                   {" "}
@@ -110,19 +114,19 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Graphic Designing</Link>
+                  <Link to="/services/digital-creative-and-logo-design">Graphic Designing</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Search Engine optimization</Link>
+                  <Link to="/services/search-engine-optimization">Search Engine optimization</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Social Media Management</Link>
+                  <Link to="/services/strategic-social-media-management">Social Media Management</Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Pay Per Click</Link>
+                  <Link to="/services/paid-media-and-advertising">Pay Per Click</Link>
                 </li>
               </ul>
             </div>

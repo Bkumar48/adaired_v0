@@ -1,31 +1,18 @@
 import { Link } from "react-router-dom";
 
-const ServiceMenu = () => {
+const ServiceMenu = ({ menu }) => {
+  console.log("from menu", menu);
   return (
     <div className="service__menu">
       <div className="service__menu-item">
         <ul>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
-          <Link to="">
-            <li>Website Graphics</li>
-          </Link>
+          {menu.map((item, index) => {
+            return (
+              <Link to={item} key={index}>
+                <li>{item}</li>
+              </Link>
+            );
+          })}
         </ul>
       </div>
     </div>

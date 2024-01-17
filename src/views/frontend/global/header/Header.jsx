@@ -156,6 +156,7 @@ import Button from "../../components/buttonComponent/Button";
 
 const Header = () => {
   const [headerFixed, setHeaderFixed] = useState(false);
+  
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 100) {
@@ -250,7 +251,10 @@ const Header = () => {
                     </div>
 
                     <div className="image">
-                      <img src="/assets/images/banner.jpg" alt="" />
+                      <img
+                        src="assets/images/certificationImages/image6.webp"
+                        alt=""
+                      />
                     </div>
                   </div>
                 )}
