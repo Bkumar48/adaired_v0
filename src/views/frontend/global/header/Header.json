@@ -1,17 +1,18 @@
 {
   "navbar": [
     {
-      "name": "home",
+      "name": "Home",
       "link": "/"
     },
     {
-      "name": "services",
+      "name": "Services",
       "link": "",
       "icon": "ic:baseline-arrow-drop-down",
       "childrens": [
         {
           "name": "Web Designing & Development",
           "link": "/services/web-designing-and-development",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "WordPress Development",
@@ -46,6 +47,7 @@
         {
           "name": "Search Engine Optimization (SEO)",
           "link": "/services/search-engine-optimization",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "Technical SEO Analysis",
@@ -76,6 +78,7 @@
         {
           "name": "Paid Media & Advertising (PPC)",
           "link": "/services/paid-media-and-advertising",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "AdWords Audit",
@@ -114,6 +117,7 @@
         {
           "name": "Compelling Content Marketing",
           "link": "/services/compelling-content-marketing",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "Content Audit",
@@ -152,6 +156,7 @@
         {
           "name": "Digital Creative & Logo Design",
           "link": "/services/digital-creative-and-logo-design",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "Website Graphics",
@@ -186,6 +191,7 @@
         {
           "name": "Strategic Social Media Management",
           "link": "/services/strategic-social-media-management",
+          "icon": "ic:baseline-arrow-drop-down",
           "childrens": [
             {
               "name": "Social Media Optimization",
@@ -201,38 +207,38 @@
     },
 
     {
-      "name": "portfolio",
+      "name": "Portfolio",
       "link": "",
       "icon": "ic:baseline-arrow-drop-down",
       "submenu_icon": "dashicons:portfolio",
       "submenu_heading": "overview",
       "childrens": [
         {
-          "name": "about us",
+          "name": "About us",
           "link": "/about"
         },
         {
-          "name": "blog",
+          "name": "Blog",
           "link": "/blog"
         },
         {
-          "name": "gallery",
+          "name": "Gallery",
           "link": "/gallery"
         }
       ]
     },
 
     {
-      "name": "case studies",
+      "name": "Case Studies",
       "link": "/case-studies",
       "icon": "fa fa-angle-down"
     },
     {
-      "name": "career",
+      "name": "Career",
       "link": "/career"
     },
     {
-      "name": "contact",
+      "name": "Contact",
       "link": "/contact"
     }
   ]

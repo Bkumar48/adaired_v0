@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const getBlogs = async () => {
   const response = await axios.get(
-    `${import.meta.env.VITE_API_URL}/api/v1/user/blog/findBlog?limit=5&skip=0`
+    `${import.meta.env.VITE_API_URL}/api/v1/blog/findBlog?limit=${5}&skip=${0}`
   );
   const data = await response.data.result;
   return data;

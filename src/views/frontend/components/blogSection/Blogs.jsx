@@ -1,5 +1,4 @@
 import BlogCard from "../singleBlogCard/BlogCard";
-import jsonData from "../../JSON_files/blogs_data.json";
 import { Link } from "react-router-dom";
 import Button from "../buttonComponent/Button";
 
@@ -8,9 +7,6 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 const Blogs = React.memo((props) => {
-  
-
-
   const {
     isLoading,
     error,
@@ -19,18 +15,17 @@ const Blogs = React.memo((props) => {
     queryKey: ["blogs", props.limit],
     queryFn: async () => {
       const response = await axios.get(
-        `${import.meta.env.VITE_API_URL}/api/v1/user/blog/findBlog?limit=${props.limit}&skip=0`
+        `${import.meta.env.VITE_API_URL}/api/v1/blog/findBlog?limit=${
+          props.limit
+        }&skip=0`
       );
       const data = await response.data.result;
-      console.log(data)
       return data;
     },
   });
 
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
-
-
 
   return (
     <>
@@ -44,7 +39,7 @@ const Blogs = React.memo((props) => {
             You can never miss an update with Adaried! Explore our blogs for
             insightful information and stay ahead with specially curated content
             by industry experts.
-          </p> 
+          </p>
         </div>
         <div className="container d-flex mt50">
           {blogs.map((data, index) => {
@@ -53,23 +48,21 @@ const Blogs = React.memo((props) => {
         </div>
         {props.viewMoreBtn && (
           <div className="text-center mt25">
-          <Button
-            title="View More"
-            type="button"
-            svgBackgroundColor="#F89520"
-            icon="solar:arrow-right-broken"
-            navigateTo="/blogs"
-            className="blog-view-more-btn text-center"
-          />
-        </div>
+            <Button
+              title="View More"
+              type="button"
+              svgBackgroundColor="#F89520"
+              icon="solar:arrow-right-broken"
+              navigateTo="/blogs"
+              className="blog-view-more-btn text-center"
+            />
+          </div>
         )}
       </section>
     </>
   );
-}
-);
+});
 
 Blogs.displayName = "Blogs";
 
 export default Blogs;
- 

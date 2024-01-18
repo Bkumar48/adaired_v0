@@ -1,5 +1,8 @@
 import React, { useMemo, useCallback } from "react";
 import Button from "../../components/buttonComponent/Button";
+import Blogs from "../../components/blogSection/Blogs";
+import Testimonials from "../../components/testimonialsSection/Testimonials";
+import OurProcessSection from "../../components/ourProcessSection/OurProcessSection";
 
 const CaseStudy = ({
   topColor = "#FFFFFF",
@@ -190,6 +193,9 @@ const CaseStudy = ({
           {/* Cards Ends From here */}
         </div>
       </section>
+      <OurProcessSection />
+        <Testimonials />
+        <Blogs viewMoreBtn={true} limit={3}/>
     </>
   );
 };

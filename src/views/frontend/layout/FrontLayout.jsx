@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // components not to be lazy loaded
 import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
+import SingleBlog from "../pages/singleBlogPage/SingleBlog.jsx";
 
 // lazy loaded components
 const AboutUs = React.lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
@@ -28,7 +29,8 @@ const FrontLayout = () => {
         <Suspense fallback={<div>Loading</div>}>
           <Routes>
             <Route path="/" element={<HomePage />} />
-            <Route path="/blog" element={<MainBlog />} />
+            <Route path="/blog" element={<MainBlog />}/>
+            <Route path="/blog/:slug" element={<SingleBlog />} />
             <Route path="/about" element={<AboutUs />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/case-studies" element={<CaseStudy />} />

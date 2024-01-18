@@ -7,11 +7,12 @@ const Footer = () => {
       <footer className="main-footer">
         <div className="container">
           <div className="ft-top_bar d-flex align-start">
-            <Link target="_blank"
+            <Link
+              target="_blank"
               to="https://maps.app.goo.gl/CEMtUbQd1246YQ3c7"
               className="ft-link d-flex just-start gap-20 align-start"
             >
-            <Icon icon="mdi:location" color="white" />
+              <Icon icon="mdi:location" color="white" />
               <span>
                 <i>Find Us</i>
                 B-509, 5th Floor, Bestech Business Towers,
@@ -23,7 +24,7 @@ const Footer = () => {
               to="tel:+91-8907200008"
               className="ft-link d-flex just-start gap-20 align-start"
             >
-            <Icon icon="carbon:phone-outgoing-filled" color="white" />
+              <Icon icon="carbon:phone-outgoing-filled" color="white" />
               <span>
                 <i>Call Us</i>
                 +91-8907200008
@@ -34,7 +35,7 @@ const Footer = () => {
               to="mailto:info@adaired.com"
               className="ft-link d-flex just-start gap-20 align-start"
             >
-            <Icon icon="mingcute:mail-open-fill" color="white" />
+              <Icon icon="mingcute:mail-open-fill" color="white" />
               <span>
                 <i>Mail Us</i>
                 info@adaired.com
@@ -44,28 +45,31 @@ const Footer = () => {
           <div className="footer-bottom d-flex align-start">
             <div className="footer_logo ft-col">
               <Link to="#" className="ft-logo">
-                <img src="assets/images/ft-logo.png" alt="logo" />
+                <img
+                  src="/assets/images/footerImages/footerLogo.svg"
+                  alt="logo"
+                />
               </Link>
               <p className="ft-para">
-              AdAired Digital Media is a digital marketing company located in Mohali.
-              We are a team of marketing and design experts who are committed to your online growth.
-{" "}
+                AdAired Digital Media is a digital marketing company located in
+                Mohali. We are a team of marketing and design experts who are
+                committed to your online growth.{" "}
               </p>
 
               <div className="footer_social">
                 <h3>Follow Us</h3>
                 <div className=" d-flex gap-20">
                   <Link to="https://www.facebook.com/adaired.digital/">
-                  <i class="fa-brands fa-facebook-f"></i>
+                    <i className="fa-brands fa-facebook-f"></i>
                   </Link>
                   <Link to="https://twitter.com/adaireddigital">
-                  <i class="fa-brands fa-x-twitter"></i>
+                    <i className="fa-brands fa-x-twitter"></i>
                   </Link>
                   <Link to="https://www.instagram.com/adaired.digital/">
-                  <i class="fa-brands fa-instagram"></i>
+                    <i className="fa-brands fa-instagram"></i>
                   </Link>
                   <Link to="https://www.linkedin.com/company/adaired/">
-                  <i class="fa-brands fa-linkedin"></i>
+                    <i className="fa-brands fa-linkedin"></i>
                   </Link>
                 </div>
               </div>
@@ -106,7 +110,9 @@ const Footer = () => {
               <ul>
                 <li>
                   {" "}
-                  <Link to="/services/web-designing-and-development">Website Design & Development</Link>
+                  <Link to="/services/web-designing-and-development">
+                    Website Design & Development
+                  </Link>
                 </li>
                 <li>
                   {" "}
@@ -114,19 +120,27 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link to="/services/digital-creative-and-logo-design">Graphic Designing</Link>
+                  <Link to="/services/digital-creative-and-logo-design">
+                    Graphic Designing
+                  </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="/services/search-engine-optimization">Search Engine optimization</Link>
+                  <Link to="/services/search-engine-optimization">
+                    Search Engine optimization
+                  </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="/services/strategic-social-media-management">Social Media Management</Link>
+                  <Link to="/services/strategic-social-media-management">
+                    Social Media Management
+                  </Link>
                 </li>
                 <li>
                   {" "}
-                  <Link to="/services/paid-media-and-advertising">Pay Per Click</Link>
+                  <Link to="/services/paid-media-and-advertising">
+                    Pay Per Click
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -134,7 +148,7 @@ const Footer = () => {
             <div className="footer-contact ft-col">
               <h3>subscribe</h3>
               <p>
-              Share your email address to subscribe to Adaired's newsletter. 
+                Share your email address to subscribe to Adaired's newsletter.
               </p>
               <div className="ft-form">
                 <input
@@ -146,8 +160,6 @@ const Footer = () => {
               </div>
             </div>
           </div>
-
-          
 
           <div className="copyright-col d-flex">
             <Link to="#">Copyright © 2023 - AdAired Digital Media</Link>

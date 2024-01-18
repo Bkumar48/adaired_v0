@@ -9,6 +9,8 @@ import DOMPurify from "dompurify";
 import Pagination from "../../components/paginationComponent/Pagination";
 import { useSearchParams } from "react-router-dom";
 
+
+
 const truncateText = (text, limit) => {
   const words = text.split(" ");
   if (words.length > limit) {
@@ -59,7 +61,7 @@ const BlogCard = React.memo(() => {
       const response = await axios.get(
         `${
           import.meta.env.VITE_API_URL
-        }/api/v1/user/blog/findBlog?limit=${limit}&skip=${skip}`
+        }/api/v1/blog/findBlog?limit=${limit}&skip=${skip}`
       );
       const data = await response.data;
       return data;
@@ -77,6 +79,12 @@ const BlogCard = React.memo(() => {
       setCurrentPage(Math.floor(newSkip / limit) + 1);
       return prev;
     });
+  };
+
+  const formatDate = (inputDateString) => {
+    const inputDate = new Date(inputDateString);
+    const options = { day: "numeric", month: "long", year: "numeric" };
+    return inputDate.toLocaleDateString("en-US", options);
   };
 
   return (
@@ -99,7 +107,7 @@ const BlogCard = React.memo(() => {
                     <div className="blog-top d-flex">
                       <div>
                         <Icon icon="uil:calender" />
-                        <span>29 March 2023</span>
+                        <span>{formatDate(blog.createdAt)}</span>
                       </div>
                       <div>
                         <Icon icon="octicon:clock-24" />
@@ -114,7 +122,7 @@ const BlogCard = React.memo(() => {
                       svgBackgroundColor="#FB9100"
                       icon="solar:arrow-right-broken"
                       borderColor="transparent"
-                      navigateTo="/about"
+                      navigateTo={`/blog/${blog.slug}`}
                     />
                   </div>
                 </div>

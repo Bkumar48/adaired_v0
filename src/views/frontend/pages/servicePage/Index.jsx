@@ -397,7 +397,7 @@ const Index = () => {
         />
       )}
       {servicesPages.isChildService === false && <Consultation />}
-      {/* <Blogs limit={3} /> */}
+      <Blogs limit={3} viewMoreBtn={true} />
     </div>
   );
 };

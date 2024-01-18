@@ -284,8 +284,8 @@ const TrustedBy = React.memo(() => {
             }}
           >
             {" "}
-            <motion.p>
-              The success of our clients is what determines our success. <br />
+            <motion.p className="p-100">
+              The success of our clients is what determines our success.
               Below are a few of our favorite clients who we have worked for; we
               have reserved a spot for you!
             </motion.p>
@@ -557,7 +557,7 @@ const Services = React.memo(() => {
             <motion.h2 variants={textVariants} className="bigheading">
               What We Offer
             </motion.h2>
-            <motion.p variants={textVariants}>
+            <motion.p variants={textVariants} className="p-100">
               Whatever service we provide, we give a thought about every small
               detail. Our main motive is brand growth and this is what leaves a
               mark on every customer.
@@ -987,7 +987,7 @@ const HomePage = () => {
       <Growth />
       <Rewards />
       <Testimonials />
-      {/* <Blogs limit={3} viewMoreBtn={true} /> */}
+      <Blogs limit={3} viewMoreBtn={true} />
       <ContactUs />
     </>
   );

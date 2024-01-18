@@ -48,6 +48,14 @@
 
 .blog-text {
     padding-top: 20px;
+
+    p {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
 }
 
 .blog-bottom {

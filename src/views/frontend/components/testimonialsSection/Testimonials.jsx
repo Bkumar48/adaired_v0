@@ -55,13 +55,13 @@ const Testimonials = () => {
                 spaceBetween: 20,
               },
             }}
-            className="review-slider mt50 mb50"
+            className="review-slider mt50 mb-50"
           >
             {jsonData.map((data, index) => {
               return (
                 <SwiperSlide key={index}>
                   <div className="review-col">
-                    <div className="user-details d-flex just-start gap-30">
+                    <div className="user-details d-flex just-start gap-20">
                     {data.image ? (
                         <img src={data.image} alt={data.name} />
                       ) : (

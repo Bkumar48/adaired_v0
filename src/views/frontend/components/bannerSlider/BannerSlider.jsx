@@ -62,12 +62,12 @@ const BannerSlider = () => {
     ]);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      SlideToNext();
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [currentSlideData]);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     SlideToNext();
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, [currentSlideData]);
 
   const socialIconVariants = {
     hidden: { scaleY: 0, originY: 0 },

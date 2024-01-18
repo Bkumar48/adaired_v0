@@ -16,8 +16,7 @@
     }
 
     .journey_head_card {
-        padding: 50px 0;
-
+       
         .journey__block {
             display: flex;
             justify-content: center;
@@ -135,7 +134,7 @@
         width: 60%;
         margin: 0 auto;
         margin-top: -60px;
-        padding: 30px;
+        padding: 25px;
         z-index: 2;
         background: #fff;
         position: relative;
@@ -150,19 +149,18 @@
         &::before {
             position: absolute;
             content: "";
-            width: 60px;
-            height: 60px;
-            top: 70px;
-            left: -25px;
+            width: 50px;
+            height: 50px;
+            top: 60px;
+            left: -20px;
             border-left: 7px solid #BC1D8D;
             border-bottom: 7px solid #BC1D8D;
         }
 
         &::after {
-            left: auto;
+            left: unset;
             border-left: unset;
-            top: 70px;
-            right: -25px;
+            right: -20px;
             border-right: 7px solid #BC1D8D;
             border-bottom: 7px solid #BC1D8D;
         }
@@ -216,6 +214,26 @@
                     text-overflow: ellipsis;
                     white-space: wrap;
                     overflow-wrap: break-word;
+
+                    h3 {
+                        font-size: 20px;
+                        line-height: 28px;
+                        padding-bottom: 5px;
+                        font-family: Nunito Sans,sans-serif;
+                        position: relative;
+
+                        &::before {
+                            position:absolute;
+                            content: "";
+                            width: 100px;
+                            height: 1.5px;
+                            background-color: #92288D;
+                            bottom:0px;
+                            left: 0px; 
+                            right: 0px;
+                            margin: 0 auto;  
+                        }
+                    }
                 }
 
                 &:nth-child(1) {

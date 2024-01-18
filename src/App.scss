@@ -754,6 +754,9 @@
     .service_flex .service-img .bigheading {
         margin-top: 35px;
     }
+    .banner__wrapper {
+        min-height: 70vh;
+    }
 
 }
 
@@ -784,7 +787,7 @@
     }
 
     .cont-text.w-50 {
-        padding-top: 40px;
+        text-align: center;
     }
 
     .cont-text.w-50,
@@ -1149,6 +1152,9 @@
     .service-grid .serv-card .serv__text .serv-hide h3 {
         margin: 0px 0px 10px !important;
     }
+    .service-grid {
+    	gap: 15px;
+    }
 
     .service-grid .serv-card {
         min-height: 400px;
@@ -1249,7 +1255,7 @@
     .contact-grid .home-form form {
         gap: 15px 20px;
         padding: 30px;
-        max-width: 750px;
+        max-width: 700px;
         margin: 0 auto;
     }
 
@@ -1286,6 +1292,11 @@
 
     .about-outer .abt-para {
         text-align: center;
+    }
+    .abt-card h4::before {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
     }
 
     .about-outer .diagonalSlider img {
@@ -1709,7 +1720,9 @@
     }
 
     .contact-grid .cont-text .social-cont {
-        margin: 25px 0 0px;
+        margin: 25px auto 0px;
+        max-width: 750px;
+        text-align: left;
     }
 
     .contact__us-main {
@@ -1800,6 +1813,10 @@
     }
     .full-container.d-flex:not(:last-child) {
         margin-bottom: 30px;
+    }
+    .diagonalSlider {
+        max-height: 650px;
+        height: 500px;
     }
 
 
@@ -2110,6 +2127,7 @@
     .btn {
         font-size: 16px;
         padding: 10px 60px 10px 10px;
+        margin-bottom: 2px;
     }
 
     .btn:hover {
@@ -2270,6 +2288,12 @@
     .service_flex .service-img .bigheading {
         margin-top: 25px;
     }
+    .splash-left, .splash-right {
+        display: none;
+    }
+    .ambitious-col {
+        max-width: 100% !important;
+    }
 
 
 
@@ -2402,8 +2426,8 @@
     }
 
     .diagonalSlider {
-        max-height: 500px;
-        height: 500px;
+        max-height: 450px;
+        height: 450px;
     }
 
     .contact-grid .cont-text .social-cont {
@@ -2655,8 +2679,12 @@
     }
 
     .diagonalSlider {
-        max-height: 430px;
-        height: 430px;
+        max-height: 400px;
+        height: 400px;
+    }
+    .cursive-para {
+        font-size: 18px;
+        margin: 20px 0 10px !important;
     }
 
     .contact-grid .d-flex,

@@ -2,10 +2,10 @@
 
 .banner__wrapper {
   position: relative;
-  width: 100vw;
   min-height: 90vh;
   -webkit-user-select: none;
   user-select: none;
+  box-sizing: border-box;
   overflow: hidden;
   color: #fff;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +13,7 @@
   transition: none;
   display: flex;
   justify-content: center;
-  z-index: -1;
+  z-index: 1;
 
 
   .social-icon {

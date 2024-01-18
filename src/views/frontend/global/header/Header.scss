@@ -1,8 +1,9 @@
-nav {
+header {
   background-color: #fff;
   width: 100%;
   z-index: 999;
   position: relative;
+
 
   &.header-fixed {
     position: fixed;
@@ -14,6 +15,72 @@ nav {
     z-index: 999;
     box-shadow: 0 0 10px rgba($color: #101115, $alpha: 0.1);
   }
+
+  .toggleButton {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    position: relative;
+    z-index: 20;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media screen and (min-width: 1024px) {
+      display: none;
+    }
+
+
+    span {
+      width: 1.5rem;
+      background-color: #000000;
+      height: 1px;
+      display: block;
+    }
+  }
+
+  .mobile-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #3498db;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    gap: 2.5rem;
+    box-sizing: border-box;
+    overflow-y: auto;
+    max-height: 100vh;
+
+
+    .mobile-nav-links {
+      list-style-type: none;
+      margin-top: 4rem;
+      padding-bottom: 2rem;
+
+      li {
+        a {
+          font-size: 1em;
+          font-weight: 600;
+          color: #ffffff;
+
+
+        }
+      }
+    }
+  }
+
+
+
 }
 
 .header-wrapper {
@@ -26,21 +93,24 @@ nav {
 
   .nav-links {
     display: inline-flex;
+    overflow: hidden;
     align-items: center;
+    gap: 30px;
+
+    .main-nav-link {
+      padding: 30px 0;
+      text-transform: none;
+      span{
+        font-weight: 600;
+      }
+
+    }
+
 
     li {
       margin: 0;
 
-      a {
-        font-size: 18px;
-        font-weight: 500;
-        text-decoration: none;
-        padding: 35px 15px;
-        color: #000;
-        display: flex;
-        align-items: center;
-        gap: 5px;
-      }
+      
 
       .drop-menu {
         background-color: #fff;
@@ -111,21 +181,21 @@ nav {
                 position: relative;
                 padding-bottom: 10px;
                 font-family: "Nunito Sans", sans-serif;
-              
 
-              &::before {
-                position: absolute;
-                content: "";
-                width: 90px;
-                height: 2.5px;
-                background: #8ec640;
-                border-radius: 5px;
-                bottom: 0px;
+
+                &::before {
+                  position: absolute;
+                  content: "";
+                  width: 90px;
+                  height: 2.5px;
+                  background: #8ec640;
+                  border-radius: 5px;
+                  bottom: 0px;
+                }
               }
             }
-            }
 
-            ul > li {
+            ul>li {
               display: flex;
               gap: 4px;
               align-items: center;
@@ -138,45 +208,45 @@ nav {
                 font-size: 0;
               }
 
-            a {
-              padding: 3px 0 3px 2px;
-              font-size: 16px;
-              position: relative;
+              a {
+                padding: 3px 0 3px 2px;
+                font-size: 16px;
+                position: relative;
 
-              &::before {
-                position: absolute;
-                content: "";
-                background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%23fb9100" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h2.5M20 12l-6-6m6 6l-6 6m6-6H9.5"%2F%3E%3C%2Fsvg%3E');
-                width: 20px;
-                transition: 0.6s all ease-in-out;
-                height: 20px;
-                background-size: 18px;
-                background-position: center;
-                right: 0;
-                top: 0px;
-                bottom: 0px;
-                margin: auto;
-                opacity: 0;
-              }
+                &::before {
+                  position: absolute;
+                  content: "";
+                  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="%23fb9100" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 12h2.5M20 12l-6-6m6 6l-6 6m6-6H9.5"%2F%3E%3C%2Fsvg%3E');
+                  width: 20px;
+                  transition: 0.6s all ease-in-out;
+                  height: 20px;
+                  background-size: 18px;
+                  background-position: center;
+                  right: 0;
+                  top: 0px;
+                  bottom: 0px;
+                  margin: auto;
+                  opacity: 0;
+                }
 
-              &:hover::before {
-                right: -23px;
-                opacity: 1;
+                &:hover::before {
+                  right: -23px;
+                  opacity: 1;
+                }
               }
-            }
             }
           }
         }
 
         .image {
-            width: 25%;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 0px 0px 52px 0px;
-            background: #F3FDFF;
-          
+          width: 25%;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 0px 0px 52px 0px;
+          background: #F3FDFF;
+
 
           img {
             width: 100%;
