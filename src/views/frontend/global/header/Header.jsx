@@ -124,7 +124,14 @@ const Header = () => {
                   }}
                   className="main-nav-link"
                 >
+                  <div style={{
+                    display: "flex",
+                    alignItems: "center",
+                  
+                  }}>
                   <AnimatedLinks title={data.name} link={data.link} />
+                  {data.childrens && <Icon icon={data.icon} className="icon" />}
+                  </div>
 
                   {data.name !== "Services" && data.childrens && (
                     <div className="drop-menu">

@@ -148,7 +148,7 @@ const AboutSection = React.memo(() => {
         <motion.div
           initial="initial"
           whileInView={"animate"}
-          viewport={{ once: false, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.2 }}
           transition={{ staggerChildren: 0.2 }}
           className="container d-flex align-start"
         >
