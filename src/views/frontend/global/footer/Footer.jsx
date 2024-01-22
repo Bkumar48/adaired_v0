@@ -84,6 +84,10 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
+                  <Link to="/blog">Blogs</Link>
+                </li>
+                <li>
+                  {" "}
                   <Link to="/gallery">Gallery </Link>
                 </li>
                 <li>
@@ -94,10 +98,7 @@ const Footer = () => {
                   {" "}
                   <Link to="/career">Career</Link>
                 </li>
-                <li>
-                  {" "}
-                  <Link to="/blog">Blogs</Link>
-                </li>
+                
                 <li>
                   {" "}
                   <Link to="/contact">Contact</Link>
@@ -111,37 +112,39 @@ const Footer = () => {
                 <li>
                   {" "}
                   <Link to="/services/web-designing-and-development">
-                    Website Design & Development
-                  </Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="#">Content Development & Marketing</Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/services/digital-creative-and-logo-design">
-                    Graphic Designing
+                    Website Designing & Development
                   </Link>
                 </li>
                 <li>
                   {" "}
                   <Link to="/services/search-engine-optimization">
-                    Search Engine optimization
-                  </Link>
-                </li>
-                <li>
-                  {" "}
-                  <Link to="/services/strategic-social-media-management">
-                    Social Media Management
+                    Search Engine optimization (SEO)
                   </Link>
                 </li>
                 <li>
                   {" "}
                   <Link to="/services/paid-media-and-advertising">
-                    Pay Per Click
+                  Paid Media & Advertising
                   </Link>
                 </li>
+                <li>
+                  {" "}
+                  <Link to="#">Compelling Content Marketing</Link>
+                </li>
+                <li>
+                  {" "}
+                  <Link to="/services/digital-creative-and-logo-design">
+                  Digital Creative & Logo Design
+                  </Link>
+                </li>
+               
+                <li>
+                  {" "}
+                  <Link to="/services/strategic-social-media-management">
+                 Strategic Social Media Management
+                  </Link>
+                </li>
+               
               </ul>
             </div>
 
@@ -162,7 +165,7 @@ const Footer = () => {
           </div>
 
           <div className="copyright-col d-flex">
-            <Link to="#">Copyright © 2023 - AdAired Digital Media</Link>
+            <Link to="#">Copyright © 2024 - AdAired Digital Media</Link>
             <p>
               <Link to="/Terms-Conditions">Terms & Conditions / </Link>
               <Link to="/privacy-policy">Privacy Policy</Link>

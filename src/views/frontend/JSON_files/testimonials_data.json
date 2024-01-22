@@ -22,5 +22,21 @@
     "description": "My experience with the company was amazing. They worked incredibly well on our recent project. We are more than happy with the final results.",
     "stars": 5,
     "id": 1
+  },
+  {
+    "image": "",
+    "name": "Rath Lora",
+    "designation": "CEO Founder",
+    "description": "It's great to deal with Adaired digital. They are responsive and if you have any trouble they are available almost 24/7. I love their project management tool. Kudos to you.",
+    "stars": 5,
+    "id": 1
+  },
+  {
+    "image": "",
+    "name": "Glenn Russell",
+    "designation": "CEO Founder",
+    "description": "AdAired Digital Media's PPC service has helped me increase my website's traffic and reach the target audience better. Their team of experts helped me create a customized campaign, which has improved my business's ROI. I'd recommend their PPC services to anyone looking to boost their online presence.",
+    "stars": 5,
+    "id": 1
   }
 ]
