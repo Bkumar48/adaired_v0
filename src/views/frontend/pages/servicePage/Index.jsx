@@ -143,9 +143,7 @@ const ServiceBuild = React.memo((props) => {
 
   return (
     <>
-      <div className="build_sec pad100" key={
-        props.data[0].id
-      }>
+      <div className="build_sec pad100">
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
