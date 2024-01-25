@@ -1,5 +1,6 @@
 {
   "name": "adaired_v0",
+  "homepage": ".",
   "private": true,
   "version": "0.0.0",
   "type": "module",

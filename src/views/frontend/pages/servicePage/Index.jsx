@@ -39,14 +39,20 @@ const IntroSection = React.memo((props) => {
                   return (
                     <div className="service__card" key={index}>
                       <div className="d-flex align-start just-start gap-20">
-                        <Icon
+                        {/* <Icon
                           icon="mdi:progress-tick"
                           color="#bc1d8d"
                           className="service-cta-icon"
+                        /> */}
+                        <img
+                          src={`${import.meta.env.VITE_API_IMAGE_URL}services/${
+                            point.mainTwoPointsImage
+                          }`}
+                          alt=""
                         />
                         <div>
                           <h6 className="new_head_1">{point.title}</h6>
-                          <RenderHtml data={point.content} />
+                          <p>{point.description}</p>
                         </div>
                       </div>
                     </div>
@@ -65,8 +71,8 @@ const IntroSection = React.memo((props) => {
                 <RenderHtml data={props.serviceDescriptionIII} />
               </div>
             </div>
-            <aside className="w-30">
-              <div className="mb-50">
+            <aside className="stick_aside w-30">
+              <div className="serv_from mb-50">
                 <ServiceMenu menu={props.menuData} />
               </div>
               <div className="mb-50">
@@ -137,7 +143,9 @@ const ServiceBuild = React.memo((props) => {
 
   return (
     <>
-      <div className="build_sec pad100">
+      <div className="build_sec pad100" key={
+        props.data[0].id
+      }>
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
@@ -218,12 +226,18 @@ const ServiceBuild = React.memo((props) => {
 ServiceBuild.displayName = "ServiceBuild";
 
 const ServiceParagraph = React.memo((props) => {
+  let modifiedServiceDescriptionIV = props.serviceDescriptionIV || "";
+  modifiedServiceDescriptionIV = modifiedServiceDescriptionIV.replace(
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
+
   return (
     <>
       <div className="service_paragraph pb100">
         <div className="container">
           <h2 className="bigheading">{props.serviceHeadingIII}</h2>
-          <RenderHtml data={props.serviceDescriptionIV} />
+          <RenderHtml data={modifiedServiceDescriptionIV} />
         </div>
       </div>
     </>
@@ -352,7 +366,6 @@ const Index = () => {
     },
     keepPreviousData: keepPreviousData,
   });
-  console.log(servicesPages);
   if (isLoading) return "Loading...";
   if (error) return "An error has occurred: " + error.message;
   return (

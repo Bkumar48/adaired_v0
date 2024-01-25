@@ -13,6 +13,7 @@ const Header = () => {
 
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
+    document.querySelector(".header-wrapper").classList.toggle("hd_active");
   };
 
   const [childVisibility, setChildVisibility] = useState({});
@@ -85,7 +86,7 @@ const Header = () => {
                 },
                 show: {
                   rotate: 45,
-                  y: 5,
+                  y: 10,
                 },
               }}
             ></motion.span>
@@ -106,7 +107,7 @@ const Header = () => {
                 },
                 show: {
                   rotate: -45,
-                  y: -5,
+                  y: -10,
                 },
               }}
             ></motion.span>
@@ -124,13 +125,16 @@ const Header = () => {
                   }}
                   className="main-nav-link"
                 >
-                  <div style={{
-                    display: "flex",
-                    alignItems: "center",
-                  
-                  }}>
-                  <AnimatedLinks title={data.name} link={data.link} />
-                  {data.childrens && <Icon icon={data.icon} className="icon" />}
+                  <div
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    <AnimatedLinks title={data.name} link={data.link} />
+                    {data.childrens && (
+                      <Icon icon={data.icon} className="icon" />
+                    )}
                   </div>
 
                   {data.name !== "Services" && data.childrens && (

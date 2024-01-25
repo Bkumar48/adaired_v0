@@ -285,9 +285,9 @@ const TrustedBy = React.memo(() => {
           >
             {" "}
             <motion.p className="p-100">
-              The success of our clients is what determines our success.
-              Below are a few of our favorite clients who we have worked for; we
-              have reserved a spot for you!
+              The success of our clients is what determines our success. Below
+              are a few of our favorite clients who we have worked for; we have
+              reserved a spot for you!
             </motion.p>
           </motion.div>
 
@@ -355,7 +355,7 @@ const Services = React.memo(() => {
 
   const servicesData = [
     {
-      title: "Website Design & Development",
+      title: "Website Designing & Development",
       description:
         "Website Design and development services that deliver exquisite design, a user-friendly interface, and robust functionality for lasting impressions on the audience.",
       list: [
@@ -369,10 +369,11 @@ const Services = React.memo(() => {
       imageSrc: "/assets/images/homePage/serviceCard1.webp",
       backgroundImage: "/assets/images/homePage/serviceCardBack1.webp",
       svgImage: "/assets/images/homePage/Website Design & Development.svg",
+      navigateTo: "/services/web-designing-and-development",
       custom: 1,
     },
     {
-      title: "Social Media Management",
+      title: "Strategic Social Media Management",
       description:
         "Enhance the social media presence of brands on diverse social platforms with engaging content to foster meaningful interactions and amplify reach.",
       list: [
@@ -385,10 +386,11 @@ const Services = React.memo(() => {
       imageSrc: "/assets/images/homePage/serviceCard2.webp",
       backgroundImage: "/assets/images/homePage/serviceCardBack2.webp",
       svgImage: "/assets/images/homePage/Social Media Management.svg",
+      navigateTo: "/services/strategic-social-media-management",
       custom: 2,
     },
     {
-      title: "Content Development & Marketing",
+      title: "Compelling Content Marketing",
       description:
         "Engaging and captivating content development that not only resonates with the audience but ranks well across all search engines.  ",
       list: [
@@ -402,10 +404,11 @@ const Services = React.memo(() => {
       imageSrc: "/assets/images/homePage/serviceCard3.webp",
       backgroundImage: "/assets/images/homePage/serviceCardBack3.webp",
       svgImage: "/assets/images/homePage/Content Development & Marketing.svg",
+      navigateTo: "/services/compelling-content-marketing",
       custom: 3,
     },
     {
-      title: "Graphic Designing",
+      title: "Digital Creative & Logo Design",
       description:
         "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience.",
       list: [
@@ -420,9 +423,10 @@ const Services = React.memo(() => {
       backgroundImage: "/assets/images/homePage/serviceCardBack4.webp",
       svgImage: "/assets/images/homePage/Graphic Designing.svg",
       custom: 4,
+      navigateTo: "/services/digital-creative-and-logo-design",
     },
     {
-      title: "Search engine optimization",
+      title: "Search Engine optimization (SEO)",
       description:
         "Launch and maintain the websites on top of search results to enhance your online visibility with tried and tested Search Engine Optimization (SEO) services.",
       list: [
@@ -436,10 +440,11 @@ const Services = React.memo(() => {
       imageSrc: "/assets/images/homePage/serviceCard5.webp",
       backgroundImage: "/assets/images/homePage/serviceCardBack5.webp",
       svgImage: "/assets/images/homePage/Search Engine Optimization.svg",
+      navigateTo: "/services/search-engine-optimization",
       custom: 5,
     },
     {
-      title: "Pay Per Click",
+      title: "Paid Media  & Advertising",
       description:
         "Building strategic ad campaigns and carrying data-driven optimizations to drive targeted traffic with our Pay-Per-Click (PPC) solutions.",
       list: [
@@ -453,6 +458,7 @@ const Services = React.memo(() => {
       imageSrc: "/assets/images/homePage/serviceCard6.webp",
       backgroundImage: "/assets/images/homePage/serviceCardBack6.webp",
       svgImage: "/assets/images/homePage/Pay Per Click.svg",
+      navigateTo: "/services/paid-media-and-advertising",
       custom: 6,
     },
   ];
@@ -465,6 +471,7 @@ const Services = React.memo(() => {
     custom,
     svgImage,
     backgroundImage,
+    navigateTo,
   }) => (
     <motion.div
       className="serv-card"
@@ -494,6 +501,7 @@ const Services = React.memo(() => {
             svgBackgroundColor="#F89520"
             icon="solar:arrow-right-broken"
             borderColor="transparent"
+            navigateTo={navigateTo}
           />
         </div>
       </div>
@@ -590,19 +598,26 @@ const CaseStudy = React.memo(() => {
             modules={[A11y, Autoplay, Parallax]}
             spaceBetween={0}
             slidesPerView={1}
-            autoplay={{ delay: 3000 }}
+            autoplay={{
+              disableOnInteraction: false, // Optional, but recommended
+              delay: 3000,
+              pauseOnMouseEnter: true,
+            }}
             parallax={true}
             loop={true}
+            grabCursor={true}
           >
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
-                  <h2 className="bigheading">Case Studies </h2>
+                  <h5 className="sub-heading sub-hd">Case Studies</h5>
+                  <h2 className="bigheading">Search Engine Optimization </h2>
                   <p>
-                    When we provide you with the best Digital Marketing
-                    Services, we mean it. Check out the results we have
-                    successfully fetched for our clients.
+                    Check out the success stories showcasing the groundbreaking
+                    capabilities of our strategic optimization techniques. Learn
+                    how we have propelled brands to the forefront of search
+                    rankings, driven organic traffic, and established long-term
+                    credibility.
                   </p>
                   <Button
                     title="View More"
@@ -622,12 +637,13 @@ const CaseStudy = React.memo(() => {
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
-                  <h2 className="bigheading">Case Studies </h2>
+                  <h5 className="sub-heading sub-hd">Success Stories</h5>
+                  <h2 className="bigheading">Paid Media & Advertising </h2>
                   <p>
-                    When we provide you with the best Digital Marketing
-                    Services, we mean it. Check out the results we have
-                    successfully fetched for our clients.
+                    Gain insights into the potency of our precisely targeted PPC
+                    campaigns. We have successfully transformed our clients'
+                    advertising expenses into evident business expansion,
+                    optimizing their ROI, and enhancing customer engagement.
                   </p>
                   <Button
                     title="View More"
@@ -647,12 +663,15 @@ const CaseStudy = React.memo(() => {
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Results that speak!</h5>
-                  <h2 className="bigheading">Case Studies </h2>
+                  <h5 className="sub-heading sub-hd">Project Highlights</h5>
+                  <h2 className="bigheading">
+                    Web Designing And Development Case Studies
+                  </h2>
                   <p>
-                    When we provide you with the best Digital Marketing
-                    Services, we mean it. Check out the results we have
-                    successfully fetched for our clients.
+                    Explore the impact of our recent Web Designing and
+                    Development projects. With technical proficiency and a
+                    creative knack, we offer our clients visually striking and
+                    structurally resilient digital solutions.
                   </p>
                   <Button
                     title="View More"
@@ -741,7 +760,7 @@ const Rewards = React.memo(() => {
       <section className="rewards_outer pb100">
         <Swiper
           modules={[A11y, Autoplay, Parallax]}
-          // autoplay={{ delay: 3000 }}
+          autoplay={{ delay: 3000 }}
           spaceBetween={20}
           parallax={true}
           loop={true}
