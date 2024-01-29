@@ -1,4 +1,5 @@
 .career_container {
+
     
 
     .career_content {
@@ -61,10 +62,6 @@
 
                         p {
                             margin: 0;
-                            color: #515151;
-                            font-family: 'Nunito Sans', sans-serif;
-                            font-size: 18px;
-                            font-weight: 300;
                             display: flex;
                             align-items: center;
 
@@ -83,13 +80,10 @@
                         p {
                             margin: 0;
                             font-family: 'Nunito Sans', sans-serif;
-                            margin-right: 20px;
+                            margin-right: 10px;
                             display: flex;
                             align-items: center;
-                            color: #515151;
-                            font-size: 18px;
-                            font-weight: 300;
-                            line-height: normal;
+                           
 
                             svg {
                                 margin-right: 10px;
@@ -98,7 +92,7 @@
 
                         .openings {
                             border-right: 1px solid #D9D9D9;
-                            padding-right: 20px;
+                            padding-right: 15px;
                         }
                     }
                 }
@@ -184,13 +178,6 @@
                             }
                         }
 
-                        .job__description p {
-                            color: #515151;
-                            font-family: 'Nunito Sans';
-                            font-size: 18px;
-                            font-weight: 300;
-                        }
-
                         .extraContent h3 {
                             color: #000;
                             font-family: 'Nunito Sans', sans-serif;
@@ -224,7 +211,6 @@
                         border-radius: 8px;
                         padding: 10px 15px;
                         outline: none;
-                        font-size: 18px;
                         color: #515151;
                         font-family: 'Nunito Sans', sans-serif;
                         font-weight: 300;

@@ -7,13 +7,13 @@ const TermsAndConditions = () => {
   return (
     <>
       <Banner title="Terms & Conditions" />
-      <div className="terms-conditions container mt25 ">
+      <section className="terms-conditions inner-main_content container mt50 pb100 ">
         <p>
           AdAired Digital Media deals with its clients in the most professional
           way considering the terms & conditions that are mentioned below.
         </p>
 
-        <div className="Contract mt25">
+        <div className="Contract">
           <h3>The Contract</h3>
           <ul>
             <li>
@@ -42,7 +42,7 @@ const TermsAndConditions = () => {
           </ul>
         </div>
 
-        <div className="payment mt25">
+        <div className="payment ">
           <h3>Payment</h3>
           <ul>
             <li>
@@ -63,7 +63,7 @@ const TermsAndConditions = () => {
           </ul>
         </div>
 
-        <div className="Liability mt25">
+        <div className="Liability">
           <h3>Liability</h3>
           <ul>
             <li>
@@ -100,7 +100,7 @@ const TermsAndConditions = () => {
           </ul>
         </div>
 
-        <div className="Waiver mt25">
+        <div className="Waiver">
           <h3>Waiver</h3>
           <ul>
             <li>
@@ -122,7 +122,7 @@ const TermsAndConditions = () => {
           </ul>
         </div>
 
-        <div className="Privacy Rights mt25 mb-50">
+        <div className="Privacy Rights">
           <h3>Privacy Rights</h3>
           <ul>
             <li>
@@ -166,7 +166,7 @@ const TermsAndConditions = () => {
             </li>
           </ul>
         </div>
-      </div>
+      </section>
     </>
   );
 };

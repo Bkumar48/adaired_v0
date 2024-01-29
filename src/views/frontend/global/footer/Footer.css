@@ -152,7 +152,7 @@ footer p {
 
 
 .main-footer {
-    background-color: #316C7A;
+    background-color: #1B5A96;
 }
 
 .ft-logo {
@@ -186,7 +186,7 @@ footer p {
   align-items: center;
 }
 .footer_social a:hover i, .ft-link:hover path  {
-    color: #316c7a;
+    color: #1B5A96;
 }
 .footer_social a:hover, .ft-link:hover svg {
     background-color: #fff;

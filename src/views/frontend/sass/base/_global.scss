@@ -159,9 +159,7 @@ section {
   padding: 100px 15px;
 }
 
-.pad100_noRightLeft {
-  padding: 100px 0;
-}
+
 
 .pt100 {
   padding: 100px 15px 0px;
@@ -238,10 +236,13 @@ h5,
 h6 {
   color: #000000;
   font-weight: 600;
-  // text-transform: capitalize;
-  // transition: 0.6s all ease-in-out;
+  text-transform: capitalize;
   font-family: "DM Serif Display", serif;
   margin: 0px;
+}
+
+.white-para {
+  color: #fff;
 }
 
 ul,
@@ -281,6 +282,7 @@ img {
 }
 
 @mixin double-border {
+
   &::after,
   &::before {
     position: absolute;
@@ -317,6 +319,7 @@ img {
   color: #f00;
   font-weight: 500;
   margin-top: 8px;
+  text-align: left;
 }
 
 .big-para {
@@ -376,12 +379,12 @@ img {
   height: 1px;
   bottom: 0;
   margin: auto;
-  left: -65px;
+  left: -55px;
 }
 
 .sub_hd-mx::after {
   left: unset;
-  right: -65px;
+  right: -55px;
 }
 
 .logo img {
@@ -392,20 +395,24 @@ img {
 .full-container .btn {
   margin-top: 20px;
 }
-.full-container{
-    a.btn{
-        margin-top: 50px;
-    }
+
+.full-container {
+  a.btn {
+    margin-top: 50px;
+  }
 }
+
 .build_sec .even .bigheading,
 .build_sec .even .accordion,
 .build_sec .even p,
 .build_sec .even ul {
   padding-left: 60px;
 }
+
 .build_sec .even .btn {
   margin-left: 60px;
 }
+
 .build_sec .odd .accordion p,
 .build_sec .even .accordion p,
 .build_sec .odd ul li p,
@@ -414,6 +421,7 @@ img {
 .build_sec .even ul li p {
   padding: 0px;
 }
+
 //
 .build_sec .odd .bigheading,
 .build_sec .odd .accordion,
@@ -421,6 +429,7 @@ img {
 .build_sec .odd ul {
   padding-right: 60px;
 }
+
 .build_sec .odd .btn {
   margin-right: 60px;
 }
@@ -432,4 +441,49 @@ img {
 .swiper-slider {
   display: flex;
   align-items: center;
+}
+
+
+.ol-list {
+  li {
+    list-style: decimal;
+    margin-left: 25px;
+
+    &::marker {
+      color: #038EB0;
+    }
+  }
+}
+
+.inner-main_content{
+   h3 {
+	margin: 45px 0 18px;
+	font-size: 35px;
+	line-height: 40px;
+}
+ ul {
+  
+  li {
+	position: relative;
+	padding-left: 30px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cg transform="rotate(90 12 12)"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cpath d="M24 0v24H0V0zM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018m.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01z"%2F%3E%3Cpath fill="%23bc1d8d" d="M12 5a1 1 0 0 1 .707.293l5 5a1 1 0 0 1-1.414 1.414L12 7.414l-4.293 4.293a1 1 0 0 1-1.414-1.414l5-5A1 1 0 0 1 12 5m0 6a1 1 0 0 1 .707.293l5 5a1 1 0 0 1-1.414 1.414L12 13.414l-4.293 4.293a1 1 0 0 1-1.414-1.414l5-5A1 1 0 0 1 12 11"%2F%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20px;
+    top: 4px;
+    left: 2px;
+    margin: auto;
+  } 
+
+}
+ 
+}
+
+
 }

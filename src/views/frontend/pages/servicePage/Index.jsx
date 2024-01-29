@@ -1,4 +1,4 @@
-import React, { lazy, useState } from "react";
+import React, { lazy, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import DOMPurify from "dompurify";
@@ -16,6 +16,7 @@ import Button from "../../components/buttonComponent/Button";
 import Accordion from "../../components/customAccordion/Accordion";
 import ComparisonSlider from "../../components/beforeAfterComparison/ComparisonSlider";
 import Blogs from "../../components/blogSection/Blogs";
+import Loader from "../../components/loaders/Loader";
 
 const RenderHtml = React.memo(({ data }) => {
   const sanitizedHtml = DOMPurify.sanitize(data);
@@ -33,7 +34,11 @@ const IntroSection = React.memo((props) => {
   );
   return (
     <>
-      <div className="service_top-grid pad100">
+      <div
+        className={`service_top-grid ${
+          props.isChildService === false ? "pad100" : "pt100"
+        }`}
+      >
         <div className="container">
           <div className="service_flex">
             <div className="service_text w-70">
@@ -78,7 +83,9 @@ const IntroSection = React.memo((props) => {
             </div>
             <aside className="stick_aside w-30">
               <div className="serv_from mb-50">
-                <ServiceMenu menu={props.menuData} />
+                {props.menuData.length !== 0 && (
+                  <ServiceMenu menu={props.menuData} />
+                )}
               </div>
               <div className="mb-50">
                 <GetInTouchForm />
@@ -148,7 +155,7 @@ const ServiceBuild = React.memo((props) => {
 
   return (
     <>
-      <div className="build_sec pad100_noRightLeft">
+      <div className="build_sec pt100">
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
@@ -239,7 +246,7 @@ const ServiceParagraph = React.memo((props) => {
 
   return (
     <>
-      <div className="service_paragraph pb100">
+      <div className="service_paragraph mt50 pb100">
         <div className="container">
           <h2 className="bigheading">{props.serviceHeadingIII}</h2>
           <RenderHtml data={modifiedServiceDescriptionIV} />
@@ -371,12 +378,14 @@ const Index = () => {
     },
     keepPreviousData: keepPreviousData,
   });
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loader />;
   if (error) return "An error has occurred: " + error.message;
+
   return (
     <div>
       <Banner title={servicesPages.serviceBanner} />
       <IntroSection
+        isChildService={servicesPages.isChildService}
         title={servicesPages.serviceTitle}
         description_1={servicesPages.serviceDescription}
         mainTwoPoints={servicesPages.mainTwoPoints}

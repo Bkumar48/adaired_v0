@@ -4,50 +4,83 @@ import Banner from "../../components/banners/Banner";
 import { lazy } from "react";
 import Button from "../../components/buttonComponent/Button";
 import Map from "../../components/mapSection/map";
-// const Map = lazy(() => import("../../components/mapSection/map"));
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const ContactForm = () => {
+  const schema = z.object({
+    formId: z.string(),
+    Name: z.string().min(3, { message: "Name is required" }),
+    Email: z.string().email("Invalid Email"),
+    Phone: z.string().min(10, "Invalid Phone Number"),
+    Message: z.string(),
+  });
+  const {
+    handleSubmit,
+    register,
+    setValue,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbxlZy1EuW8TN54wq36DIduhvQYXIy4MzKwg9ITlHH-rzzPNc5UdYHCBtKmrO_z3RqrCqg/exec";
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      await axios.post(scriptUrl, JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="contact-form home-form">
-      <form action="">
+      <form action="" onSubmit={handleSubmit(onSubmit)}>
+        <input type="hidden" {...register("formId")} value="contactpageForm" />
         <div className="full-col">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name" className="name-col"
-          placeholder="Enter Your Name"
-        />
+          <label htmlFor="name">Name</label>
+          {errors.Name && <p className="error">{errors.Name.message}</p>}
+          <input
+            type="text"
+            id="name"
+            className="name-col"
+            {...register("Name")}
+          />
         </div>
         <div className="full-col">
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          className="email-col"
-          placeholder="Enter Your Email"
-        />
+          <label htmlFor="email">Email</label>
+          {errors.Email && <p className="error">{errors.Email.message}</p>}
+          <input
+            type="email"
+            id="email"
+            className="email-col"
+            {...register("Email")}
+          />
         </div>
         <div className="full-col">
-        <label htmlFor="phone">Phone Number</label>
-        <input
-          type="tel"
-          id="phone"
-          className="phone-col"
-          name="phone"
-          placeholder="Enter Your Phone Number"
-        />
+          <label htmlFor="phone">Phone Number</label>
+
+          {errors.Phone && <p className="error">{errors.Phone.message}</p>}
+          <PhoneInput
+            country={"in"}
+            onChange={(phone) => setValue("Phone", phone)}
+          />
         </div>
         <div className="full-col">
-        <label htmlFor="message">Your Message</label>
-        <textarea
-          id="message"
-          className="msg-col"
-          name="message"
-          placeholder="Enter Your Message"
-          rows={5}
-        />
+          <label htmlFor="message">Your Message</label>
+          <textarea
+            name=""
+            id="message"
+            rows="10"
+            className="msg-col"
+            {...register("Message")}
+          />
         </div>
         <Button
           title="Submit"

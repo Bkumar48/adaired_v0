@@ -3,11 +3,12 @@ header {
   width: 100%;
   z-index: 999;
   position: relative;
-  
+ 
+
 
   .logo {
-     padding: 10px 0;
-  } 
+    padding: 10px 0;
+  }
 
   &.header-fixed {
     position: fixed;
@@ -35,51 +36,79 @@ header {
     width: 55px;
     text-align: center;
     border-radius: 100px;
+    color: #ffffff;
 
-    span {
-      width: 35px;
-      background-color: #ffffff;
-      height: 1.5px;
-      display: block;
+    // span {
+    //   width: 35px;
+    //   background-color: #ffffff;
+    //   height: 1.5px;
+    //   display: block;
+    // }
+
+    h4{
+      color:#fff;
+      // font-size: 16px;
+      font-weight: 400;
+
     }
   }
 
   .mobile-nav {
-	display: flex;
-	background-color: #1B5A96;
-	flex-wrap: wrap;
-	gap: 2.5rem;
-	box-sizing: border-box;
-	overflow-y: auto;
-	height: 100vh;
-	position: absolute;
-	top: 0;
-	left:  0;
-	width: 100%;
+    background-color: #1B5A96;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
 
+    .mobile-nav-header {
+      padding: 20px;
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      height: 80px;
+      box-sizing: border-box;
+      h4 {
+        color: #1B5A96;
+        font-size: 16px;
+        font-weight: 400;
+        background-color: #ffffff;
+        margin: 0;
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        border-radius: 100px;
+        padding:2px;      }
+    }
 
     .mobile-nav-links {
       list-style-type: none;
-      margin-top: 80px;
       width: 100%;
 
 
       li {
         border-bottom: 1px solid #ddd9;
         margin-bottom: 0;
-   
+
         a {
           font-size: 18px;
           font-weight: 500;
           color: #ffffff;
-          padding: 15px 25px;        
-          display: inline-block;  
+          padding: 15px 25px;
+          display: inline-block;
         }
       }
 
       li:last-child {
         border-bottom: 0px;
-        }
+      }
     }
   }
 
@@ -106,19 +135,19 @@ header {
     .main-nav-link {
       text-transform: none;
       padding: 40px 0;
-       
+
       a {
         color: #000;
 
         &:hover {
           color: #316C7A;
         }
-      
-      span{
-        font-weight: 600;
+
+        span {
+          font-weight: 600;
+        }
+
       }
-    
-    }
 
     }
 
@@ -126,7 +155,7 @@ header {
     li {
       margin: 0;
 
-      
+
 
       .drop-menu {
         background-color: #fff;

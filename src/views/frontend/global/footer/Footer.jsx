@@ -1,7 +1,35 @@
 import { Icon } from "@iconify/react";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const Footer = () => {
+  const scriptUrl =
+    "https://script.google.com/macros/s/AKfycbxlZy1EuW8TN54wq36DIduhvQYXIy4MzKwg9ITlHH-rzzPNc5UdYHCBtKmrO_z3RqrCqg/exec";
+
+  const schema = z.object({
+    formId: z.string(),
+    Email: z.string().email("Invalid Email"),
+  });
+
+  const {
+    handleSubmit,
+    register,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
+
+  const onSubmit = async (data) => {
+    console.log(data);
+    try {
+      await axios.post(scriptUrl, JSON.stringify(data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <footer className="main-footer">
@@ -98,7 +126,7 @@ const Footer = () => {
                   {" "}
                   <Link to="/career">Career</Link>
                 </li>
-                
+
                 <li>
                   {" "}
                   <Link to="/contact">Contact</Link>
@@ -124,7 +152,7 @@ const Footer = () => {
                 <li>
                   {" "}
                   <Link to="/services/paid-media-and-advertising">
-                  Paid Media & Advertising
+                    Paid Media & Advertising
                   </Link>
                 </li>
                 <li>
@@ -134,17 +162,16 @@ const Footer = () => {
                 <li>
                   {" "}
                   <Link to="/services/digital-creative-and-logo-design">
-                  Digital Creative & Logo Design
+                    Digital Creative & Logo Design
                   </Link>
                 </li>
-               
+
                 <li>
                   {" "}
                   <Link to="/services/strategic-social-media-management">
-                 Strategic Social Media Management
+                    Strategic Social Media Management
                   </Link>
                 </li>
-               
               </ul>
             </div>
 
@@ -154,12 +181,20 @@ const Footer = () => {
                 Share your email address to subscribe to Adaired's newsletter.
               </p>
               <div className="ft-form">
-                <input
-                  className="mail-col"
-                  type="email"
-                  placeholder="Email Address"
-                />
-                <input type="submit" value="submit" />
+                <form action="" onSubmit={handleSubmit(onSubmit)}>
+                  <input
+                    type="hidden"
+                    {...register("formId")}
+                    value="newletterForm"
+                  />
+                  <input
+                    className="mail-col"
+                    type="email"
+                    placeholder="Email Address"
+                    {...register("Email")}
+                  />
+                  <input type="submit" value="submit" />
+                </form>
               </div>
             </div>
           </div>

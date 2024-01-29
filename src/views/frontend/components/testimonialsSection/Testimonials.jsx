@@ -78,7 +78,7 @@ const Testimonials = () => {
                       <p>{data.description}</p>
                     </div>
                     <div className="rating-star mt25">
-                      <img src="/public/assets/images/homePage/rating-star.svg" />
+                      <img src="/assets/images/homePage/rating-star.svg" />
                     </div>
                   </div>
                 </SwiperSlide>

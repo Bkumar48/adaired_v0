@@ -20,10 +20,10 @@ const IntroSection = React.memo((props) => {
         <div className="container">
           <div className="text-center">
             <h4>{props.subHeading}</h4>
-            <h2 className="main-heading">{props.caseStudyName}</h2>
+            <h2 className="bigheading">{props.caseStudyName}</h2>
             <p>{props.caseStudyDescription}</p>
           </div>
-          <div className="case_single_img mt50">
+          <div className="case_single_img mt25">
             <img
               src={`${import.meta.env.VITE_API_IMG_URL}${props.caseStudyImage}`}
               alt="Image"
@@ -32,20 +32,18 @@ const IntroSection = React.memo((props) => {
         </div>
       </div>
       <style jsx>
-        {`
-          .intro__section::after {
+        {` .intro__section::after {
             position: absolute;
             content: "";
-            width: calc(100% + 100px);
-            height: 40%;
-            background-color: ${props.bgColor};
-            left: -50px;
+            width: 100%;
+            height: 35%;
+            background-color: #02811a;
+            left: 0;
             bottom: 0;
             right: 0;
             margin: auto;
-            border-top-left-radius: 1500px 500px;
-            border-top-right-radius: 1500px 500px;
-            z-index: -1;
+            points-events: none;
+            border-radius: 200px 200px 00px 0;
           }
         `}
       </style>
@@ -59,20 +57,20 @@ IntroSection.displayName = "IntroSection";
 const ProjectDetails = React.memo((props) => {
   return (
     <>
-      <div className="project__details mt50">
+      <div className="project__details pt100">
         <div className="container">
-          <div className="text-center">
-            <h2 className="main-heading">About The Project</h2>
+          <div className="text-center mb-50">
+            <h2 className="bigheading">About The Project</h2>
             <p>{props.aboutProjectDescription}</p>
           </div>
         </div>
 
-        <div className="container challenges__section d-flex mt50">
-          <div className="challenges_list">
-            <h2 className="main-heading">The Challenges</h2>
+        <div className="full-container challenges__section d-flex">
+          <div className="w-50 challenges_list">
+            <h2 className="bigheading">The Challenges</h2>
             <p>{props.challengesDescription}</p>
 
-            <div className="challenges_box">
+            <div className="challenges_box mb-50">
               <ul>
                 {props.challengesAndSolutions.map((item, index) => (
                   <li key={index}>{item.title}</li>
@@ -80,7 +78,7 @@ const ProjectDetails = React.memo((props) => {
               </ul>
             </div>
           </div>
-          <div className="challenges-img">
+          <div className="w-50 challenges-img">
             <img
               src={`${import.meta.env.VITE_API_IMG_URL}${
                 props.challengesImage
@@ -90,15 +88,15 @@ const ProjectDetails = React.memo((props) => {
           </div>
         </div>
 
-        <div className="container challenges__section d-flex">
-          <div className="solutions_img">
+        <div className="full-container solutions__section d-flex">
+          <div className="w-50 solutions_img">
             <img
               src={`${import.meta.env.VITE_API_IMG_URL}${props.solutionsImage}`}
               alt="Image"
             />
           </div>
-          <div className="solutions_list">
-            <h2 className="main-heading">Solutions</h2>
+          <div className="w-50 solutions_list">
+            <h2 className="bigheading">Solutions</h2>
             <p>{props.solutionsDescription}</p>
 
             <div className="solutions_box">
@@ -114,7 +112,7 @@ const ProjectDetails = React.memo((props) => {
         </div>
       </div>
     </>
-  );
+  );  
 });
 
 ProjectDetails.displayName = "ProjectDetails";
@@ -132,7 +130,7 @@ const TechnologyUsed = React.memo(
         <div className="technoloy__used pad100">
           <div className="container">
             <div className="text-center">
-              <h4 className="main-heading">{technologiesUsedTitle}</h4>
+              <h4 className="bigheading">{technologiesUsedTitle}</h4>
               <p>{technologiesUsedDescription}</p>
             </div>
             <div className="tech_grid mt50">
@@ -171,14 +169,14 @@ TechnologyUsed.displayName = "TechnologyUsed";
 const Objectives = React.memo((props) => {
   return (
     <>
-      <div className="case_goals">
+      <div className="case_goals pt100">
         <div className="container">
           <div className="text-center">
-            <h4 className="main-heading">{props.goalsTitle}</h4>
-            <p>{props.goalsDescription}</p>
+            <h4 className="bigheading white-para">{props.goalsTitle}</h4>
+            <p className="white-para">{props.goalsDescription}</p>
           </div>
           {props.isSeoCaseStudy && (
-            <div className="seo_stratergy d-flex">
+            <div className="seo_stratergy d-flex align-start">
               <div className="seo_objectives">
                 <h5 className="seo_objective_head">Objectives</h5>
                 <ul className="objectives">
@@ -217,9 +215,9 @@ const Objectives = React.memo((props) => {
                 props.growthBox.map((item, index) => (
                   <div className="seo_work" key={index}>
                     <div className="seo_arr_up">
-                      <Icon icon="solar:arrow-up-outline" />
+                      <Icon icon="solar:arrow-up-outline" color="#fff" />
                     </div>
-                    <h4 className="seo_work_head">{item.title}</h4>
+                    <h4 className="seo_work_head ">{item.title}</h4>
                     <span>{item.content}</span>
                   </div>
                 ))}
@@ -255,20 +253,20 @@ Objectives.displayName = "Objectives";
 const Result = React.memo((props) => {
   return (
     <>
-      <div className="case_results mt50 pb100">
+      <div className="case_results pad100">
         <div className="container">
-          <h4 className="main-heading">Result :</h4>
+          <h2 className="bigheading">Result :</h2>
           <p>
             {props.resultDescription} <br /> <br />
           </p>
           <div className="case_results_grid">
             {props.resultBox &&
               props.resultBox.map((item, index) => (
-                <div
+                <div  
                   className="result_box d-flex align-start just-start gap-20"
                   key={index}
                 >
-                  <div className="icon_container">
+                  <div className="result_icon">
                     <img
                       src={`${import.meta.env.VITE_API_IMG_URL}${item.icon}`}
                       alt="icon"

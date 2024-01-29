@@ -24,7 +24,7 @@ const Header = () => {
       ...prev,
       [index]: !prev[index],
     }));
-    setMobileNav(false);
+    toggleMobileNav();
   };
 
   const handleParentClick = (index) => {
@@ -32,7 +32,6 @@ const Header = () => {
       ...prev,
       [index]: !prev[index],
     }));
-    setMobileNav(false);
   };
 
   useEffect(() => {
@@ -81,7 +80,7 @@ const Header = () => {
             onClick={toggleMobileNav}
             className="toggleButton"
           >
-            <motion.span
+            {/* <motion.span
               variants={{
                 hide: {
                   rotate: 0,
@@ -112,7 +111,8 @@ const Header = () => {
                   y: -10,
                 },
               }}
-            ></motion.span>
+            ></motion.span> */}
+           <h4>Menu</h4>
           </motion.button>
 
           <motion.ul className="nav-links">
@@ -246,6 +246,33 @@ const Header = () => {
               exit="hide"
               className="mobile-nav"
             >
+              <motion.div
+                className="mobile-nav-header"
+                onClick={() => {
+                  toggleMobileNav();
+                }}
+                initial="hide"
+                animate="show"
+                exit="hide"
+                variants={{
+                  hide: {
+                    y: "-75%",
+                    opacity: 0,
+                  },
+                  show: {
+                    y: "0%",
+                    opacity: 1,
+                    when: "beforeChildren",
+                    staggerChildren: 0.25,
+                  },
+                }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.1,
+                }}
+              >
+                <h4>Close</h4>
+              </motion.div>
               <motion.ul
                 variants={{
                   hide: {
@@ -280,7 +307,16 @@ const Header = () => {
                           display: "flex",
                           alignItems: "center",
                         }}
-                        onClick={() => handleParentClick(index)}
+                        onClick={() => {
+                          if (
+                            data.name === "Services" ||
+                            data.name === "Portfolio"
+                          ) {
+                            handleParentClick(index);
+                          } else {
+                            toggleMobileNav();
+                          }
+                        }}
                       >
                         {data.name}{" "}
                         {data.childrens && (
@@ -305,12 +341,7 @@ const Header = () => {
                                 key={`child-${childIndex}`}
                                 onClick={() => handleChildClick(childIndex)}
                               >
-                                <Link
-                                  to={child.link}
-                                  onClick={setMobileNav(!mobileNav)}
-                                >
-                                  {child.name}
-                                </Link>
+                                <Link to={child.link}>{child.name}</Link>
                                 {/* {child.childrens && (
                                   <Icon icon={data.icon} className="icon" />
                                 )}

@@ -8,6 +8,7 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import Pagination from "../../components/paginationComponent/Pagination";
 import { useSearchParams } from "react-router-dom";
+import Loader from "../../components/loaders/Loader";
 
 const truncateText = (text, limit) => {
   const words = text.split(" ");
@@ -69,7 +70,7 @@ const BlogCard = React.memo(() => {
     placeholderData: keepPreviousData,
   });
 
-  if (isLoading) return "Loading...";
+  if (isLoading) return <Loader />;
   if (error) return "An error has occurred: " + error.message;
 
   const handleMove = (moveCount) => {

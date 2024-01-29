@@ -81,6 +81,8 @@ const CaseStudy = () => {
     placeholderData: keepPreviousData,
   });
 
+  console.log("caseStudiesData", caseStudiesData);
+
   useEffect(() => {
     setCaseStudies(caseStudiesData);
   }, [caseStudiesData]);

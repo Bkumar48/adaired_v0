@@ -1,5 +1,5 @@
-import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import React, { Suspense, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // components not to be lazy loaded
 import SplashScreen from "../components/SplashScreen/SplashScreen.jsx";
@@ -7,8 +7,10 @@ import Header from "../global/header/Header.jsx";
 import HomePage from "../pages/HomePage/HomePage.jsx";
 import SingleBlog from "../pages/singleBlogPage/SingleBlog.jsx";
 import InnerCaseStudy from "../pages/innerCaseStudyPages/InnerCaseStudy.jsx";
+import Loader from "../components/loaders/Loader.jsx";
 
 // lazy loaded components
+
 const AboutUs = React.lazy(() => import("../pages/aboutusPage/AboutUs.jsx"));
 const MainBlog = React.lazy(() => import("../pages/mainBlogPage/MainBlog.jsx"));
 const Gallery = React.lazy(() => import("../pages/galleryPage/Gallery.jsx"));
@@ -24,13 +26,20 @@ const ServicePage = React.lazy(() => import("../pages/servicePage/Index.jsx"));
 const TermsAndConditions = React.lazy(() =>
   import("../pages/policyPages/TermsAndConditions.jsx")
 );
+const Privacy = React.lazy(() => import("../pages/policyPages/Privacy.jsx"));
+
 const FrontLayout = () => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
   return (
     <div>
       <div>
         <Header />
 
-        <Suspense fallback={<div>Loading</div>}>
+        <Suspense fallback={<Loader />}>
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<MainBlog />} />
@@ -46,7 +55,8 @@ const FrontLayout = () => {
               path="/services/:parentSlug/:slug"
               element={<ServicePage />}
             />
-            <Route path="Terms-Conditions" element={<TermsAndConditions />} />
+            <Route path="/Terms-Conditions" element={<TermsAndConditions />} />
+            <Route path="/privacy-policy" element={<Privacy />} />
           </Routes>
         </Suspense>
         <Footer />

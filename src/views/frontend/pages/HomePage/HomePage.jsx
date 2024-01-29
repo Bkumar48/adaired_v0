@@ -836,10 +836,13 @@ Rewards.displayName = "Rewards";
 
 const ContactUs = React.memo(() => {
   const schema = z.object({
+    formId: z.string(),
     Name: z.string().min(2, { message: "Name is required" }),
     Email: z.string().email({ message: "Email is not valid" }),
     Phone: z.string().min(10, { message: "Phone No. is required" }),
     Interest: z.string().min(2, { message: "Interest is required" }),
+    Budget: z.string().min(2, { message: "Budget is required" }),
+    Message: z.string(),
   });
   const {
     handleSubmit,
@@ -851,7 +854,9 @@ const ContactUs = React.memo(() => {
   });
 
   const scriptUrl =
-    "https://script.google.com/macros/s/AKfycbw5yS4jO5_yQ7GUhTqm6bZyfr1eT_Rv3txPos934jcrGmlEIl-Z01GIqnkpM_lbStDnWg/exec";
+    "https://script.google.com/macros/s/AKfycbxlZy1EuW8TN54wq36DIduhvQYXIy4MzKwg9ITlHH-rzzPNc5UdYHCBtKmrO_z3RqrCqg/exec";
+  // const scriptUrl =
+  //   "https://script.google.com/macros/s/AKfycbw5yS4jO5_yQ7GUhTqm6bZyfr1eT_Rv3txPos934jcrGmlEIl-Z01GIqnkpM_lbStDnWg/exec";
 
   const onSubmit = async (data) => {
     console.log(data);
@@ -928,6 +933,12 @@ const ContactUs = React.memo(() => {
 
           <div className="home-form w-50">
             <form onSubmit={handleSubmit(onSubmit)}>
+              <input
+                type="hidden"
+                {...register("formId")}
+                value="homepageForm"
+              />
+
               <div className="formInput half-col">
                 <input
                   className={` ${errors.Name ? "errors" : ""}`}

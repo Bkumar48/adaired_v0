@@ -63,20 +63,6 @@
 
 }
 
-// About section
-
-
-.challenges__section {
-  
-    
-
-
-}
-
-
-
-
-
 
 // Technology used section
 .technoloy__used {
@@ -108,7 +94,6 @@
 // Objectives section
 .case_goals {
     position: relative;
-    padding-top: 100px;
 
     &::after {
         position: absolute;
@@ -154,7 +139,8 @@
         .seo_objectives {
             background: #fff;
             border-radius: 10px;
-            padding: 40px 60px;
+            padding: 40px 30px;
+            min-height: 390px;
 
             .seo_objective_head {
                 font-family: 'Nunito Sans', sans-serif;
@@ -181,7 +167,7 @@
         gap: 0 40px;
         justify-content: space-around;
         max-width: 1300px;
-        margin: -70px auto 0;
+        margin: -50px auto 0;
 
         .seo_work {
             background: #ffffff;
@@ -230,8 +216,9 @@
 // Result section
 .case_results {
 
-    h4 {
+    h2 {
         position: relative;
+        padding-bottom: 5px;
 
         &::after {
             position: absolute;
@@ -254,25 +241,26 @@
             border: 1px solid #A7A9AC;
             padding: 15px;
             box-sizing: border-box;
-            border-radius: 8px;
+            border-radius: 5px;
 
-            .icon_container {
-                svg {
-                    height: 36px;
-                    width: 36px;
-                    border: 1px solid #A7A9AC;
-                    padding: 8px;
-                    border-radius: 8px;
-                }
+            .result_icon {
+                flex: 15%;
+
+                img {
+                    width: 100%;
+                    max-width: 150px;
+                    }
             }
 
             .result_box_flex_wrap {
                 display: flex;
                 flex-wrap: wrap;
+                flex: 85%;
 
                 span {
                     position: relative;
                     font-weight: 700;
+                    padding-bottom: 5px;
 
                     &::after {
                         position: absolute;
