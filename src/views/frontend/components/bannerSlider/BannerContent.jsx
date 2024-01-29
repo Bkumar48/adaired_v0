@@ -59,6 +59,7 @@ const BannerContent = ({ transitionData, currentSlideData }) => {
           icon="solar:arrow-right-broken"
           borderColor="transparent"
           className="btn__case-study"
+          navigateTo="/contact"
         />
       </motion.div>
     </>

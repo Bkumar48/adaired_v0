@@ -49,6 +49,7 @@ const BlogCard = (props) => {
             svgBackgroundColor="#F89520"
             icon="solar:arrow-right-broken"
             borderColor="transparent"
+            navigateTo={`/blog/${data.slug}`}
           />
           <div className="blog-bottom d-flex">
             <div className="d-flex gap-10">

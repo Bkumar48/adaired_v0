@@ -1,33 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Icon } from "@iconify/react";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
+import axios from "axios";
+import DOMPurify from "dompurify";
+const RenderHtml = React.memo(({ data }) => {
+  const sanitizedHtml = DOMPurify.sanitize(data);
+
+  return <div dangerouslySetInnerHTML={{ __html: sanitizedHtml }} />;
+});
+
+RenderHtml.displayName = "RenderHtml";
 
 // Intro Section
-const IntroSection = React.memo(() => {
+const IntroSection = React.memo((props) => {
   return (
     <>
       <div className="intro__section pad100">
         <div className="container">
           <div className="text-center">
-            <h4>Lorem ipsum dolor sit amet.</h4>
-            <h2 className="main-heading">
-              Just Voda Lorem ipsum dolor sit amet.
-            </h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi
-              quos voluptatum ducimus sapiente ex quae aliquid accusantium!
-              Adipisci facere perspiciatis esse. Perferendis itaque atque
-              pariatur placeat quam error blanditiis iusto magnam, ab eveniet
-              iure fuga molestias nulla facilis provident non perspiciatis
-              molestiae cupiditate ratione? Fuga eligendi magnam quisquam quae
-              facilis.
-            </p>
+            <h4>{props.subHeading}</h4>
+            <h2 className="main-heading">{props.caseStudyName}</h2>
+            <p>{props.caseStudyDescription}</p>
           </div>
           <div className="case_single_img mt50">
-            <img src="assets/images/laptop_just.png" alt="Image" />
+            <img
+              src={`${import.meta.env.VITE_API_IMG_URL}${props.caseStudyImage}`}
+              alt="Image"
+            />
           </div>
         </div>
       </div>
+      <style jsx>
+        {`
+          .intro__section::after {
+            position: absolute;
+            content: "";
+            width: calc(100% + 100px);
+            height: 40%;
+            background-color: ${props.bgColor};
+            left: -50px;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border-top-left-radius: 1500px 500px;
+            border-top-right-radius: 1500px 500px;
+            z-index: -1;
+          }
+        `}
+      </style>
     </>
   );
 });
@@ -35,68 +56,58 @@ const IntroSection = React.memo(() => {
 IntroSection.displayName = "IntroSection";
 
 // Project Details
-const ProjectDetails = React.memo(() => {
+const ProjectDetails = React.memo((props) => {
   return (
     <>
       <div className="project__details mt50">
         <div className="container">
           <div className="text-center">
             <h2 className="main-heading">About The Project</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda
-              autem neque maiores! Tenetur fugiat ea, maxime at officia,
-              reprehenderit quod repudiandae laborum inventore modi libero quia
-              atque excepturi, sed dolore?
-            </p>
+            <p>{props.aboutProjectDescription}</p>
           </div>
         </div>
 
         <div className="container challenges__section d-flex mt50">
           <div className="challenges_list">
             <h2 className="main-heading">The Challenges</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit, eos non quasi eum inventore sunt eaque eligendi
-              exercitationem omnis maxime quos consequatur voluptatum molestiae
-              magni. Illo error porro repellendus soluta!
-            </p>
+            <p>{props.challengesDescription}</p>
 
             <div className="challenges_box">
               <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                {props.challengesAndSolutions.map((item, index) => (
+                  <li key={index}>{item.title}</li>
+                ))}
               </ul>
             </div>
           </div>
           <div className="challenges-img">
-            <img src={"assets/images/Objective_img1.png"} alt="image" />
+            <img
+              src={`${import.meta.env.VITE_API_IMG_URL}${
+                props.challengesImage
+              }`}
+              alt="Image"
+            />
           </div>
         </div>
 
         <div className="container challenges__section d-flex">
           <div className="solutions_img">
-            <img src={"assets/images/Objective_img1.png"} alt="image" />
+            <img
+              src={`${import.meta.env.VITE_API_IMG_URL}${props.solutionsImage}`}
+              alt="Image"
+            />
           </div>
           <div className="solutions_list">
             <h2 className="main-heading">Solutions</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reprehenderit, eos non quasi eum inventore sunt eaque eligendi
-              exercitationem omnis maxime quos consequatur voluptatum molestiae
-              magni. Illo error porro repellendus soluta!
-            </p>
+            <p>{props.solutionsDescription}</p>
 
             <div className="solutions_box">
               <ul>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
-                <li>Lorem ipsum dolor sit amet.</li>
+                {props.challengesAndSolutions.map((item, index) => (
+                  <li key={index}>
+                    <RenderHtml data={item.content} />
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -109,64 +120,50 @@ const ProjectDetails = React.memo(() => {
 ProjectDetails.displayName = "ProjectDetails";
 
 // Technology Used
-const TechnologyUsed = React.memo(() => {
-  return (
-    <>
-      <div className="technoloy__used pad100">
-        <div className="container">
-          <div className="text-center">
-            <h4 className="main-heading">Technology We Used</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, at?
-            </p>
-          </div>
-          <div className="tech_grid mt50">
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/laravel.jpg"} alt="image" />
-              </Link>{" "}
+const TechnologyUsed = React.memo(
+  ({
+    categoryData,
+    caseStudyData,
+    technologiesUsedTitle,
+    technologiesUsedDescription,
+  }) => {
+    return (
+      <>
+        <div className="technoloy__used pad100">
+          <div className="container">
+            <div className="text-center">
+              <h4 className="main-heading">{technologiesUsedTitle}</h4>
+              <p>{technologiesUsedDescription}</p>
             </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/html5.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/css.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/mysql.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/mysql.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/css.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/html5.jpg"} alt="image" />
-              </Link>{" "}
-            </div>
-            <div className="tech_grid_img">
-              <Link to="#">
-                <img src={"assets/images/laravel.jpg"} alt="image" />
-              </Link>{" "}
+            <div className="tech_grid mt50">
+              {caseStudyData &&
+                caseStudyData.map((techId, index) => {
+                  const technology =
+                    categoryData &&
+                    categoryData
+                      .map((category) => category)
+                      .flat()
+                      .find((tech) => tech._id === techId);
+                  return (
+                    <div className="tech_grid_img" key={index}>
+                      <div>
+                        <img
+                          src={`${import.meta.env.VITE_API_IMG_URL}${
+                            technology ? technology.icon : "Unknown Technology"
+                          }`}
+                          alt="image"
+                        />
+                      </div>{" "}
+                    </div>
+                  );
+                })}
             </div>
           </div>
         </div>
-      </div>
-    </>
-  );
-});
+      </>
+    );
+  }
+);
 
 TechnologyUsed.displayName = "TechnologyUsed";
 
@@ -177,98 +174,77 @@ const Objectives = React.memo((props) => {
       <div className="case_goals">
         <div className="container">
           <div className="text-center">
-            <h4 className="main-heading">{props.title}</h4>
-            <p>{props.description}</p>
+            <h4 className="main-heading">{props.goalsTitle}</h4>
+            <p>{props.goalsDescription}</p>
           </div>
           {props.isSeoCaseStudy && (
             <div className="seo_stratergy d-flex">
               <div className="seo_objectives">
                 <h5 className="seo_objective_head">Objectives</h5>
                 <ul className="objectives">
-                  <li>
-                    <h4 className="solution_head">Lorem Ipsum</h4>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Repellat voluptate nesciunt molestias doloremque qui
-                      distinctio fugiat iusto illum saepe hic.
-                    </p>
-                  </li>
-                  <li>
-                    <h4 className="solution_head">Lorem Ipsum</h4>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Repellat voluptate nesciunt molestias doloremque qui
-                      distinctio fugiat iusto illum saepe hic.
-                    </p>
-                  </li>
+                  {props.objectives.map((item, index) => (
+                    <li key={index}>
+                      <h4 className="solution_head">{index + 1}</h4>
+                      <p>{item.title}</p>
+                    </li>
+                  ))}
                 </ul>
               </div>
 
               <div className="seo_objectives">
                 <h5 className="seo_objective_head">Stratergy</h5>
                 <ul className="objectives_list">
-                  <li>
-                    <h4 className="solution_head">Lorem Ipsum</h4>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Repellat voluptate nesciunt molestias doloremque qui
-                      distinctio fugiat iusto illum saepe hic.
-                    </p>
-                  </li>
-                  <li>
-                    <h4 className="solution_head">Lorem Ipsum</h4>
-                    <p>
-                      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                      Repellat voluptate nesciunt molestias doloremque qui
-                      distinctio fugiat iusto illum saepe hic.
-                    </p>
-                  </li>
+                  {props.stratergy.map((item, index) => (
+                    <li key={index}>
+                      <h4 className="solution_head">{index + 1}</h4>
+                      <p>{item.title}</p>
+                    </li>
+                  ))}
                 </ul>
               </div>
             </div>
           )}
           <div className="goals_img mt50">
-            <img src={"assets/images/goals.jpg"} alt="image" />
+            <img
+              src={`${import.meta.env.VITE_API_IMG_URL}${props.goalImage}`}
+              alt="image"
+            />
           </div>
 
           {props.isSeoCaseStudy && (
             <div className="seo_work_percentage">
-              <div className="seo_work">
-                <div className="seo_arr_up">
-                  <Icon icon="solar:arrow-up-outline" />
-                </div>
-                <h4 className="seo_work_head">1372%</h4>
-                <span>
-                  INCREASE IN <br />
-                  BLOG TRAFFIC
-                </span>
-              </div>
-
-              <div className="seo_work">
-                <div className="seo_arr_up">
-                  <Icon icon="solar:arrow-up-outline" />
-                </div>
-                <h4 className="seo_work_head">1372%</h4>
-                <span>
-                  INCREASE IN <br />
-                  BLOG TRAFFIC
-                </span>
-              </div>
-
-              <div className="seo_work">
-                <div className="seo_arr_up">
-                  <Icon icon="solar:arrow-up-outline" />
-                </div>
-                <h4 className="seo_work_head">1372%</h4>
-                <span>
-                  INCREASE IN <br />
-                  BLOG TRAFFIC
-                </span>
-              </div>
+              {props.growthBox &&
+                props.growthBox.map((item, index) => (
+                  <div className="seo_work" key={index}>
+                    <div className="seo_arr_up">
+                      <Icon icon="solar:arrow-up-outline" />
+                    </div>
+                    <h4 className="seo_work_head">{item.title}</h4>
+                    <span>{item.content}</span>
+                  </div>
+                ))}
             </div>
           )}
         </div>
       </div>
+      <style jsx>
+        {`
+          .case_goals::after {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 70%;
+            background-color: ${props.bgColor};
+            left: 0;
+            top: 0;
+            right: 0;
+            margin: auto;
+            border-bottom-left-radius: 1000px 300px;
+            border-bottom-right-radius: 1000px 300px;
+            z-index: -1;
+          }
+        `}
+      </style>
     </>
   );
 });
@@ -276,78 +252,37 @@ const Objectives = React.memo((props) => {
 Objectives.displayName = "Objectives";
 
 // Result
-const Result = React.memo(() => {
+const Result = React.memo((props) => {
   return (
     <>
       <div className="case_results mt50 pb100">
         <div className="container">
           <h4 className="main-heading">Result :</h4>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fuga
-            impedit asperiores dolorem quibusdam eaque, error praesentium
-            laborum voluptatem aspernatur tenetur, atque deleniti animi optio
-            saepe molestias sunt provident sit sapiente!
+            {props.resultDescription} <br /> <br />
           </p>
           <div className="case_results_grid">
-            <div className="result_box d-flex align-start just-start gap-20">
-              <div className="icon_container">
-                <Icon icon="simple-icons:icon" color="#038eb0" />
-              </div>
-              <div className="result_box_flex_wrap">
-                <span>Functional Website</span>
-                <p>
-                  We built a functional website for the client that had a
-                  responsive design.
-                </p>
-              </div>
-            </div>
-            <div className="result_box d-flex align-start just-start gap-20">
-              <div className="icon_container">
-                <Icon icon="simple-icons:icon" color="#038eb0" />
-              </div>
-              <div className="result_box_flex_wrap">
-                <span>Mobile Optimized</span>
-                <p>We had built a mobile responsive website for the client.</p>
-              </div>
-            </div>
-            <div className="result_box d-flex align-start just-start gap-20">
-              <div className="icon_container">
-                <Icon icon="simple-icons:icon" color="#038eb0" />
-              </div>
-              <div className="result_box_flex_wrap">
-                <span>Visually Appealing</span>
-                <p>
-                  Creating functional and visually appealing websites is our
-                  speciality.
-                </p>
-              </div>
-            </div>
-            <div className="result_box d-flex align-start just-start gap-20">
-              <div className="icon_container">
-                <Icon icon="simple-icons:icon" color="#038eb0" />
-              </div>
-              <div className="result_box_flex_wrap">
-                <span>Visually Appealing</span>
-                <p>
-                  It is important to create a website that loads quickly to
-                  minimise bounce rate.
-                </p>
-              </div>
-            </div>
+            {props.resultBox &&
+              props.resultBox.map((item, index) => (
+                <div
+                  className="result_box d-flex align-start just-start gap-20"
+                  key={index}
+                >
+                  <div className="icon_container">
+                    <img
+                      src={`${import.meta.env.VITE_API_IMG_URL}${item.icon}`}
+                      alt="icon"
+                    />
+                  </div>
+                  <div className="result_box_flex_wrap">
+                    <span>{item.title}</span>
+                    <p>{item.percentage}</p>
+                    <p>{item.description}</p>
+                  </div>
+                </div>
+              ))}
           </div>
-          <p className="mt25">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum has
-            been the industry's standard
-          </p>
+          <p className="mt25">{props.resultFinalDescription}</p>
         </div>
       </div>
     </>
@@ -356,20 +291,89 @@ const Result = React.memo(() => {
 
 Result.displayName = "Result";
 
-const DevCaseStudy = () => {
+const InnerCaseStudy = () => {
+  const { slug } = useParams();
+  const [categorySlug, setCategorySlug] = React.useState("");
+  const {
+    isLoading,
+    error,
+    data: caseStudy,
+  } = useQuery({
+    queryKey: ["caseStudy", slug],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/case-studies/${slug}`
+      );
+      const data = await response.data.result;
+      setCategorySlug(data.category);
+      return data;
+    },
+    placeholderData: keepPreviousData,
+  });
+
+  console.log(caseStudy);
+
+  const { data: categoryData } = useQuery({
+    queryKey: ["categories", categorySlug],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${
+          import.meta.env.VITE_API_URL
+        }/api/v1/case-studies-category/getCaseStudiesCategory/${categorySlug}`
+      );
+      return response.data.result || [];
+    },
+    placeholderData: keepPreviousData,
+    enabled: categorySlug !== "",
+  });
+
   return (
     <>
-      <IntroSection />
-      <ProjectDetails />
-      <TechnologyUsed />
-      <Objectives
-        title="Goals And Objectives"
-        description="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard "
-        isSeoCaseStudy={true}
-      />
-      <Result />
+      {caseStudy && (
+        <>
+          {" "}
+          <IntroSection
+            subHeading={caseStudy.subHeading}
+            caseStudyName={caseStudy.caseStudyName}
+            caseStudyDescription={caseStudy.caseStudyDescription}
+            caseStudyImage={caseStudy.caseStudyImage}
+            bgColor={caseStudy.colorScheme}
+          />
+          <ProjectDetails
+            aboutProjectDescription={caseStudy.aboutProjectDescription}
+            challengesDescription={caseStudy.challengesDescription}
+            solutionsDescription={caseStudy.solutionsDescription}
+            solutionsImage={caseStudy.solutionsImage}
+            challengesAndSolutions={caseStudy.challengesAndSolutions}
+            challengesImage={caseStudy.challengesImage}
+          />
+          <TechnologyUsed
+            technologiesUsedTitle={caseStudy.technologiesUsedTitle}
+            technologiesUsedDescription={caseStudy.technologiesUsedDescription}
+            categoryData={categoryData && categoryData.technologies}
+            caseStudyData={caseStudy && caseStudy.technologiesUsed}
+          />
+          <Objectives
+            goalsTitle={caseStudy.goalsTitle}
+            goalsDescription={caseStudy.goalsDescription}
+            isSeoCaseStudy={
+              caseStudy.category === "search-engine-optimization" ? true : false
+            }
+            objectives={caseStudy.objectives}
+            stratergy={caseStudy.stratergy}
+            growthBox={caseStudy.growthBox}
+            goalImage={caseStudy.goalImage}
+            bgColor={caseStudy.colorScheme}
+          />
+          <Result
+            resultDescription={caseStudy.resultDescription}
+            resultBox={caseStudy.resultBox}
+            resultFinalDescription={caseStudy.resultFinalDescription}
+          />
+        </>
+      )}
     </>
   );
 };
 
-export default DevCaseStudy;
+export default InnerCaseStudy;

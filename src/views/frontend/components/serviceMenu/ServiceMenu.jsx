@@ -8,7 +8,7 @@ const ServiceMenu = ({ menu }) => {
           {menu.map((item, index) => {
             return (
               <Link to={item} key={index}>
-                <li>{item}</li>
+                <li>{item.split("-").join(" ")}</li>
               </Link>
             );
           })}

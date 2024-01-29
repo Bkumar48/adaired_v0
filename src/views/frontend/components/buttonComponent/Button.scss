@@ -1,38 +1,43 @@
 .btn {
-    border-radius: 100px;
-    font-size: 18px;
-    line-height: 17px;
-    text-transform: capitalize;
-    text-align: left;
-    padding: 15px 60px 15px 16px;
-    transition: transform 0.4s ease, left 0.4s ease 0.1s;
-    outline: none;
-    position: relative;
-    cursor: pointer;
-    border: 1px solid;
-    font-family: "Nunito Sans", sans-serif;
-    color: #515151;
-    font-weight: 400;
-    transition: all 0.6s ease;
+  border-radius: 100px;
+  font-size: 18px;
+  line-height: 17px;
+  text-transform: capitalize;
+  text-align: left;
+  padding: 15px 60px 15px 16px;
+  transition: transform 0.4s ease, left 0.4s ease 0.1s;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  border: 1px solid;
+  font-family: "Nunito Sans", sans-serif;
+  color: #515151;
+  font-weight: 400;
+  transition: all 0.6s ease;
 
+  a {
+    padding: 0 !important;
+    margin: 0 !important;
+    line-height: 17px !important;
+  }
+
+  svg {
+    padding: 8px;
+    font-size: 22px;
+    border-radius: 100px;
+    position: absolute;
+    left: calc(100% - 44px);
+    top: 50%;
+    transform: translateY(-50%);
+    transition: transform 0.4s ease, left 0.4s ease 0.1s;
+  }
+
+  &:hover {
+    padding: 15px 18px 15px 58px;
 
     svg {
-        padding: 8px;
-        font-size: 22px;
-        border-radius: 100px;
-        position: absolute;
-        left: calc(100% - 44px);
-        top: 50%;
-        transform: translateY(-50%);
-        transition: transform 0.4s ease, left 0.4s ease 0.1s;
+      left: 5px;
+      transform: translateY(-50%);
     }
-
-    &:hover {
-        padding: 15px 18px 15px 58px;
-
-        svg {
-            left: 5px;
-            transform: translateY(-50%) ;
-        }
-    }
+  }
 }

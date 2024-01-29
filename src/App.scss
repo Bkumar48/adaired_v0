@@ -115,12 +115,12 @@
 .header-wrapper .nav-links li:hover > a {
     color: #fb9100;
 }
-.stick_aside {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    height: 980px;
-}
+// .stick_aside {
+//     position: -webkit-sticky;
+//     position: sticky;
+//     top: 0;
+//     height: 980px;
+// }
 
 
 /* *********************************************************************** RESPONSIVE *************************************************************************************** */
@@ -142,6 +142,7 @@
     .build_sec .odd p,
     .build_sec .odd ul {
         padding-right: 40px;
+        
     }
     .build_sec .odd .btn {
         margin-right: 40px;
@@ -151,6 +152,7 @@
     .build_sec .even p,
     .build_sec .even ul {
         padding-left: 40px;
+       
     }
     .build_sec .even .btn {
         margin-left: 40px;

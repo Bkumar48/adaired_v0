@@ -26,6 +26,11 @@ const RenderHtml = React.memo(({ data }) => {
 RenderHtml.displayName = "RenderHtml";
 
 const IntroSection = React.memo((props) => {
+  let modifiedserviceDescriptionIII = props.serviceDescriptionIII || "";
+  modifiedserviceDescriptionIII = modifiedserviceDescriptionIII.replace(
+    /<ul>/g,
+    '<ul class="half-list d-flex wrap-flex">'
+  );
   return (
     <>
       <div className="service_top-grid pad100">
@@ -68,7 +73,7 @@ const IntroSection = React.memo((props) => {
                 />
                 <RenderHtml data={props.description_2} />
                 <h2 className="bigheading mt25">{props.serviceHeadingII}</h2>
-                <RenderHtml data={props.serviceDescriptionIII} />
+                <RenderHtml data={modifiedserviceDescriptionIII} />
               </div>
             </div>
             <aside className="stick_aside w-30">
@@ -143,7 +148,7 @@ const ServiceBuild = React.memo((props) => {
 
   return (
     <>
-      <div className="build_sec pad100">
+      <div className="build_sec pad100_noRightLeft">
         {props.data.map((item, index) => {
           if (item.editorValue) {
             item.editorValue = item.editorValue.replace(
@@ -195,6 +200,7 @@ const ServiceBuild = React.memo((props) => {
                         svgBackgroundColor="#000000"
                         icon="solar:arrow-right-broken"
                         borderColor="#FB9100"
+                        navigateTo="/contact"
                       />
                     </div>
                   </div>
@@ -209,6 +215,7 @@ const ServiceBuild = React.memo((props) => {
                       svgBackgroundColor="#000000"
                       icon="solar:arrow-right-broken"
                       borderColor="#FB9100"
+                      navigateTo="/contact"
                     />
                   </div>
                 )}

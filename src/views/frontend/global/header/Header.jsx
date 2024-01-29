@@ -13,7 +13,7 @@ const Header = () => {
 
   const toggleMobileNav = () => {
     setMobileNav(!mobileNav);
-    document.querySelector(".header-wrapper").classList.toggle("hd_active");
+    // document.querySelector(".header-wrapper").classList.toggle("hd_active");
   };
 
   const [childVisibility, setChildVisibility] = useState({});
@@ -24,6 +24,7 @@ const Header = () => {
       ...prev,
       [index]: !prev[index],
     }));
+    setMobileNav(false);
   };
 
   const handleParentClick = (index) => {
@@ -31,6 +32,7 @@ const Header = () => {
       ...prev,
       [index]: !prev[index],
     }));
+    setMobileNav(false);
   };
 
   useEffect(() => {
@@ -303,8 +305,13 @@ const Header = () => {
                                 key={`child-${childIndex}`}
                                 onClick={() => handleChildClick(childIndex)}
                               >
-                                <Link to={child.link}>{child.name}</Link>
-                                {child.childrens && (
+                                <Link
+                                  to={child.link}
+                                  onClick={setMobileNav(!mobileNav)}
+                                >
+                                  {child.name}
+                                </Link>
+                                {/* {child.childrens && (
                                   <Icon icon={data.icon} className="icon" />
                                 )}
                                 {child.childrens &&
@@ -334,7 +341,7 @@ const Header = () => {
                                         )}
                                       </ul>
                                     </motion.div>
-                                  )}
+                                  )} */}
                               </li>
                             ))}
                           </ul>

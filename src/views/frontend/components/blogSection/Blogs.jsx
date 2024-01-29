@@ -53,7 +53,7 @@ const Blogs = React.memo((props) => {
               type="button"
               svgBackgroundColor="#F89520"
               icon="solar:arrow-right-broken"
-              navigateTo="/blogs"
+              navigateTo="/blog"
               className="blog-view-more-btn text-center"
             />
           </div>

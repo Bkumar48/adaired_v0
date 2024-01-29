@@ -29,7 +29,7 @@ const PopularPosts = React.memo(() => {
         <h4 className="main-heading"> Popular Posts</h4>
         {popularBlogs.map((blog) => (
           <div className="popular__posts-item" key={blog._id}>
-            <Link to="#" className="d-flex">
+            <Link to={`/blog/${blog.slug}`} className="d-flex">
               <div className="popular__posts-item-img">
                 <img
                   src={`${import.meta.env.VITE_API_IMAGE_URL}/blog/${

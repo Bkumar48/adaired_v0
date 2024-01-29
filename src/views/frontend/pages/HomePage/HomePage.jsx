@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import React, { useState, useEffect, useRef } from "react";
-import {
-  motion,
-  AnimatePresence,
-  useInView,
-  useScroll,
-  useAnimation,
-} from "framer-motion";
+import { motion, AnimatePresence, useInView } from "framer-motion";
 import Button from "../../components/buttonComponent/Button";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Icon } from "@iconify/react";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+// Query Imports
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
@@ -627,6 +627,7 @@ const CaseStudy = React.memo(() => {
                     icon="solar:arrow-right-broken"
                     borderColor="#F89520"
                     backgroundColor="transparent"
+                    navigateTo="/case-studies"
                   />
                 </div>
                 <div className="w-50">
@@ -653,6 +654,7 @@ const CaseStudy = React.memo(() => {
                     icon="solar:arrow-right-broken"
                     borderColor="#F89520"
                     backgroundColor="transparent"
+                    navigateTo="/case-studies"
                   />
                 </div>
                 <div className="w-50">
@@ -681,6 +683,7 @@ const CaseStudy = React.memo(() => {
                     icon="solar:arrow-right-broken"
                     borderColor="#F89520"
                     backgroundColor="transparent"
+                    navigateTo="/case-studies"
                   />
                 </div>
                 <div className="w-50">
@@ -745,6 +748,7 @@ const Growth = React.memo(() => {
               svgBackgroundColor="#F89520"
               icon="solar:arrow-right-broken"
               className="mt25"
+              navigateTo="/about"
             />
           </div>
         </div>
@@ -831,11 +835,20 @@ const Rewards = React.memo(() => {
 Rewards.displayName = "Rewards";
 
 const ContactUs = React.memo(() => {
+  const schema = z.object({
+    Name: z.string().min(2, { message: "Name is required" }),
+    Email: z.string().email({ message: "Email is not valid" }),
+    Phone: z.string().min(10, { message: "Phone No. is required" }),
+    Interest: z.string().min(2, { message: "Interest is required" }),
+  });
   const {
     handleSubmit,
     register,
+    setValue,
     formState: { errors },
-  } = useForm();
+  } = useForm({
+    resolver: zodResolver(schema),
+  });
 
   const scriptUrl =
     "https://script.google.com/macros/s/AKfycbw5yS4jO5_yQ7GUhTqm6bZyfr1eT_Rv3txPos934jcrGmlEIl-Z01GIqnkpM_lbStDnWg/exec";
@@ -848,6 +861,18 @@ const ContactUs = React.memo(() => {
       console.log(error);
     }
   };
+
+  const { isLoading, data: services } = useQuery({
+    queryKey: ["services"],
+    queryFn: async () => {
+      const res = await axios.get(
+        `${import.meta.env.VITE_API_URL}/api/v1/services/?allParent=true`
+      );
+      const data = await res.data.data;
+      return data;
+    },
+    staleTime: Infinity,
+  });
 
   return (
     <>
@@ -903,58 +928,61 @@ const ContactUs = React.memo(() => {
 
           <div className="home-form w-50">
             <form onSubmit={handleSubmit(onSubmit)}>
+              <div className="formInput half-col">
+                <input
+                  className={` ${errors.Name ? "errors" : ""}`}
+                  type="text"
+                  placeholder="Name (required)"
+                  {...register("Name")}
+                />
+                {errors.Name && (
+                  <div className="error">{errors.Name.message}</div>
+                )}
+              </div>
+              <div className="formInput half-col">
+                <input
+                  type="email"
+                  placeholder="Email (required)"
+                  {...register("Email")}
+                />
+                {errors.Email && (
+                  <div className="error">{errors.Email.message}</div>
+                )}
+              </div>
+
+              <div className="half-col">
+                <PhoneInput
+                  country={"in"}
+                  onChange={(phone) => setValue("Phone", phone)}
+                />
+                {errors.Phone && (
+                  <div className="error">{errors.Phone.message}</div>
+                )}
+              </div>
+              <div className="half-col">
+                <select className="serv__select" {...register("Interest")}>
+                  <option value="" disabled>
+                    Interested
+                  </option>
+                  {services?.map((service, index) => {
+                    return (
+                      <option key={index} value={service.serviceBanner}>
+                        {service.serviceBanner}
+                      </option>
+                    );
+                  })}
+                </select>
+                {errors.Interest && (
+                  <div className="error">{errors.Interest.message}</div>
+                )}
+              </div>
+
               <input
-                className="half-col"
                 type="text"
-                placeholder="Name"
-                {...register("Name", { required: true })}
-              />
-              {errors.name && <p className="error">Name is required</p>}
-
-              <input
-                className="half-col"
-                type="email"
-                placeholder="Email"
-                {...register("Email", {
-                  required: true,
-                  pattern: /^\S+@\S+$/i,
-                })}
-              />
-              {errors.email && <p className="error">Valid email is required</p>}
-
-              <input
-                className="half-col"
-                type="tel"
-                placeholder="Phone No."
-                {...register("Phone", { required: true })}
-              />
-              {errors.phone && (
-                <p className="error">Phone number is required</p>
-              )}
-
-              <select
-                className="serv__select half-col"
-                {...register("Interest", { required: true })}
-              >
-                <option value="">Interested</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              {errors.interest && (
-                <p className="error">Please select an option</p>
-              )}
-
-              <select
+                placeholder="Budget"
                 className="serv__select full-col"
-                {...register("Budget", { required: true })}
-              >
-                <option value="">Budget</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-              </select>
-              {errors.budget && <p className="error">Please select a budget</p>}
+                {...register("Budget")}
+              />
 
               <label htmlFor="textarea">Message</label>
               <textarea

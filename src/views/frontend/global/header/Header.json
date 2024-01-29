@@ -6,7 +6,7 @@
     },
     {
       "name": "Services",
-      "link": "",
+      "link": "#",
       "icon": "ic:baseline-arrow-drop-down",
       "childrens": [
         {
@@ -37,10 +37,6 @@
             {
               "name": "Laravel Development",
               "link": "/services/web-designing-and-development/laravel-development"
-            },
-            {
-              "name": "Website Maintenance",
-              "link": "/services/web-designing-and-development/website-maintenance"
             }
           ]
         },
@@ -51,7 +47,7 @@
           "childrens": [
             {
               "name": "Technical SEO Analysis",
-              "link": "/services/search-engine-optimization/technical-seo-services"
+              "link": "/services/search-engine-optimization/technical-seo-analysis"
             },
             {
               "name": "Online Reputation Management",
@@ -208,7 +204,7 @@
 
     {
       "name": "Portfolio",
-      "link": "",
+      "link": "#",
       "icon": "ic:baseline-arrow-drop-down",
       "submenu_icon": "dashicons:portfolio",
       "submenu_heading": "overview",

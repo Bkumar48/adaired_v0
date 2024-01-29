@@ -9,8 +9,6 @@ import DOMPurify from "dompurify";
 import Pagination from "../../components/paginationComponent/Pagination";
 import { useSearchParams } from "react-router-dom";
 
-
-
 const truncateText = (text, limit) => {
   const words = text.split(" ");
   if (words.length > limit) {
@@ -43,7 +41,6 @@ const RenderHtml = React.memo(({ data, limit }) => {
 RenderHtml.displayName = "RenderHtml";
 
 const BlogCard = React.memo(() => {
-  const [currentPage, setCurrentPage] = useState(1);
   const [searchParams, setSearchParams] = useSearchParams({
     skip: 0,
     limit: 5,
@@ -51,6 +48,9 @@ const BlogCard = React.memo(() => {
   const skip = parseInt(searchParams.get("skip") || 0);
   const limit = parseInt(searchParams.get("limit") || 5);
 
+  const [currentPage, setCurrentPage] = useState(
+    searchParams.get("skip") / limit + 1
+  );
   const {
     isLoading,
     error,
@@ -151,7 +151,7 @@ const BlogCard = React.memo(() => {
                   prev.set("skip", newSkip);
                   return prev;
                 });
-                setCurrentPage(page);
+                setCurrentPage(searchParams.get("skip") / limit + 1);
               }}
             />
           </div>
