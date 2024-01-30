@@ -10,22 +10,25 @@ const GetInTouchForm = () => {
   const schema = z.object({
     formId: z.string(),
     Name: z.string().min(3, { message: "Name is required" }),
-    Email: z.string().email("Invalid Email"),
+    Email: z.string().min(5, { message: "Email is required" }).email(),
     Message: z.string(),
   });
 
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async (data,event) => {
+    event.preventDefault();
     console.log(data);
     try {
       await axios.post(scriptUrl, JSON.stringify(data));
+      event.target.reset();
     } catch (error) {
       console.log(error);
     }
@@ -36,6 +39,7 @@ const GetInTouchForm = () => {
       <form action="" onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" {...register("formId")} value="getInTouchForm" />
         <div className="form-group">
+          {errors.Name && <span className="error">{errors.Name.message}</span>}
           <input
             type="text"
             id="name"
@@ -44,6 +48,9 @@ const GetInTouchForm = () => {
           />
         </div>
         <div className="form-group">
+          {errors.Email && (
+            <span className="error">{errors.Email.message}</span>
+          )}
           <input
             type="email"
             className="form-control"

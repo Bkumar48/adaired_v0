@@ -11,21 +11,22 @@ const Footer = () => {
 
   const schema = z.object({
     formId: z.string(),
-    Email: z.string().email("Invalid Email"),
+    Email: z.string().min(5, { message: "Email is required" }).email(),
   });
 
   const {
     handleSubmit,
     register,
+    reset,
     formState: { errors },
   } = useForm({
     resolver: zodResolver(schema),
   });
 
   const onSubmit = async (data) => {
-    console.log(data);
     try {
       await axios.post(scriptUrl, JSON.stringify(data));
+      reset();
     } catch (error) {
       console.log(error);
     }
@@ -55,7 +56,7 @@ const Footer = () => {
               <Icon icon="carbon:phone-outgoing-filled" color="white" />
               <span>
                 <i>Call Us</i>
-                +91-8907200008
+                +91-8907400008
               </span>
             </Link>
 
@@ -114,10 +115,10 @@ const Footer = () => {
                   {" "}
                   <Link to="/blog">Blogs</Link>
                 </li>
-                <li>
+                {/* <li>
                   {" "}
                   <Link to="/gallery">Gallery </Link>
-                </li>
+                </li> */}
                 <li>
                   {" "}
                   <Link to="/case-studies">Case Study</Link>
@@ -157,7 +158,9 @@ const Footer = () => {
                 </li>
                 <li>
                   {" "}
-                  <Link to="#">Compelling Content Marketing</Link>
+                  <Link to="/services/compelling-content-marketing">
+                    Compelling Content Marketing
+                  </Link>
                 </li>
                 <li>
                   {" "}
@@ -193,14 +196,19 @@ const Footer = () => {
                     placeholder="Email Address"
                     {...register("Email")}
                   />
-                  <input type="submit" value="submit" />
+                  <input type="submit" value="submit" defaultValue={""} />
+                  {errors.Email && (
+                    <div className="error">{errors.Email.message}</div>
+                  )}
                 </form>
               </div>
             </div>
           </div>
 
           <div className="copyright-col d-flex">
-            <Link to="#">Copyright © 2024 - AdAired Digital Media</Link>
+            <a onClick={(e) => e.preventDefault()}>
+              Copyright © 2024 - AdAired Digital Media
+            </a>
             <p>
               <Link to="/Terms-Conditions">Terms & Conditions / </Link>
               <Link to="/privacy-policy">Privacy Policy</Link>

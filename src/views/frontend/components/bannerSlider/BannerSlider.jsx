@@ -27,15 +27,15 @@ const sliderData = [
 const socialIcons = [
   {
     icon: "line-md:facebook",
-    link: "https://www.facebook.com/adaired.digital/",
+    link: import.meta.env.VITE_ADAIRED_FACEBOOK_LINK,
   },
   {
     icon: "line-md:instagram",
-    link: "https://www.facebook.com/adaired.digital/",
+    link: import.meta.env.VITE_ADAIRED_INSTA_LINK,
   },
   {
     icon: "line-md:twitter-x",
-    link: "https://twitter.com/adaireddigital",
+    link: import.meta.env.VITE_ADAIRED_TWITTER_LINK,
   },
 ];
 

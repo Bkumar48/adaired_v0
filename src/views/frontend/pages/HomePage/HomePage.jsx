@@ -10,7 +10,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 // Query Imports
-import { useQuery, keepPreviousData } from "@tanstack/react-query";
+import { useQuery } from "@tanstack/react-query";
 
 import BannerSlider from "../../components/bannerSlider/BannerSlider";
 import Testimonials from "../../components/testimonialsSection/Testimonials";
@@ -599,7 +599,7 @@ const CaseStudy = React.memo(() => {
             spaceBetween={0}
             slidesPerView={1}
             autoplay={{
-              disableOnInteraction: false, // Optional, but recommended
+              disableOnInteraction: false,
               delay: 3000,
               pauseOnMouseEnter: true,
             }}
@@ -838,15 +838,19 @@ const ContactUs = React.memo(() => {
   const schema = z.object({
     formId: z.string(),
     Name: z.string().min(2, { message: "Name is required" }),
-    Email: z.string().email({ message: "Email is not valid" }),
+    Email: z.string().min(5, { message: "Email is required" }).email(),
     Phone: z.string().min(10, { message: "Phone No. is required" }),
     Interest: z.string().min(2, { message: "Interest is required" }),
     Budget: z.string().min(2, { message: "Budget is required" }),
     Message: z.string(),
+    consent: z.boolean().refine((val) => val === true, {
+      message: "You must agree before submitting.",
+    }),
   });
   const {
     handleSubmit,
     register,
+    reset,
     setValue,
     formState: { errors },
   } = useForm({
@@ -862,6 +866,7 @@ const ContactUs = React.memo(() => {
     console.log(data);
     try {
       await axios.post(scriptUrl, JSON.stringify(data));
+      reset();
     } catch (error) {
       console.log(error);
     }
@@ -881,7 +886,7 @@ const ContactUs = React.memo(() => {
 
   return (
     <>
-      <section className="contact-grid pad100">
+      <section className="contact-grid pb100">
         <div className="container d-flex align-start">
           <div className="cont-text w-50">
             <h2 className="bigheading">Ready To Win More Customers?</h2>
@@ -890,8 +895,8 @@ const ContactUs = React.memo(() => {
               established online brand image.
             </p>
             <div className="social-cont">
-              <a
-                href="mailto:Salesadaired@gmail.com"
+              <Link
+                to="mailto:info@adaired.com"
                 className="d-flex just-start gap-20"
               >
                 <Icon
@@ -903,11 +908,11 @@ const ContactUs = React.memo(() => {
                 />
                 <p>
                   Mail Id Of Sales Executive
-                  <strong>Salesadaired@gmail.com</strong>
+                  <strong>info@adaired.com</strong>
                 </p>
-              </a>
-              <a
-                href="skype:adaireddigital"
+              </Link>
+              <Link
+                to="skype:live:.cid.46cf67c456a5bb0c?chat"
                 className="d-flex just-start gap-20"
               >
                 <Icon
@@ -918,17 +923,45 @@ const ContactUs = React.memo(() => {
                   }}
                 />
                 <p>
-                  Our Skpe ID
-                  <strong>adaireddigital</strong>
+                  Our Skype ID
+                  <strong>Adaired Digital</strong>
                 </p>
-              </a>
+              </Link>
+              <Link
+                to="https://api.whatsapp.com/send?phone=918907400008"
+                className="d-flex just-start gap-20"
+                target="_blank"
+              >
+                <Icon
+                  icon="ic:baseline-whatsapp"
+                  style={{
+                    color: "#316C7A",
+                    fontSize: "3.5rem",
+                  }}
+                />
+                <p>
+                  Chat on
+                  <strong>Whatsapp</strong>
+                </p>
+              </Link>
+              <Link
+                to="https://telegram.me/adaired"
+                className="d-flex just-start gap-20"
+                target="_blank"
+              >
+                <Icon
+                  icon="mingcute:telegram-fill"
+                  style={{
+                    color: "#316C7A",
+                    fontSize: "3.5rem",
+                  }}
+                />
+                <p>
+                  Ping us on
+                  <strong>Telegram</strong>
+                </p>
+              </Link>
             </div>
-            {/* <h2 className="bigheading mt25">& What you will get:</h2>
-            <ul>
-              <li>On-call inquiry assistance</li>
-              <li>Project consulting by experts</li>
-              <li>Detailed project estimation</li>
-            </ul> */}
           </div>
 
           <div className="home-form w-50">
@@ -943,8 +976,9 @@ const ContactUs = React.memo(() => {
                 <input
                   className={` ${errors.Name ? "errors" : ""}`}
                   type="text"
-                  placeholder="Name (required)"
+                  placeholder="Name"
                   {...register("Name")}
+                  defaultValue={""}
                 />
                 {errors.Name && (
                   <div className="error">{errors.Name.message}</div>
@@ -953,8 +987,9 @@ const ContactUs = React.memo(() => {
               <div className="formInput half-col">
                 <input
                   type="email"
-                  placeholder="Email (required)"
+                  placeholder="Email"
                   {...register("Email")}
+                  defaultValue={""}
                 />
                 {errors.Email && (
                   <div className="error">{errors.Email.message}</div>
@@ -965,6 +1000,8 @@ const ContactUs = React.memo(() => {
                 <PhoneInput
                   country={"in"}
                   onChange={(phone) => setValue("Phone", phone)}
+                  placeholder="Phone No."
+                  defaultValue={""}
                 />
                 {errors.Phone && (
                   <div className="error">{errors.Phone.message}</div>
@@ -972,9 +1009,6 @@ const ContactUs = React.memo(() => {
               </div>
               <div className="half-col">
                 <select className="serv__select" {...register("Interest")}>
-                  <option value="" disabled>
-                    Interested
-                  </option>
                   {services?.map((service, index) => {
                     return (
                       <option key={index} value={service.serviceBanner}>
@@ -993,27 +1027,24 @@ const ContactUs = React.memo(() => {
                 placeholder="Budget"
                 className="serv__select full-col"
                 {...register("Budget")}
+                defaultValue={""}
               />
 
               <label htmlFor="textarea">Message</label>
               <textarea
                 className="full-col"
                 rows="8"
-                {...register("Message")} // No validation for message
+                {...register("Message")}
+                defaultValue={""} // No validation for message
               />
 
               <div className="checkbox full-col">
-                <input
-                  type="checkbox"
-                  id="vehicle1"
-                  name="vehicle1"
-                  {...register("terms", { required: true })}
-                />
-                <label htmlFor="vehicle1">
+                <input type="checkbox" id="consent" {...register("consent")} />
+                <label htmlFor="consent">
                   I consent to providing these details.
                 </label>
-                {errors.terms && (
-                  <p className="error">You must accept the terms</p>
+                {errors.consent && (
+                  <div className="error">{errors.consent.message}</div>
                 )}
               </div>
 

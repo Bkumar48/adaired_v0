@@ -35,7 +35,7 @@ const Blogs = React.memo((props) => {
           <h2 className="bigheading">
             Update On The Latest Marketing Trends and Tech{" "}
           </h2>
-          <p>
+          <p className="p-100">
             You can never miss an update with Adaried! Explore our blogs for
             insightful information and stay ahead with specially curated content
             by industry experts.

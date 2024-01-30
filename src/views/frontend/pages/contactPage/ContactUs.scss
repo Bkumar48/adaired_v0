@@ -5,6 +5,25 @@
 .contact-para,
 .contact-form {
     flex: 0 0 47%;
+
+    .react-tel-input .form-control {
+        border-radius: 10px;
+
+    }
+
+    .react-tel-input .flag-dropdown {
+        border-bottom-left-radius: 10px;
+        border-top-left-radius: 10px;
+
+        &:hover {
+            background: none;
+        }
+    }
+
+    .react-tel-input .flag-dropdown.open .selected-flag {
+        background: none;
+
+    }
 }
 
 .contact-form {

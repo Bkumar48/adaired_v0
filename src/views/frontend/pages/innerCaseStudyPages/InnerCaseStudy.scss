@@ -261,6 +261,8 @@
                     position: relative;
                     font-weight: 700;
                     padding-bottom: 5px;
+                    display: inline-block;
+                    margin-bottom: 15px;
 
                     &::after {
                         position: absolute;

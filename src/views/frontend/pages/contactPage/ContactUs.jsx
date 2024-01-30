@@ -63,11 +63,11 @@ const ContactForm = () => {
             {...register("Email")}
           />
         </div>
-        <div className="full-col">
+        <div className="full-col ">
           <label htmlFor="phone">Phone Number</label>
 
           {errors.Phone && <p className="error">{errors.Phone.message}</p>}
-          <PhoneInput
+          <PhoneInput  
             country={"in"}
             onChange={(phone) => setValue("Phone", phone)}
           />

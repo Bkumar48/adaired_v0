@@ -4,6 +4,7 @@ import { Icon } from "@iconify/react";
 import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import axios from "axios";
 import DOMPurify from "dompurify";
+import Banner from "../../components/banners/Banner";
 const RenderHtml = React.memo(({ data }) => {
   const sanitizedHtml = DOMPurify.sanitize(data);
 
@@ -32,18 +33,19 @@ const IntroSection = React.memo((props) => {
         </div>
       </div>
       <style jsx>
-        {` .intro__section::after {
+        {`
+          .intro__section::after {
             position: absolute;
             content: "";
-            width: 100%;
+            width: 120%;
             height: 35%;
             background-color: #02811a;
-            left: 0;
+            left: -10%;
             bottom: 0;
             right: 0;
-            margin: auto;
-            points-events: none;
-            border-radius: 200px 200px 00px 0;
+            margin: 0 auto;
+            clip-path: circle(68.55% at 50% 100%);
+            overflow: hidden;
           }
         `}
       </style>
@@ -112,7 +114,7 @@ const ProjectDetails = React.memo((props) => {
         </div>
       </div>
     </>
-  );  
+  );
 });
 
 ProjectDetails.displayName = "ProjectDetails";
@@ -262,7 +264,7 @@ const Result = React.memo((props) => {
           <div className="case_results_grid">
             {props.resultBox &&
               props.resultBox.map((item, index) => (
-                <div  
+                <div
                   className="result_box d-flex align-start just-start gap-20"
                   key={index}
                 >
@@ -329,7 +331,7 @@ const InnerCaseStudy = () => {
     <>
       {caseStudy && (
         <>
-          {" "}
+          <Banner title="Case Study" />{" "}
           <IntroSection
             subHeading={caseStudy.subHeading}
             caseStudyName={caseStudy.caseStudyName}
