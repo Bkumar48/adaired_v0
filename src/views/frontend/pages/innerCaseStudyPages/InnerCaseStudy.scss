@@ -17,38 +17,7 @@
         z-index: -1;
     }
 
-    .text-center {
-        h4 {
-            color: #515151;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 20px;
-            margin-bottom: 15px !important;
-            font-family: 'Nunito Sans', sans-serif;
-            position: relative;
-            padding: 0;
-            display: inline-block;
-
-            &::after,
-            &::before {
-                position: absolute;
-                content: "";
-                width: 50px;
-                height: 1px;
-                top: 50%;
-                transform: translateY(-50%);
-                background-color: #515151;
-            }
-
-            &::before {
-                left: -60px;
-            }
-
-            &::after {
-                right: -60px;
-            }
-        }
-    }
+    
 
     .case_single_img {
         align-items: center;

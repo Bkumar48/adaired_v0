@@ -114,7 +114,7 @@ const CaseStudy = () => {
             <div className="case__study-card-inner">
               <div className="case__study-card-text-box">
                 <div className="case__study-card-text">
-                  <span
+                  <span 
                     style={{
                       position: "absolute",
                       content: "''",
@@ -131,7 +131,7 @@ const CaseStudy = () => {
                     About the project
                   </h4>
                   <p>
-                    {caseStudy.aboutProjectDescription.slice(0, 200) + "..."}
+                    {caseStudy.aboutProjectDescription}
                   </p>
                 </div>
                 <div className="case__study-technologies">
@@ -205,27 +205,34 @@ const CaseStudy = () => {
                 );
                 position: relative;
               }
+              @media(max-width: 1199px) {
+                  .case__study-card {
+                    background: linear-gradient( to bottom, #fff 65%,  ${caseStudy.colorScheme} 25% );
+                  }
+  
+              }
+
 
               @media(max-width: 999px) {
                 .case__study-card {
-                  background: linear-gradient( to bottom, #fff 78%, #02811a 28% );
-                 }
+                  background: linear-gradient( to bottom, #fff 91%,  ${caseStudy.colorScheme} 25% );
+                }
               }
 
               @media (max-width: 768px) {
                 .case__study-card {
-                  background: linear-gradient( to bottom, #fff 77%, #02811a 30% );
+                  background: linear-gradient( to bottom, #fff 90.11%,  ${caseStudy.colorScheme} 25% );
                 }
               }
 
               @media (max-width: 600px) {
                 .case__study-card {
-                  background: linear-gradient( to bottom, #fff 71%, #02811a 30% );
+                  background: linear-gradient( to bottom, #fff 89.5%,  ${caseStudy.colorScheme} 25% );
                 }
               }
               @media (max-width: 450px) {
                 .case__study-card {
-                  background: linear-gradient( to bottom, #fff 60%, #02811a 40% );
+                  background: linear-gradient( to bottom, #fff 90%,  ${caseStudy.colorScheme} 25% );
                 }
               }
             `}

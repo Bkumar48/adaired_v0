@@ -45,6 +45,7 @@ const SlideInfoText = ({ data }) => {
     </motion.div>
   );
 };
+
 const BannerContent = ({ transitionData, currentSlideData }) => {
   return (
     <>

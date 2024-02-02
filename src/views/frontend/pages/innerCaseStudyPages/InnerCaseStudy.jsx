@@ -20,7 +20,7 @@ const IntroSection = React.memo((props) => {
       <div className="intro__section pad100">
         <div className="container">
           <div className="text-center">
-            <h4>{props.subHeading}</h4>
+            <h4 className="sub-heading sub_hd-mx">{props.subHeading}</h4>
             <h2 className="bigheading">{props.caseStudyName}</h2>
             <p>{props.caseStudyDescription}</p>
           </div>

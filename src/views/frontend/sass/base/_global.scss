@@ -78,6 +78,10 @@ section {
   align-items: center;
 }
 
+.flex-end {
+  justify-content: flex-end;
+}
+
 .align-start {
   align-items: flex-start;
 }
@@ -461,13 +465,31 @@ img {
 .ol-list {
   li {
     list-style: decimal;
-    margin-left: 25px;
+    margin-left: 25px !important;
 
     &::marker {
       color: #038EB0;
     }
   }
 }
+
+.description__accordion-content h3 {
+    font-size: 22px;
+    color: #000000;
+    font-weight: 500;
+    font-family: var(--font-Nunito);
+    position: relative;
+    padding-bottom: 5px;
+  }
+  .description__accordion-content h3:nth-child(1):before {
+    position: absolute;
+    content: "";
+    width: 120px;
+    height: 2px;
+    background-color: #038EB0;
+    left: 0;
+    bottom: 0px;  
+  }
 
 .inner-main_content {
   h3 {

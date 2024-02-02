@@ -366,64 +366,11 @@ const Services = React.memo(() => {
         "Landing page design & development",
         "E-commerce website design & development",
       ],
-      imageSrc: "/assets/images/homePage/serviceCard1.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack1.webp",
+      imageSrc: "/assets/images/homePage/serviceCard3.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack3.webp",
       svgImage: "/assets/images/homePage/Website Design & Development.svg",
       navigateTo: "/services/web-designing-and-development",
       custom: 1,
-    },
-    {
-      title: "Strategic Social Media Management",
-      description:
-        "Enhance the social media presence of brands on diverse social platforms with engaging content to foster meaningful interactions and amplify reach.",
-      list: [
-        "Profile Optimization",
-        "Targeted Page Likes",
-        "Hashtag Trend Research",
-        "Content Calendar",
-        "Monthly Report",
-      ],
-      imageSrc: "/assets/images/homePage/serviceCard2.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack2.webp",
-      svgImage: "/assets/images/homePage/Social Media Management.svg",
-      navigateTo: "/services/strategic-social-media-management",
-      custom: 2,
-    },
-    {
-      title: "Compelling Content Marketing",
-      description:
-        "Engaging and captivating content development that not only resonates with the audience but ranks well across all search engines.  ",
-      list: [
-        "Infographics",
-        "Website Blogs",
-        "Press Releases",
-        "Website Copy",
-        "Guest Posting",
-        "Social Media Posting",
-      ],
-      imageSrc: "/assets/images/homePage/serviceCard3.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack3.webp",
-      svgImage: "/assets/images/homePage/Content Development & Marketing.svg",
-      navigateTo: "/services/compelling-content-marketing",
-      custom: 3,
-    },
-    {
-      title: "Digital Creative & Logo Design",
-      description:
-        "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience.",
-      list: [
-        "Digital Broucher",
-        "Email Marketing Graphics",
-        "Logos and Branded Elements",
-        "Poster, Banner and Signage",
-        "Business Card, Letterhead and Envelope",
-        "Social media graphics & digital marketing ads",
-      ],
-      imageSrc: "/assets/images/homePage/serviceCard4.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack4.webp",
-      svgImage: "/assets/images/homePage/Graphic Designing.svg",
-      custom: 4,
-      navigateTo: "/services/digital-creative-and-logo-design",
     },
     {
       title: "Search Engine optimization (SEO)",
@@ -437,8 +384,8 @@ const Services = React.memo(() => {
         "Website Broken Link Analysis",
         "Penalty review & recovery",
       ],
-      imageSrc: "/assets/images/homePage/serviceCard5.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack5.webp",
+      imageSrc: "/assets/images/homePage/serviceCard1.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack1.webp",
       svgImage: "/assets/images/homePage/Search Engine Optimization.svg",
       navigateTo: "/services/search-engine-optimization",
       custom: 5,
@@ -455,11 +402,64 @@ const Services = React.memo(() => {
         "Overall performance Analysis",
         "Campaign management and optimization",
       ],
-      imageSrc: "/assets/images/homePage/serviceCard6.webp",
-      backgroundImage: "/assets/images/homePage/serviceCardBack6.webp",
+      imageSrc: "/assets/images/homePage/serviceCard2.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack2.webp",
       svgImage: "/assets/images/homePage/Pay Per Click.svg",
       navigateTo: "/services/paid-media-and-advertising",
       custom: 6,
+    },
+    {
+      title: "Compelling Content Marketing",
+      description:
+        "Engaging and captivating content development that not only resonates with the audience but ranks well across all search engines.  ",
+      list: [
+        "Infographics",
+        "Website Blogs",
+        "Press Releases",
+        "Website Copy",
+        "Guest Posting",
+        "Social Media Posting",
+      ],
+      imageSrc: "/assets/images/homePage/serviceCard4.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack4.webp",
+      svgImage: "/assets/images/homePage/Content Development & Marketing.svg",
+      navigateTo: "/services/compelling-content-marketing",
+      custom: 3,
+    },
+    {
+      title: "Digital Creative & Logo Design",
+      description:
+        "The creative team illustrates the brand's image and ideas in captivating visuals to communicate with the target audience.",
+      list: [
+        "Digital Broucher",
+        "Email Marketing Graphics",
+        "Logos and Branded Elements",
+        "Poster, Banner and Signage",
+        "Business Card, Letterhead and Envelope",
+        "Social media graphics & digital marketing ads",
+      ],
+      imageSrc: "/assets/images/homePage/serviceCard5.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack5.webp",
+      svgImage: "/assets/images/homePage/Graphic Designing.svg",
+      custom: 4,
+      navigateTo: "/services/digital-creative-and-logo-design",
+    },
+    {
+      title: "Strategic Social Media Management",
+      description:
+        "Enhance the social media presence of brands on diverse social platforms with engaging content to foster meaningful interactions and amplify reach.",
+      list: [
+        "Profile Optimization",
+        "Targeted Page Likes",
+        "Hashtag Trend Research",
+        "Content Calendar",
+        "Monthly Report",
+      ],
+      imageSrc: "/assets/images/homePage/serviceCard6.webp",
+      backgroundImage: "/assets/images/homePage/serviceCardBack6.webp",
+      svgImage: "/assets/images/homePage/Social Media Management.svg",
+      navigateTo: "/services/strategic-social-media-management",
+      custom: 2,
     },
   ];
 
@@ -590,37 +590,63 @@ const Services = React.memo(() => {
 Services.displayName = "Services";
 
 const CaseStudy = React.memo(() => {
+  const data = [
+    {
+      sub_hd: "Case Studies",
+      bigheading: "Search Engine Optimization",
+      para: "Check out the success stories showcasing the groundbreaking capabilities of our strategic optimization techniques. Learn how we have propelled brands to the forefront of search rankings, driven organic traffic, and established long-term credibility.",
+      btn: "View More",
+      img: "/assets/images/homePage/case1.webp",
+      clip_color: "#3F9C2D",
+    },
+    {
+      sub_hd: "Success Stories",
+      bigheading: "Paid Media & Advertising",
+      para: "Gain insights into the potency of our precisely targeted PPC campaigns. We have successfully transformed our clients' advertising expenses into evident business expansion, optimizing their ROI, and enhancing customer engagement.",
+      btn: "View More",
+      img: "/assets/images/homePage/case2.webp",
+      clip_color: "#EA5E5509",
+    },
+    {
+      sub_hd: "Project Highlights",
+      bigheading: "Web Designing And Development Case Studies",
+      para: "Explore the impact of our recent Web Designing and Development projects. With technical proficiency and a creative knack, we offer our clients visually striking and structurally resilient digital solutions.",
+      btn: "View More",
+      img: "/assets/images/homePage/case3.webp",
+      clip_color: "#3BC0F309",
+    },
+  ];
   return (
     <>
-      <section className="case-study pad100">
-        <div className="study_slider">
-          <Swiper
-            modules={[A11y, Autoplay, Parallax]}
-            spaceBetween={0}
-            slidesPerView={1}
-            autoplay={{
-              disableOnInteraction: false,
-              delay: 3000,
-              pauseOnMouseEnter: true,
+      <Swiper
+        modules={[A11y, Autoplay, Parallax]}
+        spaceBetween={0}
+        slidesPerView={1}
+        autoplay={{
+          disableOnInteraction: false,
+          delay: 3000,
+          pauseOnMouseEnter: true,
+        }}
+        parallax={true}
+        loop={true}
+        grabCursor={true}
+      >
+        {data.map((item) => (
+          <div
+            className="case-study pad100"
+            style={{
+              // backgroundColor: `${item.clip_color}`,
             }}
-            parallax={true}
-            loop={true}
-            grabCursor={true}
+            key={item}
           >
             <SwiperSlide className="case-study-col">
               <div className="container d-flex">
                 <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Case Studies</h5>
-                  <h2 className="bigheading">Search Engine Optimization </h2>
-                  <p>
-                    Check out the success stories showcasing the groundbreaking
-                    capabilities of our strategic optimization techniques. Learn
-                    how we have propelled brands to the forefront of search
-                    rankings, driven organic traffic, and established long-term
-                    credibility.
-                  </p>
+                  <h5 className="sub-heading sub-hd">{item.sub_hd}</h5>
+                  <h2 className="bigheading">{item.bigheading} </h2>
+                  <p>{item.para}</p>
                   <Button
-                    title="View More"
+                    title={item.btn}
                     type="button"
                     color="#000"
                     svgBackgroundColor="#000"
@@ -631,69 +657,13 @@ const CaseStudy = React.memo(() => {
                   />
                 </div>
                 <div className="w-50">
-                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
+                  <img src={item.img} alt="CaseStudy Image" />
                 </div>
               </div>
             </SwiperSlide>
-            <SwiperSlide className="case-study-col">
-              <div className="container d-flex">
-                <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Success Stories</h5>
-                  <h2 className="bigheading">Paid Media & Advertising </h2>
-                  <p>
-                    Gain insights into the potency of our precisely targeted PPC
-                    campaigns. We have successfully transformed our clients'
-                    advertising expenses into evident business expansion,
-                    optimizing their ROI, and enhancing customer engagement.
-                  </p>
-                  <Button
-                    title="View More"
-                    color="#000"
-                    type="button"
-                    svgBackgroundColor="#000"
-                    icon="solar:arrow-right-broken"
-                    borderColor="#F89520"
-                    backgroundColor="transparent"
-                    navigateTo="/case-studies"
-                  />
-                </div>
-                <div className="w-50">
-                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
-                </div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide className="case-study-col">
-              <div className="container d-flex">
-                <div className="w-50">
-                  <h5 className="sub-heading sub-hd">Project Highlights</h5>
-                  <h2 className="bigheading">
-                    Web Designing And Development Case Studies
-                  </h2>
-                  <p>
-                    Explore the impact of our recent Web Designing and
-                    Development projects. With technical proficiency and a
-                    creative knack, we offer our clients visually striking and
-                    structurally resilient digital solutions.
-                  </p>
-                  <Button
-                    title="View More"
-                    type="button"
-                    color="#000"
-                    svgBackgroundColor="#000"
-                    icon="solar:arrow-right-broken"
-                    borderColor="#F89520"
-                    backgroundColor="transparent"
-                    navigateTo="/case-studies"
-                  />
-                </div>
-                <div className="w-50">
-                  <img src="/assets/images/homePage/caseStudiesImage.webp" />
-                </div>
-              </div>
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </section>
+          </div>
+        ))}
+      </Swiper>
     </>
   );
 });

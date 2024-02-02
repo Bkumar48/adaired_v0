@@ -66,15 +66,14 @@
     margin-bottom: 8px;
     max-width: max-content;
     padding: 5px;
-    width: 60px;
-    height: 60px;
     border: 1px solid #dddddd4f;
     border-radius: 5px;
+    max-width: 55px;
 }
 
 /************************************************************************* LOGO SLIDER *****************************************************************************/
 
-.footer-bottom li:hover a {
+.footer-bottom li:hover a, .copyright-col a:hover  {
     color: #fb9100;
 }
 
@@ -118,9 +117,7 @@
 .result_box_flex_wrap p {
 	margin-bottom: 0 !important;
 }
-.ol-list {
-	padding-left: 20px;
-}
+
 
 
 
@@ -277,6 +274,17 @@
     }
     .contact-grid .home-form form::after {
         height: 26.7%;
+    }
+    .case__study-card {
+        padding: 30px;
+        min-height: 480px;
+    }
+    .case__study-card .case__study-card-inner {
+        gap: 25px;
+    }
+    .case__study-card .case__study-card-text-box .case__study-technologies {
+        gap: 12px;
+        padding-top: 40px;
     }
 }
 
@@ -504,6 +512,21 @@
     .service_flex .service__card img {
         max-width: 55px;
      }
+     .single__blog-section .container .single__blog-card {
+        padding: 25px;
+        flex: 70%;
+    }
+    .single__blog-section .container {
+        gap: 25px;
+    }
+    .case__study-card .case__study-card-text-box .case__study-technologies {
+        gap: 10px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .case__study-card-text span {
+        top: 30px !important;
+        left: 30px !important;
+    }
    
     
 }
@@ -564,10 +587,6 @@
         margin: 30px 0 15px 0;
     }
 
-    .case__study-card .case__study-card-text-box .case__study-technologies {
-        gap: 15px;
-        padding-top: 40px;
-    }
 
     .contact__us-cta-icon {
         height: 35px;
@@ -907,6 +926,9 @@
     .banner__wrapper .social-icon .line {
         height: 100px;
     }
+    .single__blog-section .container {
+        gap: 20px;
+    }
     
 }
 
@@ -962,6 +984,9 @@
     }
     .intro__section .case_single_img img {
         max-width: 700px;
+    }
+    .description__accordion-content h3 {
+        font-size: 20px;
     }
 
 
@@ -1164,13 +1189,16 @@
 
     .abt-card {
         border: 1px solid #d9d9d9;
-        padding: 10px;
+        padding: 20px 10px;
+        width: 49%;
+    }
+    .abt-card p {
+        max-width: 350px;
+        margin: 0 auto;
     }
 
     .abt-icon {
-        display: block;
-        margin: 0 auto;
-        max-width: 60px;
+        margin: 0 auto 10px;
     }
 
     .about-outer .w-50 {
@@ -2027,9 +2055,6 @@
         display: block;
     }
 
-    .case__study-card .case__study-card-text-box .case__study-technologies {
-        padding-top: 30px;
-    }
 
     .case__study-card {
         min-height: auto;
@@ -2075,6 +2100,42 @@
         display: block;
         margin: 0 auto;
     }
+    .pagination ul .number {
+        height: 32px !important;
+        width: 32px !important;
+        font-size: 16px !important;
+        line-height: 30px !important;
+     }
+     .pagination ul .button {
+        padding: 0 10px !important;
+        font-size: 16px !important;
+        line-height: 30px !important;
+    }
+    .single__blog-section .container .single__blog-card {
+        flex: 100%;
+    }
+    .single__blog-section .advertisement__wrapper {
+        flex: 100%;
+        display: none;
+    }
+    .single__blog-section .container {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+    .career_container .career_content .career__left .current_recruitments .description__accordion .description__accordion-header {
+        padding: 5px 10px 0 10px;
+        border-radius: 0 0 5px 5px;
+    }
+    .career_container .career_content .career__left .current_recruitments .description__accordion .description__accordion-header .svg_container svg {
+        padding: 4px;
+        font-size: 16px;
+    }
+    .case__study-card .case__study-img-section .case__study-img img {
+        height: auto;
+        object-fit: contain;
+        max-width: 650px;
+    }
+
 }
 
 @media screen and (max-width: 768px) {
@@ -2110,6 +2171,9 @@
 
     .banner .swiper {
         max-height: 60vh;
+    }
+    .abt-card p {
+        max-width: 230px;
     }
 
     .banner-slider .banner-box {
@@ -2598,6 +2662,16 @@
         font-size: 20px;
         line-height: 25px;
     }
+    .single__blog-section .container .single__blog-card {
+        padding: 20px;
+     }
+     .inner-main_content ul li::before {
+        background-size: 18px;
+        left: 0px;
+    }
+    .inner-main_content ul li {
+        padding-left: 20px;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -2650,6 +2724,12 @@
 
     .abt-card-group.d-flex {
         flex-wrap: wrap;
+    }
+    .abt-card {
+        width: 100%;
+    }
+    .abt-card p {
+        max-width: 100%;
     }
 
     .our_workstation .d-flex {
@@ -2768,7 +2848,7 @@
     }
 
     .abt-icon {
-        max-width: 50px;
+        max-width: 45px;
     }
 
     .footer-bottom h3 {
@@ -2793,6 +2873,16 @@
     }
     .case__study-card .case__study-card-text-box .case__study-technologies {
         grid-template-columns: repeat(2, 1fr);
+    }
+    .description__accordion-content h3 {
+        font-size: 18px;
+     }
+     .career_container .career_content .career__left .current_recruitments .description__accordion .description__accordion-content {
+        padding: 20px;
+    }
+    .top_bar .top_bar-flex {
+        margin: 0 auto;
+        gap: 25px;
     }
 
 }
@@ -3115,7 +3205,51 @@
         border-left: 3px solid #bc1d8d;
         border-right: 3px solid #bc1d8d;
      }
-     
+     .sub_hd-mx::before, .sub_hd-mx::after {
+        width: 25px;
+        left: -30px;
+    }
+    .sub_hd-mx::after {
+        left: unset;
+        right: -30px;
+    }
+    .single__blog-section .container .single__blog-card {
+        padding: 15px;
+     }
+     .case__study-card-text p {
+        max-width: 240px;
+        margin: 0 auto 10px;
+    }   
+    .description__accordion-content h3 {
+        font-size: 16px;
+     }
+     .top_bar .top_bar-flex .phone-top img {
+        margin-right: 5px;
+        max-width: 18px;
+    }
+    .top_bar .top_bar-flex {
+        gap: 18px;
+    }
+    .top_bar {
+        padding: 10px;
+    }
+    .top_bar .top_bar-flex .phone-top span {
+        font-size: 14px;
+    }
+    .inner-main_content h3 {
+        font-size: 20px;
+        line-height: 25px;
+        margin: 20px 0 7px !important;
+        font-weight: 400;
+    }
+    .inner-main_content ul li {
+        padding-left: 16px;
+    }
+    .inner-main_content ul li::before {
+        background-size: 16px;
+        background-position: center left;
+        top: 2px;
+    }
 }
 
 /* *********************************************************************** RESPONSIVE *************************************************************************************** */

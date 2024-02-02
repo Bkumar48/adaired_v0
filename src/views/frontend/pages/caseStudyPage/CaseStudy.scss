@@ -46,6 +46,13 @@
                 position: relative;
                 margin: 40px 0 20px 0;
             }
+            p {
+                text-overflow: ellipsis;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+            }
         }
 
         .case__study-technologies {

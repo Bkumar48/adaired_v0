@@ -95,7 +95,8 @@
       transition: 0.4s all ease-in-out;
       right: 0;
       bottom: 0px;
-      background: #038eb0;
+
+      background: #bc1d8d;
     }
 
     &:hover::before {
@@ -116,23 +117,25 @@
     }
 
     &:nth-child(2)::before {
-      background-color: #8ec640;
-    }
 
-    &:nth-child(3)::before {
-      background-color: #92288d;
-    }
-
-    &:nth-child(4)::before {
       background-color: #f89520;
     }
 
+    &:nth-child(3)::before {
+
+      background-color: #ec1f27;
+    }
+
+    &:nth-child(4)::before {
+      background-color: #038eb0;
+    }
+
     &:nth-child(5)::before {
-      background-color: #bc1d8d;
+      background-color: #92288d;
     }
 
     &:nth-child(6)::before {
-      background-color: #ec1f27;
+      background-color: #8ec640;
     }
 
     .serv-img {
@@ -165,7 +168,7 @@
           left: 0;
           width: 80%;
           height: 1px;
-          background: #515151;
+          background: #A7A9AC;
         }
       }
 
@@ -281,6 +284,7 @@
 
 .case-study-col .growth-img {
   position: relative;
+  
 }
 
 .growth-img .team-img {

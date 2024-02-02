@@ -53,8 +53,34 @@ const Header = () => {
     open: { opacity: 1, y: 0 },
     closed: { opacity: 0, y: -100 },
   };
-  return (
+  return (<>
+
+    <section className="top_bar">
+        <div className="container">
+         <div className="top_bar-flex  d-flex flex-end">
+          <div className="phone-top d-flex"
+           onClick={() => {
+            window.location.href = "tel:+12052736006";
+          }}
+          >
+           <img src="/assets/images/header_footer/USA-flag.png"/>
+            <span>+1 (205) 273-6006</span>
+          </div>
+          <div className="phone-top d-flex"
+           onClick={() => {
+            window.location.href = "tel:+918907400008";
+          }}
+          >
+           <img src="/assets/images/header_footer/india-flag.png"/>
+            <span>+91 8907400008</span>
+          </div>
+
+          </div>
+          </div>
+          </section> 
     <header className={`${headerFixed == true && "header-fixed"}`}>
+
+
       <nav>
         <motion.div
           className="header-wrapper container"
@@ -198,7 +224,7 @@ const Header = () => {
               }}
             >
               <Button
-                title="+91-8907400008"
+                title="Contact"
                 type="button"
                 svgBackgroundColor="#000"
                 icon="ic:round-phone"
@@ -310,7 +336,7 @@ const Header = () => {
                         onClick={() => {
                           if (
                             data.name === "Services" ||
-                            data.name === "Portfolio"
+                            data.name === "Resources"
                           ) {
                             handleParentClick(index);
                           } else {
@@ -387,6 +413,7 @@ const Header = () => {
         )}
       </AnimatePresence>
     </header>
+    </>
   );
 };
 

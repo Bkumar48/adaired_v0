@@ -240,7 +240,7 @@ const JobCard = ({ job }) => {
   let modifiedDescription = job.description || "";
   modifiedDescription = modifiedDescription.replace(
     /<ol>/g,
-    '<ol class="ol-list">'
+    '<ul class="ol-list">'
   );
 
   const dateString = job.updatedAt;
